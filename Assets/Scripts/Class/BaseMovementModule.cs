@@ -21,7 +21,7 @@ public class BaseMovementModule : MonoBehaviour
     //TODO: Check this is working correctly
 
     [Tooltip("How fast the player falls (should be negative value)")]
-    public float gravity = -35;
+    public static float gravity = -35;
 
 
     [Tooltip("How much dead area before the control sticks cause movement")]
@@ -95,6 +95,11 @@ public class BaseMovementModule : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
+        }
+        if (Input.GetMouseButton(0))
+        {
+            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
+      
         }
     }
 

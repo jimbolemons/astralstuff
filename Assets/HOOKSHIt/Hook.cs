@@ -75,6 +75,7 @@ public class Hook : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
                 //TODO turn off gravity for the player so that the grapple works more smoothly
                 this.GetComponent<Rigidbody>().useGravity = false;
+                BaseMovementModule.gravity = 0;
                // this.GetComponent<MovModDoubleJump>().gravity = 0;
             }
             // if not reeling in do this
@@ -120,7 +121,7 @@ public class Hook : MonoBehaviour
 
         LineRenderer rope = hook.GetComponent<LineRenderer>();
         rope.SetVertexCount(0);
-               
+        BaseMovementModule.gravity = -35;
     }
 
 }
