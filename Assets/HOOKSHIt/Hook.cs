@@ -44,7 +44,7 @@ public class Hook : MonoBehaviour
         }
 
         //reel in to hok
-        if (Input.GetKeyDown(KeyCode.O) && hooked)
+        if (Input.GetMouseButton(0) && hooked)
         {
             reelIn = true;
         }
@@ -84,7 +84,7 @@ public class Hook : MonoBehaviour
             }
 
             // return the hook to the player
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetMouseButton(1))
                   ReturnHook();
 
             
