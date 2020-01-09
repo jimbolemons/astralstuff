@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// BulletStats Class
+/// This script handles bullet collisions
+/// </summary>
 public class BulletDamage : BulletStats
 {
-
-
+    /// <summary>
+    /// if the bullet collides with a trigger volume
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         ObjectWithHealth target = other.gameObject.GetComponent<ObjectWithHealth>();
@@ -22,6 +27,10 @@ public class BulletDamage : BulletStats
 
         }
     }
+    /// <summary>
+    /// when the bullet collides with another collider
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         ObjectWithHealth target = collision.gameObject.GetComponent<ObjectWithHealth>();
@@ -35,7 +44,6 @@ public class BulletDamage : BulletStats
                 Destroy(gameObject);
             }
             //print("I HIT A THING! " + collision.gameObject.name);
-
         }
     }
 }

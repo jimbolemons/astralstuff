@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This module enables the player to double jump
+/// Inherits base stats from BaseMovementModule class
+/// </summary>
 public class MovModDoubleJump : BaseMovementModule
 {
-    int doubleJumpCount;
+    [Tooltip("How many midair jumps")]
     public int doubleJumpBase = 1;
-    // Start is called before the first frame update
+    int doubleJumpCount;
+    
     void Start()
     {
+        //initialize default count
         doubleJumpCount = doubleJumpBase;
     }
 
@@ -21,8 +27,6 @@ public class MovModDoubleJump : BaseMovementModule
             CheckForRotation();
 
             XYMovement();
-            //print(direction);        
-            //direction.y -= gravity * Time.deltaTime;
 
             //custom code for this inherited class
             if (controller.isGrounded)

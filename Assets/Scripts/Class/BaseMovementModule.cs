@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class handles the basic information for the player's movement and controls
+/// Movement modules can inherit more information from this class
+/// </summary>
 public class BaseMovementModule : MonoBehaviour
 {
     //reference to the charactercontroller component of the player

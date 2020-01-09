@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Gun class
+/// The most basic shooting script, simply fires bullets
+/// </summary>
 public class Shoot : Gun
 {
     public override void Fire()

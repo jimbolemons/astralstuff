@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Gun class
+/// Fires the bullet as a child of the parent
+/// This means it will follow the parent's movement over it's lifetime
+/// </summary>
 public class ShootAsChild : Gun
 {
     public override void Fire()

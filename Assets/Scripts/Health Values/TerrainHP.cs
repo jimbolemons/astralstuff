@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ObjectWithHealth Class
+/// Meant for terrain to enable it to stop bullets
+/// </summary>
 public class TerrainHP : ObjectWithHealth
 {
     private void Start()
     {
         objectType = objectWithHealthType.terrain;
-    }
-
-    public override void TimeToDie()
-    {
-
     }
 
     public override void TriggerOnDeath()

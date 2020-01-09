@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// handles the pause canvas and pause function
+/// </summary>
 public class PauseControl : MonoBehaviour
 {
     bool prevPaused = false;
+    [Tooltip("Reference to the pause canvas.")]
     public Canvas pauseCanvas;
 
     void Update()
     {
-        if (Input.GetAxis("Pause") != 0 && prevPaused == MasterStaticScript.gameIsPaused)
-        //if(Input.GetKeyDown(KeyCode.Escape) && prevPaused == MasterStaticScript.gamePaused)
+        //TODO: Refactor this so it correctly uses the functions
+
+        //if the player presses pause, tell the master script to pause the game
+        if (Input.GetAxis("Pause") != 0 && prevPaused == MasterStaticScript.gameIsPaused)        
         {
             MasterStaticScript.gameIsPaused = !MasterStaticScript.gameIsPaused;
             SetPauseCanvasState();
@@ -25,18 +30,25 @@ public class PauseControl : MonoBehaviour
 
         }
     }
-
+   /// <summary>
+   /// Public function to pause the game
+   /// </summary>
     public void Pause()
     {
         MasterStaticScript.gameIsPaused = true;
         SetPauseCanvasState();
     }
-
+    /// <summary>
+    /// Public function to unpause game
+    /// </summary>
     public void UnPause()
     {
         MasterStaticScript.gameIsPaused = false;
         SetPauseCanvasState();
     }
+    /// <summary>
+    /// function that sets the master script to the correct state
+    /// </summary>
     void SetPauseCanvasState()
     {
         pauseCanvas.enabled = MasterStaticScript.gameIsPaused;
