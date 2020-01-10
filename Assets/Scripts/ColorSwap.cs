@@ -8,6 +8,7 @@ public class ColorSwap : MonoBehaviour
 {
     //TODO: Refactor this to be less of a mess
     //Reference to all of the objects that need to be swapped or deactivated
+    public static bool isWaffles = false;
     public Material playerMat;
     public Material demonMat;
     public MeshRenderer player;
@@ -16,9 +17,11 @@ public class ColorSwap : MonoBehaviour
     public MeshRenderer demon;
     public bool counter = false;
     GameObject dummy;
+    public GameObject playerTarget;
     public GameObject dummyBase;
     public GameObject leftHand;
     public GameObject rightHand;
+    public GameObject cam;
     
     void Start()
     { 
@@ -33,26 +36,40 @@ public class ColorSwap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             //if swapping to demon
+            //TODO: Spawn demon with its own player controler and set the camera target to be that object. demon needs to inhearit some items from hope such as health.
             if (counter == true)
             {
-                demon.enabled = true;
-                player.enabled = false;
-                gun.enabled = false;
-                eyes.enabled = false;
+                //spawn demon prefab
                 dummy = Instantiate(dummyBase, transform.position, Quaternion.identity);
-                rightHand.SetActive(false);
-                leftHand.SetActive(true);
+
+                //set cammera target to demon                 
+                cam.GetComponent<ThirdPersonCamera>().target = dummy.gameObject.transform.GetChild(0);                
+
+                //turn off controls for hope
+                //TODO
+                isWaffles = true;
+
+                //send data from hope to waffles
+                //TODO
+                                       
             }
             //if swapping to Hope
+            //TODO: destroy Demon and set the cameratarget back to hope
             if (counter == false)
             {
-                demon.enabled = false;
-                player.enabled = true;
-                gun.enabled = true;
-                eyes.enabled = true;
+                //send data from demon to hope
+                //TODO
+
+                //set camera target to hope
+                cam.GetComponent<ThirdPersonCamera>().target = playerTarget.gameObject.transform.GetChild(0);
+
+                //turn on hopes controls 
+                //TODO
+                isWaffles = false;
+
+                //destroy demon prefab
                 Destroy(dummy);
-                rightHand.SetActive(true);
-                leftHand.SetActive(false);
+                                       
             }
             counter = !counter;
         }
