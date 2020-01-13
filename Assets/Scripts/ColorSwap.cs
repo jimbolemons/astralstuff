@@ -48,7 +48,7 @@ public class ColorSwap : MonoBehaviour
                 //turn off controls for hope
                 //TODO
                 isWaffles = true;
-
+                playerTarget.GetComponent<CharacterController>().enabled = false;
                 //send data from hope to waffles
                 //TODO
                                        

@@ -34,16 +34,12 @@ public class Hook : MonoBehaviour
         hook.gameObject.transform.localScale = hook.gameObject.transform.localScale;
 
         // fireing the hok
-        
-
         if (fired)
         {
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.SetVertexCount(2);
             rope.SetPosition(0, hookHolder.transform.position);
             rope.SetPosition(1, hook.transform.position);
-           
-
         }
 
         //reel in to hok
@@ -65,48 +61,40 @@ public class Hook : MonoBehaviour
         //if the hook is hooked into somthing do this
         if (hooked == true && fired == true)
         {
-            hook.transform.parent = hookedObj.transform;
-          
-
-           
+            hook.transform.parent = hookedObj.transform;           
             hook.transform.SetParent(hookedObj.transform, true);
-
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             //if reeling in do this
             if (reelIn)
             { 
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
                 //TODO turn off gravity for the player so that the grapple works more smoothly
-                this.GetComponent<Rigidbody>().useGravity = false;
+                //this.GetComponent<Rigidbody>().useGravity = false;
                 BaseMovementModule.gravity = 0;
                // this.GetComponent<MovModDoubleJump>().gravity = 0;
             }
             // if not reeling in do this
             if (!reelIn && distanceToHook > currentDistance)
             {
-                //BaseMovementModule.gravity = 0;
-                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 35 );
-
+                BaseMovementModule.gravity = -20;
+                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 36 );                
                // transform.position = ;
-
             }
             else
             {
-               // BaseMovementModule.gravity = -35;
+                BaseMovementModule.gravity = -35;
             }
-
-
-            // return the hook to the player
-
-
 
             //Debug.Log(distanceToHook);
             if (distanceToHook < 2)
             {
                 reelIn = false;
                 currentDistance = 2;
-            }
-            
+                if (Input.GetButton("Jump"))
+                {
+                    ReturnHook();
+                }
+            }            
 
         } else {
 
@@ -116,7 +104,6 @@ public class Hook : MonoBehaviour
                 hook.transform.localPosition = Vector3.zero;
                 hook.transform.localScale = new Vector3(.5f, .5f, .5f);
             }
-
                        
             //TODO turn on gravity
             this.GetComponent<Rigidbody>().useGravity = true;
