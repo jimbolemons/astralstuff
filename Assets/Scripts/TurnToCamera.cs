@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnToCamera : MonoBehaviour
 {
-    public Transform camera; 
+    public Transform cameras; 
     // Start is called before the first frame update
     void Start()
     {
@@ -12,12 +12,12 @@ public class TurnToCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (Input.GetMouseButton(0))
         {
 
-            transform.LookAt(camera);
+           transform.LookAt(cameras);
         }
 
     }

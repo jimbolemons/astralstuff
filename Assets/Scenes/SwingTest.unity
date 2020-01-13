@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437df001fd0311245ac6648d380fec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 22749712}
+  cameras: {fileID: 22749712}
 --- !u!1 &774274196
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,7 +3264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437df001fd0311245ac6648d380fec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 22749712}
+  cameras: {fileID: 22749712}
 --- !u!114 &7595660462839661598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,7 +3545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 1266348459}
   hookHolder: {fileID: 1749675840}
-  hookTravelSpeed: 40
+  hookTravelSpeed: 60
   playerTravelSpeed: 30
   hooked: 0
   hookedObj: {fileID: 0}

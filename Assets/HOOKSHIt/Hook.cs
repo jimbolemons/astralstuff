@@ -21,17 +21,20 @@ public class Hook : MonoBehaviour
     private float currentDistance;
     private float ropeDis;
 
-  
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButton(0) && fired == false)
+        {
+            fired = true;
+        }
+    }
 
     private void Update()
     {
         hook.gameObject.transform.localScale = hook.gameObject.transform.localScale;
 
         // fireing the hok
-        if (Input.GetMouseButton(0) && fired == false)
-        {
-            fired = true;
-        }
+        
 
         if (fired)
         {
@@ -60,7 +63,7 @@ public class Hook : MonoBehaviour
         }
         // Debug.Log(currentDistance);
         //if the hook is hooked into somthing do this
-        if (hooked == true)
+        if (hooked == true && fired == true)
         {
             hook.transform.parent = hookedObj.transform;
           
@@ -81,17 +84,28 @@ public class Hook : MonoBehaviour
             // if not reeling in do this
             if (!reelIn && distanceToHook > currentDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
+                //BaseMovementModule.gravity = 0;
+                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 35 );
+
+               // transform.position = ;
+
+            }
+            else
+            {
+               // BaseMovementModule.gravity = -35;
             }
 
-            // return the hook to the player
-            if (Input.GetMouseButton(1))
-                  ReturnHook();
 
-            
+            // return the hook to the player
+
+
+
             //Debug.Log(distanceToHook);
-            if (distanceToHook < 2)           
-                ReturnHook();
+            if (distanceToHook < 2)
+            {
+                reelIn = false;
+                currentDistance = 2;
+            }
             
 
         } else {
@@ -107,11 +121,16 @@ public class Hook : MonoBehaviour
             //TODO turn on gravity
             this.GetComponent<Rigidbody>().useGravity = true;
         }
+        if (Input.GetMouseButton(1))
+            ReturnHook();
     }
     //resets hook into players gun
     void ReturnHook()
     {
-      
+        hook.transform.SetParent(hookHolder.transform, true);
+        hook.transform.localPosition = Vector3.zero;
+        hook.transform.localScale = new Vector3(.5f, .5f, .5f);
+
         hook.transform.rotation = hookHolder.transform.rotation;
         hook.transform.position = hookHolder.transform.position;       
 
