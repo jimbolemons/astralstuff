@@ -7,8 +7,9 @@ using UnityEngine;
 /// </summary>
 public class MasterStaticScript : MonoBehaviour
 {
+
     [Tooltip("Game Paused State.")]
     public static bool gameIsPaused = false;
     [Tooltip("Player's Current Position.")]
-    public static Transform playerPosition;
+    public static Transform playerTransform = GameObject.FindGameObjectsWithTag("Player");
 }
