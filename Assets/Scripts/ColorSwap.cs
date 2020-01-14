@@ -66,7 +66,7 @@ public class ColorSwap : MonoBehaviour
                 //turn on hopes controls 
                 //TODO
                 isWaffles = false;
-
+                playerTarget.GetComponent<CharacterController>().enabled = true;
                 //destroy demon prefab
                 Destroy(dummy);
                                        

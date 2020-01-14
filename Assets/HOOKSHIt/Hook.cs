@@ -18,8 +18,12 @@ public class Hook : MonoBehaviour
     public GameObject hookedObj;
 
     public float maxDistance;
-    private float currentDistance;
+    private float ropeLength;
     private float ropeDis;
+
+    //public float  = 0f;
+    Collider col;
+    bool swinging;
 
     private void LateUpdate()
     {
@@ -52,9 +56,9 @@ public class Hook : MonoBehaviour
         {
             hook.transform.parent = null;
             hook.transform.Translate(Vector3.forward * Time.deltaTime * hookTravelSpeed);
-            currentDistance = Vector3.Distance(transform.position, hook.transform.position);
+            ropeLength = Vector3.Distance(transform.position, hook.transform.position);
 
-            if (currentDistance >= maxDistance)
+            if (ropeLength >= maxDistance)
                 ReturnHook();
         }
         // Debug.Log(currentDistance);
@@ -63,8 +67,17 @@ public class Hook : MonoBehaviour
         {
             hook.transform.parent = hookedObj.transform;           
             hook.transform.SetParent(hookedObj.transform, true);
+
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             //if reeling in do this
+            if (Input.GetKey(KeyCode.E))
+            {
+                ropeLength -= 5 * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.Q))
+            {
+                ropeLength += 5 * Time.deltaTime;
+            }
             if (reelIn)
             { 
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
@@ -74,7 +87,7 @@ public class Hook : MonoBehaviour
                // this.GetComponent<MovModDoubleJump>().gravity = 0;
             }
             // if not reeling in do this
-            if (!reelIn && distanceToHook > currentDistance)
+            if (!reelIn && distanceToHook >= ropeLength)
             {
                 BaseMovementModule.gravity = -20;
                 transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 36 );                
@@ -82,14 +95,14 @@ public class Hook : MonoBehaviour
             }
             else
             {
-                BaseMovementModule.gravity = -35;
+               // BaseMovementModule.gravity = -35;
             }
 
             //Debug.Log(distanceToHook);
             if (distanceToHook < 2)
             {
                 reelIn = false;
-                currentDistance = 2;
+                ropeLength = 2;
                 if (Input.GetButton("Jump"))
                 {
                     ReturnHook();
