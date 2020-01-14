@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5540625690113268287}
   - component: {fileID: 5540625690113268286}
   - component: {fileID: 5540625690113268281}
-  - component: {fileID: 5540625690113268259}
   - component: {fileID: 5540625690113268256}
+  - component: {fileID: 3750316350600762978}
   m_Layer: 10
   m_Name: enemy
   m_TagString: Untagged
@@ -132,19 +132,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5540625690113268259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540625690113268280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725763352d8d3144a9a8e1b5dda75f29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &5540625690113268256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +147,21 @@ MonoBehaviour:
   objectType: 1
   health: 1
   immortal: 0
+--- !u!114 &3750316350600762978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540625690113268280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442aadf61986ed0469d2bba3535fba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  distanceToPlayer: 20
+  currentState: 0
 --- !u!114 &5540625690123750053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,16 +182,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5540625690113268258}
     m_Modifications:
-    - target: {fileID: 2552185331968797417, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
-        type: 3}
-      propertyPath: m_Name
-      value: GunSingleShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 2552185331968797417, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2552185331968797416, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +236,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552185331968797417, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
+        type: 3}
+      propertyPath: m_Name
+      value: GunSingleShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552185331968797417, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2552185333305863578, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
