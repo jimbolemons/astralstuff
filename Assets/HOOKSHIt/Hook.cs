@@ -28,6 +28,11 @@ public class Hook : MonoBehaviour
     Vector3 newVel;
     Rigidbody rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void LateUpdate()
     {
         if (Input.GetMouseButton(0) && fired == false)
