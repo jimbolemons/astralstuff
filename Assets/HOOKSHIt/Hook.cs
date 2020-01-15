@@ -8,6 +8,7 @@ public class Hook : MonoBehaviour
     private Vector3 scale2;
     public GameObject hook;
     public GameObject hookHolder;
+    public GameObject player;
 
     public float hookTravelSpeed;
     public float playerTravelSpeed;
@@ -24,6 +25,8 @@ public class Hook : MonoBehaviour
     //public float  = 0f;
     Collider col;
     bool swinging;
+    Vector3 newVel;
+    Rigidbody rb;
 
     private void LateUpdate()
     {
@@ -68,6 +71,25 @@ public class Hook : MonoBehaviour
             hook.transform.parent = hookedObj.transform;           
             hook.transform.SetParent(hookedObj.transform, true);
 
+            Vector3 v = transform.position - hook.transform.position;
+
+            float dis = v.magnitude;
+            newVel = v;
+
+            Vector3 myUp = (transform.position - hook.transform.position).normalized;
+
+            if (dis > ropeLength)
+            {
+                newVel.Normalize();
+                v = Vector3.ClampMagnitude(v, ropeLength);
+                transform.position = hook.transform.position + v;
+                float x = Vector3.Dot(newVel, rb.velocity);
+                newVel *= x;
+                rb.velocity -= newVel;
+            }
+
+
+
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             //if reeling in do this
             if (Input.GetKey(KeyCode.E))
@@ -79,15 +101,16 @@ public class Hook : MonoBehaviour
                 ropeLength += 5 * Time.deltaTime;
             }
             if (reelIn)
-            { 
-            transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
+            {
+                player.GetComponent<CharacterController>().enabled = false;
+                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
                 //TODO turn off gravity for the player so that the grapple works more smoothly
                 //this.GetComponent<Rigidbody>().useGravity = false;
                 BaseMovementModule.gravity = 0;
                // this.GetComponent<MovModDoubleJump>().gravity = 0;
             }
             // if not reeling in do this
-            if (!reelIn && distanceToHook >= ropeLength)
+            /*if (!reelIn && distanceToHook >= ropeLength)
             {
                 BaseMovementModule.gravity = -20;
                 transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 36 );                
@@ -97,10 +120,12 @@ public class Hook : MonoBehaviour
             {
                // BaseMovementModule.gravity = -35;
             }
+            */
 
             //Debug.Log(distanceToHook);
             if (distanceToHook < 2)
             {
+                player.GetComponent<CharacterController>().enabled = true;
                 reelIn = false;
                 ropeLength = 2;
                 if (Input.GetButton("Jump"))
@@ -127,6 +152,8 @@ public class Hook : MonoBehaviour
     //resets hook into players gun
     void ReturnHook()
     {
+        player.GetComponent<CharacterController>().enabled = true;
+
         hook.transform.SetParent(hookHolder.transform, true);
         hook.transform.localPosition = Vector3.zero;
         hook.transform.localScale = new Vector3(.5f, .5f, .5f);

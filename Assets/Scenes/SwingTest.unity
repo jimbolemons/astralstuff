@@ -2248,7 +2248,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266348459}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3584,6 +3584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 1266348459}
   hookHolder: {fileID: 1749675840}
+  player: {fileID: 7595660463209988381}
   hookTravelSpeed: 60
   playerTravelSpeed: 30
   hooked: 0
