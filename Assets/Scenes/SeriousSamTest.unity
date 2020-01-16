@@ -6950,7 +6950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442aadf61986ed0469d2bba3535fba67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1594125995}
   distanceToPlayer: 20
   currentState: 0
 --- !u!114 &615752498
@@ -20940,7 +20939,7 @@ GameObject:
   - component: {fileID: 1594125997}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24691,7 +24690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abaea687371ff244993a4fba878160b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 1594125995}
 --- !u!1 &1854824233
 GameObject:
   m_ObjectHideFlags: 0

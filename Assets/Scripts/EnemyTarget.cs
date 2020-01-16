@@ -9,7 +9,6 @@ public class EnemyTarget : MonoBehaviour
 {
 
     [Tooltip("Reference to the player.")]
-    public Transform player;
     public float distanceToPlayer = 20;
     NavMeshAgent agent;
 
@@ -24,10 +23,14 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
-        float dist = Vector3.Distance(player.position, transform.position);
+        Vector3 forwardTransform = transform.position;
+        float dist = Vector3.Distance(MasterStaticScript.playerTransform.position, transform.position);
         switch (currentState)
         {
             case (EnemyState.IDLE):
+                agent.SetDestination(transform.position);
+                forwardTransform = transform.position;
+                transform.LookAt(forwardTransform);
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 break;
             case (EnemyState.FOLLOW_PLAYER):
@@ -40,8 +43,8 @@ public class EnemyTarget : MonoBehaviour
                     {
                         //path towards target
                         agent.isStopped = false;
-                        agent.SetDestination(player.position);
-                        transform.LookAt(player.position);
+                        agent.SetDestination(MasterStaticScript.playerTransform.position);
+                        transform.LookAt(MasterStaticScript.playerTransform.position);
                         transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
 

@@ -10,6 +10,19 @@ public class MasterStaticScript : MonoBehaviour
 
     [Tooltip("Game Paused State.")]
     public static bool gameIsPaused = false;
-    [Tooltip("Player's Current Position.")]
-    public static Transform playerTransform = GameObject.FindGameObjectsWithTag("Player");
+
+    public static Transform playerTransform;
+
+    private static MasterStaticScript instance;
+
+    void Awake()
+    {
+        playerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        print(playerTransform.position);
+    }
+
+    private void Update()
+    {
+        
+    }
 }
