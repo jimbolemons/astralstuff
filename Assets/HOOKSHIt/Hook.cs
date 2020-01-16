@@ -23,16 +23,15 @@ public class Hook : MonoBehaviour
     private float ropeDis;
 
     //public float  = 0f;
-    Collider col;
+   
     bool swinging;
     Vector3 newVel;
-    Rigidbody rb;
+  
+    float disToGround;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+ 
 
+   
     private void LateUpdate()
     {
         if (Input.GetMouseButton(0) && fired == false)
@@ -83,24 +82,31 @@ public class Hook : MonoBehaviour
 
             Vector3 myUp = (transform.position - hook.transform.position).normalized;
 
-            if (dis > ropeLength)
+            if (!reelIn && dis > ropeLength)
             {
+                swinging = true;
                 newVel.Normalize();
                 v = Vector3.ClampMagnitude(v, ropeLength);
                 transform.position = hook.transform.position + v;
-                float x = Vector3.Dot(newVel, rb.velocity);
-                newVel *= x;
-                rb.velocity -= newVel;
+              
+               
             }
 
-
+            if (Physics.Raycast(transform.position, Vector3.down, disToGround + 1))
+            {
+                
+            }
 
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             //if reeling in do this
+
+            //climb up the rope
             if (Input.GetKey(KeyCode.E))
             {
                 ropeLength -= 5 * Time.deltaTime;
             }
+
+            //climb down the rope
             if (Input.GetKey(KeyCode.Q))
             {
                 ropeLength += 5 * Time.deltaTime;
@@ -108,32 +114,29 @@ public class Hook : MonoBehaviour
             if (reelIn)
             {
                 player.GetComponent<CharacterController>().enabled = false;
-                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
-                //TODO turn off gravity for the player so that the grapple works more smoothly
-                //this.GetComponent<Rigidbody>().useGravity = false;
-                BaseMovementModule.gravity = 0;
-               // this.GetComponent<MovModDoubleJump>().gravity = 0;
+                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);                
+                BaseMovementModule.gravity = 0;               
             }
-            // if not reeling in do this
-            /*if (!reelIn && distanceToHook >= ropeLength)
-            {
-                BaseMovementModule.gravity = -20;
-                transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * 36 );                
-               // transform.position = ;
-            }
-            else
-            {
-               // BaseMovementModule.gravity = -35;
-            }
-            */
 
+
+            Debug.Log(Input.GetAxis("Horizontal"));
             //Debug.Log(distanceToHook);
-            if (distanceToHook < 2)
+            if ( distanceToHook < 2)
             {
+                
                 player.GetComponent<CharacterController>().enabled = true;
                 reelIn = false;
                 ropeLength = 2;
                 if (Input.GetButton("Jump"))
+                {
+                   
+                    ReturnHook();
+                }
+                if (Input.GetAxis("Horizontal") >= .1f || Input.GetAxis("Horizontal") <= -.1f)
+                {
+                    ReturnHook();
+                }
+                if (Input.GetAxis("Vertical") >= .1f || Input.GetAxis("Vertical") <= -.1f)
                 {
                     ReturnHook();
                 }
@@ -173,6 +176,20 @@ public class Hook : MonoBehaviour
         LineRenderer rope = hook.GetComponent<LineRenderer>();
         rope.SetVertexCount(0);
         BaseMovementModule.gravity = -35;
+    }
+    private void FixedUpdate()
+    {
+        //if the player is not on th ground and they are swinging and they are not above the position of the hook then do this
+        if (!IsGrounded() && swinging && transform.position.y <= hook.transform.position.y)
+        {
+            Debug.Log("i would like to swing now please");
+
+        }
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -transform.up, disToGround + 1f);
     }
 
 }
