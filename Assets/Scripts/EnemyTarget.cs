@@ -19,12 +19,17 @@ public class EnemyTarget : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+       
     }
 
     void Update()
     {
         Vector3 forwardTransform = transform.position;
-        float dist = Vector3.Distance(MasterStaticScript.playerTransform.position, transform.position);
+
+        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0] ;
+
+        float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
         switch (currentState)
         {
             case (EnemyState.IDLE):
@@ -43,9 +48,9 @@ public class EnemyTarget : MonoBehaviour
                     {
                         //path towards target
                         agent.isStopped = false;
-                        agent.SetDestination(MasterStaticScript.playerTransform.position);
-                        transform.LookAt(MasterStaticScript.playerTransform.position);
-                        transform.rotation *= Quaternion.Euler(0, -90, 0);
+                        agent.SetDestination(player.transform.position); //MasterStaticScript.player.position
+                    transform.LookAt(player.transform.position); //MasterStaticScript.player.position
+                    transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
 
                 if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
