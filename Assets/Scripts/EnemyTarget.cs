@@ -11,6 +11,8 @@ public class EnemyTarget : MonoBehaviour
     [Tooltip("Reference to the player.")]
     public float distanceToPlayer = 20;
     NavMeshAgent agent;
+    private Transform targetSite;
+    private bool readyToGo = false;
 
     public enum EnemyState {IDLE, FOLLOW_PLAYER, FOLLOW_SITE};
 
@@ -36,8 +38,8 @@ public class EnemyTarget : MonoBehaviour
                 agent.SetDestination(transform.position);
                 forwardTransform = transform.position;
                 transform.LookAt(forwardTransform);
-                print("Demon is idle.");
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+                if (readyToGo) currentState = EnemyState.FOLLOW_SITE;
                 break;
             case (EnemyState.FOLLOW_PLAYER):
                     //only move if game is not paused
@@ -52,17 +54,39 @@ public class EnemyTarget : MonoBehaviour
                         agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
                         transform.LookAt(player.transform.position);        //MasterStaticScript.player.position
                         transform.rotation *= Quaternion.Euler(0, -90, 0);
+                    print("Demon is following player.");
                     }
 
                 if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
+                if (readyToGo && dist > distanceToPlayer) currentState = EnemyState.FOLLOW_SITE;
+                break;
+            case (EnemyState.FOLLOW_SITE):
+                //only move if game is not paused
+                if (MasterStaticScript.gameIsPaused)
+                {
+                    agent.isStopped = true;
+                }
+                else
+                {
+                    //path towards target
+                    agent.isStopped = false;
+                    agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
+                    transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
+                    transform.rotation *= Quaternion.Euler(0, -90, 0);
+                    print("Demon is moving towards Sacred Site.");
+                }
+
+                if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+                //TODO: refine "back to IDLE" for state machine.
+                //else currentState = EnemyState.IDLE;
                 break;
         }
     }
 
     public void SetTarget(Transform target)
     {
-
-        currentState = EnemyState.FOLLOW_PLAYER;
-        print("Demon is targeting player.");
+        targetSite = target;
+        readyToGo = true;
+        currentState = EnemyState.FOLLOW_SITE;
     }
 }
