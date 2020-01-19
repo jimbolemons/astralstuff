@@ -12,7 +12,7 @@ public class EnemyTarget : MonoBehaviour
     public float distanceToPlayer = 20;
     NavMeshAgent agent;
 
-    public enum EnemyState {IDLE, FOLLOW_PLAYER};
+    public enum EnemyState {IDLE, FOLLOW_PLAYER, FOLLOW_SITE};
 
     public EnemyState currentState = EnemyState.IDLE;
 
@@ -36,6 +36,7 @@ public class EnemyTarget : MonoBehaviour
                 agent.SetDestination(transform.position);
                 forwardTransform = transform.position;
                 transform.LookAt(forwardTransform);
+                print("Demon is idle.");
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 break;
             case (EnemyState.FOLLOW_PLAYER):
@@ -48,13 +49,20 @@ public class EnemyTarget : MonoBehaviour
                     {
                         //path towards target
                         agent.isStopped = false;
-                        agent.SetDestination(player.transform.position); //MasterStaticScript.player.position
-                    transform.LookAt(player.transform.position); //MasterStaticScript.player.position
-                    transform.rotation *= Quaternion.Euler(0, -90, 0);
+                        agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
+                        transform.LookAt(player.transform.position);        //MasterStaticScript.player.position
+                        transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
 
                 if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
                 break;
         }
+    }
+
+    public void SetTarget(Transform target)
+    {
+
+        currentState = EnemyState.FOLLOW_PLAYER;
+        print("Demon is targeting player.");
     }
 }

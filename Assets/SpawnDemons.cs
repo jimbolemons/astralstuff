@@ -90,7 +90,7 @@ public class SpawnDemons : MonoBehaviour
     void SetDemonTarget(GameObject demon)
     {
         //set the demon's target
-        PlayerTarget targetScript = demon.GetComponent<PlayerTarget>();
+        EnemyTarget targetScript = demon.GetComponent<EnemyTarget>();
         targetScript.SetTarget(SacredTarget);
     }
 
