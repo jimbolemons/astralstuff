@@ -9,9 +9,10 @@ public class ThirdPersonCamera : MonoBehaviour
     float y;
     float x;
     [Tooltip("Player's camera target object.")]
-    public Transform target;
+    public Transform target;    
+    
     [Tooltip("Using mouse controls?")]
-    public bool mouseControl = true;
+    public  bool mouseControl = true;
     public float mouseSensitivity = 10;
 
     //how far back the camera sits

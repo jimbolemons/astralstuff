@@ -21,7 +21,7 @@ public class BaseMovementModule : MonoBehaviour
     //TODO: Check this is working correctly
 
     [Tooltip("How fast the player falls (should be negative value)")]
-    public float gravity = -35;
+    public static float gravity = -35;
 
 
     [Tooltip("How much dead area before the control sticks cause movement")]
@@ -45,6 +45,8 @@ public class BaseMovementModule : MonoBehaviour
     [System.NonSerialized]
     public Vector3 direction;
 
+   
+    
     //reference to the camera target assistant
     public Transform cameraTarget;
 
@@ -96,6 +98,11 @@ public class BaseMovementModule : MonoBehaviour
         {
             player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
         }
+        if (Input.GetMouseButton(0))
+        {
+            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
+      
+        }
     }
 
     virtual public void XYMovement()
@@ -103,6 +110,7 @@ public class BaseMovementModule : MonoBehaviour
         //print(controller.isGrounded);
         if (controller.isGrounded)
         {
+
             direction = Input.GetAxis("Vertical") * transform.forward;
             direction += Input.GetAxis("Horizontal") * transform.right;
             direction *= speed;
