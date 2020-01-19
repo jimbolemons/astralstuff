@@ -10,6 +10,7 @@ public class PlayerTarget : MonoBehaviour
     [Tooltip("Reference to the player.")]
     public Transform player;
     NavMeshAgent agent;
+    public bool moving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +27,20 @@ public class PlayerTarget : MonoBehaviour
         }
         else
         {
+            if (moving)
+            {
             //path towards target
             agent.isStopped = false;
             agent.SetDestination(player.position);
             transform.LookAt(player.position);
-            transform.rotation *= Quaternion.Euler(0, -90, 0);
+            transform.rotation *= Quaternion.Euler(0, -90, 0);
+            }
         }
+    }
 
-
-
+    public void SetTarget(Transform target)
+    {
+        player = target;
+        moving = true;
     }
 }

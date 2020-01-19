@@ -7,6 +7,22 @@ using UnityEngine;
 /// </summary>
 public class MasterStaticScript : MonoBehaviour
 {
+
     [Tooltip("Game Paused State.")]
     public static bool gameIsPaused = false;
+
+    public static GameObject playerTransform;
+
+    private static MasterStaticScript instance;
+
+    void Awake()
+    {
+        playerTransform = GameObject.FindGameObjectsWithTag("Player")[0];
+        print(playerTransform.transform.position);
+    }
+
+    private void Update()
+    {
+        
+    }
 }
