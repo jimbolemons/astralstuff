@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class containing static variables for easy reference in the scene
@@ -41,11 +42,22 @@ public class MasterStaticScript : MonoBehaviour
 
     public static void CheckForGameLose()
     {
-        if (sacredSites.Count <= 0) print("Game has been lost."); //TODO: change Game's lose state to true, go to lose scene.
+        if (sacredSites.Count <= 0)
+        {
+            print("Game has been lost.");
+            SceneManager.LoadScene("LoseState");
+            //TODO: change Game's lose state to true, go to lose scene.
+
+        }
     }
 
     public static void CheckForGameWin()
     {
-        if (enemyGates.Count <= 0) print("Game has been won!"); //TODO: change Game's win state to true, go to win scene.
+        if (enemyGates.Count <= 0)
+        {
+        print("Game has been won!");
+            SceneManager.LoadScene("WinState");
+        //TODO: change Game's win state to true, go to win scene.
+        }
     }
 }
