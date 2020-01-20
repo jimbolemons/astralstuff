@@ -16,9 +16,11 @@ public class MasterStaticScript : MonoBehaviour
     private static MasterStaticScript instance;
 
     [Tooltip("Stores all the Sacred Sites in the scene.")]
-    public static GameObject[] sacredSites;
+    public static List<GameObject> sacredSites = new List<GameObject>();
     [Tooltip("Stores all the Enemy Gates in the scene.")]
-    public static GameObject[] enemyGates;
+    public static List<GameObject> enemyGates = new List<GameObject>();
+    [Tooltip("Stores all references to enemies in the scene.")]
+    public static List<GameObject> enemyList = new List<GameObject>(); 
 
     void Awake()
     {
@@ -29,5 +31,21 @@ public class MasterStaticScript : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    public static void RemoveFromObjectList(GameObject objectToRemove, List<GameObject> objectList)
+    {
+        objectList.Remove(objectToRemove);
+        print("Current number of objects in List: " + objectList.Count);
+    }
+
+    public static void CheckForGameLose()
+    {
+        if (sacredSites.Count <= 0) print("Game has been lost."); //TODO: change Game's lose state to true, go to lose scene.
+    }
+
+    public static void CheckForGameWin()
+    {
+        if (enemyGates.Count <= 0) print("Game has been won!"); //TODO: change Game's win state to true, go to win scene.
     }
 }
