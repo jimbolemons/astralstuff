@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 290698225}
   - component: {fileID: 290698224}
   - component: {fileID: 290698223}
+  - component: {fileID: 290698227}
   m_Layer: 0
   m_Name: Gate B
   m_TagString: EnemyGate
@@ -553,6 +554,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290698221}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &290698227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290698221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33608a3df92b6dc42a10ac90ea79e09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 2
+  health: 1
+  immortal: 0
+  isDead: 0
 --- !u!1 &333278720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,7 +1262,6 @@ GameObject:
   - component: {fileID: 809854329}
   - component: {fileID: 809854328}
   - component: {fileID: 809854333}
-  - component: {fileID: 809854332}
   m_Layer: 0
   m_Name: Sacred Site
   m_TagString: SacredSite
@@ -1328,19 +1344,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &809854332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809854327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6769514e344882041a6164425214c39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
 --- !u!114 &809854333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,6 +1359,7 @@ MonoBehaviour:
   objectType: 2
   health: 1
   immortal: 0
+  isDead: 0
 --- !u!1 &854385868
 GameObject:
   m_ObjectHideFlags: 0

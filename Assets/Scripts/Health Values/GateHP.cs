@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiteHP : ObjectWithHealth
+public class GateHP : ObjectWithHealth
 {
     public bool isDead = false;
     private void Start()
     {
         objectType = objectWithHealthType.destructible;
-        MasterStaticScript.sacredSites.Add(gameObject);
+        MasterStaticScript.enemyGates.Add(gameObject);
     }
 
     public void Update()
     {
-        if (isDead) killSite();
+        if (isDead) killGate();
         else
         {
             //do your thing.
@@ -29,11 +29,11 @@ public class SiteHP : ObjectWithHealth
         
     }
 
-    private void killSite()
+    private void killGate()
     {
-        print("Site is dead.");
-        MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.sacredSites);
-        MasterStaticScript.CheckForGameLose();
+        print("Gate is dead.");
+        MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.enemyGates);
+        MasterStaticScript.CheckForGameWin();
         Destroy(gameObject);
     }
 }

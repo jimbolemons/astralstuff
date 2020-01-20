@@ -54,7 +54,7 @@ public class EnemyTarget : MonoBehaviour
                         agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
                         transform.LookAt(player.transform.position);        //MasterStaticScript.player.position
                         transform.rotation *= Quaternion.Euler(0, -90, 0);
-                    print("Demon is following player.");
+                        //print("Demon is following player.");
                     }
 
                 if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
@@ -73,7 +73,7 @@ public class EnemyTarget : MonoBehaviour
                     agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
                     transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
                     transform.rotation *= Quaternion.Euler(0, -90, 0);
-                    print("Demon is moving towards Sacred Site.");
+                    //print("Demon is moving towards Sacred Site.");
                 }
 
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
