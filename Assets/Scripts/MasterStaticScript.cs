@@ -15,6 +15,11 @@ public class MasterStaticScript : MonoBehaviour
 
     private static MasterStaticScript instance;
 
+    [Tooltip("Stores all the Sacred Sites in the scene.")]
+    public static GameObject[] sacredSites;
+    [Tooltip("Stores all the Enemy Gates in the scene.")]
+    public static GameObject[] enemyGates;
+
     void Awake()
     {
         playerTransform = GameObject.FindGameObjectsWithTag("Player")[0];
