@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddToSites : MonoBehaviour
+public class SiteHP : ObjectWithHealth
 {
     public bool isDead = false;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        objectType = objectWithHealthType.destructible;
         MasterStaticScript.sacredSites.Add(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if(isDead) killSite();
+        if (isDead) killSite();
         else
         {
             //do your thing.
         }
     }
 
-    void killSite()
+
+    public override void TriggerOnDeath()
+    {
+        //Explosions totally go here!
+        //print("Barrel go boom");
+        Destroy(gameObject);
+    }
+
+    private void killSite()
     {
         print("Site is dead.");
         MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.sacredSites);

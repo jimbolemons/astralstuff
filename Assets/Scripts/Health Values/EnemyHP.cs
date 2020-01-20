@@ -16,15 +16,8 @@ public class EnemyHP : ObjectWithHealth
     }
 
     private void Update()
-    {
-        foreach(GameObject site in MasterStaticScript.sacredSites)
-        {
-            //check collision between enemy and site:
-            
-                //if collision has happened, mark current site as dead.
+    { 
 
-                //else, do nothing.
-        }
     }
 
     public override void TriggerOnDeath()
