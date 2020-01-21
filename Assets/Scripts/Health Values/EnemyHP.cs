@@ -12,7 +12,7 @@ public class EnemyHP : ObjectWithHealth
     {
         objectType = objectWithHealthType.enemy;
         MasterStaticScript.enemyList.Add(gameObject);
-        print("Enemies currently in Array: " + MasterStaticScript.enemyList.Count);
+        //print("Enemies currently in Array: " + MasterStaticScript.enemyList.Count);
     }
 
     private void Update()

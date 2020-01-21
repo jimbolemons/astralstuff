@@ -61,7 +61,7 @@ public class SpawnDemons : MonoBehaviour
             if(spawnEnergy > secondsToSPawn)
             {
                 Vector3 demonSpawn = SpawnLocation(spawnArea.bounds);
-                print(demonSpawn);
+                //print(demonSpawn);
                 GameObject demon = SpawnDemon(demonSpawn);
                 //SetDemonTarget(demon);
                 numberOfDemons++;
