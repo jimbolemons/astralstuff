@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GateCrashing.unity
+    guid: 464c5b6550aacf6478c76eb7fdf81ff2
   m_configObjects: {}
