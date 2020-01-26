@@ -34,15 +34,14 @@ public class Hook : MonoBehaviour
    
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(0) )
+        if (Input.GetMouseButton(0))
         {
             ReturnHook();
             fired = true;
         }
         // TODO want to check to see if the player is grounded here as well
         if (Input.GetButton("Jump") && hooked)
-        {
-            
+        {            
             ReturnHook();
         }
     }
@@ -50,7 +49,7 @@ public class Hook : MonoBehaviour
     private void Update()
     {
         hook.gameObject.transform.localScale = hook.gameObject.transform.localScale;
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && gameObject.activeSelf)
             ReturnHook();
 
         // fireing the hok
@@ -178,7 +177,7 @@ public class Hook : MonoBehaviour
                 hook.transform.localScale = new Vector3(.5f, .5f, .5f);
             }                   
             
-            this.GetComponent<Rigidbody>().useGravity = true;
+            player.GetComponent<Rigidbody>().useGravity = true;
         }
         
     }

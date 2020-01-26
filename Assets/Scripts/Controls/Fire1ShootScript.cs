@@ -10,6 +10,7 @@ public class Fire1ShootScript : MonoBehaviour
 {
     [SerializeField]
     Gun[] rightArmGuns;
+    int pFiring = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +25,18 @@ public class Fire1ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
-            //If player presses fire1
-            if (Input.GetAxis("Fire1") > 0)
+            //If player presses fire1 and was not already holding it
+            if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
             {
                 //fire every gun that hand is holding
                 foreach (Gun g in rightArmGuns)
                 {
                     if (g != null) g.Fire();
                 }
+                pFiring = 1;
             }
+            //if the player is not holding fire, enable firing
+            if (Input.GetAxis("Fire1") == 0) pFiring = 0;
         }
     }
 

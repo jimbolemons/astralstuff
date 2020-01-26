@@ -9,6 +9,7 @@ public class Fire2ShootScript : MonoBehaviour
 {
     [SerializeField]
     Gun[] leftArmGuns;
+    public float pFiring = 0;
     void Start()
     {
         UpdateGuns();
@@ -22,13 +23,19 @@ public class Fire2ShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             //if player presses fire2
-            if (Input.GetAxis("Fire2") > 0)
+            if (Input.GetAxis("Fire2") > 0 && pFiring == 0)
             {
                 //fire every gun the hand is holding
                 foreach (Gun g in leftArmGuns)
                 {
                     if (g != null) g.Fire();
                 }
+                pFiring = 1;
+            }
+            else
+            {
+                //if the player is not holding fire, enable firing
+                if(Input.GetAxis("Fire2") == 0) pFiring = 0;
             }
         }
     }

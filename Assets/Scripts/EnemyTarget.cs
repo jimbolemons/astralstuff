@@ -19,10 +19,8 @@ public class EnemyTarget : MonoBehaviour
     public EnemyState currentState = EnemyState.IDLE;
 
     void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-
-       
+    {       
+        agent = GetComponent<NavMeshAgent>();               
     }
 
     void Update()
@@ -35,7 +33,13 @@ public class EnemyTarget : MonoBehaviour
         switch (currentState)
         {
             case (EnemyState.IDLE):
+                try
+                {
                 agent.SetDestination(transform.position);
+                }
+                catch
+                {                  
+                }
                 forwardTransform = transform.position;
                 transform.LookAt(forwardTransform);
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;

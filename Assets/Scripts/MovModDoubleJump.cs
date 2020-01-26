@@ -54,7 +54,6 @@ public class MovModDoubleJump : BaseMovementModule
                 controller.Move(pVelocity * Time.deltaTime);
             }
 
-
             //cleanup
             //if (controller.isGrounded) velocityY = 0;
         }

@@ -6,9 +6,11 @@ public class SpawnDemons : MonoBehaviour
 {
     public Transform SpawnPoint;
     public Collider spawnArea;
-    public GameObject demon1;
+    public GameObject imp;
+    public GameObject brute;
+    public GameObject conjuror;
 
-
+    [Space(10)]
     public int numberOfDemons = 0;
     public int demonsToSpawn = 5;
 
@@ -96,7 +98,23 @@ public class SpawnDemons : MonoBehaviour
 
     GameObject SpawnDemon(Vector3 location)
     {
-       GameObject demon = Instantiate(demon1, location, Quaternion.identity);
+       GameObject demon = Instantiate(RandomDemon(), location, Quaternion.identity);
         return demon;
+    }
+    GameObject RandomDemon()
+    {
+        int number = Random.Range(1, 4);
+        if(number == 1)
+        {
+            return brute;
+        }
+        else if(number == 2)
+        {
+            return conjuror;
+        }
+        else
+        {
+            return imp;
+        }
     }
 }

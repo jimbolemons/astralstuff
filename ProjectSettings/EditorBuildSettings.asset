@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GateCrashing.unity
     guid: 464c5b6550aacf6478c76eb7fdf81ff2
+  - enabled: 1
+    path: Assets/Scenes/LoseState.unity
+    guid: af52c87e8f503934396aac16b40b77cf
+  - enabled: 1
+    path: Assets/Scenes/WinState.unity
+    guid: 38c4deec838f9e744a1c05fd92b7df05
   m_configObjects: {}
