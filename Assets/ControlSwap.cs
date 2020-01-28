@@ -64,5 +64,6 @@ public class ControlSwap : MonoBehaviour
         body.SetActive(true);
         body.transform.position = transform.position;
         body.transform.SetParent(null);
+        BaseMovementModule.gravity = -35;
     }
 }

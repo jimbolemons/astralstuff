@@ -48,6 +48,7 @@ public class Hook : MonoBehaviour
 
     private void Update()
     {
+        
         hook.gameObject.transform.localScale = hook.gameObject.transform.localScale;
         if (Input.GetMouseButton(1) && gameObject.activeSelf)
             ReturnHook();
@@ -85,17 +86,21 @@ public class Hook : MonoBehaviour
 
             Vector3 v = player.transform.position - hook.transform.position;
 
-            float dis = v.magnitude;
-            newVel = v;
+            ropeDis = v.magnitude;
+           // newVel = v;
 
             Vector3 myUp = (player.transform.position - hook.transform.position).normalized;
 
             // this casuses the player to swing on the rope
-            if (!reelIn && dis > ropeLength)
+            if (!reelIn && ropeDis > ropeLength)
             {
+                Debug.Log("i would like to swing now please");
                 swinging = true;
-                newVel.Normalize();
+               // newVel.Normalize();
+                
+                // TODO: Fix this breaks if you switch to waffles and then back to hope and try to swing
                 v = Vector3.ClampMagnitude(v, ropeLength);
+                
                 player.transform.position = hook.transform.position + v;            
                
             }
@@ -106,7 +111,7 @@ public class Hook : MonoBehaviour
                 
             }
 
-            float distanceToHook = Vector3.Distance(player.transform.position, hook.transform.position);
+            
 
             
 
@@ -127,45 +132,35 @@ public class Hook : MonoBehaviour
                 if (reelIn)
                 {
                     player.GetComponent<CharacterController>().enabled = false;
-                player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);                
+                    player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);                
                     BaseMovementModule.gravity = 0;               
                 }
 
 
 
 
-                    //Debug.Log(Input.GetAxis("Horizontal"));
-                    //Debug.Log(distanceToHook);
-                    //if hope is close to the hook stop her from going in any farther
-                    
+            //Debug.Log(Input.GetAxis("Horizontal"));
+            //Debug.Log(distanceToHook);
+            //if hope is close to the hook stop her from going in any farther
+            Debug.Log(ropeDis);
 
-                        // if hope reels in and then presses any controls she will resles 
-                        if ( reelIn && distanceToHook < 2)
+            // if hope reels in and then presses any controls she will resles 
+                        if ( reelIn && ropeDis < 2)
                         {
                 
                             player.GetComponent<CharacterController>().enabled = true;
                             
                             ropeLength = 2;
-                            if (Input.GetButton("Jump"))
-                            {                   
-                                ReturnHook();
-                                reelIn = false;
-                            }
-                            if (Input.GetAxis("Horizontal") >= .1f || Input.GetAxis("Horizontal") <= -.1f)
-                            {
-                                ReturnHook();
-                                reelIn = false;
-                            }
-                            if (Input.GetAxis("Vertical") >= .1f || Input.GetAxis("Vertical") <= -.1f)
-                            {
-                                ReturnHook();
-                                reelIn = false;
-                            }
+                            BaseMovementModule.gravity = -35;
+                            reelIn = false;
+
+                           
                          
-                         }
-                        else if (distanceToHook < 2)
+                        }
+                       if (ropeLength <= 2)
                         {
-                            ropeLength += 1 *Time.deltaTime;
+                            
+                            ropeLength = 2;
                         }
 
         } else {
@@ -198,6 +193,8 @@ public class Hook : MonoBehaviour
         fired = false;
         reelIn = false;
         hooked = false;
+        swinging = false;
+        ropeLength = 0;
 
         LineRenderer rope = hook.GetComponent<LineRenderer>();
         rope.SetVertexCount(0);
@@ -210,7 +207,7 @@ public class Hook : MonoBehaviour
         //if the player is not on the ground and they are swinging and they are not above the position of the hook then do this
         if (!IsGrounded() && swinging && player.transform.position.y <= hook.transform.position.y)
         {
-            Debug.Log("i would like to swing now please");
+           
 
         }
     }
