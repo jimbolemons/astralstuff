@@ -79,7 +79,6 @@ public class BaseMovementModule : MonoBehaviour
             if (Input.GetAxis("Vertical") <= deadZone && Input.GetAxis("Horizontal") <= deadZone)
             {
                 controller.Move(pVelocity * Time.deltaTime);
-
             }
 
 
@@ -100,8 +99,7 @@ public class BaseMovementModule : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
-      
+            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);      
         }
     }
 
@@ -123,6 +121,7 @@ public class BaseMovementModule : MonoBehaviour
         }
         else
         {//if not grounded
+            //apply weaker input controls while in the air
             Vector3 airControl = new Vector3();
             airControl = Input.GetAxis("Vertical") * transform.forward;
             airControl += Input.GetAxis("Horizontal") * transform.right;
@@ -134,6 +133,7 @@ public class BaseMovementModule : MonoBehaviour
         }
     }
 
+    //apply jump value
     virtual public void Jump()
     {
         direction.y = jumpSpeed;

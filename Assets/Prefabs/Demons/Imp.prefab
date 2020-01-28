@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5540625690113268256}
   - component: {fileID: 3750316350600762978}
   m_Layer: 10
-  m_Name: enemy
+  m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442aadf61986ed0469d2bba3535fba67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   distanceToPlayer: 20
   currentState: 0
 --- !u!114 &5540625690123750053
@@ -257,6 +256,12 @@ PrefabInstance:
       propertyPath: fireCooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4792109501195072344, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1789292267992456371, guid: ad3c67b41dfcedd43a45afcdaa430f0a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99cf745ec2405dd4a80d0bc93a4a6849, type: 3}
 --- !u!1 &8038765614331837384 stripped

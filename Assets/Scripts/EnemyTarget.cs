@@ -14,48 +14,53 @@ public class EnemyTarget : MonoBehaviour
     private Transform targetSite;
     private bool readyToGo = false;
 
-    public enum EnemyState {IDLE, FOLLOW_PLAYER, FOLLOW_SITE};
+    public enum EnemyState { IDLE, FOLLOW_PLAYER, FOLLOW_SITE };
 
     public EnemyState currentState = EnemyState.IDLE;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-       
     }
 
     void Update()
     {
         Vector3 forwardTransform = transform.position;
 
-        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0] ;
+        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
 
         float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
         switch (currentState)
         {
             case (EnemyState.IDLE):
-                agent.SetDestination(transform.position);
+                try
+                {
+                    agent.SetDestination(transform.position);
+                }
+                catch
+                {
+                }
                 forwardTransform = transform.position;
                 transform.LookAt(forwardTransform);
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 if (readyToGo) currentState = EnemyState.FOLLOW_SITE;
                 break;
             case (EnemyState.FOLLOW_PLAYER):
-                    //only move if game is not paused
-                    if (MasterStaticScript.gameIsPaused)
-                    {
-                        agent.isStopped = true;
-                    }
-                    else
-                    {
-                        //path towards target
-                        agent.isStopped = false;
-                        agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
-                        transform.LookAt(player.transform.position);        //MasterStaticScript.player.position
-                        transform.rotation *= Quaternion.Euler(0, -90, 0);
-                        //print("Demon is following player.");
-                    }
+                //only move if game is not paused
+                if (MasterStaticScript.gameIsPaused)
+                {
+                    agent.isStopped = true;
+                }
+                else
+                {
+                    //path towards target
+                    agent.isStopped = false;
+                    agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
+                    transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
+                    //transform.LookAt(player.transform.position);       
+                    transform.rotation *= Quaternion.Euler(0, -90, 0);
+                    //print("Demon is following player.");
+                }
 
                 if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
                 if (readyToGo && dist > distanceToPlayer) currentState = EnemyState.FOLLOW_SITE;
