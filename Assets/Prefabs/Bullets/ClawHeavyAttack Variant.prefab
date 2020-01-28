@@ -15,7 +15,12 @@ PrefabInstance:
     - target: {fileID: 3811140800667417732, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
         type: 3}
       propertyPath: m_Name
-      value: ClawHeavyAttack
+      value: ClawHeavyAttack Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937335590334160527, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
+        type: 3}
+      propertyPath: damage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8909375902189494316, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
         type: 3}

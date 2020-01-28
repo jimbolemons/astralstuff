@@ -35,10 +35,10 @@ public class SpawnDemons : MonoBehaviour
     void Update()
     {
         //if ready to send out the demons
-        if(numberOfDemons >= demonsToSpawn)
+        if (numberOfDemons >= demonsToSpawn)
         {
             //tell the demons to go
-            foreach(GameObject g in demonList)
+            foreach (GameObject g in demonList)
             {
                 SetDemonTarget(g);
             }
@@ -49,7 +49,7 @@ public class SpawnDemons : MonoBehaviour
             //start counting for delay between spawns
             countdownForGroup += Time.deltaTime;
             //if countdown is done
-            if(countdownForGroup > secondsBetweenGroups)
+            if (countdownForGroup > secondsBetweenGroups)
             {
                 countdownForGroup = 0;
                 numberOfDemons = 0;
@@ -57,10 +57,10 @@ public class SpawnDemons : MonoBehaviour
         }
 
         //if spawning demons
-        if(numberOfDemons < demonsToSpawn)
+        if (numberOfDemons < demonsToSpawn)
         {
             spawnEnergy += Time.deltaTime;
-            if(spawnEnergy > secondsToSPawn)
+            if (spawnEnergy > secondsToSPawn)
             {
                 Vector3 demonSpawn = SpawnLocation(spawnArea.bounds);
                 //print(demonSpawn);
@@ -69,14 +69,14 @@ public class SpawnDemons : MonoBehaviour
                 numberOfDemons++;
                 spawnEnergy = 0;
                 demonList.Add(demon);
-            }                     
+            }
         }
         //TODO: something if the sacred site is destroyed
 
         //TODO: spawn different demons
 
         //TODO: spawn facing sacred site
-        
+
         //TODO: spawn in larger area?
 
         //TODO: different demons take different time / energy?
@@ -92,23 +92,30 @@ public class SpawnDemons : MonoBehaviour
     void SetDemonTarget(GameObject demon)
     {
         //set the demon's target
-        EnemyTarget targetScript = demon.GetComponent<EnemyTarget>();
-        targetScript.SetTarget(SacredTarget);
+        try
+        {
+            EnemyTarget targetScript = demon.GetComponent<EnemyTarget>();
+            targetScript.SetTarget(SacredTarget);
+        }
+        catch
+        {
+
+        }
     }
 
     GameObject SpawnDemon(Vector3 location)
     {
-       GameObject demon = Instantiate(RandomDemon(), location, Quaternion.identity);
+        GameObject demon = Instantiate(RandomDemon(), location, Quaternion.identity);
         return demon;
     }
     GameObject RandomDemon()
     {
         int number = Random.Range(1, 4);
-        if(number == 1)
+        if (number == 1)
         {
             return brute;
         }
-        else if(number == 2)
+        else if (number == 2)
         {
             return conjuror;
         }

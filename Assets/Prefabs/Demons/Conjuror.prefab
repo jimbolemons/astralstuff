@@ -76,6 +76,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4792024901624038470}
     m_Modifications:
+    - target: {fileID: 1037164397080371833, guid: 921fc764a1be175428c117a348de83b4,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4176801664597943643, guid: 0fa7373b19dc0f0428123e5f978a47a3,
+        type: 3}
     - target: {fileID: 5540625690113268258, guid: 921fc764a1be175428c117a348de83b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 5540625690113268258, guid: 921fc764a1be175428c117a348de83b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5540625690113268258, guid: 921fc764a1be175428c117a348de83b4,
         type: 3}

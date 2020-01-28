@@ -2963,6 +2963,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 34648656}
+    - target: {fileID: 7233323390733360771, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: hookTravelSpeed
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7240564887355110611, guid: 19ddc3911778be04fa1f45ea73b31549,
         type: 3}
       propertyPath: m_LocalRotation.x
