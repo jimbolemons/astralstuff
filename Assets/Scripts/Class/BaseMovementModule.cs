@@ -45,7 +45,9 @@ public class BaseMovementModule : MonoBehaviour
     [System.NonSerialized]
     public Vector3 direction;
 
-   
+    //ability to run off and still jump
+    public float coyoteTime = .2f;
+    public float coyoteTimer;
     
     //reference to the camera target assistant
     public Transform cameraTarget;
@@ -55,6 +57,7 @@ public class BaseMovementModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        coyoteTimer = coyoteTime;
     }
 
     // Update is called once per frame
@@ -83,7 +86,7 @@ public class BaseMovementModule : MonoBehaviour
 
 
             //cleanup
-            //if (controller.isGrounded) velocityY = 0;
+            //if (controller.isGrounded) pVelocity.y = 0;
         }
     }
 

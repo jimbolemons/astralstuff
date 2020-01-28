@@ -12,6 +12,7 @@ public class MovModDoubleJump : BaseMovementModule
     public int doubleJumpBase = 1;
     int doubleJumpCount;
     
+    
     void Start()
     {
         //initialize default count

@@ -58,6 +58,7 @@ public class EnemyTarget : MonoBehaviour
                     agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
                     transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
                     //transform.LookAt(player.transform.position);       
+                    //TODO: face gun / attack towards player y, not whole model
                     transform.rotation *= Quaternion.Euler(0, -90, 0);
                     //print("Demon is following player.");
                 }

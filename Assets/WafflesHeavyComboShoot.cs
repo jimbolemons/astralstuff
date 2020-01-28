@@ -44,7 +44,7 @@ public class WafflesHeavyComboShoot : Gun
         {
             if (comboCounter == 0)
             {
-                Fire1();
+                Fire2();
                 comboTimer = 0;
                 comboCounter++;
             }
@@ -52,7 +52,7 @@ public class WafflesHeavyComboShoot : Gun
             {
                 if (ComboCheck())
                 {
-                    Fire2();
+                    Fire1();
                     comboTimer = 0;
                     comboCounter++;
                 }
