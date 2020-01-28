@@ -71,7 +71,7 @@ public class Hook : MonoBehaviour
         {
             hook.transform.parent = null;
             hook.transform.Translate(Vector3.forward * Time.deltaTime * hookTravelSpeed);
-            ropeLength = Vector3.Distance(transform.position, hook.transform.position);
+            ropeLength = Vector3.Distance(player.transform.position, hook.transform.position);
 
             if (ropeLength >= maxDistance)
                 ReturnHook();
@@ -83,12 +83,12 @@ public class Hook : MonoBehaviour
             hook.transform.parent = hookedObj.transform;           
             hook.transform.SetParent(hookedObj.transform, true);
 
-            Vector3 v = transform.position - hook.transform.position;
+            Vector3 v = player.transform.position - hook.transform.position;
 
             float dis = v.magnitude;
             newVel = v;
 
-            Vector3 myUp = (transform.position - hook.transform.position).normalized;
+            Vector3 myUp = (player.transform.position - hook.transform.position).normalized;
 
             // this casuses the player to swing on the rope
             if (!reelIn && dis > ropeLength)
@@ -96,17 +96,17 @@ public class Hook : MonoBehaviour
                 swinging = true;
                 newVel.Normalize();
                 v = Vector3.ClampMagnitude(v, ropeLength);
-                transform.position = hook.transform.position + v;            
+                player.transform.position = hook.transform.position + v;            
                
             }
 
             // this checks to see what is below the player and then does absolutly notthing about it at the moment
-            if (Physics.Raycast(transform.position, Vector3.down, disToGround + 1))
+            if (Physics.Raycast(player.transform.position, Vector3.down, disToGround + 1))
             {
                 
             }
 
-            float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
+            float distanceToHook = Vector3.Distance(player.transform.position, hook.transform.position);
 
             
 
@@ -127,7 +127,7 @@ public class Hook : MonoBehaviour
                 if (reelIn)
                 {
                     player.GetComponent<CharacterController>().enabled = false;
-                    transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);                
+                player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);                
                     BaseMovementModule.gravity = 0;               
                 }
 
@@ -208,7 +208,7 @@ public class Hook : MonoBehaviour
     private void FixedUpdate()
     {
         //if the player is not on the ground and they are swinging and they are not above the position of the hook then do this
-        if (!IsGrounded() && swinging && transform.position.y <= hook.transform.position.y)
+        if (!IsGrounded() && swinging && player.transform.position.y <= hook.transform.position.y)
         {
             Debug.Log("i would like to swing now please");
 
@@ -219,7 +219,7 @@ public class Hook : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -transform.up, disToGround + 1f);
+        return Physics.Raycast(player.transform.position, -transform.up, disToGround + 1f);
     }
 
 }
