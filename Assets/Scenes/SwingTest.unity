@@ -2863,10 +2863,35 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4279159776326772145, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: minTimeBetweenShots
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279159776326772145, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: fireCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279159776326772145, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: maxTimeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4279159776936858335, guid: 19ddc3911778be04fa1f45ea73b31549,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279159778338150623, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: attackTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279159778380815187, guid: 19ddc3911778be04fa1f45ea73b31549,
+        type: 3}
+      propertyPath: fireCooldown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5120742785667887422, guid: 19ddc3911778be04fa1f45ea73b31549,
         type: 3}

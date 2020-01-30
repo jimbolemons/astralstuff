@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class WafflesComboShoot : Gun
 {
+
     public float minTimeBetweenShots = .2f;
     public float maxTimeBetweenShots = .5f;
     public float comboTimer = 0;
-    public float comboCounter = 0;
+    public int comboCounter = 0;
     public int maxCombo = 3;
 
     public bool failCombo = false;
@@ -54,11 +55,7 @@ public class WafflesComboShoot : Gun
                 Fire2();
                 comboTimer = 0;
                 comboCounter++;
-                }
-                else
-                {
-                    failCombo = true;
-                }
+                }                
             }
             else if (comboCounter == 2)
             {
@@ -68,11 +65,7 @@ public class WafflesComboShoot : Gun
                 Fire2();
                 comboTimer = 0;
                 comboCounter++;
-                }
-                else
-                {
-                    failCombo = true;
-                }
+                }                
             }
             else
             {
@@ -98,8 +91,8 @@ public class WafflesComboShoot : Gun
 
     bool ComboCheck()
     {
-        if (comboCounter < minTimeBetweenShots) return false;
-        if (comboCounter > maxTimeBetweenShots) return false;
+        if (comboTimer < minTimeBetweenShots) return false;
+        if (comboTimer > maxTimeBetweenShots) return false;
         return true;
     }
     void Fire1()

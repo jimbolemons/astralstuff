@@ -317,6 +317,8 @@ MonoBehaviour:
   deadZone: 0.2
   friction: 0.8
   jumpSpeed: 10
+  coyoteTime: 0.2
+  coyoteTimer: 0
   cameraTarget: {fileID: 0}
   player: {fileID: 0}
   doubleJumpBase: 0
@@ -590,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightArmGuns: []
+  pFiring: 0
 --- !u!1 &5120742784799989993
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +940,8 @@ MonoBehaviour:
   deadZone: 0.2
   friction: 0.8
   jumpSpeed: 20
+  coyoteTime: 0.2
+  coyoteTimer: 0
   cameraTarget: {fileID: 0}
   player: {fileID: 0}
   doubleJumpBase: 1
@@ -1561,11 +1566,11 @@ MonoBehaviour:
   gunEnd: {fileID: 4279159777683295974}
   projectilePrefab: {fileID: 3811140800667417732, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
     type: 3}
-  fireCooldown: 3
+  fireCooldown: 0.3
   canFire: 1
   parentType: 0
-  minTimeBetweenShots: 0.5
-  maxTimeBetweenShots: 2
+  minTimeBetweenShots: 2
+  maxTimeBetweenShots: 3
   comboTimer: 0
   comboCounter: 0
   maxCombo: 3

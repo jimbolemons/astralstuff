@@ -10,7 +10,7 @@ public class Fire1ShootScript : MonoBehaviour
 {
     [SerializeField]
     Gun[] rightArmGuns;
-    int pFiring = 0;
+    public float pFiring = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,6 @@ public class Fire1ShootScript : MonoBehaviour
         //get every Gun script able to fire
         //put into list
     }
-
 
     void Update()
     {
@@ -35,8 +34,11 @@ public class Fire1ShootScript : MonoBehaviour
                 }
                 pFiring = 1;
             }
-            //if the player is not holding fire, enable firing
-            if (Input.GetAxis("Fire1") == 0) pFiring = 0;
+            else
+            {
+                //if the player is not holding fire, enable firing
+                if (Input.GetAxis("Fire1") == 0) pFiring = 0;
+            }
         }
     }
 
