@@ -26,12 +26,13 @@ public class Fire2ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
-            //if player presses fire2
+            //if player presses fire2. starts a timer 
             if (Input.GetAxis("Fire2") > 0 && pFiring == 0)
             {
                 chargeTimer += Time.deltaTime;                
                 
             }
+            // if the player has held down the  button long enogh befor releseing then fire the 
             if ((Input.GetMouseButtonUp(1)) && (chargeTimer > attackTime))
             {
                 //fire every gun the hand is holding
@@ -48,19 +49,7 @@ public class Fire2ShootScript : MonoBehaviour
 
         }
     }
-
-    /*
-     * 
-     * 
-     * pFiring = 1;
-     * 
-     *  else
-            {
-                //if the player is not holding fire, enable firing
-                if(Input.GetAxis("Fire2") == 0) pFiring = 0;
-            }
-     */
-
+    
     /// <summary>
     /// destroy all guns in the current array
     /// </summary>
