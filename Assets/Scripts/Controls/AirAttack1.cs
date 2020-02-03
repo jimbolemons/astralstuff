@@ -24,9 +24,10 @@ public class AirAttack1 : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             Debug.Log(car.isGrounded);
-            //If player presses fire1 and was not already holding it
+           //checks if the playe ris grounded if not then continue
             if (!IsGrounded.Grounded)
             {
+                // checks to see if the player is trying to fire if so continues
                 if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
                 {
                     //fire every gun that hand is holding

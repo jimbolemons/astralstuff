@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class IsGrounded : MonoBehaviour
 {
+    /*
+     * ..... this checks to see if the player is standing on something 
+     */
     public GameObject player;
-    public static bool Grounded;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public static bool Grounded;       
     void Update()
     {
         Grounded = IsGroundeded();

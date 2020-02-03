@@ -28,15 +28,18 @@ public class Fire1ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
+            //checks to see if the player is grounded if they are then continue
             if (IsGrounded.Grounded)
             {
+                // if the player is holding down the left mouse button
                 if (Input.GetMouseButton(0)) 
                 {
                     attackTimer += Time.deltaTime;
-
                 }
+                //if they are still holding down the mouse button and the timer has gone up enough
                 if (Input.GetMouseButton(0) && attackTimer >= holdBeforNewAttackTime)
                 {
+                    // fires each gun in the hands
                     foreach (Gun g in rightArmGuns)
                     {
                         if (g != null) g.Fire();
@@ -44,7 +47,13 @@ public class Fire1ShootScript : MonoBehaviour
                     attackTimer = 0;
 
                 }
-                //If player presses fire1 and was not already holding it
+                if (Input.GetMouseButtonUp(0) && attackTimer < holdBeforNewAttackTime)
+                {
+                    attackTimer = 0;
+
+                }
+
+                /*If player presses fire1 and was not already holding it
                 if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
                 {
                     //fire every gun that hand is holding
@@ -59,6 +68,7 @@ public class Fire1ShootScript : MonoBehaviour
                     //if the player is not holding fire, enable firing
                     if (Input.GetAxis("Fire1") == 0) pFiring = 0;
                 }
+                */
             }
         }
     }

@@ -28,6 +28,7 @@ public class Fire2ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
+            // if the player is grounded
             if (IsGrounded.Grounded)
             {
                 //if player presses fire2. starts a timer 
@@ -36,8 +37,10 @@ public class Fire2ShootScript : MonoBehaviour
                     chargeTimer += Time.deltaTime;
 
                 }
+                // if the player has held down the button long enough then auto attack
                 if (Input.GetMouseButton(1) && chargeTimer >= attackRelese)
                 {
+                    //fire every gun the hand is holding
                     foreach (Gun g in leftArmGuns)
                     {
                         if (g != null) g.Fire();
@@ -55,6 +58,7 @@ public class Fire2ShootScript : MonoBehaviour
                     }
                     chargeTimer = 0;
                 }
+                // if the player releses too early cancle every thing and reset
                 if ((Input.GetMouseButtonUp(1)) && (chargeTimer < attackTime))
                 {
                     chargeTimer = 0;
