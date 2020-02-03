@@ -55,6 +55,8 @@ public class BaseMovementModule : MonoBehaviour
     //the player's transform, for editing correctly
     public Transform player;
     // Start is called before the first frame update
+
+   
     void Start()
     {
         coyoteTimer = coyoteTime;
@@ -156,4 +158,6 @@ public class BaseMovementModule : MonoBehaviour
     {
         cameraTarget = t;
     }
+    
 }
+

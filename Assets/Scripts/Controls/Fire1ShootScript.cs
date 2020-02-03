@@ -11,6 +11,10 @@ public class Fire1ShootScript : MonoBehaviour
     [SerializeField]
     Gun[] rightArmGuns;
     public float pFiring = 0;
+    public CharacterController car;
+    public float holdBeforNewAttackTime;
+    public float attackTimer;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,20 +28,37 @@ public class Fire1ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
-            //If player presses fire1 and was not already holding it
-            if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
+            if (IsGrounded.Grounded)
             {
-                //fire every gun that hand is holding
-                foreach (Gun g in rightArmGuns)
+                if (Input.GetMouseButton(0)) 
                 {
-                    if (g != null) g.Fire();
+                    attackTimer += Time.deltaTime;
+
                 }
-                pFiring = 1;
-            }
-            else
-            {
-                //if the player is not holding fire, enable firing
-                if (Input.GetAxis("Fire1") == 0) pFiring = 0;
+                if (Input.GetMouseButton(0) && attackTimer >= holdBeforNewAttackTime)
+                {
+                    foreach (Gun g in rightArmGuns)
+                    {
+                        if (g != null) g.Fire();
+                    }
+                    attackTimer = 0;
+
+                }
+                //If player presses fire1 and was not already holding it
+                if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
+                {
+                    //fire every gun that hand is holding
+                    foreach (Gun g in rightArmGuns)
+                    {
+                        if (g != null) g.Fire();
+                    }
+                    pFiring = 1;
+                }
+                else
+                {
+                    //if the player is not holding fire, enable firing
+                    if (Input.GetAxis("Fire1") == 0) pFiring = 0;
+                }
             }
         }
     }
@@ -60,4 +81,5 @@ public class Fire1ShootScript : MonoBehaviour
     {
         rightArmGuns = GetComponentsInChildren<Gun>();
     }
+    
 }

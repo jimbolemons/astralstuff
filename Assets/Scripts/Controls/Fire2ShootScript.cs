@@ -13,6 +13,8 @@ public class Fire2ShootScript : MonoBehaviour
     public float pFiring = 0;
     public float chargeTimer = 0;
     public float attackTime = 1;
+    public float attackRelese = 1;
+    public GameObject player;
 
     void Start()
     {
@@ -26,25 +28,37 @@ public class Fire2ShootScript : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
-            //if player presses fire2. starts a timer 
-            if (Input.GetAxis("Fire2") > 0 && pFiring == 0)
+            if (IsGrounded.Grounded)
             {
-                chargeTimer += Time.deltaTime;                
-                
-            }
-            // if the player has held down the  button long enogh befor releseing then fire the 
-            if ((Input.GetMouseButtonUp(1)) && (chargeTimer > attackTime))
-            {
-                //fire every gun the hand is holding
-                foreach (Gun g in leftArmGuns)
+                //if player presses fire2. starts a timer 
+                if (Input.GetAxis("Fire2") > 0 && pFiring == 0)
                 {
-                    if (g != null) g.Fire();
+                    chargeTimer += Time.deltaTime;
+
                 }
-                chargeTimer = 0;
-            }
-            if ((Input.GetMouseButtonUp(1)) && (chargeTimer < attackTime))
-            {                
-                chargeTimer = 0;
+                if (Input.GetMouseButton(1) && chargeTimer >= attackRelese)
+                {
+                    foreach (Gun g in leftArmGuns)
+                    {
+                        if (g != null) g.Fire();
+                    }
+                    chargeTimer = 0;
+
+                }
+                // if the player has held down the  button long enogh befor releseing then fire the 
+                if ((Input.GetMouseButtonUp(1)) && (chargeTimer > attackTime))
+                {
+                    //fire every gun the hand is holding
+                    foreach (Gun g in leftArmGuns)
+                    {
+                        if (g != null) g.Fire();
+                    }
+                    chargeTimer = 0;
+                }
+                if ((Input.GetMouseButtonUp(1)) && (chargeTimer < attackTime))
+                {
+                    chargeTimer = 0;
+                }
             }
 
         }
