@@ -23,7 +23,7 @@ public class AirAttack1 : MonoBehaviour
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
-            Debug.Log(car.isGrounded);
+            //Debug.Log(car.isGrounded);
            //checks if the playe ris grounded if not then continue
             if (!IsGrounded.Grounded)
             {
