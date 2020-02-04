@@ -29,7 +29,7 @@ public class Fire1ShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             //checks to see if the player is grounded if they are then continue
-            if (IsGrounded.Grounded)
+            if (IsGrounded.down)
             {
                 // if the player is holding down the left mouse button
                 if (Input.GetMouseButton(0)) 

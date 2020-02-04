@@ -38,8 +38,11 @@ public class MovModDoubleJump : BaseMovementModule
             {                
                 if(doubleJumpCount > 0  && Input.GetButtonDown("Jump"))
                 {
-                Jump();
-                doubleJumpCount--;
+                    if (IsGrounded.wall)
+                    {
+                        Jump();
+                        doubleJumpCount--;
+                    }
                 }
             }
 

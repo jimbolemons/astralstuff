@@ -29,7 +29,7 @@ public class Fire2ShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             // if the player is grounded
-            if (IsGrounded.Grounded)
+            if (IsGrounded.down)
             {
                 //if player presses fire2. starts a timer 
                 if (Input.GetAxis("Fire2") > 0 && pFiring == 0)

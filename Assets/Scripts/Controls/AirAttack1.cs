@@ -25,7 +25,7 @@ public class AirAttack1 : MonoBehaviour
         {
             //Debug.Log(car.isGrounded);
            //checks if the playe ris grounded if not then continue
-            if (!IsGrounded.Grounded)
+            if (!IsGrounded.down)
             {
                 // checks to see if the player is trying to fire if so continues
                 if (Input.GetAxis("Fire1") > 0 && pFiring == 0)
