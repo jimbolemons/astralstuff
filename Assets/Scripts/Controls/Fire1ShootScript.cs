@@ -33,7 +33,15 @@ public class Fire1ShootScript : MonoBehaviour
             {
                 // if the player is holding down the left mouse button
                 if (Input.GetMouseButton(0)) 
-                {
+                {                    
+                    if (attackTimer == 0)
+                    {
+                        foreach (Gun g in rightArmGuns)
+                        {
+                            if (g != null) g.Fire();
+                        }
+
+                    }
                     attackTimer += Time.deltaTime;
                 }
                 //if they are still holding down the mouse button and the timer has gone up enough
