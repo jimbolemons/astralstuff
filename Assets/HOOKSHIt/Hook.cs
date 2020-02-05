@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -99,8 +99,7 @@ public class Hook : MonoBehaviour
                // newVel.Normalize();
                 
                 // TODO: Fix this breaks if you switch to waffles and then back to hope and try to swing
-                v = Vector3.ClampMagnitude(v, ropeLength);
-                
+                v = Vector3.ClampMagnitude(v, ropeLength);                
                 player.transform.position = hook.transform.position + v;            
                
             }

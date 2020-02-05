@@ -17,5 +17,6 @@ public class PlayerHP : ObjectWithHealth
     {
 
         Debug.Log("player down!! Player down!!");
+        //switch scene here to lose
     }
 }
