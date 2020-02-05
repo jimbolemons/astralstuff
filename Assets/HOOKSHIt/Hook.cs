@@ -141,7 +141,7 @@ public class Hook : MonoBehaviour
             //Debug.Log(Input.GetAxis("Horizontal"));
             //Debug.Log(distanceToHook);
             //if hope is close to the hook stop her from going in any farther
-            Debug.Log(ropeDis);
+            //Debug.Log(ropeDis);
 
             // if hope reels in and then presses any controls she will resles 
                         if ( reelIn && ropeDis < 2)

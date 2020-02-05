@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// ObjectWithHealth Class
@@ -8,15 +9,30 @@ using UnityEngine;
 /// </summary>
 public class PlayerHP : ObjectWithHealth
 {
+    public bool isDead = false;
     private void Start()
     {
         objectType = objectWithHealthType.player;
     }
 
-    public override void TriggerOnDeath()
+    public void Update()
     {
+        if (isDead) killPlayer();
+        else
+        {
+            //do your thing.
+        }
+    }
 
-        Debug.Log("player down!! Player down!!");
-        //switch scene here to lose
+    public override void TriggerOnDeath()
+    {        
+        isDead = true;        
+    }
+
+    private void killPlayer()
+    {
+        print("player down!! Player down!!");        
+        MasterStaticScript.PlayerDead();
+       // Destroy(gameObject);
     }
 }

@@ -48,7 +48,13 @@ public class MasterStaticScript : MonoBehaviour
             SceneManager.LoadScene("LoseState");
             //TODO: change Game's lose state to true, go to lose scene.
 
-        }
+        }       
+    }
+
+    public static void PlayerDead()
+    {
+        print("Game has been lost.");
+        SceneManager.LoadScene("LoseState");
     }
 
     public static void CheckForGameWin()
