@@ -23,9 +23,12 @@ public class HookRayCast : MonoBehaviour
     bool timerRunning = true;
     bool canShoot = true;
 
+    LineRenderer rope;
+
     // Start is called before the first frame update
     void Start()
     {
+        rope = hook.GetComponent<LineRenderer>();
 
     }
 
@@ -66,21 +69,19 @@ public class HookRayCast : MonoBehaviour
             timerRunning = false;
             timer = hookDelay;
             canShoot = true;
-
-
         }
         if (Input.GetMouseButton(0) && !fired && canShoot)
         {
             fired = true;
         }
-
-
     }
     private void ReelIn()
     {
+        rope.SetVertexCount(2);
+        rope.SetPosition(0, hookHolder.transform.position);
+        rope.SetPosition(1, hook.transform.position);
 
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
-
         player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
         BaseMovementModule.gravity = 0;
@@ -93,13 +94,15 @@ public class HookRayCast : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
         hook.transform.position = hookHolder.transform.position;
+        
+        rope.SetVertexCount(0);
 
     }
     private void FireHook()
     {
         if (Physics.Raycast(line, out hit, ropeLength, layerMask))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             //hookedPos = hit.point;                
             hook.transform.position = hit.point;
             ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
