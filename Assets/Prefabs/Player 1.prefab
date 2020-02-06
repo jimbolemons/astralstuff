@@ -795,6 +795,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &8630143289931806119
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102169208868396915}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6102169209914260418
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 835125535822189513}
+  - component: {fileID: 6854081960721465606}
   - component: {fileID: 6103794470903706914}
   m_Layer: 2
   m_Name: Hope
@@ -950,7 +967,7 @@ Transform:
   m_Father: {fileID: 8630143291791907486}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6103794470903706914
+--- !u!114 &6854081960721465606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -958,6 +975,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6103794470903706917}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5057eb72e4286f24983d69689d0ed293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hookHolder: {fileID: 8630143290625000276}
+  player: {fileID: 8630143291791907487}
+  hook: {fileID: 0}
+  playerTravelSpeed: 100
+  ropeLength: 100
+  hookDelay: 5
+--- !u!114 &6103794470903706914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103794470903706917}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae6f0edfec7e84b4f87458d9a21443f5, type: 3}
   m_Name: 
@@ -1001,22 +1036,6 @@ Transform:
   m_Father: {fileID: 835125535822189513}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8630143289931806119
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6102169208868396915}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8630143290262245874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1800,7 @@ MonoBehaviour:
   objectType: 0
   health: -1
   immortal: 0
+  isDead: 0
 --- !u!54 &8630143291791907484
 Rigidbody:
   m_ObjectHideFlags: 0
