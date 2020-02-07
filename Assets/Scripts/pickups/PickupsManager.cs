@@ -26,6 +26,9 @@ public class PickupsManager : MonoBehaviour
         {
             UseCurrentPickup();
         }
+            //uncoment this to make the power up go off instantly
+        //UseCurrentPickup();
+
     }
     public void UseCurrentPickup()
     {
