@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerHP : ObjectWithHealth
 {
+    public PickupsManager pickups;
     public bool isDead = false;
     private void Start()
     {
@@ -34,5 +35,9 @@ public class PlayerHP : ObjectWithHealth
         print("player down!! Player down!!");        
         MasterStaticScript.PlayerDead();
        // Destroy(gameObject);
+    }
+    public void CollectedPickUp(PickupType type)
+    {
+        pickups.CollectedPickUp(type);
     }
 }
