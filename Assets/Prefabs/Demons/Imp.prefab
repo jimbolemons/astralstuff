@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5540625690113268284}
   - component: {fileID: 5540625690113268287}
   - component: {fileID: 5540625690113268286}
-  - component: {fileID: 5540625690113268281}
+  - component: {fileID: 7609488239337315094}
   - component: {fileID: 5540625690113268256}
   - component: {fileID: 3750316350600762978}
   m_Layer: 10
@@ -110,7 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32314444, y: 2, z: 0.937201}
   m_Center: {x: -0.014849901, y: 0, z: -0.005049467}
---- !u!195 &5540625690113268281
+--- !u!195 &7609488239337315094
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
