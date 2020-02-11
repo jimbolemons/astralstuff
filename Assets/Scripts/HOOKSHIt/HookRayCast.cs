@@ -22,6 +22,7 @@ public class HookRayCast : MonoBehaviour
     bool hooked = false;
     bool timerRunning = true;
     bool canShoot = true;
+    bool unhookedButInAir = false;
 
     LineRenderer rope;
 
@@ -29,7 +30,6 @@ public class HookRayCast : MonoBehaviour
     void Start()
     {
         rope = hook.GetComponent<LineRenderer>();
-
     }
 
     // Update is called once per frame
@@ -38,25 +38,42 @@ public class HookRayCast : MonoBehaviour
         layerMask = 1 << 2;
         layerMask = ~layerMask;
         line = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
-
-
-
         Timer();
 
         if (!hooked & fired)
         {
             FireHook();
         }
+
         if (hooked && fired)
         {
             ReelIn();
         }
+
         if (hooked && fired && ropeDis <= 1)
         {
-            UnHook();
+           UnHook();            
         }
 
+        if (unhookedButInAir & !IsGrounded.downHook)
+        {
+            if (!IsGrounded.up)
+            {
+                ClimbUp();
+            }
+            else
+            {
+                unhookedButInAir = false;
+            }           
+
+        }
+        
+        if (unhookedButInAir & IsGrounded.downHook)
+        {
+            unhookedButInAir = false;
+        }
     }
+
     private void Timer()
     {
         if (timerRunning)
@@ -70,48 +87,78 @@ public class HookRayCast : MonoBehaviour
             timer = hookDelay;
             canShoot = true;
         }
+
         if (Input.GetMouseButton(0) && !fired && canShoot)
         {
             fired = true;
         }
     }
+
     private void ReelIn()
     {
-        rope.SetVertexCount(2);
-        rope.SetPosition(0, hookHolder.transform.position);
-        rope.SetPosition(1, hook.transform.position);
-
+        MakeLines();
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
         player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
         BaseMovementModule.gravity = 0;
     }
+
+    private void ClimbUp()
+    {      
+        player.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
+        player.transform.Translate(Vector3.up * Time.deltaTime * 18f);
+    }
+
     private void UnHook()
     {
+        if (unhookedButInAir & IsGrounded.cannotClimb)
+        {
+            unhookedButInAir = false;
+        }
+        else
+        {
+            unhookedButInAir = true;
+        }
         timerRunning = true;
         hooked = false;
         fired = false;
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
         hook.transform.position = hookHolder.transform.position;
+        DestroyLines();
         
-        rope.SetVertexCount(0);
-
     }
+
     private void FireHook()
     {
         if (Physics.Raycast(line, out hit, ropeLength, layerMask))
         {
             //Debug.Log(hit.collider.name);
-            //hookedPos = hit.point;                
-            hook.transform.position = hit.point;
-            ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
-            hooked = true;
-            canShoot = false;
+            //hookedPos = hit.point; 
+            if (hit.collider.gameObject.tag == "Hookable")
+            {
+                hook.transform.position = hit.point;
+                ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
+                hooked = true;
+                canShoot = false;
+            }
         }
     }
+
     private void DrawHookLine()
     {
         Debug.DrawRay(hookHolder.transform.position, hookHolder.transform.forward * ropeLength, Color.yellow, layerMask);
+    }
+
+    private void MakeLines()
+    {
+        rope.SetVertexCount(2);
+        rope.SetPosition(0, hookHolder.transform.position);
+        rope.SetPosition(1, hook.transform.position);
+    }
+
+    private void DestroyLines()
+    {
+        rope.SetVertexCount(0);
     }
 }

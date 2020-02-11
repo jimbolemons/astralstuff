@@ -506,6 +506,50 @@ Transform:
   m_Father: {fileID: 8630143290454248279}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1484747571100095063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7110452219524416791}
+  - component: {fileID: 583504177403560576}
+  m_Layer: 0
+  m_Name: climbDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7110452219524416791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484747571100095063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8630143291791907486}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &583504177403560576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484747571100095063}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b31f0f5ce205c448f0d78c3f637740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpot: {fileID: 1484747571100095063}
 --- !u!1 &3564725134452862544
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +1009,7 @@ Transform:
   - {fileID: 8630143289923194377}
   - {fileID: 8630143290272273734}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6854081960721465606
 MonoBehaviour:
@@ -1262,7 +1306,7 @@ Transform:
   - {fileID: 3656598918729106721}
   - {fileID: 843937651587086718}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8630143290625000276
 GameObject:
@@ -1754,6 +1798,7 @@ Transform:
   m_LocalPosition: {x: -35.78, y: 0.92, z: -40.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7110452219524416791}
   - {fileID: 8876238830106708581}
   - {fileID: 835125535822189513}
   - {fileID: 8630143290454248279}
@@ -1849,6 +1894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8630143291791907487}
+  climbSpot: {fileID: 1484747571100095063}
 --- !u!114 &389225359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,7 +2062,7 @@ PrefabInstance:
     - target: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
         type: 3}
