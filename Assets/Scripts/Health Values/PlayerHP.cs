@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerHP : ObjectWithHealth
 {
+    public CameraShake cameraShake;
     public PickupsManager pickups;
     public bool isDead = false;
     private void Start()
@@ -23,6 +24,15 @@ public class PlayerHP : ObjectWithHealth
         {
             //do your thing.
         }
+
+        //do this when the playe takes damage.... i dont know where that happens
+       
+        //
+    }
+
+    public override void TriggerOnDamage()
+    {
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
     }
 
     public override void TriggerOnDeath()
@@ -39,5 +49,6 @@ public class PlayerHP : ObjectWithHealth
     public void CollectedPickUp(PickupType type)
     {
         pickups.CollectedPickUp(type);
+        
     }
 }

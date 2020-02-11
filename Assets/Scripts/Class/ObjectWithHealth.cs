@@ -19,6 +19,8 @@ public abstract class ObjectWithHealth : MonoBehaviour
     [Tooltip("Whether or not the object can die")]
     public bool immortal = false;
 
+    
+
     //TODO: Needs separate variable for default health value if the objects able to heal or show a health bar
 
     /// <summary>
@@ -28,6 +30,8 @@ public abstract class ObjectWithHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        TriggerOnDamage();
+       
         if ((health <= 0) && !immortal)
         {
             TriggerOnDeath();
@@ -38,6 +42,7 @@ public abstract class ObjectWithHealth : MonoBehaviour
     /// </summary>
     public abstract void TriggerOnDeath();
 
+    public abstract void TriggerOnDamage();
     /// <summary>
     /// reference to object's type
     /// </summary>

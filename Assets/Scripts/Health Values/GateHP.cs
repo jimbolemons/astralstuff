@@ -36,4 +36,8 @@ public class GateHP : ObjectWithHealth
         MasterStaticScript.CheckForGameWin();
         Destroy(gameObject);
     }
+    public override void TriggerOnDamage()
+    {
+        throw new System.NotImplementedException();
+    }
 }

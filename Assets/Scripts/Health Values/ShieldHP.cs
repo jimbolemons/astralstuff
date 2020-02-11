@@ -13,4 +13,8 @@ public class ShieldHP : ObjectWithHealth
     {
         Destroy(gameObject);
     }
+    public override void TriggerOnDamage()
+    {
+        throw new System.NotImplementedException();
+    }
 }

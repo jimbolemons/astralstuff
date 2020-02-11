@@ -36,4 +36,8 @@ public class SiteHP : ObjectWithHealth
         MasterStaticScript.CheckForGameLose();
         Destroy(gameObject);
     }
+    public override void TriggerOnDamage()
+    {
+        throw new System.NotImplementedException();
+    }
 }

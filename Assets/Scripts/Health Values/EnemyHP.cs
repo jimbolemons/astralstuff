@@ -25,4 +25,8 @@ public class EnemyHP : ObjectWithHealth
         MasterStaticScript.enemyList.Remove(gameObject);
         Destroy(gameObject);
     }
+    public override void TriggerOnDamage()
+    {
+        throw new System.NotImplementedException();
+    }
 }

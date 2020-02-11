@@ -19,4 +19,8 @@ public class BarrelHP : ObjectWithHealth
         //print("Barrel go boom");
         Destroy(gameObject);
     }
+    public override void TriggerOnDamage()
+    {
+        throw new System.NotImplementedException();
+    }
 }
