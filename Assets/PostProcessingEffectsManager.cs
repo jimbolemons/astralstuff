@@ -14,6 +14,7 @@ public class PostProcessingEffectsManager : MonoBehaviour
     public float boop2;
     public float boop3;
     public float boop4;
+    public bool flash;
 
   public float[] pushVals = {0,0,0,0};
 
@@ -28,11 +29,16 @@ public class PostProcessingEffectsManager : MonoBehaviour
 		//Flash();
 	}
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.UpArrow)){
+		if(Input.GetKeyDown(KeyCode.M)){
 			Flash();
             Debug.Log("fuck you");
             
 		}
+        if (flash)
+        {
+            Flash();
+            Debug.Log("fuck you");
+        }
         
 
         for (int i = 0; i < pushVals.Length; i++)
