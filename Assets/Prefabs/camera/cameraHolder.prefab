@@ -64,9 +64,10 @@ GameObject:
   - component: {fileID: 4111022351362458198}
   - component: {fileID: 6445794818091418087}
   - component: {fileID: 4173315852157436895}
+  - component: {fileID: 8565417594719331374}
   - component: {fileID: 4010060582985081985}
-  - component: {fileID: 2921281273470672605}
   - component: {fileID: 3413502582431328743}
+  - component: {fileID: 2921281273470672605}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -177,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 0}
+  volumeTrigger: {fileID: 389992987227428203}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16147
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -225,6 +226,23 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &8565417594719331374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216267902685295215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 2b6fad14cc42ea947b560313a740f7a6, type: 2}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!114 &4010060582985081985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,19 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0daf031292ef3ab4d82e5d42b733e062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2921281273470672605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4216267902685295215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b75b1ff14caee44bd8d2c9c0c8130e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EffectMat: {fileID: 2100000, guid: 43869b5e3a7eca0418de282568c8767c, type: 2}
 --- !u!114 &3413502582431328743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +281,19 @@ MonoBehaviour:
   - 0
   - 0
   flashLength: 0.5
+--- !u!114 &2921281273470672605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216267902685295215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b75b1ff14caee44bd8d2c9c0c8130e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectMat: {fileID: 2100000, guid: 43869b5e3a7eca0418de282568c8767c, type: 2}
 --- !u!1 &6302592387830470819
 GameObject:
   m_ObjectHideFlags: 0

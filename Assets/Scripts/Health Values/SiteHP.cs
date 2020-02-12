@@ -38,6 +38,6 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 }

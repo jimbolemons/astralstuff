@@ -33,6 +33,7 @@ public class PlayerHP : ObjectWithHealth
     public override void TriggerOnDamage()
     {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
+        PostProcessingEffectsManager.instance.Flash();
     }
 
     public override void TriggerOnDeath()

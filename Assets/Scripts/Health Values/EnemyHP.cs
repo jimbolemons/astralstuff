@@ -8,11 +8,15 @@ using UnityEngine;
 /// </summary>
 public class EnemyHP : ObjectWithHealth
 {
+    public CameraShake cameraShake;
+    public GameObject camera;
     private void Start()
     {
         objectType = objectWithHealthType.enemy;
         MasterStaticScript.enemyList.Add(gameObject);
         //print("Enemies currently in Array: " + MasterStaticScript.enemyList.Count);
+        camera = GameObject.Find("/cameraHolder/Camera");
+        cameraShake = camera.GetComponent<CameraShake>();
     }
 
     private void Update()
@@ -27,6 +31,6 @@ public class EnemyHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
     }
 }

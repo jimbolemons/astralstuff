@@ -21,6 +21,6 @@ public class BarrelHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        // hit a barrel?
     }
 }

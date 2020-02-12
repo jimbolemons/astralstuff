@@ -5,10 +5,14 @@ using UnityEngine;
 public class GateHP : ObjectWithHealth
 {
     public bool isDead = false;
+    public CameraShake cameraShake;
+    public GameObject camera;
     private void Start()
     {
         objectType = objectWithHealthType.destructible;
         MasterStaticScript.enemyGates.Add(gameObject);
+        camera = GameObject.Find("/cameraHolder/Camera");
+        cameraShake = camera.GetComponent<CameraShake>();
     }
 
     public void Update()
@@ -38,6 +42,6 @@ public class GateHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
     }
 }

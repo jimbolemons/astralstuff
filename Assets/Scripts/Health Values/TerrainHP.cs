@@ -19,6 +19,6 @@ public class TerrainHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        // hit some terrain
     }
 }

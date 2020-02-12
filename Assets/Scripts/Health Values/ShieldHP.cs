@@ -15,6 +15,6 @@ public class ShieldHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        throw new System.NotImplementedException();
+        // hit a shield
     }
 }
