@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b1c8198f8d5324988192d880c48013, type: 3}
+  m_Script: {fileID: 11500000, guid: 4be3eb1cfd5fd824581cc1b9f8e8f33d, type: 3}
   m_Name: Chroma
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessingEffectScriptableObject
-  intensity: 14.9
+  intensity: 15
   color: {r: 1, g: 1, b: 1, a: 1}
-  EffectObject: {fileID: 1714456352110584763, guid: 1c213bc1a4a4ce04b95976f6d6e92bae,
+  EffectObject: {fileID: 1714456352110584763, guid: 41b47e7505692c64e829f82160eb6ea5,
     type: 3}

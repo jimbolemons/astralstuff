@@ -42,7 +42,7 @@ public class MasterStaticScript : MonoBehaviour
 
     public static void CheckForGameLose()
     {
-        if (sacredSites.Count <= 1)
+        if (sacredSites.Count <= 0)
         {
             print("Game has been lost. Via Site Distruction");
             SceneManager.LoadScene("LoseState");
