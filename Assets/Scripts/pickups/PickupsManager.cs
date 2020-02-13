@@ -8,14 +8,15 @@ public class PickupsManager : MonoBehaviour
 
     public bool hasPower = false;
     public bool hasSpeed = false;
-    public bool hasHealth = false;   
+    public bool hasHealth = false;
+    float starthealth;
 
     public GameObject player;
    
     // Start is called before the first frame update
     void Start()
-    {      
-        
+    {
+        starthealth = player.GetComponent<PlayerHP>().health;
 
     }
 
@@ -90,6 +91,7 @@ public class PickupsManager : MonoBehaviour
     {
         if (hasHealth)
         {
+            player.GetComponent<PlayerHP>().health = starthealth;
             //give the player some health
             Debug.Log("You dawg you got any more of that Health?");
 
