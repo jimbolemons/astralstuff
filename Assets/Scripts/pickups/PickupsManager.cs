@@ -9,7 +9,33 @@ public class PickupsManager : MonoBehaviour
     public bool hasPower = false;
     public bool hasSpeed = false;
     public bool hasHealth = false;
+
+    public bool usingSpeed = false;
+    public bool usingPower = false;
+    bool usingSpeed2 = false;
+    bool usingPower2 = false;
+
+    public BulletDamage heavyAttack;
+    public BulletDamage lightAttack;
+    public BulletDamage airAttack;
+   
+    public float powerBoostAmt;
+
     float starthealth;
+
+    public MovModDoubleJump hopeLegs;
+    public MovModDoubleJump wafflesLegs;
+    public float speedBoostAmt;
+
+    public float speedTimer;
+    public float powerTimer;
+
+    
+    
+
+    float speedTimer2;
+    float powerTimer2;
+
 
     public GameObject player;
    
@@ -17,7 +43,8 @@ public class PickupsManager : MonoBehaviour
     void Start()
     {
         starthealth = player.GetComponent<PlayerHP>().health;
-
+        speedTimer2 = speedTimer;
+        powerTimer2 = powerTimer;
     }
 
     // Update is called once per frame
@@ -27,8 +54,11 @@ public class PickupsManager : MonoBehaviour
         {
             UseCurrentPickup();
         }
-            //uncoment this to make the power up go off instantly
+        //uncoment this to make the power up go off instantly
         //UseCurrentPickup();
+
+        BoostPower();
+        BoostSpeed();
 
     }
     public void UseCurrentPickup()
@@ -74,6 +104,9 @@ public class PickupsManager : MonoBehaviour
     {
         if (hasPower)
         {
+            powerTimer2 = powerTimer;
+            usingPower = true;
+            hasPower = false;
             // give the player a power boost
             Debug.Log("POOOWWWAAAAA");
 
@@ -83,6 +116,11 @@ public class PickupsManager : MonoBehaviour
     {
         if (hasSpeed)
         {
+
+            speedTimer2 = speedTimer;
+            usingSpeed = true;
+            hasSpeed = false;
+
             //giv ethe player a speed boost
             Debug.Log("SPEEEEEEEED");
         }
@@ -91,11 +129,67 @@ public class PickupsManager : MonoBehaviour
     {
         if (hasHealth)
         {
+         
             player.GetComponent<PlayerHP>().health = starthealth;
             //give the player some health
             Debug.Log("You dawg you got any more of that Health?");
+            hasHealth = false;
 
         }
+    }
+    public void BoostPower()
+    {
+        if (usingPower)
+        {
+
+           // heavyAttack.damage += powerBoostAmt;
+            //lightAttack.damage += powerBoostAmt;
+            //airAttack.damage += powerBoostAmt;
+
+           // usingPower = false;
+            usingPower2 = true;
+
+            //increase power here
+
+
+        }
+        if (usingPower2 && powerTimer2 <= 0)
+        {
+            heavyAttack.damage -= powerBoostAmt;
+            lightAttack.damage -= powerBoostAmt;
+            airAttack.damage -= powerBoostAmt;
+            //decreas power here
+            usingPower2 = false;
+            usingPower = false;
+        }
+        if (powerTimer2 > 0)
+        {
+            powerTimer2 -= Time.deltaTime;
+        }
+    }
+    public void BoostSpeed()
+    {
+        if (usingSpeed)
+        {
+            //increase speed here
+            hopeLegs.speed += speedBoostAmt;
+            wafflesLegs.speed += speedBoostAmt;
+            usingSpeed = false;
+            usingSpeed2 = true;
+        }
+       if (usingSpeed2 && speedTimer2 <= 0)
+        {
+            hopeLegs.speed -= speedBoostAmt;
+            wafflesLegs.speed -= speedBoostAmt;
+            //decrease speed here
+
+            usingSpeed2 = false;
+        }
+        if (speedTimer2 > 0)
+        {
+            speedTimer2 -= Time.deltaTime;
+        }
+
     }
     
 }

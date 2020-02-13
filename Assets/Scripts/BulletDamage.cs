@@ -11,6 +11,25 @@ public class BulletDamage : BulletStats
     /// if the bullet collides with a trigger volume
     /// </summary>
     /// <param name="other"></param>
+
+    public bool playerBullet;
+    private void Start()
+    {
+        GameObject player = GameObject.Find("Player 1");
+        if (playerBullet)
+        {
+            if (player.GetComponent<PickupsManager>().usingPower)
+            {
+                MoreDam();
+            }
+            Debug.Log(damage);
+        }
+
+    }
+    private void MoreDam()
+    {
+        damage = damage * 2;
+    }
     private void OnTriggerEnter(Collider other)
     {
         ObjectWithHealth target = other.gameObject.GetComponent<ObjectWithHealth>();

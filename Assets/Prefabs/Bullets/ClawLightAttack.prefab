@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1842877922767275642}
   - component: {fileID: 8512174891321090133}
   m_Layer: 0
-  m_Name: Claw 1
+  m_Name: ClawLightAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   parentType: 0
+  playerBullet: 1
 --- !u!54 &1842877922767275642
 Rigidbody:
   m_ObjectHideFlags: 0

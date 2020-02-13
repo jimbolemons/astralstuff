@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   parentType: 0
+  playerBullet: 1
 --- !u!54 &5969208344186071573
 Rigidbody:
   m_ObjectHideFlags: 0
