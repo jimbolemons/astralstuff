@@ -56,10 +56,13 @@ public class BaseMovementModule : MonoBehaviour
     public Transform player;
     // Start is called before the first frame update
 
-   
+    
+
+
     void Start()
     {
         coyoteTimer = coyoteTime;
+       
     }
 
     // Update is called once per frame
@@ -91,6 +94,7 @@ public class BaseMovementModule : MonoBehaviour
             //if (controller.isGrounded) pVelocity.y = 0;
         }
     }
+   
 
     virtual public void CheckForRotation()
     {
@@ -117,6 +121,9 @@ public class BaseMovementModule : MonoBehaviour
             direction = Input.GetAxis("Vertical") * transform.forward;
             direction += Input.GetAxis("Horizontal") * transform.right;
             direction *= speed;
+           
+
+            //put animations here i think
 
             //TODO: implement coyote time to prevent jump getting eaten
             if (Input.GetButton("Jump"))

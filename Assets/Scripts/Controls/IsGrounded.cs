@@ -10,6 +10,9 @@ public class IsGrounded : MonoBehaviour
     public GameObject player;
     public GameObject climbSpot;
 
+    public GameObject animator;
+    Animator anim;
+
     public static bool up;
     public static bool down;
     public static bool downHook;
@@ -22,8 +25,13 @@ public class IsGrounded : MonoBehaviour
 
     int layerMask = 0;
 
+    private void Start()
+    {
+        anim = animator.GetComponent<Animator>();
+    }
     void Update()
     {
+       
         layerMask = 1 << 2;
         layerMask = ~layerMask;
         up    = Up();
@@ -43,6 +51,19 @@ public class IsGrounded : MonoBehaviour
         Debug.DrawRay(player.transform.position, -transform.right * 1f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, transform.forward * 1f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, -transform.forward * 1f, Color.yellow, layerMask);
+        AnimateFunc();
+    }
+    public void AnimateFunc()
+    {
+        if (down)
+        {
+            anim.SetBool("Grounded", true);
+        }
+        if (!down)
+        {
+            anim.SetBool("Grounded", false);
+        }
+
     }
     public bool TouchingWall()
     {

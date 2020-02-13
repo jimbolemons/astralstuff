@@ -11,12 +11,19 @@ public class MovModDoubleJump : BaseMovementModule
     [Tooltip("How many midair jumps")]
     public int doubleJumpBase = 1;
     int doubleJumpCount;
-    
-    
+
+
+    public GameObject animator;
+    Animator anim;
+
+    float runAnim;
+
+
     void Start()
     {
         //initialize default count
         doubleJumpCount = doubleJumpBase;
+        anim = animator.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,6 +63,28 @@ public class MovModDoubleJump : BaseMovementModule
             if (Input.GetAxis("Vertical") <= deadZone && Input.GetAxis("Horizontal") <= deadZone)
             {
                 controller.Move(pVelocity * Time.deltaTime);
+               
+                if (Input.GetAxis("Vertical") > 0)
+                {
+                    runAnim = 1;
+                }
+                else if (Input.GetAxis("Vertical") < 0)
+                {
+                    runAnim = -1;
+                }
+                else
+                {
+                    
+                    if (runAnim < .1f && runAnim > -.1f)
+                    {
+                        runAnim = 0;
+                    }
+                    else
+                    {
+                        runAnim = runAnim / 1.1f;
+                    }
+                }
+                anim.SetFloat("MoveSpeed", runAnim);
             }
 
             //cleanup
