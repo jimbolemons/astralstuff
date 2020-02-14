@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -693,6 +693,11 @@ PrefabInstance:
       propertyPath: hook
       value: 
       objectReference: {fileID: 771198987}
+    - target: {fileID: 8630143291394175054, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
     - target: {fileID: 8630143291570566039, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameras
@@ -1358,7 +1363,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2527,7 +2532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3090,7 +3095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3548,8 +3553,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173315852157436895, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173315852157436895, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173315852157436895, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: m_ShowToolkit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173315852157436895, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173315852157436895, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565417594719331374, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
