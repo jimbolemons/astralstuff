@@ -16,15 +16,24 @@ public class Fire2ShootScript : MonoBehaviour
     public float attackRelese = 1;
     public GameObject player;
 
+    public CharacterController controller;
+    public float speed;
+    public Vector3 direction;
+    bool attackDash = false;
+    float timer;
+    public float attackDashTime = 1;
+
     void Start()
     {
         UpdateGuns();
         //get every Gun script able to fire
         //put into list
+        timer = attackDashTime;
     }
 
     void Update()
     {
+        AttackDash();
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
@@ -43,7 +52,11 @@ public class Fire2ShootScript : MonoBehaviour
                     //fire every gun the hand is holding
                     foreach (Gun g in leftArmGuns)
                     {
-                        if (g != null) g.Fire();
+                        if (g != null)
+                        {
+                            g.Fire();
+                            attackDash = true;
+                        }
                     }
                     chargeTimer = 0;
 
@@ -85,5 +98,26 @@ public class Fire2ShootScript : MonoBehaviour
     public void UpdateGuns()
     {
         leftArmGuns = GetComponentsInChildren<Gun>();
+    }
+    public void AttackDash()
+    {
+        if (attackDash)
+        {
+            direction = 5 * player.transform.forward;
+            //direction += Input.GetAxis("Horizontal") * transform.right;
+            direction *= speed;
+            controller.Move(direction * Time.deltaTime);
+        }
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+
+        }
+        else
+        {
+            attackDash = false;
+            timer = attackDashTime;
+        }
     }
 }

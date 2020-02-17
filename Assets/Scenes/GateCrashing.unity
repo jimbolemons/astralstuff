@@ -688,6 +688,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 843937652316500862, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 843937652316500862, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: attackDashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 843937652316500862, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1866197798}
+    - target: {fileID: 843937652316500862, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1866197797}
     - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: hook
@@ -703,6 +723,11 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1866197798}
+    - target: {fileID: 8630143290728825002, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: attackDashTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8630143291394175054, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3042,6 +3067,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827774310}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1866197797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8630143291791907487, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 389225356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1866197798 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 8630143291791907485, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,

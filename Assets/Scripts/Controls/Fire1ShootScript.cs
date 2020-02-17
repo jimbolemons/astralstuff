@@ -15,6 +15,7 @@ public class Fire1ShootScript : MonoBehaviour
     public float holdBeforNewAttackTime;
     public float attackTimer;
     public GameObject player;
+
     public CharacterController controller;
     public float speed;
     public Vector3 direction;
