@@ -15,16 +15,24 @@ public class Fire1ShootScript : MonoBehaviour
     public float holdBeforNewAttackTime;
     public float attackTimer;
     public GameObject player;
+    public CharacterController controller;
+    public float speed;
+    public Vector3 direction;
+    bool attackDash = false;
+    float timer ;
+    public float attackDashTime = 1;
     // Start is called before the first frame update
     void Start()
     {
         UpdateGuns();
         //get every Gun script able to fire
         //put into list
+        timer = attackDashTime;
     }
 
     void Update()
     {
+        AttackDash();
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
@@ -38,7 +46,15 @@ public class Fire1ShootScript : MonoBehaviour
                     {
                         foreach (Gun g in rightArmGuns)
                         {
-                            if (g != null) g.Fire();
+                            if (g != null)
+                            {
+                              g.Fire();
+                                // move player forword
+                                attackDash = true;
+                               
+
+                            }
+                            
                         }
 
                     }
@@ -98,6 +114,29 @@ public class Fire1ShootScript : MonoBehaviour
     public void UpdateGuns()
     {
         rightArmGuns = GetComponentsInChildren<Gun>();
+    }
+    public void AttackDash()
+    {
+        if (attackDash)
+        {
+            direction = 5 * player.transform.forward;
+            //direction += Input.GetAxis("Horizontal") * transform.right;
+            direction *= speed;
+            controller.Move(direction * Time.deltaTime);
+
+        }
+     
+       
+        
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            
+        }
+        else {
+            attackDash = false;
+            timer = attackDashTime;
+        }
     }
     
 }
