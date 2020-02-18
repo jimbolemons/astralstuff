@@ -45,7 +45,8 @@ public class BulletDamage : BulletStats
                     if (target.tag != "EnemyGate")
                     {
                         target.TakeDamage(damage);
-                        Destroy(gameObject);
+
+                        //Destroy(gameObject);
                     }
                 }
                 else
@@ -54,7 +55,8 @@ public class BulletDamage : BulletStats
                     if (target.tag != "SacredSite")
                     {
                         target.TakeDamage(damage);
-                        Destroy(gameObject);
+
+                        //Destroy(gameObject);
                     }
                 }
             }
@@ -79,7 +81,7 @@ public class BulletDamage : BulletStats
                     if(target.tag!= "EnemyGate")
                     {
                         target.TakeDamage(damage);
-                        Destroy(gameObject);
+                       // Destroy(gameObject);
                     }
                 }else 
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
@@ -87,7 +89,7 @@ public class BulletDamage : BulletStats
                     if(target.tag!= "SacredSite")
                     {
                         target.TakeDamage(damage);
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
                     }
                 }
             }

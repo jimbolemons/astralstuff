@@ -147,6 +147,9 @@ MonoBehaviour:
   objectType: 1
   health: 1
   immortal: 0
+  InvolnTime: 0.5
+  cameraShake: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!114 &3750316350600762978
 MonoBehaviour:
   m_ObjectHideFlags: 0

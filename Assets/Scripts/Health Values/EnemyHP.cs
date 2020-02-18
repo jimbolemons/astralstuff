@@ -18,16 +18,15 @@ public class EnemyHP : ObjectWithHealth
         camera = GameObject.Find("/cameraHolder/Camera");
         cameraShake = camera.GetComponent<CameraShake>();
     }
+   
 
-    private void Update()
-    { 
-
-    }
 
     public override void TriggerOnDeath()
     {
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
         MasterStaticScript.enemyList.Remove(gameObject);
         Destroy(gameObject);
+        
     }
     public override void TriggerOnDamage()
     {

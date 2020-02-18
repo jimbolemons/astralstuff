@@ -10,11 +10,11 @@ public class PostProcessingEffectsManager : MonoBehaviour
 	public static PostProcessingEffectsManager instance;
 	public List<PostProcessingEffectScriptableObject> effectScripts = new List<PostProcessingEffectScriptableObject>();
     public Material mat;
-    public float boop1;
-    public float boop2;
-    public float boop3;
-    public float boop4;
-    public bool flash;
+    //public float boop1;
+   // public float boop2;
+    //public float boop3;
+    //public float boop4;
+    //public bool flash;
 
   public float[] pushVals = {0,0,0,0};
 
@@ -29,26 +29,32 @@ public class PostProcessingEffectsManager : MonoBehaviour
 		//Flash();
 	}
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.M)){
-			Flash();
-            Debug.Log("fuck you");
+		//if(Input.GetKeyDown(KeyCode.M)){
+		//	Flash();
+        //    Debug.Log("fuck you");
             
-		}
-        if (flash)
-        {
-            Flash();
-            Debug.Log("fuck you");
-        }
+		//}
+      //  if (flash)
+       // {
+       //     Flash2();
+        //    Debug.Log("fuck you");
+       // }
         
 
         for (int i = 0; i < pushVals.Length; i++)
         {
-            if (pushVals[i] > 0)
+            if (pushVals[i] > .1f)
                 pushVals[i] *= .98f;
-            if (pushVals[i] < 0)
-                pushVals[i] *= .98f;
+            if (pushVals[i] < .1f)
+                pushVals[i] = 0f;
 
+
+            if (pushVals[i] < -.1f)
+                pushVals[i] *= .98f;
+            if (pushVals[i] > -.1f)
+                pushVals[i] = 0f;
         }
+        /*
         for (int i = 0; i < pushVals.Length; i++)
         {
 
@@ -70,8 +76,10 @@ public class PostProcessingEffectsManager : MonoBehaviour
             
         }
 
+        */
 
-            mat.SetFloat("_GreenOffsetX", pushVals[0]);
+
+        mat.SetFloat("_GreenOffsetX", pushVals[0]);
         mat.SetFloat("_GreenOffsetY", pushVals[1]);
         mat.SetFloat("_BlueOffsetX", pushVals[2]);
         mat.SetFloat("_BlueOffsetY", pushVals[3]);

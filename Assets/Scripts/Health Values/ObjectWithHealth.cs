@@ -19,7 +19,10 @@ public abstract class ObjectWithHealth : MonoBehaviour
     [Tooltip("Whether or not the object can die")]
     public bool immortal = false;
 
-    
+    bool canTakeDamage = true;
+    float timer =.1f;
+    float InvolnTime = 1f;
+
 
     //TODO: Needs separate variable for default health value if the objects able to heal or show a health bar
 
@@ -27,15 +30,38 @@ public abstract class ObjectWithHealth : MonoBehaviour
     /// Calculate damage to health
     /// </summary>
     /// <param name="damage">how much damage the object is taking</param>
+    
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        TriggerOnDamage();
+        if (canTakeDamage)
+        {
+            TriggerOnDamage();
+            health -= damage;
        
+            canTakeDamage = false;
+        }
+
         if ((health <= 0) && !immortal)
         {
             TriggerOnDeath();
         }
+    }
+    public void LateUpdate()
+    {
+        Timers();
+    }
+    public void Timers()
+    {
+        if (!canTakeDamage)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (timer < 0)
+        {
+            canTakeDamage = true;
+            timer = InvolnTime;
+        }
+        
     }
     /// <summary>
     /// Anything that needs to start when the object dies
