@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3721,6 +3721,12 @@ PrefabInstance:
       propertyPath: SacredTarget
       value: 
       objectReference: {fileID: 809854331}
+    - target: {fileID: 2289810818737904109, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
+        type: 3}
+      propertyPath: conjuror
+      value: 
+      objectReference: {fileID: 4792024901624038468, guid: a880a38c522277d43a30aa62c6837575,
+        type: 3}
     - target: {fileID: 2289810818737904111, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
         type: 3}
       propertyPath: m_Name
