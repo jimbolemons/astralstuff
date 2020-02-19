@@ -146,7 +146,10 @@ public class HookRayCast : MonoBehaviour
     {
         if (Physics.Raycast(line, out hit, ropeLength, layerMask))
         {
-            img.color = UnityEngine.Color.green;
+            if (hit.collider.gameObject.tag == "Hookable")
+            {
+                img.color = UnityEngine.Color.green;
+            }
 
         }
         else
