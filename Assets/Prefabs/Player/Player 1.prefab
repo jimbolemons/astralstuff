@@ -447,6 +447,10 @@ MonoBehaviour:
   attackTime: 1
   attackRelese: 1
   player: {fileID: 0}
+  controller: {fileID: 0}
+  speed: 0
+  direction: {x: 0, y: 0, z: 0}
+  attackDashTime: 1
 --- !u!1 &843937652736075078
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +539,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3564725134452862544
 GameObject:
@@ -686,7 +690,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 835125535822189513}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2177734787592658093
 MeshFilter:
@@ -990,14 +994,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8630143290272464602}
   - {fileID: 5516203948567980012}
   - {fileID: 8630143291570566024}
   - {fileID: 8630143289923194377}
   - {fileID: 8630143290272273734}
   - {fileID: 4889915647968067}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6854081960721465606
 MonoBehaviour:
@@ -1012,6 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookHolder: {fileID: 8630143290625000276}
+  cameras: {fileID: 0}
   player: {fileID: 8630143291791907487}
   hook: {fileID: 0}
   playerTravelSpeed: 100
@@ -1066,7 +1070,7 @@ Transform:
   m_Children:
   - {fileID: 8630143290262245873}
   m_Father: {fileID: 835125535822189513}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8630143290262245874
 GameObject:
@@ -1190,7 +1194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 835125535822189513}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8630143290272273732
 MonoBehaviour:
@@ -1261,7 +1265,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.7200001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 835125535822189513}
+  m_Father: {fileID: 8630143291791907486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8630143290454248264
@@ -1295,7 +1299,7 @@ Transform:
   - {fileID: 3656598918729106721}
   - {fileID: 843937651587086718}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8630143290625000276
 GameObject:
@@ -1458,6 +1462,10 @@ MonoBehaviour:
   holdBeforNewAttackTime: 0.5
   attackTimer: 0
   player: {fileID: 8630143291791907487}
+  controller: {fileID: 0}
+  speed: 0
+  direction: {x: 0, y: 0, z: 0}
+  attackDashTime: 1
 --- !u!1 &8630143291394175044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1714,7 @@ Transform:
   m_Children:
   - {fileID: 8630143291635051107}
   m_Father: {fileID: 835125535822189513}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8630143291570566039
 MonoBehaviour:
@@ -1787,6 +1795,7 @@ Transform:
   m_LocalPosition: {x: -35.78, y: 0.92, z: -40.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8630143290272464602}
   - {fileID: 7110452219524416791}
   - {fileID: 8876238830106708581}
   - {fileID: 835125535822189513}
@@ -1957,7 +1966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4889916270699016, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2153,7 +2162,7 @@ PrefabInstance:
     - target: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
         type: 3}

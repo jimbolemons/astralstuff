@@ -46,11 +46,12 @@ public class HookRayCast : MonoBehaviour
         if (!hooked & fired)
         {
             FireHook();
-            MakeLines();
+            
         }
 
         if (hooked && fired)
         {
+            MakeLines();
             ReelIn();
         }
 
