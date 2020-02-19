@@ -6,6 +6,7 @@ public class HookRayCast : MonoBehaviour
 {
 
     public GameObject hookHolder;
+    public GameObject cameras;
     public GameObject player;
     public GameObject hook;
     public float playerTravelSpeed = 20f;
@@ -35,14 +36,17 @@ public class HookRayCast : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        DrawHookLine();
         layerMask = 1 << 2;
         layerMask = ~layerMask;
-        line = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
+        //line2 = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
+        line = new Ray(cameras.transform.position, cameras.transform.forward);
         Timer();
 
         if (!hooked & fired)
         {
             FireHook();
+            MakeLines();
         }
 
         if (hooked && fired)
@@ -96,7 +100,7 @@ public class HookRayCast : MonoBehaviour
 
     private void ReelIn()
     {
-        MakeLines();
+        
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
         player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
@@ -124,7 +128,9 @@ public class HookRayCast : MonoBehaviour
         fired = false;
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
-        hook.transform.position = hookHolder.transform.position;
+       // hook.transform.position = hookHolder.transform.position;
+        hook.transform.position = cameras.transform.position;
+
         DestroyLines();
         
     }
@@ -148,6 +154,8 @@ public class HookRayCast : MonoBehaviour
     private void DrawHookLine()
     {
         Debug.DrawRay(hookHolder.transform.position, hookHolder.transform.forward * ropeLength, Color.yellow, layerMask);
+        Debug.DrawRay(cameras.transform.position, cameras.transform.forward * ropeLength, Color.yellow, layerMask);
+
     }
 
     private void MakeLines()
