@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HookRayCast : MonoBehaviour
 {
@@ -26,16 +27,21 @@ public class HookRayCast : MonoBehaviour
     bool unhookedButInAir = false;
 
     LineRenderer rope;
+    Image img;
 
     // Start is called before the first frame update
     void Start()
     {
         rope = hook.GetComponent<LineRenderer>();
+        img = GameObject.Find("crosshair").GetComponent<Image>();
+      
+
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
+        TestLine();
         DrawHookLine();
         layerMask = 1 << 2;
         layerMask = ~layerMask;
@@ -136,6 +142,19 @@ public class HookRayCast : MonoBehaviour
         
     }
 
+    private void TestLine()
+    {
+        if (Physics.Raycast(line, out hit, ropeLength, layerMask))
+        {
+            img.color = UnityEngine.Color.green;
+
+        }
+        else
+        {
+            img.color = UnityEngine.Color.red;
+        }
+    } 
+
     private void FireHook()
     {
         if (Physics.Raycast(line, out hit, ropeLength, layerMask))
@@ -149,7 +168,12 @@ public class HookRayCast : MonoBehaviour
                 hooked = true;
                 canShoot = false;
             }
+            else
+            {
+                fired = false;
+            }
         }
+        
     }
 
     private void DrawHookLine()
