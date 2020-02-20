@@ -94,10 +94,18 @@ public class EnemyTarget : MonoBehaviour
                 {
                     //path towards target
                     agent.isStopped = false;
+                    try
+                    {
+
                     agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
                     transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
                     transform.rotation *= Quaternion.Euler(0, -90, 0);
+                    }
                     //print("Demon is moving towards Sacred Site.");
+                    catch
+                    {
+                        FindNearestSite();
+                    }
                 }
 
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
