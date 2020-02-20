@@ -5,6 +5,7 @@ using UnityEngine;
 public class SiteHP : ObjectWithHealth
 {
     public bool isDead = false;
+
     private void Start()
     {
         objectType = objectWithHealthType.destructible;
@@ -26,13 +27,14 @@ public class SiteHP : ObjectWithHealth
         //Explosions totally go here!
         //print("Barrel go boom");
         isDead = true;
-        
+
     }
 
     private void killSite()
     {
         print("Site is dead.");
         MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.sacredSites);
+
         MasterStaticScript.CheckForGameLose();
         Destroy(gameObject);
     }
