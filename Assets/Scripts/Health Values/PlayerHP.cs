@@ -26,8 +26,14 @@ public class PlayerHP : ObjectWithHealth
         }
 
         //do this when the playe takes damage.... i dont know where that happens
-       
+
         //
+    }
+
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+        if (health > maxHealth) health = maxHealth;
     }
 
     public override void TriggerOnDamage()
@@ -37,19 +43,19 @@ public class PlayerHP : ObjectWithHealth
     }
 
     public override void TriggerOnDeath()
-    {        
-        isDead = true;        
+    {
+        isDead = true;
     }
 
     private void killPlayer()
     {
-        print("player down!! Player down!!");        
+        print("player down!! Player down!!");
         MasterStaticScript.PlayerDead();
-       // Destroy(gameObject);
+        // Destroy(gameObject);
     }
     public void CollectedPickUp(PickupType type)
     {
         pickups.CollectedPickUp(type);
-        
+
     }
 }

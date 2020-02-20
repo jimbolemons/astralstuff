@@ -10,6 +10,9 @@ public class PickupsManager : MonoBehaviour
     public bool hasSpeed = false;
     public bool hasHealth = false;
 
+    public float healAmount = 5;
+
+
     public bool usingSpeed = false;
     public bool usingPower = false;
     bool usingSpeed2 = false;
@@ -129,8 +132,8 @@ public class PickupsManager : MonoBehaviour
     {
         if (hasHealth)
         {
-         
-            player.GetComponent<PlayerHP>().health = starthealth;
+
+            player.GetComponent<PlayerHP>().Heal(healAmount);
             //give the player some health
             Debug.Log("You dawg you got any more of that Health?");
             hasHealth = false;
