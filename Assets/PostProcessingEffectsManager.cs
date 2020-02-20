@@ -96,7 +96,7 @@ public class PostProcessingEffectsManager : MonoBehaviour
     }
 
 	public void Flash2(){
-		Debug.Log("flash");
+		//Debug.Log("flash");
 		foreach(PostProcessingEffectScriptableObject ef in effectScripts){
 			PostProcessingEffect effect = Instantiate(ef.EffectObject, this.transform.position, Quaternion.identity, this.transform).GetComponent<PostProcessingEffect>();
 			effect.Init(ef,true);
