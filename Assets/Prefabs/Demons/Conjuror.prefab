@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 1
+  maxHealth: 1
   health: 1
   immortal: 0
   cameraShake: {fileID: 0}

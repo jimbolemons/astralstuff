@@ -15,7 +15,7 @@ public abstract class ObjectWithHealth : MonoBehaviour
     //sets the object's type to a default value to be overridden later
     public objectWithHealthType objectType = objectWithHealthType.nan;
     [Tooltip("Object's max health. Make sure to make this positive if the object can take damage.")]
-    public float maxHealth = -1;
+    public float maxHealth =0;
     public float health;
     [Tooltip("Whether or not the object can die")]
     public bool immortal = false;
@@ -26,6 +26,7 @@ public abstract class ObjectWithHealth : MonoBehaviour
 
     private void Start()
     {
+        if (maxHealth == 0) health = -1;
         health = maxHealth;
     }
     //TODO: Needs separate variable for default health value if the objects able to heal or show a health bar
