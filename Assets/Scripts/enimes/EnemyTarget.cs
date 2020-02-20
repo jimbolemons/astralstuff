@@ -11,7 +11,7 @@ public class EnemyTarget : MonoBehaviour
     [Tooltip("Reference to the player.")]
     public float distanceToPlayer = 20;
     NavMeshAgent agent;
-    private Transform targetSite;
+    public Transform targetSite;
     private bool readyToGo = false;
 
     public enum EnemyState { IDLE, FOLLOW_PLAYER, FOLLOW_SITE };
@@ -24,6 +24,24 @@ public class EnemyTarget : MonoBehaviour
     }
 
     void Update()
+    {
+        try
+        {
+            if (targetSite != null) print("Site is fine");
+        }
+        catch
+        {
+            FindNearestSite();
+            print("Try not working!");
+        }
+    }
+
+    private void LateUpdate()
+    {
+        EnemyStateMachine();
+    }
+
+    void EnemyStateMachine()
     {
         Vector3 forwardTransform = transform.position;
 
@@ -88,11 +106,33 @@ public class EnemyTarget : MonoBehaviour
                 break;
         }
     }
-
     public void SetTarget(Transform target)
     {
         targetSite = target;
         readyToGo = true;
         currentState = EnemyState.FOLLOW_SITE;
+    }
+
+    //Checks all the sites in the level, and sets the closest one as targetSite
+    public void FindNearestSite()
+    {
+        //1.) Check every site's distance to this gate.
+        GameObject closestSite = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+
+        foreach (GameObject site in MasterStaticScript.sacredSites)
+        {
+            Vector3 difference = site.transform.position - position;
+            float currentDistance = difference.sqrMagnitude;
+            if (currentDistance < distance)
+            {
+                closestSite = site;
+                distance = currentDistance;
+            }
+        }
+
+        //2.) Output the final gate's transform to SacredTarget.
+        targetSite = closestSite.transform;
     }
 }
