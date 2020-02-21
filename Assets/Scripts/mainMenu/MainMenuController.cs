@@ -27,11 +27,7 @@ public class MainMenuController : MonoBehaviour
             {
                 UnPauseGame();
             }
-
-
-
-        }
-            
+        }            
     }
 
     public void GoToScene(int SceneNumber)
@@ -52,5 +48,4 @@ public class MainMenuController : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
     }
-
 }

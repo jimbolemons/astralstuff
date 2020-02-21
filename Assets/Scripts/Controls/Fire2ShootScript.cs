@@ -62,7 +62,6 @@ public class Fire2ShootScript : MonoBehaviour
                         }
                     }
                     chargeTimer = 0;
-
                 }
                 // if the player has held down the  button long enogh befor releseing then fire the 
                 if ((Input.GetMouseButtonUp(1)) && (chargeTimer > attackTime))
@@ -80,7 +79,6 @@ public class Fire2ShootScript : MonoBehaviour
                     chargeTimer = 0;
                 }
             }
-
         }
     }
     

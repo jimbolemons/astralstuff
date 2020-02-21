@@ -10,7 +10,6 @@ public class AudioMenu : MonoBehaviour
     public AudioSource loop;
     void Start()
     {
-
         loop.loop = true;
         StartCoroutine(playSound());
     }
