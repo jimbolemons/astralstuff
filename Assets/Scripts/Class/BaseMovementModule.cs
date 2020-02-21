@@ -55,19 +55,24 @@ public class BaseMovementModule : MonoBehaviour
     //the player's transform, for editing correctly
     public Transform player;
     // Start is called before the first frame update
-
+    public GameObject playermodel;
+    public float rotateSpeed;
+    public Transform pivot;
     
 
 
     void Start()
     {
         coyoteTimer = coyoteTime;
+
+
        
     }
 
     // Update is called once per frame
     void Update()
     {
+        pivot.transform.position = player.transform.position;
         //only run if game isn't paused
         if (!MasterStaticScript.gameIsPaused)
         {
@@ -100,11 +105,11 @@ public class BaseMovementModule : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") != 0)
         {
-            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
+            //player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
         }
         if (Input.GetAxis("Horizontal") != 0)
         {
-            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
+           // player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);
         }
         if (Input.GetMouseButton(0))
         {
@@ -117,10 +122,21 @@ public class BaseMovementModule : MonoBehaviour
         //print(controller.isGrounded);
         if (controller.isGrounded)
         {
-
             direction = Input.GetAxis("Vertical") * transform.forward;
+            //TODO: rotate player and move them forward
             direction += Input.GetAxis("Horizontal") * transform.right;
             direction *= speed;
+
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+            {
+                transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
+                Quaternion newrot = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+                playermodel.transform.rotation = Quaternion.Slerp(playermodel.transform.rotation, newrot, rotateSpeed * Time.deltaTime);
+
+
+            }
+
+           
            
 
             //put animations here i think

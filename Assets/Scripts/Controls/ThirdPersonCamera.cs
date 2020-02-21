@@ -9,7 +9,8 @@ public class ThirdPersonCamera : MonoBehaviour
     float y;
     float x;
     [Tooltip("Player's camera target object.")]
-    public Transform target;    
+    public Transform target;
+    public Transform pivot;
     
     [Tooltip("Using mouse controls?")]
     public  bool mouseControl = true;
@@ -35,6 +36,7 @@ public class ThirdPersonCamera : MonoBehaviour
                 x += Input.GetAxis("Mouse X") * mouseSensitivity;
                 y -= Input.GetAxis("Mouse Y") * mouseSensitivity;
             }
+            pivot.transform.position = target.transform.position;
 
             y = Mathf.Clamp(y, yMinMax.x, yMinMax.y);
 
@@ -45,7 +47,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
             transform.position = target.position - transform.forward * distanceFromTarget;
 
-            target.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            pivot.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         }
     }
 }

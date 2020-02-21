@@ -63,30 +63,34 @@ public class MovModDoubleJump : BaseMovementModule
             if (Input.GetAxis("Vertical") <= deadZone && Input.GetAxis("Horizontal") <= deadZone)
             {
                 controller.Move(pVelocity * Time.deltaTime);
-               
-                if (Input.GetAxis("Vertical") > 0)
-                {
-                    runAnim = 1;
-                }
-                else if (Input.GetAxis("Vertical") < 0)
-                {
-                    runAnim = -1;
-                }
-                else
-                {
-                    
-                    if (runAnim < .1f && runAnim > -.1f)
-                    {
-                        runAnim = 0;
-                    }
-                    else
-                    {
-                        runAnim = runAnim / 1.1f;
-                    }
-                }
-                anim.SetFloat("MoveSpeed", runAnim);
-            }
 
+                /*  if (Input.GetAxis("Vertical") > 0)
+                  {
+                      runAnim = 1;
+                  }
+                  else if (Input.GetAxis("Vertical") < 0)
+                  {
+                      runAnim = -1;
+                  }
+                  else
+                  {
+
+                      if (runAnim < .1f && runAnim > -.1f)
+                      {
+                          runAnim = 0;
+                      }
+                      else
+                      {
+                          runAnim = runAnim / 1.1f;
+                      }
+                  }*/
+                 
+                
+            }
+            
+                anim.SetFloat("MoveSpeed", Mathf.Abs(Mathf.Abs( direction.x) + Mathf.Abs(direction.z)));
+            
+            
             //cleanup
             //if (controller.isGrounded) velocityY = 0;
         }
