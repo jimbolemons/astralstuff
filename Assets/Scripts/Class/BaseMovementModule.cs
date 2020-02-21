@@ -151,6 +151,7 @@ public class BaseMovementModule : MonoBehaviour
         {//if not grounded
             //apply weaker input controls while in the air
             Vector3 airControl = new Vector3();
+
             airControl = Input.GetAxis("Vertical") * transform.forward;
             airControl += Input.GetAxis("Horizontal") * transform.right;
             airControl *= AirSpeed;
@@ -158,6 +159,15 @@ public class BaseMovementModule : MonoBehaviour
             airControl.y += gravity;
 
             direction += airControl * Time.deltaTime;
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+            {
+                transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
+                Quaternion newrot = Quaternion.LookRotation(new Vector3(airControl.x, 0f, airControl.z));
+                playermodel.transform.rotation = Quaternion.Slerp(playermodel.transform.rotation, newrot, rotateSpeed * Time.deltaTime);
+
+
+            }
+           
         }
     }
 

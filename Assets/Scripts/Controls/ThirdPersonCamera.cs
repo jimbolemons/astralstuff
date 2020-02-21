@@ -18,7 +18,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     //how far back the camera sits
     public float distanceFromTarget = 4;
-    public Vector2 yMinMax = new Vector2(-40, 85);
+    public Vector2 yMinMax = new Vector2(-40, 40);
 
     //a bit of dampening on the rotation
     public float rotationSmoothTime = .12f;
