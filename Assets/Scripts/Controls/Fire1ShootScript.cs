@@ -22,6 +22,8 @@ public class Fire1ShootScript : MonoBehaviour
     bool attackDash = false;
     float timer ;
     public float attackDashTime = 1;
+
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,14 +44,19 @@ public class Fire1ShootScript : MonoBehaviour
             {
                 // if the player is holding down the left mouse button
                 if (Input.GetMouseButton(0)) 
-                {                    
+                {
+                    
+
                     if (attackTimer == 0)
                     {
+                        audioManager.Play("fart");
+
                         foreach (Gun g in rightArmGuns)
                         {
                             if (g != null)
                             {
-                              g.Fire();
+                                
+                                g.Fire();
                                 // move player forword
                                 attackDash = true;
                                
@@ -64,10 +71,12 @@ public class Fire1ShootScript : MonoBehaviour
                 //if they are still holding down the mouse button and the timer has gone up enough
                 if (Input.GetMouseButton(0) && attackTimer >= holdBeforNewAttackTime)
                 {
+                    
                     // fires each gun in the hands
                     foreach (Gun g in rightArmGuns)
                     {
                         if (g != null) g.Fire();
+                        
                     }
                     attackTimer = 0;
 

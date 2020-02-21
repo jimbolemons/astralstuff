@@ -23,6 +23,8 @@ public class Fire2ShootScript : MonoBehaviour
     float timer;
     public float attackDashTime = 1;
 
+    public AudioManager audioManager;
+
     void Start()
     {
         UpdateGuns();
@@ -49,6 +51,7 @@ public class Fire2ShootScript : MonoBehaviour
                 // if the player has held down the button long enough then auto attack
                 if (Input.GetMouseButton(1) && chargeTimer >= attackRelese)
                 {
+                    audioManager.Play("timeScream");
                     //fire every gun the hand is holding
                     foreach (Gun g in leftArmGuns)
                     {
