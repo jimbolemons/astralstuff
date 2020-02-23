@@ -25,15 +25,15 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
-        try
-        {
-            if (targetSite != null) print("Site is fine");
-        }
-        catch
-        {
-            FindNearestSite();
-            print("Try not working!");
-        }
+          try
+          {
+              if (targetSite != null) print("Site is fine");
+          }
+          catch
+          {
+              FindNearestSite();
+              print("Try not working!");
+          }
     }
 
     private void LateUpdate()
@@ -48,6 +48,7 @@ public class EnemyTarget : MonoBehaviour
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
 
         float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
+        if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
         switch (currentState)
         {
             case (EnemyState.IDLE):
@@ -96,19 +97,19 @@ public class EnemyTarget : MonoBehaviour
                     agent.isStopped = false;
                     try
                     {
-
-                    agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
-                    transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
-                    transform.rotation *= Quaternion.Euler(0, -90, 0);
+                        agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
+                        transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
+                        transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
                     //print("Demon is moving towards Sacred Site.");
                     catch
                     {
+                        Debug.Log("finding new site");
                         FindNearestSite();
                     }
                 }
 
-                if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+
                 //TODO: refine "back to IDLE" for state machine.
                 //else currentState = EnemyState.IDLE;
                 break;
@@ -139,8 +140,8 @@ public class EnemyTarget : MonoBehaviour
                 distance = currentDistance;
             }
         }
-
+        SetTarget(closestSite.transform);
         //2.) Output the final gate's transform to SacredTarget.
-        targetSite = closestSite.transform;
+
     }
 }

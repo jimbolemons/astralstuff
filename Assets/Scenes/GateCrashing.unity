@@ -438,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92540794}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -49.8, y: 19.5, z: 16.33}
+  m_LocalPosition: {x: -49.8, y: 22.53, z: 16.33}
   m_LocalScale: {x: 5.2, y: 9.6, z: 35.09446}
   m_Children:
   - {fileID: 1292495552}
@@ -1140,7 +1140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533042149}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -49.8, y: 11.6, z: 16.33}
+  m_LocalPosition: {x: -49.8, y: 12.97, z: 16.33}
   m_LocalScale: {x: 5.2, y: 9.6, z: 35.09446}
   m_Children:
   - {fileID: 960174244}
@@ -2415,7 +2415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f1bb1c67989528408a30406a0ddaabd, type: 2}
+  - {fileID: 2100000, guid: f76fcc629456b3545b54a97576917a66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2945,7 +2945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1794010430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6902a77f6a84edf40a1991a8146ae160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startfart: {fileID: 1794010434}
 --- !u!1 &1797732922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,6 +4328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cameraHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629602191960352575, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5114f03e0f4b8c4ebefdc150a69ae15, type: 3}
