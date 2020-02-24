@@ -73,7 +73,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
             //moves the camera twards where it wants to be            
            
-            transform.position = Vector3.Lerp(cameras.transform.position, wantedPos, Time.deltaTime * cameraMoveSpeed);
+            transform.position = Vector3.Lerp(cameras.transform.position, wantedPos + transform.forward, Time.deltaTime * cameraMoveSpeed);
 
             //keeps the pivot in place
             pivot.transform.position = target.transform.position;                                
@@ -82,7 +82,7 @@ public class ThirdPersonCamera : MonoBehaviour
             target.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 
             /// testing random shit down here
-            // cameras.transform.position =  wantedPos + transform.forward * 2;
+            // cameras.transform.position =  ;
             // cameras.transform.position = target.position - transform.forward * cameraDis;
             // cameraDis = Mathf.Lerp(cameras.transform.position.z, wantedPos.z, Time.deltaTime * cameraMoveSpeed);
 
