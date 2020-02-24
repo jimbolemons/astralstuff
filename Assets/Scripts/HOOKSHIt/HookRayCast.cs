@@ -24,6 +24,7 @@ public class HookRayCast : MonoBehaviour
     bool hooked = false;
     bool timerRunning = true;
     bool canShoot = true;
+    bool canHit;
     bool unhookedButInAir = false;
 
     LineRenderer rope;
@@ -99,7 +100,7 @@ public class HookRayCast : MonoBehaviour
             canShoot = true;
         }
 
-        if (Input.GetMouseButton(0) && !fired && canShoot)
+        if (Input.GetMouseButton(0) && !fired && canShoot && canHit)
         {
             fired = true;
         }
@@ -149,12 +150,14 @@ public class HookRayCast : MonoBehaviour
             if (hit.collider.gameObject.tag == "Hookable")
             {
                 img.color = UnityEngine.Color.green;
+                canHit = true;
             }
 
         }
         else
         {
             img.color = UnityEngine.Color.red;
+            canHit = false;
         }
     } 
 
@@ -174,6 +177,7 @@ public class HookRayCast : MonoBehaviour
             else
             {
                 fired = false;
+                
             }
         }
         
@@ -181,8 +185,8 @@ public class HookRayCast : MonoBehaviour
 
     private void DrawHookLine()
     {
-        Debug.DrawRay(hookHolder.transform.position, hookHolder.transform.forward * ropeLength, Color.yellow, layerMask);
-        Debug.DrawRay(cameras.transform.position, cameras.transform.forward * ropeLength, Color.yellow, layerMask);
+        //Debug.DrawRay(hookHolder.transform.position, hookHolder.transform.forward * ropeLength, Color.yellow, layerMask);
+        //Debug.DrawRay(cameras.transform.position, cameras.transform.forward * ropeLength, Color.yellow, layerMask);
 
     }
 

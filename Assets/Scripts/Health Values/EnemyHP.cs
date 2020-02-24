@@ -9,14 +9,14 @@ using UnityEngine;
 public class EnemyHP : ObjectWithHealth
 {
     public CameraShake cameraShake;
-    public GameObject camera;
+    public GameObject cameras;
     private void Start()
     {
         objectType = objectWithHealthType.enemy;
         MasterStaticScript.enemyList.Add(gameObject);
         //print("Enemies currently in Array: " + MasterStaticScript.enemyList.Count);
-        camera = GameObject.Find("/cameraHolder/Camera");
-        cameraShake = camera.GetComponent<CameraShake>();
+        cameras = GameObject.Find("/cameraHolder/Camera");
+        cameraShake = cameras.GetComponent<CameraShake>();
     }
    
 

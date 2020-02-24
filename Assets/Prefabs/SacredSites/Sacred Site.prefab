@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 2
+  maxHealth: 0
   health: 10
   immortal: 0
   isDead: 0

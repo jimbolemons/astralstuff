@@ -53,12 +53,12 @@ public class PickupsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            UseCurrentPickup();
-        }
+        //if (Input.GetKeyDown(KeyCode.V))
+       // {
+       //     UseCurrentPickup();
+       // }
         //uncoment this to make the power up go off instantly
-        //UseCurrentPickup();
+        UseCurrentPickup();
 
         BoostPower();
         BoostSpeed();
@@ -66,7 +66,7 @@ public class PickupsManager : MonoBehaviour
     }
     public void UseCurrentPickup()
     {
-        Debug.Log("Attempt use pickup");
+       // Debug.Log("Attempt use pickup");
         if (hasPower)
             UsePower();        
         else if (hasSpeed)

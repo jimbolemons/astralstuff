@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3247060138756158941}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GunBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3247060140095582882}
   - component: {fileID: 5540569678324034332}
   - component: {fileID: 1037218761630761920}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GunSingleShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
+  targetSite: {fileID: 0}
   currentState: 0
 --- !u!1 &6771074714936927466
 GameObject:
@@ -418,10 +419,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b5884d1529ae4b247b6fd5ef3b9a045b, type: 2}
+    - target: {fileID: -2417255712241724374, guid: 23dff4b78605bfc49b9ba81a2d1331ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 23dff4b78605bfc49b9ba81a2d1331ad,
         type: 3}
       propertyPath: m_Name
       value: conjuror_body_retopo
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 23dff4b78605bfc49b9ba81a2d1331ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092784154428897153, guid: 23dff4b78605bfc49b9ba81a2d1331ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6648682328335869304, guid: 23dff4b78605bfc49b9ba81a2d1331ad,
         type: 3}
@@ -522,6 +538,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Conjuror_hood_retopo
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 00e0a103d916f2a48a1948958e09d1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092784154428897153, guid: 00e0a103d916f2a48a1948958e09d1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e0a103d916f2a48a1948958e09d1d7, type: 3}

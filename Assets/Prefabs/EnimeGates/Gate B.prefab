@@ -179,9 +179,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 2
+  maxHealth: 0
   health: 10
   immortal: 0
   isDead: 0
+  cameraShake: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &2289810819499198713
 GameObject:
   m_ObjectHideFlags: 0

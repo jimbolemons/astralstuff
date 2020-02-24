@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7609488239337315094}
   - component: {fileID: 5540625690113268256}
   - component: {fileID: 3750316350600762978}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
+  targetSite: {fileID: 0}
   currentState: 0
 --- !u!114 &5540625690123750053
 MonoBehaviour:
@@ -247,12 +248,12 @@ PrefabInstance:
     - target: {fileID: 2552185331968797417, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2552185333305863578, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4792109501195072344, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
