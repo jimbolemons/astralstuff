@@ -12,6 +12,9 @@ public class MainMenuController : MonoBehaviour
     KeyCode pauseKey = KeyCode.Escape;
     bool gamePaused = false;
 
+    public GameObject setiings;
+    public GameObject menu;
+
     private void Update()
     {
         if (Input.GetKeyDown(quitKey))
@@ -37,6 +40,7 @@ public class MainMenuController : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+        Debug.Log("I am Quiting the game");
     }
     public void PauseGame()
     {
@@ -48,4 +52,5 @@ public class MainMenuController : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
     }
+    
 }

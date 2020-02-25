@@ -18,7 +18,7 @@ public class CameraShake : MonoBehaviour
             elapsed += Time.deltaTime;
 
             yield return null;
-            Debug.Log("SHAKE SHAKE SHAKE");
+           // Debug.Log("SHAKE SHAKE SHAKE");
             
 
         }
@@ -26,5 +26,7 @@ public class CameraShake : MonoBehaviour
 
 
     }
-   
+    
+
+
 }

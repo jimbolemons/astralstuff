@@ -25,9 +25,12 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
-          try
-          {
-              if (targetSite != null) print("Site is fine");
+        try
+        {
+            if (targetSite != null)
+            { 
+            //print("Site is fine");
+            }
           }
           catch
           {

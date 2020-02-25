@@ -13,6 +13,8 @@ public class BulletDamage : BulletStats
     /// <param name="other"></param>
 
     public bool playerBullet;
+    public CameraShake cameraShake;
+    public GameObject cameras;
     private void Start()
     {
         GameObject player = GameObject.Find("Player 1");
@@ -22,8 +24,10 @@ public class BulletDamage : BulletStats
             {
                 MoreDam();
             }
-            Debug.Log(damage);
+            //Debug.Log(damage);
         }
+        cameras = GameObject.Find("/cameraHolder/Camera");
+        cameraShake = cameras.GetComponent<CameraShake>();
 
     }
     private void MoreDam()
@@ -45,6 +49,7 @@ public class BulletDamage : BulletStats
                     if (target.tag != "EnemyGate")
                     {
                         target.TakeDamage(damage);
+                        StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
                     }
@@ -55,6 +60,7 @@ public class BulletDamage : BulletStats
                     if (target.tag != "SacredSite")
                     {
                         target.TakeDamage(damage);
+                        StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
                     }

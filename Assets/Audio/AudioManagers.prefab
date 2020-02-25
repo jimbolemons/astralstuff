@@ -46,19 +46,19 @@ MonoBehaviour:
   sounds:
   - name: fart
     clip: {fileID: 8300000, guid: 30dfec9fd429e644aa893c87a5e4be93, type: 3}
+    loop: 0
     volume: 1
     pitch: 1
-    loop: 0
     source: {fileID: 0}
   - name: timeScream
     clip: {fileID: 8300000, guid: 9c8bf09da7415fc4792b983682ea78dd, type: 3}
+    loop: 0
     volume: 1
     pitch: 1
-    loop: 0
     source: {fileID: 0}
   - name: MLG
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    loop: 0
     volume: 1
     pitch: 1
-    loop: 0
     source: {fileID: 0}

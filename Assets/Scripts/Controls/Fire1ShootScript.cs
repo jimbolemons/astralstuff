@@ -23,7 +23,7 @@ public class Fire1ShootScript : MonoBehaviour
     float timer ;
     public float attackDashTime = 1;
 
-    public AudioManager audioManager;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class Fire1ShootScript : MonoBehaviour
         //get every Gun script able to fire
         //put into list
         timer = attackDashTime;
+        
     }
 
     void Update()
@@ -49,7 +50,8 @@ public class Fire1ShootScript : MonoBehaviour
 
                     if (attackTimer == 0)
                     {
-                        audioManager.Play("fart");
+                        FindObjectOfType<AudioManager>().Play("fart");
+                        
 
                         foreach (Gun g in rightArmGuns)
                         {

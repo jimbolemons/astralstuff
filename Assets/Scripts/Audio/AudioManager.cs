@@ -2,14 +2,20 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    public Sound[] sounds;
     public static AudioManager instance;
+    public Sound[] sounds;
+    
 
-    void Awake()
+    
+
+    void Start()
     {
-        SingletonCheck();        
+
+       
+
+        // SingletonCheck();        
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -17,7 +23,9 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-        }        
+
+        }
+        
     }
 
     private void Update()
@@ -25,6 +33,7 @@ public class AudioManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             Play("MLG");
+           // Debug.Log("fuck you ya cunt");
         }
     }
 
@@ -37,6 +46,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+        Debug.Log("fuck you ya cunt");
     }
     void SingletonCheck()
     {
@@ -50,5 +60,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
     }
 }

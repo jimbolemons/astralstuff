@@ -24,10 +24,13 @@ public abstract class ObjectWithHealth : MonoBehaviour
     float timer =.1f;
     float InvolnTime = 1f;
 
+    
+
     private void Start()
     {
         if (maxHealth == 0) health = -1;
         health = maxHealth;
+        
     }
     //TODO: Needs separate variable for default health value if the objects able to heal or show a health bar
 
@@ -42,7 +45,8 @@ public abstract class ObjectWithHealth : MonoBehaviour
         {
             TriggerOnDamage();
             health -= damage;
-       
+            
+
             canTakeDamage = false;
         }
 
