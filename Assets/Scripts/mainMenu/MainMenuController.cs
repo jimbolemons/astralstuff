@@ -52,5 +52,10 @@ public class MainMenuController : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
     }
+    public void Mute()
+    {
+
+    }
+
     
 }
