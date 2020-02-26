@@ -33,6 +33,11 @@ PrefabInstance:
       propertyPath: playerBullet
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8524728553021628189, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8909375902189494316, guid: 0d07a05e9be47b540bdcc0ffb346ebcb,
         type: 3}
       propertyPath: m_LocalPosition.x

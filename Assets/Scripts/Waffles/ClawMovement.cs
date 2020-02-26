@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ClawMovement : MonoBehaviour
 {
     [Tooltip("How fast the attack rotates.")]
@@ -12,6 +13,9 @@ public class ClawMovement : MonoBehaviour
     bool grow = true;
 
     public float angleToRotate = 45;
+    public ParticleSystem emit;
+
+    
 
     Vector3 originalScale;
     Vector3 destinationScale;
@@ -69,11 +73,20 @@ public class ClawMovement : MonoBehaviour
             }
         }
     }
+    void DetachParticles()
+    {
+        // This splits the particle off so it doesn't get deleted with the parent
+        emit.transform.parent = null;
 
+        // this stops the particle from creating more bits
+        emit.Stop();
+    }
     public void DestroySelf()
     {
+        DetachParticles();
         Destroy(gameObject);
     }
+
 
    
 }
