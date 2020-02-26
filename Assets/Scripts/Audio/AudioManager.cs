@@ -2,13 +2,15 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+
 public class AudioManager : Singleton<AudioManager>
 {
     public static AudioManager instance;
     public Sound[] sounds;
 
     public float volu = 1f;
-    
+
+   
 
     void Start()
     {
@@ -47,7 +49,8 @@ public class AudioManager : Singleton<AudioManager>
             return;
         }
         s.source.Play();
-        Debug.Log("fuck you ya cunt");
+        //Debug.Log("fuck you");
+        
     }
 
     public void VolumeChange(float vol)
