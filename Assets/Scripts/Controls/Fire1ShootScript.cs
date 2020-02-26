@@ -22,6 +22,7 @@ public class Fire1ShootScript : MonoBehaviour
     bool attackDash = false;
     float timer ;
     public float attackDashTime = 1;
+    public int mouse;
 
    
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class Fire1ShootScript : MonoBehaviour
             if (IsGrounded.down)
             {
                 // if the player is holding down the left mouse button
-                if (Input.GetMouseButton(0)) 
+                if (Input.GetMouseButton(mouse)) 
                 {
                     
 
@@ -71,7 +72,7 @@ public class Fire1ShootScript : MonoBehaviour
                     attackTimer += Time.deltaTime;
                 }
                 //if they are still holding down the mouse button and the timer has gone up enough
-                if (Input.GetMouseButton(0) && attackTimer >= holdBeforNewAttackTime)
+                if (Input.GetMouseButton(mouse) && attackTimer >= holdBeforNewAttackTime)
                 {
                     
                     // fires each gun in the hands
@@ -83,7 +84,7 @@ public class Fire1ShootScript : MonoBehaviour
                     attackTimer = 0;
 
                 }
-                if (Input.GetMouseButtonUp(0) && attackTimer < holdBeforNewAttackTime)
+                if (Input.GetMouseButtonUp(mouse) && attackTimer < holdBeforNewAttackTime)
                 {
                     attackTimer = 0;
 
