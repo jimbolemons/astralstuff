@@ -8,6 +8,7 @@ public class AudioMenu : MonoBehaviour
 
     public AudioSource start;
     public AudioSource loop;
+
     void Start()
     {
         loop.loop = true;
@@ -20,6 +21,7 @@ public class AudioMenu : MonoBehaviour
         yield return new WaitForSeconds(start.clip.length);       
         loop.Play();
     }
+
 }
 
 

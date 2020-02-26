@@ -6,8 +6,8 @@ public class AudioManager : Singleton<AudioManager>
 {
     public static AudioManager instance;
     public Sound[] sounds;
-    
 
+    public float volu = 1f;
     
 
     void Start()
@@ -15,7 +15,7 @@ public class AudioManager : Singleton<AudioManager>
 
        
 
-        // SingletonCheck();        
+              
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -35,6 +35,7 @@ public class AudioManager : Singleton<AudioManager>
             Play("MLG");
            // Debug.Log("fuck you ya cunt");
         }
+       
     }
 
     public void Play(string name)
@@ -48,18 +49,15 @@ public class AudioManager : Singleton<AudioManager>
         s.source.Play();
         Debug.Log("fuck you ya cunt");
     }
-    void SingletonCheck()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
 
+    public void VolumeChange(float vol)
+    {
+        
+        foreach (Sound s in sounds)
+        {
+            volu = vol;
+
+        }
     }
+    
 }

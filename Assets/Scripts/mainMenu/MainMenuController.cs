@@ -14,6 +14,13 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject setiings;
     public GameObject menu;
+    private float volumeFloat = 1f;
+    private AudioSource audioSrc;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
