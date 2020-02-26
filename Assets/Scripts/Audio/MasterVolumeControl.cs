@@ -38,7 +38,7 @@ public class MasterVolumeControl : MonoBehaviour
     public void LateStart()
     {
         num = FindObjectOfType<AudioManager>().volu;
-        Debug.Log(num);
+       // Debug.Log(num);
         if (isSlider)
         {
             mSlider.value = num;
