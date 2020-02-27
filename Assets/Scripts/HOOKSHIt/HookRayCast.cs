@@ -14,6 +14,8 @@ public class HookRayCast : MonoBehaviour
     public float ropeLength = 100f;
     public float hookDelay = 5f;
 
+    public BaseMovementModule playerMove;
+
     Ray line;
     RaycastHit hit;
     Vector3 hookedPos;
@@ -60,16 +62,20 @@ public class HookRayCast : MonoBehaviour
         {
             MakeLines();
             ReelIn();
+            
+
+
         }
 
         if (hooked && fired && ropeDis <= 1)
         {
-           UnHook();            
+            UnHook();
+           
         }
 
-        if (unhookedButInAir & !IsGrounded.downHook)
+        if (unhookedButInAir & !IsGrounded.downHook )
         {
-            if (!IsGrounded.up)
+            if (!IsGrounded.up && !IsGrounded.cannotClimb)
             {
                 ClimbUp();
             }
@@ -119,6 +125,7 @@ public class HookRayCast : MonoBehaviour
     {      
         player.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
         player.transform.Translate(Vector3.up * Time.deltaTime * 18f);
+        playerMove.direction = Vector3.zero;
     }
 
     private void UnHook()
@@ -134,10 +141,12 @@ public class HookRayCast : MonoBehaviour
         timerRunning = true;
         hooked = false;
         fired = false;
+        
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
        // hook.transform.position = hookHolder.transform.position;
         hook.transform.position = cameras.transform.position;
+        
 
         DestroyLines();
         
