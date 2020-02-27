@@ -7,6 +7,7 @@ public class Fire3ShootScript : MonoBehaviour
     [SerializeField]
     Gun[] leftArmGuns;
     public float pFiring = 0;
+    public AudioManager audioManager;
     void Start()
     {
         UpdateGuns();
@@ -38,6 +39,7 @@ public class Fire3ShootScript : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.J))
                 {
+                    audioManager.Play("SLAP");
                     foreach (Gun g in leftArmGuns)
                     {
                         if (g != null) g.StopFire();
