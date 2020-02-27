@@ -51,7 +51,7 @@ public class Fire1ShootScript : MonoBehaviour
 
                     if (attackTimer == 0)
                     {
-                        FindObjectOfType<AudioManager>().Play("fart");
+                        //FindObjectOfType<AudioManager>().Play("SLAP");
                         
 
                         foreach (Gun g in rightArmGuns)

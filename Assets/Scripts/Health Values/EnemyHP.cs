@@ -10,6 +10,7 @@ public class EnemyHP : ObjectWithHealth
 {
     public CameraShake cameraShake;
     public GameObject cameras;
+    public AudioSource slap;
     private void Start()
     {
         objectType = objectWithHealthType.enemy;
@@ -23,13 +24,20 @@ public class EnemyHP : ObjectWithHealth
 
     public override void TriggerOnDeath()
     {
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
-        MasterStaticScript.enemyList.Remove(gameObject);
-        Destroy(gameObject);
+
+        Invoke("Death", .5f);
+        
         
     }
     public override void TriggerOnDamage()
     {
         StartCoroutine(cameraShake.Shake(.15f, .4f));
+        //FindObjectOfType<AudioManager>().Play("SLAP");
+        slap.Play();
+    }
+    private void Death()
+    {
+        MasterStaticScript.enemyList.Remove(gameObject);
+        Destroy(gameObject);
     }
 }

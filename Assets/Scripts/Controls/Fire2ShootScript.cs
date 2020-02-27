@@ -51,7 +51,7 @@ public class Fire2ShootScript : MonoBehaviour
                 // if the player has held down the button long enough then auto attack
                 if (Input.GetMouseButton(1) && chargeTimer >= attackRelese)
                 {
-                    FindObjectOfType<AudioManager>().Play("timeScream");
+                    //FindObjectOfType<AudioManager>().Play("SLAP");
                     //fire every gun the hand is holding
                     foreach (Gun g in leftArmGuns)
                     {
