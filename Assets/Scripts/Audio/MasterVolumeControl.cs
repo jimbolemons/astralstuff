@@ -8,6 +8,7 @@ public class MasterVolumeControl : MonoBehaviour
 
     [SerializeField]
     private float num;
+    private float num2;
     Slider mSlider;
     bool isSlider = false;
     private void Start()        
@@ -49,11 +50,14 @@ public class MasterVolumeControl : MonoBehaviour
     {
         if (num > 0)
         {
+            num2 = num;
             num = 0;
+            mSlider.value = num;
         }
         else
         {
-            num = 1;
+            num = num2;
+            mSlider.value = num;
         }
     }
 }
