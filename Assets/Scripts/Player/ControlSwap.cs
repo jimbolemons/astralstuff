@@ -29,7 +29,7 @@ public class ControlSwap : MonoBehaviour
             setupCheck = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && Input.GetKeyDown(KeyCode.Return)!= keyWasPressed){
+        if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Tab)!= keyWasPressed){
             if(controlState == 0)
             {
                 //state 0 - controlling hope
@@ -44,7 +44,7 @@ public class ControlSwap : MonoBehaviour
             }
         }
         //if key was pressed last frame
-        keyWasPressed = Input.GetKeyDown(KeyCode.Return);
+        keyWasPressed = Input.GetKeyDown(KeyCode.Tab);
     }
 
     void ActivateHope()
