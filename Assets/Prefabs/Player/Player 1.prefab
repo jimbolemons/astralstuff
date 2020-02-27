@@ -766,6 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7110452219524416791}
+  - component: {fileID: 1600123678471378607}
   m_Layer: 0
   m_Name: climbDetector
   m_TagString: Untagged
@@ -787,6 +788,19 @@ Transform:
   m_Father: {fileID: 8630143291791907486}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600123678471378607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484747571100095063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437df001fd0311245ac6648d380fec19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameras: {fileID: 0}
 --- !u!1 &3564725134452862544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,15 +2261,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7211eda00fda3e4baf23e31bc84dc9b, type: 3}
---- !u!4 &8876238830106708581 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8630143290436068238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2597806001448381577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6037408805851811591, guid: a7211eda00fda3e4baf23e31bc84dc9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8630143290436068238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8876238830106708581 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 930786797475310059, guid: a7211eda00fda3e4baf23e31bc84dc9b,
     type: 3}
   m_PrefabInstance: {fileID: 8630143290436068238}
   m_PrefabAsset: {fileID: 0}
