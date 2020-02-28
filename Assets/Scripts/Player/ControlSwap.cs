@@ -57,6 +57,7 @@ public class ControlSwap : MonoBehaviour
 
     void ActivateHope()
     {
+       
         hope.SetActive(true);
         waffles.SetActive(false);
         if (revertToBody)
@@ -67,6 +68,7 @@ public class ControlSwap : MonoBehaviour
     }
     void ActivateWaffles()
     {
+        hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);
         body.SetActive(true);

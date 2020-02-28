@@ -75,8 +75,12 @@ public class HookRayCast : MonoBehaviour
             UnHook();
            
         }
+        if (player.GetComponent<ControlSwap>().controlState != 0)
+        {
+            UnHook();
+        }
 
-        if (unhookedButInAir & !IsGrounded.downHook )
+            if (unhookedButInAir & !IsGrounded.downHook )
         {
             if (!IsGrounded.up && !CanClimb.cannotClimb)
             {
@@ -147,7 +151,7 @@ public class HookRayCast : MonoBehaviour
 
     private void UnHook()
     {
-        if (unhookedButInAir & CanClimb.cannotClimb)
+        if (unhookedButInAir & CanClimb.cannotClimb && player.GetComponent<ControlSwap>().controlState == 0 )
         {
             unhookedButInAir = false;
         }
@@ -226,5 +230,12 @@ public class HookRayCast : MonoBehaviour
     private void DestroyLines()
     {
         rope.SetVertexCount(0);
+    }
+    public void WafflesUnhook()
+    {
+        if (hooked)
+        {
+            UnHook();
+        }
     }
 }

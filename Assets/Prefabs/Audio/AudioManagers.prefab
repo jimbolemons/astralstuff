@@ -51,9 +51,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: timeScream
-    clip: {fileID: 8300000, guid: 9c8bf09da7415fc4792b983682ea78dd, type: 3}
+    clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.136
     pitch: 1
     source: {fileID: 0}
   - name: MLG
@@ -62,3 +62,10 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: SLAP
+    clip: {fileID: 8300000, guid: a146db1885572ee4a90181904c81c65a, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+  volu: 1
