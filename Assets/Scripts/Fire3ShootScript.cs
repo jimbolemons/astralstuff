@@ -39,7 +39,7 @@ public class Fire3ShootScript : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.J))
                 {
-                    audioManager.Play("SLAP");
+                    //audioManager.Play("SLAP");
                     foreach (Gun g in leftArmGuns)
                     {
                         if (g != null) g.StopFire();

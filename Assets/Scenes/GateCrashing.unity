@@ -811,6 +811,11 @@ PrefabInstance:
       propertyPath: cameras
       value: 
       objectReference: {fileID: 328225264}
+    - target: {fileID: 1600123678471378607, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameras
@@ -2532,7 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftArmGuns: []
   pFiring: 0
-  audioManager: {fileID: 1666349676}
+  audioManager: {fileID: 0}
 --- !u!1 &1408019033
 GameObject:
   m_ObjectHideFlags: 0

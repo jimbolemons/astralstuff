@@ -113,7 +113,7 @@ public class BaseMovementModule : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);      
+           // player.transform.rotation = Quaternion.Euler(0, cameraTarget.rotation.eulerAngles.y, 0);      
         }
     }
 

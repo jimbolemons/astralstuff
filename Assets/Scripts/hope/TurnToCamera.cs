@@ -16,7 +16,8 @@ public class TurnToCamera : MonoBehaviour
     {
         if (Input.GetAxis("Fire1") > 0)       {
 
-           transform.LookAt(cameras);
+           //transform.LookAt(cameras);
+           transform.rotation = Quaternion.Euler(0, cameras.rotation.eulerAngles.y, 0);     
         }
 
     }
