@@ -34,7 +34,7 @@ public class Fire3ShootScript : MonoBehaviour
             {
                 //if the player is not holding fire, enable firing
                 //if(Input.GetAxis("Fire3") == 0) pFiring = 0;
-                if (Input.GetKeyDown(KeyCode.J)) pFiring = 0;
+                //if (Input.GetKeyDown(KeyCode.J)) pFiring = 0;
                 //fire every gun the hand is holding               
 
                 if (Input.GetKeyUp(KeyCode.J))
@@ -44,6 +44,7 @@ public class Fire3ShootScript : MonoBehaviour
                     {
                         if (g != null) g.StopFire();
                     }
+                    pFiring = 0;
                 }
             }
         }

@@ -56,8 +56,10 @@ public class ShootCharge : Gun
 
     public override void StopFire()
     {
-        charging = false;
         control.TimeToGo();
+        //reset to defaults
+        charging = false;
         power = basePower;
+        control = null;
     }
 }
