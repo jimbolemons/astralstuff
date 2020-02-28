@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CanClimb : MonoBehaviour
 {
-   public static bool frontClimb;
+   
     int layerMask = 0;
+    public GameObject player;
     public GameObject climbSpot;
+
+    public static bool cannotClimb;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +21,15 @@ public class CanClimb : MonoBehaviour
     {
 
         layerMask = 1 << 2;
-        layerMask = ~layerMask;
-        frontClimb = FrontClimb();
+        layerMask = ~layerMask;       
+        cannotClimb = CannotClimb();
         Debug.DrawRay(climbSpot.transform.position, transform.forward * 2f, Color.yellow, layerMask);
-        Debug.Log(frontClimb);
+
+
+      
+        
     }
-    public bool FrontClimb()
+    public bool CannotClimb()
     {
         return Physics.Raycast(climbSpot.transform.position, transform.forward, 2f, layerMask);
     }

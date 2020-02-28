@@ -10,9 +10,12 @@ public class HookRayCast : MonoBehaviour
     public GameObject cameras;
     public GameObject player;
     public GameObject hook;
+    public GameObject climbDetector;
     public float playerTravelSpeed = 20f;
     public float ropeLength = 100f;
     public float hookDelay = 5f;
+
+    float climbDelay = .2f;
 
     public BaseMovementModule playerMove;
 
@@ -75,9 +78,10 @@ public class HookRayCast : MonoBehaviour
 
         if (unhookedButInAir & !IsGrounded.downHook )
         {
-            if (!IsGrounded.up && !IsGrounded.cannotClimb)
+            if (!IsGrounded.up && !CanClimb.cannotClimb)
             {
                 ClimbUp();
+                BaseMovementModule.gravity = -35;
             }
             else
             {
@@ -122,15 +126,27 @@ public class HookRayCast : MonoBehaviour
     }
 
     private void ClimbUp()
-    {      
-        player.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
-        player.transform.Translate(Vector3.up * Time.deltaTime * 18f);
-        playerMove.direction = Vector3.zero;
+    {
+        if (climbDelay > 0)
+        {
+            
+            player.transform.Translate(Vector3.up * Time.deltaTime * 20f);
+            player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * 15f);
+            playerMove.direction = Vector3.zero;
+        }
+        else
+        {
+
+            unhookedButInAir = false;
+            climbDelay = .2f;
+        }
+        climbDelay -= Time.deltaTime;
+
     }
 
     private void UnHook()
     {
-        if (unhookedButInAir & IsGrounded.cannotClimb)
+        if (unhookedButInAir & CanClimb.cannotClimb)
         {
             unhookedButInAir = false;
         }

@@ -810,11 +810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cameras
       value: 
-      objectReference: {fileID: 328225264}
+      objectReference: {fileID: 557995020}
     - target: {fileID: 1600123678471378607, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
@@ -836,6 +836,11 @@ PrefabInstance:
       propertyPath: playerMove
       value: 
       objectReference: {fileID: 219867909}
+    - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: climbDetector
+      value: 
+      objectReference: {fileID: 456205246}
     - target: {fileID: 8060628530584088470, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: wafflesMovement
@@ -1079,6 +1084,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &456205246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1484747571100095063, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 389225356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &456205249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456205246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b31f0f5ce205c448f0d78c3f637740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1866197797}
+  climbSpot: {fileID: 456205246}
 --- !u!1 &533042149
 GameObject:
   m_ObjectHideFlags: 0

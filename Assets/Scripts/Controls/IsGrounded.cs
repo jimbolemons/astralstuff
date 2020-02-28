@@ -21,7 +21,7 @@ public class IsGrounded : MonoBehaviour
     public static bool front;
     public static bool back;
     public static bool wall;
-    public static bool cannotClimb;
+     //public static bool cannotClimb;
     public static bool canClimb;
 
     int layerMask = 0;
@@ -43,8 +43,8 @@ public class IsGrounded : MonoBehaviour
         front = Front();
         back  = Back();
         wall = TouchingWall();
-        cannotClimb = CannotClimb();
-        Debug.DrawRay(climbSpot.transform.position, transform.forward * 2f, Color.yellow, layerMask);
+        //cannotClimb = CannotClimb();
+        //Debug.DrawRay(climbSpot.transform.position, transform.forward * 2f, Color.yellow, layerMask);
         
 
         Debug.DrawRay(player.transform.position, transform.up* 1.5f, Color.yellow, layerMask);
@@ -106,10 +106,10 @@ public class IsGrounded : MonoBehaviour
     {
         return Physics.Raycast(player.transform.position, -transform.forward, 1f, layerMask);
     }
-    public bool CannotClimb()
-    {
-        return Physics.Raycast(climbSpot.transform.position, transform.forward, 2f, layerMask);
-    }
+    //public bool CannotClimb()
+   // {
+    //    return Physics.Raycast(climbSpot.transform.position, transform.forward, 2f, layerMask);
+    //}
     
 
 }
