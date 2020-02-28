@@ -45,16 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  pivot: {fileID: 0}
-  cameras: {fileID: 0}
+  pivot: {fileID: 6302592387830470819}
+  cameras: {fileID: 4216267902685295215}
   mouseControl: 1
   mouseSensitivity: 5
-  yMinMax: {x: -20, y: 40}
+  yMinMax: {x: -40, y: 60}
   rotationSmoothTime: 0.12
-  cameraDisDefult: 0
-  cameraMoveSpeed: 0
-  minCamDis: 0
-  cameraShake: {fileID: 0}
+  cameraDisDefult: 20
+  cameraMoveSpeed: 100
+  minCamDis: 2
+  cameraShake: {fileID: 4010060582985081985}
 --- !u!1 &4216267902685295215
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17d591d682e04b47b1183e4c1a632d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolume: 1
+  num: 0
 --- !u!114 &4111022351362458198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6377457737545378956}
   m_Layer: 0
-  m_Name: target
+  m_Name: cameraPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
