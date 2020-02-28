@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7726212935373565832
+--- !u!114 &-3096431375999134190
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FloorMat
+  m_Name: GlassesMat
   m_Shader: {fileID: -6465566751694194690, guid: 7fa86d0ffc4a5a7458f9a3fa10c9c156,
     type: 3}
   m_ShaderKeywords: 
@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_763C2CF3:
-        m_Texture: {fileID: 2800000, guid: 283f897e4925411ebbaa758b4cb13fc2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1cdc5b506b1a4a33a53c30669ced1f51, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -82,10 +82,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2E022F52: 0.323
-    - Vector1_41B21C6E: 0.137
-    - Vector1_9CC3C364: 0.129
-    - Vector1_C50B34A3: -0.371
+    - Vector1_2E022F52: 0
+    - Vector1_41B21C6E: 0
+    - Vector1_9CC3C364: 0
+    - Vector1_C50B34A3: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -114,7 +114,7 @@ Material:
     m_Colors:
     - Color_89D12B76: {r: 0, g: 0, b: 0, a: 0}
     - Color_CAA266E1: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.100302584, g: 0.43396226, b: 0.13524073, a: 1}
-    - _Color: {r: 0.10030261, g: 0.4339623, b: 0.13524078, a: 1}
+    - _BaseColor: {r: 0.06603769, g: 0.061988205, b: 0.061988205, a: 1}
+    - _Color: {r: 0.066037714, g: 0.06198823, b: 0.06198823, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

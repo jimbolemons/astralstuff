@@ -47,30 +47,6 @@ MonoBehaviour:
   leftArmGuns: []
   pFiring: 0
   audioManager: {fileID: 0}
---- !u!114 &1856555101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552185333528277719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f7cdf952da4c84da5d24de96efa39c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunEnd: {fileID: 2552185332182562215}
-  projectilePrefab: {fileID: 5756112813902312846, guid: 6b844b4267673a4489c70f764c326eee,
-    type: 3}
-  fireCooldown: 0.1
-  canFire: 1
-  parentType: 0
-  charging: 0
-  power: 0
-  basePower: 1
-  maxPower: 5
-  chargeSpeed: 2
-  control: {fileID: 0}
 --- !u!1 &180241375641232976
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +834,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8630143291791907487}
   climbSpot: {fileID: 1484747571100095063}
+--- !u!114 &1856555101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552185333528277719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f7cdf952da4c84da5d24de96efa39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunEnd: {fileID: 2552185332182562215}
+  projectilePrefab: {fileID: 5756112813902312846, guid: 6b844b4267673a4489c70f764c326eee,
+    type: 3}
+  fireCooldown: 0.1
+  canFire: 1
+  parentType: 0
+  charging: 0
+  power: 0
+  basePower: 1
+  maxPower: 5
+  chargeSpeed: 2
+  control: {fileID: 0}
 --- !u!54 &1760206563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1517,7 +1517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8630143290454248279
 Transform:
   m_ObjectHideFlags: 0

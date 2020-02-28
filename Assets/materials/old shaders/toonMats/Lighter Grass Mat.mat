@@ -7,21 +7,21 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GunMat
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Name: Lighter Grass Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 7fa86d0ffc4a5a7458f9a3fa10c9c156,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_763C2CF3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bb8dfcd263ad4eb383a33d74a720be6f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -90,7 +90,6 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -102,11 +101,11 @@ Material:
     m_Colors:
     - Color_89D12B76: {r: 0, g: 0, b: 0, a: 0}
     - Color_CAA266E1: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.4879405, g: 0.65715975, b: 0.8018868, a: 1}
-    - _Color: {r: 0.48794055, g: 0.65715975, b: 0.8018868, a: 1}
+    - _BaseColor: {r: 0.42777875, g: 0.75471693, b: 0.33107862, a: 1}
+    - _Color: {r: 0.42777878, g: 0.754717, b: 0.33107865, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &8735880920001554763
+--- !u!114 &488569655535957251
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
