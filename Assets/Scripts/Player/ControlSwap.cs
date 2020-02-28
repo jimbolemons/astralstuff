@@ -8,6 +8,10 @@ public class ControlSwap : MonoBehaviour
     public GameObject body;
     public GameObject waffles;
 
+    public BaseMovementModule hopeMovement;
+    public BaseMovementModule wafflesMovement;
+    
+
     public int controlState = 0;
 
     public bool revertToBody;
@@ -23,21 +27,25 @@ public class ControlSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!setupCheck && Time.time > .1f)
+        if (!setupCheck && Time.time > .1f)
         {
             ActivateHope();
             setupCheck = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Tab)!= keyWasPressed){
-            if(controlState == 0)
+        if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Tab) != keyWasPressed)
+        {
+            if (controlState == 0)
             {
+                Vector3 velocity = hopeMovement.pVelocity;
                 //state 0 - controlling hope
                 ActivateWaffles();
+                wafflesMovement.pVelocity = velocity;
                 controlState = 1;
-            } else
-            if(controlState == 1)
-            {
+            }
+            else
+            if (controlState == 1)
+            {                
                 ActivateHope();
                 //state 1 controlling waffles
                 controlState = 0;
@@ -53,9 +61,9 @@ public class ControlSwap : MonoBehaviour
         waffles.SetActive(false);
         if (revertToBody)
         {
-        transform.position = body.transform.position;
+            transform.position = body.transform.position;
         }
-        body.SetActive(false);        
+        body.SetActive(false);
     }
     void ActivateWaffles()
     {
