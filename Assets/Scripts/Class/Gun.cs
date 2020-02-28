@@ -27,9 +27,14 @@ public abstract class Gun : MonoBehaviour
         parentType = GetComponentInParent<ObjectWithHealth>().objectType;
     }
 
+    public virtual void StopFire()
+    {
+
+    }
     /// <summary>
     /// Fire function to be called and set up based on each individual gun's needs
     /// </summary>
+    /// 
     public abstract void Fire();
     /// <summary>
     /// Reset the gun to be ready to fire (after cooldown is done)

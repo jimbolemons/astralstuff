@@ -11,26 +11,32 @@ public class BulletMovement : MonoBehaviour
     public float speed = 20;
     [Tooltip("How long til the bullet times out.")]
     public float lifeSpan = 4;
+    public bool moving = true;
     void Start()
     {
         //Invoke("DestroySelf", 4);
     }
 
-    
+
     void Update()
     {
         //if game is not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
             //move forward
-        transform.position += this.transform.forward * speed * Time.deltaTime;
-            lifeSpan -= Time.deltaTime;
-            if(lifeSpan <= 0)
+            if (moving)
             {
-                DestroySelf();
+
+                transform.position += this.transform.forward * speed * Time.deltaTime;
+                lifeSpan -= Time.deltaTime;
+                if (lifeSpan <= 0)
+                {
+                    DestroySelf();
+                }
             }
         }
     }
+
 
     public void DestroySelf()
     {

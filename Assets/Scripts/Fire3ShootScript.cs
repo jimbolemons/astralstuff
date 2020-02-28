@@ -7,6 +7,7 @@ public class Fire3ShootScript : MonoBehaviour
     [SerializeField]
     Gun[] leftArmGuns;
     public float pFiring = 0;
+    public AudioManager audioManager;
     void Start()
     {
         UpdateGuns();
@@ -20,7 +21,7 @@ public class Fire3ShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             //if player presses fire2
-            if (Input.GetAxis("Fire3") > 0 && pFiring == 0)
+            if (Input.GetKeyDown(KeyCode.J) && pFiring == 0)
             {
                 //fire every gun the hand is holding
                 foreach (Gun g in leftArmGuns)
@@ -32,7 +33,19 @@ public class Fire3ShootScript : MonoBehaviour
             else
             {
                 //if the player is not holding fire, enable firing
-                if(Input.GetAxis("Fire3") == 0) pFiring = 0;
+                //if(Input.GetAxis("Fire3") == 0) pFiring = 0;
+                //if (Input.GetKeyDown(KeyCode.J)) pFiring = 0;
+                //fire every gun the hand is holding               
+
+                if (Input.GetKeyUp(KeyCode.J))
+                {
+                    audioManager.Play("SLAP");
+                    foreach (Gun g in leftArmGuns)
+                    {
+                        if (g != null) g.StopFire();
+                    }
+                    pFiring = 0;
+                }
             }
         }
     }
