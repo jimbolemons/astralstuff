@@ -43,7 +43,7 @@ public class ColorSwap : MonoBehaviour
                 dummy = Instantiate(dummyBase, transform.position, Quaternion.identity);
 
                 //set cammera target to demon                 
-                cam.GetComponent<ThirdPersonCamera>().target = dummy.gameObject.transform.GetChild(0);                
+                cam.GetComponent<ThirdPersonCamera>().cameraTarget = dummy.gameObject.transform.GetChild(0);                
 
                 //turn off controls for hope
                 //TODO
@@ -61,7 +61,7 @@ public class ColorSwap : MonoBehaviour
                 //TODO
 
                 //set camera target to hope
-                cam.GetComponent<ThirdPersonCamera>().target = playerTarget.gameObject.transform.GetChild(0);
+                cam.GetComponent<ThirdPersonCamera>().cameraTarget = playerTarget.gameObject.transform.GetChild(0);
 
                 //turn on hopes controls 
                 //TODO

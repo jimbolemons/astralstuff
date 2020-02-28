@@ -49,7 +49,7 @@ public class BulletDamage : BulletStats
                     if (target.tag != "EnemyGate")
                     {
                         target.TakeDamage(damage);
-                        StartCoroutine(cameraShake.Shake(.15f, .4f));
+                        //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
                     }
@@ -58,9 +58,9 @@ public class BulletDamage : BulletStats
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
                 {
                     if (target.tag != "SacredSite")
-                    {
+                   {
                         target.TakeDamage(damage);
-                        StartCoroutine(cameraShake.Shake(.15f, .4f));
+                        //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
                     }
@@ -86,6 +86,11 @@ public class BulletDamage : BulletStats
                 if (parentType == ObjectWithHealth.objectWithHealthType.enemy){
                     if(target.tag!= "EnemyGate")
                     {
+                        if(target.GetComponent<ObjectWithHealth>().objectType == ObjectWithHealth.objectWithHealthType.player)
+                        {
+                            StartCoroutine(cameraShake.Shake(.15f, .4f));
+                        }
+                        
                         target.TakeDamage(damage);
                        // Destroy(gameObject);
                     }

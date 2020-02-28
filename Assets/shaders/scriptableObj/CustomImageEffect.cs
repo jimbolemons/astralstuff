@@ -9,6 +9,4 @@ public class CustomImageEffect : MonoBehaviour
     {
         Graphics.Blit(source, destination, EffectMat);
     }
-
-
 }
