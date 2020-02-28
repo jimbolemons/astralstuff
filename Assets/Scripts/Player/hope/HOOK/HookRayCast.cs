@@ -235,7 +235,10 @@ public class HookRayCast : MonoBehaviour
     {
         if (hooked)
         {
+           
             UnHook();
+            //TODO: need to send waffles twards the grapling hook point
+
         }
     }
 }
