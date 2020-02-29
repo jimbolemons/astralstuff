@@ -16139,6 +16139,10 @@ PrefabInstance:
       propertyPath: gunEnd
       value: 
       objectReference: {fileID: 138862044}
+    - target: {fileID: 1856555101, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: cameraPivot
+      value: 
+      objectReference: {fileID: 138862044}
     - target: {fileID: 843937652316500862, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: audioManager
@@ -16229,7 +16233,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4792109502320995174, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
 --- !u!1 &840076745
 GameObject:
