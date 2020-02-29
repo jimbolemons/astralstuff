@@ -95,11 +95,12 @@ public class EnemyTarget : MonoBehaviour
                     agent.isStopped = true;
                 }
                 else
-                {
+                {                   
                     //path towards target
-                    agent.isStopped = false;
+                    agent.isStopped = false;                    
                     try
                     {
+                        //Debug.Log(agent.SetDestination(targetSite.position));
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
                         transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
                         transform.rotation *= Quaternion.Euler(0, -90, 0);
@@ -107,7 +108,7 @@ public class EnemyTarget : MonoBehaviour
                     //print("Demon is moving towards Sacred Site.");
                     catch
                     {
-                        Debug.Log("finding new site");
+                        //Debug.Log("finding new site");
                         FindNearestSite();
                     }
                 }

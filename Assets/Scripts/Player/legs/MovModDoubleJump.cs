@@ -55,6 +55,7 @@ public class MovModDoubleJump : BaseMovementModule
 
 
             //apply movement
+
             controller.Move(direction * Time.deltaTime);
             //TODO: Make this actually work better
             pVelocity = direction * (1 - friction);

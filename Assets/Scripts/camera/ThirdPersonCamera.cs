@@ -31,12 +31,16 @@ public class ThirdPersonCamera : MonoBehaviour
 
     Ray line;
     int layerMask = 0;
+    bool raycastConfirm = false;
     RaycastHit hit;
 
     public float cameraOffsetAngle = 15;
     public float cameraDis = -20;
     public float cameraMoveSpeed;
     public float minCamDis;
+
+    bool lerping = false;
+
     Vector3 wantedPos;
 
     public CameraShake cameraShake;
@@ -57,14 +61,25 @@ public class ThirdPersonCamera : MonoBehaviour
             //transform.position = cameraTarget.transform.position;
 
             float distance = Vector3.Distance(transform.position, cameraTarget.transform.position);
+            if (distance < .5f) lerping = false;
 
-            if (distance > cameraSnapDistance)
+            if (lerping)
             {
                 transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, Time.deltaTime * cameraMoveSpeed);
             }
             else
             {
                 transform.position = cameraTarget.transform.position;
+            }
+
+
+            if(raycastConfirm)
+            {
+                mainCamera.transform.position = wantedPos;
+            }
+            else
+            {
+                UpdateCameraDistance();
             }
 
            // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);
@@ -97,6 +112,11 @@ public class ThirdPersonCamera : MonoBehaviour
         }
     }
 
+
+    public void SetLerp(bool x)
+    {
+        lerping = x;
+    }
     void UpdateCameraDistance()
     {
         float x = mainCamera.transform.localRotation.x;
@@ -109,7 +129,7 @@ public class ThirdPersonCamera : MonoBehaviour
         if (-z != cameraDis)
         {
             mainCamera.transform.localPosition = new Vector3(0, 0, -cameraDis);
-            pivot.transform.position = new Vector3(0, -1.5f, cameraDis);
+           // pivot.transform.position = new Vector3(0, -1.5f, cameraDis);
         }
     }
 
@@ -119,14 +139,18 @@ public class ThirdPersonCamera : MonoBehaviour
         layerMask = 1 << 12;
         //layerMask = ~layerMask;
         line = new Ray(transform.position, -transform.forward);
-        wantedPos = transform.position - transform.forward * cameraDis;
+        wantedPos = transform.position - transform.forward * cameraDis;        
 
         if (Physics.Raycast(line, out hit, cameraDis, layerMask))
         {
             wantedPos = hit.point;
+            raycastConfirm = true;
         }
         else
-
+        {
+            raycastConfirm = false;
             Debug.DrawRay(pivot.transform.position, -pivot.transform.forward * cameraDis, Color.green);
+        }
+
     }
 }

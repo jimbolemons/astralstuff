@@ -47,16 +47,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 0}
   pivot: {fileID: 6302592387830470819}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 4216267902685295215}
   mouseControl: 1
   mouseSensitivity: 5
   yMinMax: {x: -40, y: 60}
   rotationSmoothTime: 0.12
-  cameraSnapDistance: 0.5
-  cameraOffsetAngle: 15
-  cameraDis: -20
-  cameraMoveSpeed: 100
-  minCamDis: 2
+  cameraSnapDistance: 1
+  cameraOffsetAngle: 0
+  cameraDis: 20
+  cameraMoveSpeed: 10
+  minCamDis: 3
   cameraShake: {fileID: 4010060582985081985}
 --- !u!1 &4216267902685295215
 GameObject:
@@ -92,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4216267902685295215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2179153274459336449}
@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6302592387830470819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2179153274459336449}

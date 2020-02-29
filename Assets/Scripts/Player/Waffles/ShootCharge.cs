@@ -13,6 +13,8 @@ public class ShootCharge : Gun
     public PlayerEnergy energy;
     public HadokenControl control;
 
+    public Transform cameraPivot;
+
     void Update()
     {
         if (charging && energy.IsCharging())
@@ -43,6 +45,7 @@ public class ShootCharge : Gun
 
         control = g.GetComponentInChildren<HadokenControl>();
         control.SetParent(gameObject);
+        control.SetTransform(cameraPivot);
 
         try
         {
@@ -61,6 +64,7 @@ public class ShootCharge : Gun
         {
             energy.StopCharging();
             control.TimeToGo();
+
             //reset to defaults
             charging = false;
             power = basePower;

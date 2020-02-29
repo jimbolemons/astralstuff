@@ -8,6 +8,8 @@ public class HadokenControl : MonoBehaviour
     public BulletStats stats;
     public BulletMovement movement;
 
+    Transform holderTransform;
+
     public float power = 1;
     
     // Start is called before the first frame update
@@ -40,12 +42,18 @@ public class HadokenControl : MonoBehaviour
     }
     public void TimeToGo()
     {
+        transform.rotation = holderTransform.rotation;
         stats.damage = power;
         movement.speed = 30 - power;
         movement.moving = true;
         transform.parent = null;
     }
 
+
+    public void SetTransform(Transform t)
+    {
+        holderTransform = t;
+    }
     public void SetParent(GameObject parent)
     {
         transform.parent = parent.transform;

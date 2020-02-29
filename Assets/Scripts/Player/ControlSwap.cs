@@ -10,6 +10,8 @@ public class ControlSwap : MonoBehaviour
 
     public BaseMovementModule hopeMovement;
     public BaseMovementModule wafflesMovement;
+
+    public ThirdPersonCamera cameraControl;
     
 
     public int controlState = 0;
@@ -45,10 +47,11 @@ public class ControlSwap : MonoBehaviour
             }
             else
             if (controlState == 1)
-            {                
+            {   
                 ActivateHope();
                 //state 1 controlling waffles
                 controlState = 0;
+                cameraControl.SetLerp(true);
             }
         }
         //if key was pressed last frame
