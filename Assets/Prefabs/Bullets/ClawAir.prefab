@@ -4763,9 +4763,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3522275354114264131}
   - component: {fileID: 2617781418448301915}
-  - component: {fileID: 9070791931158131424}
   - component: {fileID: 5969208344186071573}
   - component: {fileID: 4423807101508734010}
+  - component: {fileID: 4874684830546942886}
   m_Layer: 0
   m_Name: ClawAir
   m_TagString: Untagged
@@ -4805,23 +4805,6 @@ MonoBehaviour:
   lifeSpan: 0.5
   angleToRotate: 135
   emit: {fileID: 1264630970634281993}
---- !u!114 &9070791931158131424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9198092845644337387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52c0aabffa5edc44af7e11120b9cb76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  parentType: 0
-  playerBullet: 1
-  cameraShake: {fileID: 0}
-  cameras: {fileID: 0}
 --- !u!54 &5969208344186071573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4851,6 +4834,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34576172, y: 0.33092523, z: 3.5063517}
   m_Center: {x: 0.036039382, y: 0.011006236, z: 1.2531756}
+--- !u!114 &4874684830546942886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198092845644337387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc4c1a25e47f6b4b9d0e5e2bfcdcd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  parentType: 0
+  playerBullet: 0
+  cameraShake: {fileID: 0}
+  cameras: {fileID: 0}
 --- !u!1001 &6095912048958609032
 PrefabInstance:
   m_ObjectHideFlags: 0

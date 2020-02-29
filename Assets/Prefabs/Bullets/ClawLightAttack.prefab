@@ -4763,10 +4763,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8909375902189494316}
   - component: {fileID: 8003440506540163892}
-  - component: {fileID: 3937335590334160527}
   - component: {fileID: 1842877922767275642}
   - component: {fileID: 8512174891321090133}
   - component: {fileID: 5412369774175438119}
+  - component: {fileID: 962979559007548004}
   m_Layer: 0
   m_Name: ClawLightAttack
   m_TagString: Untagged
@@ -4806,23 +4806,6 @@ MonoBehaviour:
   lifeSpan: 0.5
   angleToRotate: 135
   emit: {fileID: 8524728553021628189}
---- !u!114 &3937335590334160527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811140800667417732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52c0aabffa5edc44af7e11120b9cb76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  parentType: 0
-  playerBullet: 1
-  cameraShake: {fileID: 0}
-  cameras: {fileID: 0}
 --- !u!54 &1842877922767275642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4948,6 +4931,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &962979559007548004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811140800667417732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc4c1a25e47f6b4b9d0e5e2bfcdcd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  parentType: 0
+  playerBullet: 0
+  cameraShake: {fileID: 0}
+  cameras: {fileID: 0}
 --- !u!1001 &2295942310921616103
 PrefabInstance:
   m_ObjectHideFlags: 0

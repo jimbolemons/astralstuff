@@ -34,7 +34,7 @@ public class BulletDamage : BulletStats
     {
         damage = damage * 2;
     }
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         ObjectWithHealth target = other.gameObject.GetComponent<ObjectWithHealth>();
 
@@ -51,7 +51,7 @@ public class BulletDamage : BulletStats
                         target.TakeDamage(damage);
                         //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
-                        //Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                 }
                 else
@@ -62,7 +62,7 @@ public class BulletDamage : BulletStats
                         target.TakeDamage(damage);
                         //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
-                        //Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                 }
             }
@@ -74,7 +74,7 @@ public class BulletDamage : BulletStats
     /// when the bullet collides with another collider
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         ObjectWithHealth target = collision.gameObject.GetComponent<ObjectWithHealth>();
 
@@ -92,7 +92,7 @@ public class BulletDamage : BulletStats
                         }
                         
                         target.TakeDamage(damage);
-                       // Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                 }else 
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
@@ -100,7 +100,7 @@ public class BulletDamage : BulletStats
                     if(target.tag!= "SacredSite")
                     {
                         target.TakeDamage(damage);
-                        //Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                 }
             }
