@@ -103,13 +103,13 @@ public class ThirdPersonCamera : MonoBehaviour
         if (x != -cameraOffsetAngle)
         {
             mainCamera.transform.localRotation = Quaternion.Euler(-cameraOffsetAngle, 0, 0);
-
         }
         //mainCamera.transform.eulerAngles = new Vector3(cameraOffsetAngle, 0, 0);
         float z = mainCamera.transform.localPosition.z;
         if (-z != cameraDis)
         {
             mainCamera.transform.localPosition = new Vector3(0, 0, -cameraDis);
+            pivot.transform.position = new Vector3(0, -1.5f, cameraDis);
         }
     }
 

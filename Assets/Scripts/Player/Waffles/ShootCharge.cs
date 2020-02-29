@@ -10,13 +10,14 @@ public class ShootCharge : Gun
     public float maxPower = 5;
     public float chargeSpeed = 2;
 
+    public PlayerEnergy energy;
     public HadokenControl control;
 
     void Update()
     {
-        if (charging)
+        if (charging && energy.IsCharging())
         {
-            if(power < maxPower)
+            if (power < maxPower)
             {
                 power += Time.deltaTime * chargeSpeed;
             }
@@ -25,7 +26,7 @@ public class ShootCharge : Gun
     }
     public override void Fire()
     {
-        if (canFire)
+        if (canFire && energy.StartCharging())
         {
             power = basePower;
 
@@ -37,16 +38,16 @@ public class ShootCharge : Gun
     void StartCharge()
     {
         charging = true;
-        
+
         GameObject g = Instantiate(projectilePrefab, gunEnd.position, gunEnd.rotation);
-        
+
         control = g.GetComponentInChildren<HadokenControl>();
         control.SetParent(gameObject);
-       
+
         try
         {
             g.GetComponentInChildren<BulletStats>().SetParent(parentType);
-            
+
         }
         catch
         {
@@ -56,10 +57,14 @@ public class ShootCharge : Gun
 
     public override void StopFire()
     {
-        control.TimeToGo();
-        //reset to defaults
-        charging = false;
-        power = basePower;
-        control = null;
+        if (charging)
+        {
+            energy.StopCharging();
+            control.TimeToGo();
+            //reset to defaults
+            charging = false;
+            power = basePower;
+            control = null;
+        }
     }
 }
