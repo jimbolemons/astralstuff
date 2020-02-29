@@ -28,6 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6377457737545378956}
   - {fileID: 389992987227428203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,14 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8471e1bc0aef10d4282fdd57c55a92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  cameraTarget: {fileID: 0}
   pivot: {fileID: 6302592387830470819}
-  cameras: {fileID: 4216267902685295215}
+  mainCamera: {fileID: 0}
   mouseControl: 1
   mouseSensitivity: 5
   yMinMax: {x: -40, y: 60}
   rotationSmoothTime: 0.12
-  cameraDisDefult: 20
+  cameraSnapDistance: 0.5
+  cameraOffsetAngle: 15
+  cameraDis: -20
   cameraMoveSpeed: 100
   minCamDis: 2
   cameraShake: {fileID: 4010060582985081985}
@@ -91,10 +94,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6377457737545378956}
+  m_Children: []
   m_Father: {fileID: 2179153274459336449}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2287584592259221699
 Camera:
@@ -338,6 +340,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 389992987227428203}
+  m_Father: {fileID: 2179153274459336449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

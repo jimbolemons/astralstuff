@@ -67,10 +67,10 @@ public class ThirdPersonCamera : MonoBehaviour
                 transform.position = cameraTarget.transform.position;
             }
 
-
+           // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);
 
             //if camera distance has been updated, fix camera position
-            UpdateCameraDistance();
+           // UpdateCameraDistance();
 
             CheckRayCamera();
 
@@ -118,8 +118,8 @@ public class ThirdPersonCamera : MonoBehaviour
         //checks only on ground layer
         layerMask = 1 << 12;
         //layerMask = ~layerMask;
-        line = new Ray(pivot.transform.position, -pivot.transform.forward);
-        wantedPos = cameraTarget.position - transform.forward * cameraDis;
+        line = new Ray(transform.position, -transform.forward);
+        wantedPos = transform.position - transform.forward * cameraDis;
 
         if (Physics.Raycast(line, out hit, cameraDis, layerMask))
         {

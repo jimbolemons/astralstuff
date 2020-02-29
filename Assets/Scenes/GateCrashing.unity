@@ -3959,7 +3959,7 @@ PrefabInstance:
     - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
       propertyPath: cameraSnapDistance
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
@@ -4417,6 +4417,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1208397339, guid: 25045b06f51116044b6ee03bf42b4ccc, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8989271491233756866, guid: 25045b06f51116044b6ee03bf42b4ccc,
         type: 3}
       propertyPath: player
