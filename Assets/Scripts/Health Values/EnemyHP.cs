@@ -31,7 +31,7 @@ public class EnemyHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
+        //StartCoroutine(cameraShake.Shake(.15f, .4f));
         //FindObjectOfType<AudioManager>().Play("SLAP");
         slap.Play();
     }
