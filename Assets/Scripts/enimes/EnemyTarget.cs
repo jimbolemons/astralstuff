@@ -100,7 +100,7 @@ public class EnemyTarget : MonoBehaviour
                     agent.isStopped = false;                    
                     try
                     {
-                        //Debug.Log(agent.SetDestination(targetSite.position));
+                        Debug.Log(agent.SetDestination(targetSite.position));
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
                         transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
                         transform.rotation *= Quaternion.Euler(0, -90, 0);

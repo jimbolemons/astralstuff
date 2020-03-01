@@ -72,7 +72,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2289810818737904111}
-  m_LocalRotation: {x: -0, y: -0, z: 0.19936788, w: 0.97992474}
+  m_LocalRotation: {x: 0, y: 0, z: 0.19936788, w: 0.97992474}
   m_LocalPosition: {x: 34.31, y: -1.3199997, z: 48.62}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -156,7 +156,7 @@ MonoBehaviour:
   spawnArea: {fileID: 2289810818405678378}
   imp: {fileID: 5540625690113268280, guid: 921fc764a1be175428c117a348de83b4, type: 3}
   brute: {fileID: 4588974315857495838, guid: 2b48bdba13e10f54c82bb116c15caa24, type: 3}
-  conjuror: {fileID: 4792024901624038468, guid: 52836903b8df2ab41892cca73a75f6e8,
+  conjuror: {fileID: 4792024901624038468, guid: a880a38c522277d43a30aa62c6837575,
     type: 3}
   numberOfDemons: 0
   demonsToSpawn: 5
