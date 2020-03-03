@@ -69,6 +69,7 @@ public class ShootCharge : Gun
             charging = false;
             power = basePower;
             control = null;
+            FindObjectOfType<AudioManager>().Play("fart");
         }
     }
 }

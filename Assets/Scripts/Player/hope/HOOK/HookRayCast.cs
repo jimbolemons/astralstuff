@@ -63,9 +63,10 @@ public class HookRayCast : MonoBehaviour
 
         if (hooked && fired)
         {
+            
             MakeLines();
             ReelIn();
-            
+          
 
 
         }
@@ -199,6 +200,7 @@ public class HookRayCast : MonoBehaviour
             //hookedPos = hit.point; 
             if (hit.collider.gameObject.tag == "Hookable")
             {
+                FindObjectOfType<AudioManager>().Play("fart");
                 hook.transform.position = hit.point;
                 ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
                 hooked = true;
