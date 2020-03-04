@@ -10,6 +10,11 @@ public class EnemyTarget : MonoBehaviour
 
     [Tooltip("Reference to the player.")]
     public float distanceToPlayer = 20;
+    //more anim stuff
+    ImpAnimCOn impAnim;
+    BruteAnimCon bruteAnim;
+    conjAnimCon conjAnim;
+
     NavMeshAgent agent;
     public Transform targetSite;
     private bool readyToGo = false;
@@ -21,6 +26,10 @@ public class EnemyTarget : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        //animstuf go here
+        impAnim = gameObject.GetComponentInChildren<ImpAnimCOn>();
+        bruteAnim = gameObject.GetComponentInChildren<BruteAnimCon>();
+        conjAnim = gameObject.GetComponentInChildren<conjAnimCon>();
     }
 
     void Update()
@@ -61,7 +70,17 @@ public class EnemyTarget : MonoBehaviour
                 }
                 catch
                 {
+                    
                 }
+                //Anims Idle
+                if(impAnim != null)
+                impAnim.run = false;
+                if (bruteAnim != null)
+                    bruteAnim.run = false;
+                if (conjAnim != null)
+                    conjAnim.run = false;
+
+
                 forwardTransform = transform.position;
                 transform.LookAt(forwardTransform);
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
@@ -75,6 +94,13 @@ public class EnemyTarget : MonoBehaviour
                 }
                 else
                 {
+                    //Anims Walking
+                    if (impAnim != null)
+                        impAnim.run = true;
+                    if (bruteAnim != null)
+                        bruteAnim.run = true;
+                    if (conjAnim != null)
+                        conjAnim.run = true;
                     //path towards target
                     agent.isStopped = false;
                     agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
@@ -85,8 +111,16 @@ public class EnemyTarget : MonoBehaviour
                     //print("Demon is following player.");
                 }
 
-                if (dist > distanceToPlayer) currentState = EnemyState.IDLE;
-                if (readyToGo && dist > distanceToPlayer) currentState = EnemyState.FOLLOW_SITE;
+                if (dist > distanceToPlayer)
+                {
+                    currentState = EnemyState.IDLE;
+                   
+                }
+                if (readyToGo && dist > distanceToPlayer)
+                {
+                    currentState = EnemyState.FOLLOW_SITE;
+                    
+                }
                 break;
             case (EnemyState.FOLLOW_SITE):
                 //only move if game is not paused
@@ -95,12 +129,19 @@ public class EnemyTarget : MonoBehaviour
                     agent.isStopped = true;
                 }
                 else
-                {                   
+                {
+                    //ANims Walking
+                    if (impAnim != null)
+                        impAnim.run = true;
+                    if (bruteAnim != null)
+                        bruteAnim.run = true;
+                    if (conjAnim != null)
+                        conjAnim.run = true;
                     //path towards target
                     agent.isStopped = false;                    
                     try
                     {
-                        Debug.Log(agent.SetDestination(targetSite.position));
+                       // Debug.Log(agent.SetDestination(targetSite.position));
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
                         transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
                         transform.rotation *= Quaternion.Euler(0, -90, 0);

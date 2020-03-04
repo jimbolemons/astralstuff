@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 95612694704914839, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475837283360084724, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
@@ -783,6 +783,21 @@ PrefabInstance:
       propertyPath: dance
       value: 
       objectReference: {fileID: 140181142}
+    - target: {fileID: 843937651587086719, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: AirSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 843937651587086719, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 843937651587086719, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: canJump
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1539676818644627001, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_RootOrder
@@ -883,6 +898,11 @@ PrefabInstance:
       propertyPath: animator2
       value: 
       objectReference: {fileID: 140181139}
+    - target: {fileID: 8630143290272273733, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: canJump
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8630143290454248264, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_IsActive
