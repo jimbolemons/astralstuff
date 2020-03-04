@@ -571,7 +571,9 @@ MonoBehaviour:
   playermodel: {fileID: 352829498485110578}
   rotateSpeed: 15
   pivot: {fileID: 8630143290272464602}
+  canJump: 0
   doubleJumpBase: 0
+  dance: {fileID: 0}
   animator: {fileID: 1968476983984697}
 --- !u!1 &843937652294938868
 GameObject:
@@ -1380,6 +1382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator2: {fileID: 6794763493654580637}
+  run: 0
 --- !u!1 &7314384854417933944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1518,9 @@ MonoBehaviour:
   playermodel: {fileID: 1968476983984697}
   rotateSpeed: 15
   pivot: {fileID: 8630143290272464602}
+  canJump: 0
   doubleJumpBase: 1
+  dance: {fileID: 0}
   animator: {fileID: 1968476983984697}
 --- !u!1 &8630143290272464603
 GameObject:
@@ -1888,6 +1893,7 @@ MonoBehaviour:
   player: {fileID: 8630143291791907487}
   climbSpot: {fileID: 1484747571100095063}
   animator: {fileID: 1968476983984697}
+  animator2: {fileID: 0}
 --- !u!114 &389225359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3656598918729106721}
     m_Modifications:
+    - target: {fileID: -9119022345710462944, guid: d198fa5c24eef6b408f7df4ca4a43b9a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5dee0526c621c1749996d22727f01605, type: 2}
     - target: {fileID: -6057140222963153312, guid: d198fa5c24eef6b408f7df4ca4a43b9a,
         type: 3}
       propertyPath: m_Controller
@@ -2236,6 +2247,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d198fa5c24eef6b408f7df4ca4a43b9a,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed by
+        Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+        'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+        'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom
+        animation clip 'Falling Idle'\n\tFrom animation clip 'Falling To Landing'\n\tFrom
+        animation clip 'Jumping Up'\n\tFrom animation clip 'Standard Idle'\n\tFrom
+        animation clip 'Standard Run'"
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d198fa5c24eef6b408f7df4ca4a43b9a,
         type: 3}
