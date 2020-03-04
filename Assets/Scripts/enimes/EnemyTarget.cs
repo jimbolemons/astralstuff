@@ -15,6 +15,11 @@ public class EnemyTarget : MonoBehaviour
     BruteAnimCon bruteAnim;
     conjAnimCon conjAnim;
 
+    public float speed;
+    //float step;
+
+    
+
     NavMeshAgent agent;
     public Transform targetSite;
     private bool readyToGo = false;
@@ -34,6 +39,7 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
+        
         try
         {
             if (targetSite != null)
@@ -82,7 +88,11 @@ public class EnemyTarget : MonoBehaviour
 
 
                 forwardTransform = transform.position;
-                transform.LookAt(forwardTransform);
+
+                var neededRotation = Quaternion.LookRotation(transform.position - transform.position);
+                Quaternion.Slerp(transform.rotation, neededRotation, Time.deltaTime * speed);
+
+                //transform.LookAt(forwardTransform);
                 if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 if (readyToGo) currentState = EnemyState.FOLLOW_SITE;
                 break;
@@ -104,10 +114,15 @@ public class EnemyTarget : MonoBehaviour
                     //path towards target
                     agent.isStopped = false;
                     agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
-                    transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
+
+                    var neededRotation2 = Quaternion.LookRotation(player.transform.position - transform.position);
+                  Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * speed);
+
+                   
+                   // transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
                     //transform.LookAt(player.transform.position);       
                     //TODO: face gun / attack towards player y, not whole model
-                    transform.rotation *= Quaternion.Euler(0, -90, 0);
+                    //transform.rotation *= Quaternion.Euler(0, -90, 0);
                     //print("Demon is following player.");
                 }
 
@@ -143,8 +158,12 @@ public class EnemyTarget : MonoBehaviour
                     {
                        // Debug.Log(agent.SetDestination(targetSite.position));
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
-                        transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
-                        transform.rotation *= Quaternion.Euler(0, -90, 0);
+                        //transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
+
+                        var neededRotation3 = Quaternion.LookRotation(targetSite.transform.position - transform.position);
+                        Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * speed);
+
+                        //transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
                     //print("Demon is moving towards Sacred Site.");
                     catch
