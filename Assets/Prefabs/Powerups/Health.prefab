@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 113767965664879731}
   - component: {fileID: 221731121609085377}
   - component: {fileID: 6369405185369911513}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 834060d3e4e498142ae0030db549ffd9, type: 2}
+  - {fileID: 2100000, guid: 597c8a00df7357c45a9ec4bb4b373ca2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7801227484843497556}
   - component: {fileID: 7981529779804499430}
   - component: {fileID: 3869440942530055422}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 251231b6fcfd89e49916353b52f03c93, type: 2}
+  - {fileID: 2100000, guid: 18e1f7f2124cf2d4a98d3f125d61c79a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

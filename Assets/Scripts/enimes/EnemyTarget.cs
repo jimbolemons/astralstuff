@@ -68,6 +68,8 @@ public class EnemyTarget : MonoBehaviour
 
         float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
         if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+        if (readyToGo && dist >= distanceToPlayer) currentState = EnemyState.FOLLOW_SITE;
+
         switch (currentState)
         {
             case (EnemyState.IDLE):
@@ -94,8 +96,10 @@ public class EnemyTarget : MonoBehaviour
                 Quaternion.Slerp(transform.rotation, neededRotation, Time.deltaTime * speed);
 
                 //transform.LookAt(forwardTransform);
-                if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+               
+                    if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 if (readyToGo) currentState = EnemyState.FOLLOW_SITE;
+
                 break;
             case (EnemyState.FOLLOW_PLAYER):
                 //only move if game is not paused

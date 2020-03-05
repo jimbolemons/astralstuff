@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 /// ObjectWithHealth Class
@@ -13,6 +14,8 @@ public class EnemyHP : ObjectWithHealth
     public AudioSource slap;
     public EnemyTarget eneeie;
     public AutoFire shoot;
+    public NavMeshAgent agent;
+
 
 
     ImpAnimCOn impAnim;
@@ -28,8 +31,9 @@ public class EnemyHP : ObjectWithHealth
         impAnim = gameObject.GetComponentInChildren<ImpAnimCOn>();
         bruteAnim = gameObject.GetComponentInChildren<BruteAnimCon>();
         conjAnim = gameObject.GetComponentInChildren<conjAnimCon>();
-        eneeie = this.GetComponent<EnemyTarget>();
+        eneeie = gameObject.GetComponent<EnemyTarget>();
         shoot = gameObject.GetComponentInChildren<AutoFire>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
    
 
@@ -42,7 +46,7 @@ public class EnemyHP : ObjectWithHealth
             bruteAnim.dead = true;
         if (conjAnim != null)
             conjAnim.dead = true;
-
+        agent.enabled = false;
         shoot.enabled = false;
         eneeie.enabled = false;
         Invoke("Death", 5f);

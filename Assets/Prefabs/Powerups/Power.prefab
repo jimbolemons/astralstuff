@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1082089680213056888}
   - component: {fileID: 973844938395068618}
   - component: {fileID: 6265872456354892242}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5884d1529ae4b247b6fd5ef3b9a045b, type: 2}
+  - {fileID: 2100000, guid: d9a547c1883138340b3e4512984dccff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
