@@ -7,6 +7,7 @@ public class BruteAnimCon : MonoBehaviour
     public GameObject animator;
     Animator anim;
     public bool run = false;
+    public bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,16 @@ public class BruteAnimCon : MonoBehaviour
             //  Debug.Log("no Run");
             anim.SetBool("walking", false);
         }
+
+        if (dead)
+        {
+            anim.SetBool("dead", true);
+        }
+        else
+        {
+            anim.SetBool("dead", false);
+        }
+
 
     }
 }

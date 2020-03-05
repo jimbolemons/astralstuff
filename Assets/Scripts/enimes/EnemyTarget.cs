@@ -11,6 +11,7 @@ public class EnemyTarget : MonoBehaviour
     [Tooltip("Reference to the player.")]
     public float distanceToPlayer = 20;
     //more anim stuff
+
     ImpAnimCOn impAnim;
     BruteAnimCon bruteAnim;
     conjAnimCon conjAnim;
