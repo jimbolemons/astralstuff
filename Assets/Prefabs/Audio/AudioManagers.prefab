@@ -45,9 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: fart
-    clip: {fileID: 8300000, guid: 30dfec9fd429e644aa893c87a5e4be93, type: 3}
+    clip: {fileID: 8300000, guid: cfb7c920678bdda4caff46ca1616a5d2, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.1
     pitch: 1
     source: {fileID: 0}
   - name: timeScream
