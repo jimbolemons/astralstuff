@@ -34,6 +34,7 @@ public class EnemyHP : ObjectWithHealth
         //StartCoroutine(cameraShake.Shake(.15f, .4f));
         //FindObjectOfType<AudioManager>().Play("SLAP");
         slap.Play();
+        Debug.Log("ouch");
     }
     private void Death()
     {

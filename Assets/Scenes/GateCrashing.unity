@@ -834,7 +834,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animator2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1777373317}
     - target: {fileID: 5367720194544765141, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_IsActive
@@ -2615,7 +2615,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 389225356}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1777373317}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1d6d2b2ca1f1074b898f7406e136641, type: 3}
@@ -2946,6 +2946,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639855260}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1777373317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6794763493654580637, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 389225356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797732922
 GameObject:
   m_ObjectHideFlags: 0
