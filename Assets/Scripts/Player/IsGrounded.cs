@@ -12,6 +12,8 @@ public class IsGrounded : MonoBehaviour
 
     public GameObject animator;
     Animator anim;
+    public GameObject animator2;
+    Animator anim2;
 
     public static bool up;
     public static bool down;
@@ -29,6 +31,7 @@ public class IsGrounded : MonoBehaviour
     private void Start()
     {
         anim = animator.GetComponent<Animator>();
+        anim2 = animator2.GetComponent<Animator>();
     }
     void Update()
     {
@@ -60,10 +63,12 @@ public class IsGrounded : MonoBehaviour
         if (down)
         {
             anim.SetBool("Grounded", true);
+            anim2.SetBool("Grounded", true);
         }
         if (!down)
         {
             anim.SetBool("Grounded", false);
+            anim2.SetBool("Grounded", false);
         }
 
     }

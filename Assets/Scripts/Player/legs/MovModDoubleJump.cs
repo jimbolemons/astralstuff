@@ -12,9 +12,13 @@ public class MovModDoubleJump : BaseMovementModule
     public int doubleJumpBase = 1;
     int doubleJumpCount;
 
+    public Dancetest dance;
+
 
     public GameObject animator;
+
     Animator anim;
+ 
 
     float runAnim;
 
@@ -24,6 +28,8 @@ public class MovModDoubleJump : BaseMovementModule
         //initialize default count
         doubleJumpCount = doubleJumpBase;
         anim = animator.GetComponent<Animator>();
+      
+
     }
 
     // Update is called once per frame
@@ -85,13 +91,33 @@ public class MovModDoubleJump : BaseMovementModule
                           runAnim = runAnim / 1.1f;
                       }
                   }*/
-                 
+
+               
+            }
+            else {
                 
             }
-            
+
+
+            float movement = Mathf.Abs(Mathf.Abs(direction.x) + Mathf.Abs(direction.z));
+            // Debug.Log(movement);
+            if (dance != null)
+            {
+
+                if (movement > .4f)
+                {
+                    dance.run = true;
+
+                }
+                else
+                {
+                    dance.run = false;
+                }
+            }
+
                 anim.SetFloat("MoveSpeed", Mathf.Abs(Mathf.Abs( direction.x) + Mathf.Abs(direction.z)));
             
-            
+
             //cleanup
             //if (controller.isGrounded) velocityY = 0;
         }

@@ -58,6 +58,8 @@ public class BaseMovementModule : MonoBehaviour
     public GameObject playermodel;
     public float rotateSpeed;
     public Transform pivot;
+
+    public bool canJump;
     
 
 
@@ -142,7 +144,7 @@ public class BaseMovementModule : MonoBehaviour
             //put animations here i think
 
             //TODO: implement coyote time to prevent jump getting eaten
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump") && canJump)
             {
                 Jump();
             }

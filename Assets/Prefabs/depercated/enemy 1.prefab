@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &411188008794993274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801232754610881303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc87afcb491e2104ca65ec9d7ea04312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 5130773580903258790}
 --- !u!1 &411188008818057959
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 1
+  maxHealth: 0
   health: 1
   immortal: 0
+  cameraShake: {fileID: 0}
+  cameras: {fileID: 0}
+  slap: {fileID: 0}
 --- !u!114 &411188008818057980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +164,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
+  targetSite: {fileID: 0}
   currentState: 0
+--- !u!114 &411188008794993274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801232754610881303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc87afcb491e2104ca65ec9d7ea04312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 5130773580903258790}
 --- !u!1001 &411188009182112254
 PrefabInstance:
   m_ObjectHideFlags: 0

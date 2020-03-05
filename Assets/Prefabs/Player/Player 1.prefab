@@ -535,7 +535,9 @@ MonoBehaviour:
   playermodel: {fileID: 1892269365604707165}
   rotateSpeed: 15
   pivot: {fileID: 8630143290272464602}
+  canJump: 0
   doubleJumpBase: 0
+  dance: {fileID: 0}
   animator: {fileID: 1968476983984697}
 --- !u!1 &843937652294938868
 GameObject:
@@ -1181,7 +1183,7 @@ Transform:
   - {fileID: 8630143290272273734}
   - {fileID: 4889915647968067}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6854081960721465606
 MonoBehaviour:
@@ -1224,6 +1226,20 @@ MonoBehaviour:
   hooked: 0
   hookedObj: {fileID: 0}
   maxDistance: 50
+--- !u!114 &5401789772440804848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794763493654580637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d6d2b2ca1f1074b898f7406e136641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator2: {fileID: 6794763493654580637}
+  run: 0
 --- !u!1 &7314384854417933944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1375,9 @@ MonoBehaviour:
   playermodel: {fileID: 1968476983984697}
   rotateSpeed: 15
   pivot: {fileID: 8630143290272464602}
+  canJump: 0
   doubleJumpBase: 1
+  dance: {fileID: 0}
   animator: {fileID: 1968476983984697}
 --- !u!1 &8630143290272464603
 GameObject:
@@ -1406,7 +1424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8630143290454248279
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,7 +1443,7 @@ Transform:
   - {fileID: 1319895121}
   - {fileID: 3177827398878894414}
   m_Father: {fileID: 8630143291791907486}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8630143290625000276
 GameObject:
@@ -1630,6 +1648,7 @@ Transform:
   - {fileID: 8630143290272464602}
   - {fileID: 7110452219524416791}
   - {fileID: 8876238830106708581}
+  - {fileID: 1539676818644627001}
   - {fileID: 835125535822189513}
   - {fileID: 8630143290454248279}
   m_Father: {fileID: 0}
@@ -1680,6 +1699,10 @@ MonoBehaviour:
   cameraShake: {fileID: 0}
   pickups: {fileID: 389225359}
   isDead: 0
+  player: {fileID: 0}
+  hope: {fileID: 0}
+  deadBody: {fileID: 0}
+  waffles: {fileID: 0}
 --- !u!54 &8630143291791907484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1731,6 +1754,7 @@ MonoBehaviour:
   player: {fileID: 8630143291791907487}
   climbSpot: {fileID: 1484747571100095063}
   animator: {fileID: 1968476983984697}
+  animator2: {fileID: 0}
 --- !u!114 &389225359
 MonoBehaviour:
   m_ObjectHideFlags: 0
