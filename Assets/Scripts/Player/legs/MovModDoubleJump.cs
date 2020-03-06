@@ -13,6 +13,7 @@ public class MovModDoubleJump : BaseMovementModule
     int doubleJumpCount;
 
     public Dancetest dance;
+    public HopeAnimsController hopeAnims;
 
 
     public GameObject animator;
@@ -114,8 +115,21 @@ public class MovModDoubleJump : BaseMovementModule
                     dance.run = false;
                 }
             }
+            if (hopeAnims != null)
+            {
 
-                anim.SetFloat("MoveSpeed", Mathf.Abs(Mathf.Abs( direction.x) + Mathf.Abs(direction.z)));
+                if (movement > .4f)
+                {
+                    hopeAnims.run = true;
+
+                }
+                else
+                {
+                    hopeAnims.run = false;
+                }
+            }
+
+            //anim.SetFloat("MoveSpeed", Mathf.Abs(Mathf.Abs( direction.x) + Mathf.Abs(direction.z)));
             
 
             //cleanup

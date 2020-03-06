@@ -60,6 +60,9 @@ public class BaseMovementModule : MonoBehaviour
     public Transform pivot;
 
     public bool canJump;
+
+    float jumptimer = .1f;
+    bool canJumpTimer = true;
     
 
 
@@ -144,9 +147,22 @@ public class BaseMovementModule : MonoBehaviour
             //put animations here i think
 
             //TODO: implement coyote time to prevent jump getting eaten
-            if (Input.GetButton("Jump") && canJump)
+            if (Input.GetButton("Jump") && canJump && canJumpTimer)
             {
                 Jump();
+                canJumpTimer = false;
+                jumptimer = .1f;
+
+            }
+
+
+            if (jumptimer > 0)
+            {
+                jumptimer -= Time.deltaTime;
+            }
+            else if (jumptimer < 0)
+            {
+                canJumpTimer = true;
             }
         }
         else

@@ -11,6 +11,8 @@ public class HookRayCast : MonoBehaviour
     public GameObject player;
     public GameObject hook;
     public GameObject climbDetector;
+
+    public HopeAnimsController hopeAnims;
     public float playerTravelSpeed = 20f;
     public float ropeLength = 100f;
     public float hookDelay = 5f;
@@ -31,6 +33,7 @@ public class HookRayCast : MonoBehaviour
     bool canShoot = true;
     bool canHit;
     bool unhookedButInAir = false;
+    bool climbing = false;
 
     LineRenderer rope;
     Image img;
@@ -40,13 +43,14 @@ public class HookRayCast : MonoBehaviour
     {
         rope = hook.GetComponent<LineRenderer>();
         img = GameObject.Find("crosshair").GetComponent<Image>();
-      
+        hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
 
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
+        
         TestLine();
         DrawHookLine();
         layerMask = 1 << 2;
@@ -87,6 +91,7 @@ public class HookRayCast : MonoBehaviour
             {
                 ClimbUp();
                 //BaseMovementModule.gravity = -35;
+                climbing = true;
             }
             else
             {
@@ -133,6 +138,7 @@ public class HookRayCast : MonoBehaviour
 
     private void ClimbUp()
     {
+        
         if (climbDelay > 0)
         {
             
@@ -163,7 +169,8 @@ public class HookRayCast : MonoBehaviour
         timerRunning = true;
         hooked = false;
         fired = false;
-        
+        climbing = false;
+
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
        // hook.transform.position = hookHolder.transform.position;
@@ -200,6 +207,7 @@ public class HookRayCast : MonoBehaviour
             //hookedPos = hit.point; 
             if (hit.collider.gameObject.tag == "Hookable")
             {
+                
                 FindObjectOfType<AudioManager>().Play("fart");
                 hook.transform.position = hit.point;
                 ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
