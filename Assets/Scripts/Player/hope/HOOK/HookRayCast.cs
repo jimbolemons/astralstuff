@@ -129,7 +129,7 @@ public class HookRayCast : MonoBehaviour
 
     private void ReelIn()
     {
-        
+        hopeAnims.hooked = true;
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
         player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
@@ -175,7 +175,7 @@ public class HookRayCast : MonoBehaviour
         BaseMovementModule.gravity = -35;
        // hook.transform.position = hookHolder.transform.position;
         hook.transform.position = cameras.transform.position;
-        
+        hopeAnims.hooked = false;        
 
         DestroyLines();
         

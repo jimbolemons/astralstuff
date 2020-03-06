@@ -14,6 +14,7 @@ public class HopeAnimsController : MonoBehaviour
     public bool dance = false;
     public bool climbing = false;
     public bool grounded = false;
+    public bool hooked = false;
 
 
 
@@ -91,15 +92,23 @@ public class HopeAnimsController : MonoBehaviour
         {
            // anim.SetBool("dead", false);
         }
+        if (hooked)
+        {
+             anim.SetBool("hooked", true);
+        }
+        else
+        {
+             anim.SetBool("hooked", false);
+        }
 
 
     }
     public void Climb()
     {
-        anim.SetBool("climbing", true);
+        hooked = true;
     }
     public void StopClimb()
     {
-        anim.SetBool("climbing", false);
+        hooked = false;
     }
 }

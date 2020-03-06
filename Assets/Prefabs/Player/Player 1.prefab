@@ -1165,7 +1165,7 @@ MonoBehaviour:
   rotateSpeed: 15
   pivot: {fileID: 8630143290272464602}
   canJump: 1
-  doubleJumpBase: 1
+  doubleJumpBase: 0
   dance: {fileID: 0}
   hopeAnims: {fileID: 5674279031711456325}
   animator: {fileID: 3349457209271727099}
@@ -1279,7 +1279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8630143290625000276}
   m_LocalRotation: {x: -6.938894e-18, y: 0.000000059604645, z: -2.3283064e-10, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.609, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 835125535822189513}
@@ -2025,6 +2025,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 835125535822189513}
     m_Modifications:
+    - target: {fileID: 1315062505851434882, guid: 3db7e4c21ee07f64dbedaabfaaae4b6d,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5274332267668679565, guid: 3db7e4c21ee07f64dbedaabfaaae4b6d,
         type: 3}
       propertyPath: car
@@ -2192,6 +2197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HopeDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037408805851811591, guid: a7211eda00fda3e4baf23e31bc84dc9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7211eda00fda3e4baf23e31bc84dc9b, type: 3}
