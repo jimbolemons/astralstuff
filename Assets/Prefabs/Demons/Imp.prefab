@@ -187,6 +187,9 @@ MonoBehaviour:
   slap: {fileID: 8950660437794265353}
   eneeie: {fileID: 0}
   shoot: {fileID: 0}
+  agent: {fileID: 0}
+  colliders: []
+  rb: {fileID: 0}
 --- !u!114 &3750316350600762978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +640,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 5540625690113268258}
     m_Modifications:
     - target: {fileID: 2552185331968797413, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552185331968797414, guid: 99cf745ec2405dd4a80d0bc93a4a6849,
         type: 3}
       propertyPath: m_Enabled
       value: 0

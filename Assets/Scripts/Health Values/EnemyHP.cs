@@ -16,7 +16,7 @@ public class EnemyHP : ObjectWithHealth
     public AutoFire shoot;
     public NavMeshAgent agent;
 
-
+    public Collider[] colliders;
 
     ImpAnimCOn impAnim;
     BruteAnimCon bruteAnim;
@@ -34,6 +34,8 @@ public class EnemyHP : ObjectWithHealth
         eneeie = gameObject.GetComponent<EnemyTarget>();
         shoot = gameObject.GetComponentInChildren<AutoFire>();
         agent = gameObject.GetComponent<NavMeshAgent>();
+
+        colliders = GetComponents<Collider>();
     }
    
 
@@ -49,6 +51,13 @@ public class EnemyHP : ObjectWithHealth
         agent.enabled = false;
         shoot.enabled = false;
         eneeie.enabled = false;
+
+        //turn off colliders so it stops taking damage
+        foreach(Collider c in colliders)
+        {
+            c.enabled = false;
+        }
+
         Invoke("Death", 5f);
         
         

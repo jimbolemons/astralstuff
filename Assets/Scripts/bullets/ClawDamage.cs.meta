@@ -3,7 +3,11 @@ guid: 0cc4c1a25e47f6b4b9d0e5e2bfcdcd03
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cameraShake: {instanceID: 0}
+  - cameras: {instanceID: 0}
+  - bloodSplat: {fileID: 3505124026446006010, guid: 3c7ea1d74cbdbf242aca205a51f77d29,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

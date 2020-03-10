@@ -88,14 +88,6 @@ public class EnemyTarget : MonoBehaviour
                     bruteAnim.run = false;
                 if (conjAnim != null)
                     conjAnim.run = false;
-
-
-                forwardTransform = transform.position;
-
-                var neededRotation = Quaternion.LookRotation(transform.position - transform.position);
-                Quaternion.Slerp(transform.rotation, neededRotation, Time.deltaTime * speed);
-
-                //transform.LookAt(forwardTransform);
                
                     if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 if (readyToGo) currentState = EnemyState.FOLLOW_SITE;

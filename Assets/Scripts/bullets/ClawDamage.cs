@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class ClawDamage : BulletDamage
 {
+    public GameObject bloodSplat;
+    public Transform bloodspot;
     override public void OnTriggerEnter(Collider other)
     {
+        print("HIT SOMETHING??!?!? collider");
         ObjectWithHealth target = other.gameObject.GetComponent<ObjectWithHealth>();
 
         if (target != null)
         {
-
             //only interact with whatever you hit if it's not the same type as the gameobject that fired the bullet
             if (parentType != target.objectType)
             {
+                //enemies cannot hit gates
                 if (parentType == ObjectWithHealth.objectWithHealthType.enemy)
                 {
                     if (target.tag != "EnemyGate")
@@ -27,12 +30,22 @@ public class ClawDamage : BulletDamage
                 else
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
                 {
+                    print("blood TEEEST??");
+                    //player cannot hit sacred sites
                     if (target.tag != "SacredSite")
-                    {
+                    {                        
                         target.TakeDamage(damage);
                         //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
+                    }
+                    if(target.objectType == ObjectWithHealth.objectWithHealthType.enemy)
+                    {
+                        Debug.Log("spawning blood 2");
+                        GameObject g = Instantiate(bloodSplat, target.transform);
+                        g.transform.position = bloodspot.position;
+                        //Instantiate(bloodSplat, target.transform.position, Quaternion.Euler(other.coll collision.contacts[0].normal));
+
                     }
                 }
             }
@@ -46,7 +59,6 @@ public class ClawDamage : BulletDamage
     override public void OnCollisionEnter(Collision collision)
     {
         ObjectWithHealth target = collision.gameObject.GetComponent<ObjectWithHealth>();
-
         if (target != null)
         {
             //only interact with whatever you hit if it's not the same type as the gameobject that fired the bullet
@@ -68,8 +80,11 @@ public class ClawDamage : BulletDamage
                 else
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
                 {
+
+                    //player cannot hit sacred site
                     if (target.tag != "SacredSite")
                     {
+                  // Instantiate(bloodSplat, target.transform.position, Quaternion.Euler(collision.contacts[0].normal));
                         target.TakeDamage(damage);
                         //Destroy(gameObject);
                     }
