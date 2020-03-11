@@ -68,10 +68,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.5
+    value: 1.75
   threshold:
     overrideState: 1
-    value: 1
+    value: 0.1
   softKnee:
     overrideState: 1
     value: 0.96
@@ -86,7 +86,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.9838381, g: 0, b: 1, a: 1}
+    value: {r: 0, g: 0.6077366, b: 1, a: 1}
   fastMode:
     overrideState: 1
     value: 1
@@ -114,8 +114,8 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   spectralLut:
-    overrideState: 0
-    value: {fileID: 0}
+    overrideState: 1
+    value: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
     defaultState: 1
   intensity:
     overrideState: 1
