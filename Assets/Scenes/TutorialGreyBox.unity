@@ -5891,6 +5891,12 @@ PrefabInstance:
       propertyPath: cameras
       value: 
       objectReference: {fileID: 138862044}
+    - target: {fileID: 5401789772440804848, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: animator2
+      value: 
+      objectReference: {fileID: -927199367670048503, guid: b0376ae4a457fb04284552bfe84aa3f4,
+        type: 3}
     - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameras
@@ -5906,6 +5912,11 @@ PrefabInstance:
       propertyPath: cameraControl
       value: 
       objectReference: {fileID: 680966645}
+    - target: {fileID: 8630143290454248264, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameraShake
