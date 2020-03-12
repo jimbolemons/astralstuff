@@ -39,7 +39,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public float cameraMoveSpeed;
     public float minCamDis;
 
-    bool lerping = false;
+    bool lerping = true;
 
     Vector3 wantedPos;
 
@@ -61,7 +61,7 @@ public class ThirdPersonCamera : MonoBehaviour
             //transform.position = cameraTarget.transform.position;
 
             float distance = Vector3.Distance(transform.position, cameraTarget.transform.position);
-            if (distance < .5f) lerping = false;
+            //if (distance < .5f) lerping = false;
 
             if (lerping)
             {
@@ -79,7 +79,7 @@ public class ThirdPersonCamera : MonoBehaviour
             }
             else
             {
-                UpdateCameraDistance();
+               UpdateCameraDistance();
             }
 
            // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);

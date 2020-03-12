@@ -201,7 +201,7 @@ public class EnemyTarget : MonoBehaviour
                 distance = currentDistance;
             }
         }
-        if (closestSite.transform != null)
+        if (closestSite != null)
         { 
             SetTarget(closestSite.transform);
         }
