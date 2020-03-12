@@ -11,7 +11,15 @@ public class WafflesComboShoot : Gun
     public int comboCounter = 0;
     public int maxCombo = 3;
 
-   public animsWaffles waffles;
+    public float speed;
+    public Vector3 direction;
+    bool attackDash = false;
+    float timer;
+    public float attackDashTime = 1;
+    public GameObject player;
+    public CharacterController controller;
+
+    public animsWaffles waffles;
 
     public bool failCombo = false;
 
@@ -38,6 +46,7 @@ public class WafflesComboShoot : Gun
             comboCounter = 0;
             comboTimer = 0;
         }
+        AttackDash();
     }
 
     public override void Fire()
@@ -48,6 +57,7 @@ public class WafflesComboShoot : Gun
             {
                 //left
                 waffles.Left();
+                attackDash = true;
                 Fire1();                
                 comboTimer = 0;
                 comboCounter++;
@@ -57,7 +67,8 @@ public class WafflesComboShoot : Gun
                 if (ComboCheck())
                 {
                     //right
-                    waffles.Right();                    
+                    waffles.Right();
+                    attackDash = true;
                     Fire2();
                 comboTimer = 0;
                 comboCounter++;
@@ -69,6 +80,7 @@ public class WafflesComboShoot : Gun
                 {
                     // left hands
                     waffles.Left();
+                    attackDash = true;
                     Fire1();
                 
                 comboTimer = 0;
@@ -81,6 +93,7 @@ public class WafflesComboShoot : Gun
                 {
                     //right
                     waffles.Right();
+                    attackDash = true;
                     Fire2();
 
                     comboTimer = 0;
@@ -139,6 +152,30 @@ public class WafflesComboShoot : Gun
         catch
         {
             g.GetComponent<ObjectWithHealth>().SetParent(parentType);
+        }
+    }
+    public void AttackDash()
+    {
+        if (attackDash)
+        {
+            direction = 5 * player.transform.forward;
+            //direction += Input.GetAxis("Horizontal") * transform.right;
+            direction *= speed;
+            controller.Move(direction * Time.deltaTime);
+
+        }
+
+
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+
+        }
+        else
+        {
+            attackDash = false;
+            timer = attackDashTime;
         }
     }
 }

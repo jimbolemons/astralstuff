@@ -37,7 +37,7 @@ public class Fire1ShootScript : MonoBehaviour
 
     void Update()
     {
-        AttackDash();
+        
         //only fire if not paused
         if (MasterStaticScript.gameIsPaused == false)
         {
@@ -61,7 +61,7 @@ public class Fire1ShootScript : MonoBehaviour
                                 
                                 g.Fire();
                                 // move player forword
-                                attackDash = true;
+                                
                                
 
                             }
@@ -128,28 +128,6 @@ public class Fire1ShootScript : MonoBehaviour
     {
         rightArmGuns = GetComponentsInChildren<Gun>();
     }
-    public void AttackDash()
-    {
-        if (attackDash)
-        {
-            direction = 5 * player.transform.forward;
-            //direction += Input.GetAxis("Horizontal") * transform.right;
-            direction *= speed;
-            controller.Move(direction * Time.deltaTime);
-
-        }
-     
-       
-        
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-            
-        }
-        else {
-            attackDash = false;
-            timer = attackDashTime;
-        }
-    }
+   
     
 }

@@ -201,7 +201,10 @@ public class EnemyTarget : MonoBehaviour
                 distance = currentDistance;
             }
         }
-        SetTarget(closestSite.transform);
+        if (closestSite.transform != null)
+        { 
+            SetTarget(closestSite.transform);
+        }
         //2.) Output the final gate's transform to SacredTarget.
 
     }

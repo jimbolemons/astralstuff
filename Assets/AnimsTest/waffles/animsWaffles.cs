@@ -21,18 +21,18 @@ public class animsWaffles : MonoBehaviour
         //this is a test
         if (Input.GetKey(KeyCode.E))
         {
-            //  anim2.SetBool("dance", true);
+             anim2.SetBool("dance", true);
             // Debug.Log("daadadad");
         }
         else
         {
-            //  Debug.Log("no Dance");
-            //anim2.SetBool("dance", false);
+             // Debug.Log("no Dance");
+           anim2.SetBool("dance", false);
         }
         //this is a test
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim2.SetTrigger("right");
+           // anim2.SetTrigger("right");
 
 
         }
