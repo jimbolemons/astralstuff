@@ -11,6 +11,8 @@ public class WafflesComboShoot : Gun
     public int comboCounter = 0;
     public int maxCombo = 3;
 
+   public animsWaffles waffles;
+
     public bool failCombo = false;
 
     public Transform gunEnd2;
@@ -44,7 +46,9 @@ public class WafflesComboShoot : Gun
         {
             if (comboCounter == 0)
             {
-                Fire1();
+                //left
+                waffles.Left();
+                Fire1();                
                 comboTimer = 0;
                 comboCounter++;
             }
@@ -52,7 +56,9 @@ public class WafflesComboShoot : Gun
             {
                 if (ComboCheck())
                 {
-                Fire2();
+                    //right
+                    waffles.Right();                    
+                    Fire2();
                 comboTimer = 0;
                 comboCounter++;
                 }                
@@ -61,11 +67,25 @@ public class WafflesComboShoot : Gun
             {
                 if (ComboCheck())
                 {
-                Fire1();
-                Fire2();
+                    // left hands
+                    waffles.Left();
+                    Fire1();
+                
                 comboTimer = 0;
                 comboCounter++;
                 }                
+            }
+            else if (comboCounter == 3)
+            {
+                if (ComboCheck())
+                {
+                    //right
+                    waffles.Right();
+                    Fire2();
+
+                    comboTimer = 0;
+                    comboCounter++;
+                }
             }
             else
             {

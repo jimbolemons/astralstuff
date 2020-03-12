@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dancetest : MonoBehaviour
+public class animsWaffles : MonoBehaviour
 {
     public GameObject animator2;
     Animator anim2;
@@ -21,27 +21,28 @@ public class Dancetest : MonoBehaviour
         //this is a test
         if (Input.GetKey(KeyCode.E))
         {
-            anim2.SetBool("dance", true);
-           // Debug.Log("daadadad");
+            //  anim2.SetBool("dance", true);
+            // Debug.Log("daadadad");
         }
         else
         {
-          //  Debug.Log("no Dance");
-            anim2.SetBool("dance", false);
+            //  Debug.Log("no Dance");
+            //anim2.SetBool("dance", false);
         }
         //this is a test
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim2.SetTrigger("Jump");
-            
-            
+            anim2.SetTrigger("right");
+
+
         }
         else
         {
-            
-            
-           
+
+
+
         }
+
 
         if (run)
         {
@@ -51,9 +52,17 @@ public class Dancetest : MonoBehaviour
         }
         else
         {
-           // Debug.Log("no Run");
+            // Debug.Log("no Run");
             anim2.SetBool("running", false);
         }
 
+    }
+    public void Right()
+    {
+        anim2.SetTrigger("right");
+    }
+    public void Left()
+    {
+        anim2.SetTrigger("left");
     }
 }

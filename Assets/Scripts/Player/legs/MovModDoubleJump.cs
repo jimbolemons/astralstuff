@@ -12,7 +12,8 @@ public class MovModDoubleJump : BaseMovementModule
     public int doubleJumpBase = 1;
     int doubleJumpCount;
 
-    public Dancetest dance;
+    //public Dancetest dance;
+    public animsWaffles wafflesAnim;
     public HopeAnimsController hopeAnims;
 
 
@@ -102,17 +103,17 @@ public class MovModDoubleJump : BaseMovementModule
 
             float movement = Mathf.Abs(Mathf.Abs(direction.x) + Mathf.Abs(direction.z));
             // Debug.Log(movement);
-            if (dance != null)
+            if (wafflesAnim != null)
             {
 
                 if (movement > .4f)
                 {
-                    dance.run = true;
+                    wafflesAnim.run = true;
 
                 }
                 else
                 {
-                    dance.run = false;
+                    wafflesAnim.run = false;
                 }
             }
             if (hopeAnims != null)
