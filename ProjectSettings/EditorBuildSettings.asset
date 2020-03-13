@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinState.unity
     guid: 38c4deec838f9e744a1c05fd92b7df05
+  - enabled: 1
+    path: Assets/Scenes/loseMk2.unity
+    guid: 8545df23253f1c7428b02816469dbec6
   m_configObjects: {}
