@@ -544,7 +544,7 @@ MonoBehaviour:
   doubleJumpBase: 0
   wafflesAnim: {fileID: 1787188517102596531}
   hopeAnims: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 1630516161724120504}
 --- !u!1 &843937652316500832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,12 +2194,6 @@ PrefabInstance:
       propertyPath: car
       value: 
       objectReference: {fileID: 8630143291791907485}
-    - target: {fileID: 5274332267668679565, guid: 3db7e4c21ee07f64dbedaabfaaae4b6d,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1968476983984697, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
-        type: 3}
     - target: {fileID: 5274332267668679565, guid: 3db7e4c21ee07f64dbedaabfaaae4b6d,
         type: 3}
       propertyPath: controller
