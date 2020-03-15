@@ -4802,8 +4802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7093196af8da34b8b7312a3fbd49d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  lifeSpan: 0.5
+  speed: 5
+  lifeSpan: 0.3
   angleToRotate: 135
   emit: {fileID: 8524728553021628189}
 --- !u!65 &8512174891321090133

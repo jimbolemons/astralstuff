@@ -60,14 +60,9 @@ public class Fire1ShootScript : MonoBehaviour
                             {
                                 
                                 g.Fire();
-                                // move player forword
-                                
-                               
-
+                                // move player forword      
                             }
-                            
                         }
-
                     }
                     attackTimer += Time.deltaTime;
                 }

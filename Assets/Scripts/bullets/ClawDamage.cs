@@ -8,7 +8,7 @@ public class ClawDamage : BulletDamage
     public Transform bloodspot;
     override public void OnTriggerEnter(Collider other)
     {
-        print("HIT SOMETHING??!?!? collider");
+        //print("HIT SOMETHING??!?!? collider");
         ObjectWithHealth target = other.gameObject.GetComponent<ObjectWithHealth>();
 
         if (target != null)
@@ -30,7 +30,7 @@ public class ClawDamage : BulletDamage
                 else
                 if (parentType == ObjectWithHealth.objectWithHealthType.player)
                 {
-                    print("blood TEEEST??");
+                   // print("blood TEEEST??");
                     //player cannot hit sacred sites
                     if (target.tag != "SacredSite")
                     {                        
@@ -41,7 +41,7 @@ public class ClawDamage : BulletDamage
                     }
                     if(target.objectType == ObjectWithHealth.objectWithHealthType.enemy)
                     {
-                        Debug.Log("spawning blood 2");
+                       // Debug.Log("spawning blood 2");
                         GameObject g = Instantiate(bloodSplat, target.transform);
                         g.transform.position = bloodspot.position;
                         //Instantiate(bloodSplat, target.transform.position, Quaternion.Euler(other.coll collision.contacts[0].normal));

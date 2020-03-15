@@ -6,10 +6,10 @@ using UnityEngine;
 public class ClawMovement : MonoBehaviour
 {
     [Tooltip("How fast the attack rotates.")]
-    public float speed = 2;
+    public float speed = 4;
     [Tooltip("How long Does the hitbox linger")]
-    public float lifeSpan = 1;
-    float speed2 = .5f;
+    public float lifeSpan = .5f;
+    float speed2 = 2;
     bool grow = true;
 
     public float angleToRotate = 45;
@@ -23,8 +23,8 @@ public class ClawMovement : MonoBehaviour
     Quaternion targetRotation;
     void Start()
     {
-        transform.localScale = Vector3.zero;
         originalScale = transform.localScale;
+        transform.localScale = Vector3.zero;
         destinationScale = new Vector3(2.0f, 2.0f, 2.0f);
         
         targetRotation = transform.rotation;
