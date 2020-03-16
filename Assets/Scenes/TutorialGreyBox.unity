@@ -24302,6 +24302,11 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 16183
       objectReference: {fileID: 0}
+    - target: {fileID: 2287584592259221699, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2921281273470672605, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
       propertyPath: m_Enabled
@@ -30734,6 +30739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989271491505877613, guid: 25045b06f51116044b6ee03bf42b4ccc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hookable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25045b06f51116044b6ee03bf42b4ccc, type: 3}
@@ -72035,6 +72045,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!20 &2116565242 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2287584592259221699, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+    type: 3}
+  m_PrefabInstance: {fileID: 758010937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &2121170071 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7487778551449828996, guid: 921fc764a1be175428c117a348de83b4,
@@ -72360,6 +72376,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996856393123109394, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: fovMod
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996856393123109394, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2116565242}
+    - target: {fileID: 8996856393123109394, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: hookFov
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996856393123109394, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: cameraFovSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
