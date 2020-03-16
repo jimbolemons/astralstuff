@@ -53,6 +53,16 @@ public class BruteAnimCon : MonoBehaviour
         {
             anim.SetBool("dead", false);
         }
+        if (!MasterStaticScript.gameIsPaused)
+        {
+
+            anim.enabled = true;
+        }
+        else
+        {
+            anim.enabled = false;
+
+        }
 
 
     }

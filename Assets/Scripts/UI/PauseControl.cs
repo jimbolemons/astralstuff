@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// handles the pause canvas and pause function
 /// </summary>
 public class PauseControl : MonoBehaviour
 {
+    public MainMenuController pauseMenu;
     bool prevPaused = false;
     [Tooltip("Reference to the pause canvas.")]
     public Canvas pauseCanvas;
-    public CenterMouse centerMouse;
+    
 
     private void Start()
     {
@@ -36,24 +38,29 @@ public class PauseControl : MonoBehaviour
 
         }
     }
+     
    /// <summary>
    /// Public function to pause the game
    /// </summary>
     public void Pause()
     {
+       
         MasterStaticScript.gameIsPaused = true;
         SetPauseCanvasState();
-      // centerMouse.enabled = false;
-    }
+       
+    
+}
     /// <summary>
     /// Public function to unpause game
     /// </summary>
     public void UnPause()
     {
+        
         MasterStaticScript.gameIsPaused = false;
         SetPauseCanvasState();
-      //  centerMouse.enabled = true;
-    }
+        
+    
+}
     /// <summary>
     /// function that sets the master script to the correct state
     /// </summary>

@@ -25206,6 +25206,11 @@ PrefabInstance:
       propertyPath: centerMouse
       value: 
       objectReference: {fileID: 2116565237}
+    - target: {fileID: 4111022351362458198, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 762782627}
     - target: {fileID: 6445794818091418087, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
       propertyPath: m_Enabled
@@ -25359,8 +25364,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitKey: 112
   pauseKey: 27
-  setiings: {fileID: 0}
-  menu: {fileID: 0}
 --- !u!1001 &765161847
 PrefabInstance:
   m_ObjectHideFlags: 0

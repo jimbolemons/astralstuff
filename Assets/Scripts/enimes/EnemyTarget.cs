@@ -59,7 +59,11 @@ public class EnemyTarget : MonoBehaviour
     private void LateUpdate()
     {
         EnemyStateMachine();
-    }
+        if (!MasterStaticScript.gameIsPaused)
+        {
+            currentState = EnemyState.IDLE;
+        }
+      }
 
     void EnemyStateMachine()
     {

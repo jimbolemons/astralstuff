@@ -67,4 +67,5 @@ public class MasterStaticScript : MonoBehaviour
         //TODO: change Game's win state to true, go to win scene.
         }
     }
+    
 }

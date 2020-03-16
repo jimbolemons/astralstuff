@@ -34,52 +34,55 @@ public class SpawnDemons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if ready to send out the demons
-        if (numberOfDemons >= demonsToSpawn)
+        if (!MasterStaticScript.gameIsPaused)
         {
-            //tell the demons to go
-            foreach (GameObject g in demonList)
+            //if ready to send out the demons
+            if (numberOfDemons >= demonsToSpawn)
             {
-                SetDemonTarget(g);
-            }
-            //clear the references
-            demonList.Clear();
+                //tell the demons to go
+                foreach (GameObject g in demonList)
+                {
+                    SetDemonTarget(g);
+                }
+                //clear the references
+                demonList.Clear();
 
 
-            //start counting for delay between spawns
-            countdownForGroup += Time.deltaTime;
-            //if countdown is done
-            if (countdownForGroup > secondsBetweenGroups)
-            {
-                countdownForGroup = 0;
-                numberOfDemons = 0;
+                //start counting for delay between spawns
+                countdownForGroup += Time.deltaTime;
+                //if countdown is done
+                if (countdownForGroup > secondsBetweenGroups)
+                {
+                    countdownForGroup = 0;
+                    numberOfDemons = 0;
+                }
             }
+
+            //if spawning demons
+            if (numberOfDemons < demonsToSpawn)
+            {
+                spawnEnergy += Time.deltaTime;
+                if (spawnEnergy > secondsToSPawn)
+                {
+                    Vector3 demonSpawn = SpawnLocation(spawnArea.bounds);
+                    //print(demonSpawn);
+                    GameObject demon = SpawnDemon(demonSpawn);
+                    //SetDemonTarget(demon);
+                    numberOfDemons++;
+                    spawnEnergy = 0;
+                    demonList.Add(demon);
+                }
+            }
+            //TODO: something if the sacred site is destroyed
+
+            //TODO: spawn different demons
+
+            //TODO: spawn facing sacred site
+
+            //TODO: spawn in larger area?
+
+            //TODO: different demons take different time / energy?
         }
-
-        //if spawning demons
-        if (numberOfDemons < demonsToSpawn)
-        {
-            spawnEnergy += Time.deltaTime;
-            if (spawnEnergy > secondsToSPawn)
-            {
-                Vector3 demonSpawn = SpawnLocation(spawnArea.bounds);
-                //print(demonSpawn);
-                GameObject demon = SpawnDemon(demonSpawn);
-                //SetDemonTarget(demon);
-                numberOfDemons++;
-                spawnEnergy = 0;
-                demonList.Add(demon);
-            }
-        }
-        //TODO: something if the sacred site is destroyed
-
-        //TODO: spawn different demons
-
-        //TODO: spawn facing sacred site
-
-        //TODO: spawn in larger area?
-
-        //TODO: different demons take different time / energy?
     }
 
     Vector3 SpawnLocation(Bounds bounds)
