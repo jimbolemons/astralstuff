@@ -212,7 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
-  speed: 1
+  moveSpeed: 0
+  rotSpeed: 1000
   targetSite: {fileID: 0}
   currentState: 0
 --- !u!114 &7158892832373729742
@@ -231,9 +232,20 @@ MonoBehaviour:
   maxHealth: 1
   health: 1
   immortal: 0
+  materials: []
+  baseMat: {fileID: 0}
+  lerpMat: {fileID: 0}
+  color2Mat: {fileID: 0}
+  testRenderers: []
+  testRenderer: {fileID: 141004741722736593}
+  flashMat: {fileID: 2100000, guid: bb0ba4999bc02c541b6807f9adf03a0e, type: 2}
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
   slap: {fileID: 3952422661842905676}
+  eneeie: {fileID: 0}
+  shoot: {fileID: 0}
+  agent: {fileID: 0}
+  colliders: []
 --- !u!65 &2631274824738027910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -293,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6998129237285569591}
   run: 0
+  dead: 0
 --- !u!1 &8325498365513474718
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +670,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1314967944360484158}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &141004741722736593 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1426312253768358639, guid: 65510a6d6aa2f8c47a3e06bb103de0e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1314967944360484158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3830857479040399102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,7 +757,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 43b69ea7995d1fe4ebb16f333ae6238a, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 00e0a103d916f2a48a1948958e09d1d7,
         type: 3}
       propertyPath: m_Name

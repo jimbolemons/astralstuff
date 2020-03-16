@@ -60,14 +60,9 @@ public class Fire1ShootScript : MonoBehaviour
                             {
                                 
                                 g.Fire();
-                                // move player forword
-                                
-                               
-
+                                // move player forword      
                             }
-                            
                         }
-
                     }
                     attackTimer += Time.deltaTime;
                 }
@@ -78,8 +73,7 @@ public class Fire1ShootScript : MonoBehaviour
                     // fires each gun in the hands
                     foreach (Gun g in rightArmGuns)
                     {
-                        if (g != null) g.Fire();
-                        
+                        if (g != null) g.Fire();                        
                     }
                     attackTimer = 0;
 

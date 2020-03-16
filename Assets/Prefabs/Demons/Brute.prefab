@@ -353,6 +353,14 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   immortal: 0
+  materials: []
+  baseMat: {fileID: 0}
+  lerpMat: {fileID: 0}
+  color2Mat: {fileID: 0}
+  testRenderers:
+  - {fileID: 7991733638971130149}
+  testRenderer: {fileID: 0}
+  flashMat: {fileID: 2100000, guid: bb0ba4999bc02c541b6807f9adf03a0e, type: 2}
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
   slap: {fileID: 7766545823095819990}
@@ -360,7 +368,6 @@ MonoBehaviour:
   shoot: {fileID: 0}
   agent: {fileID: 0}
   colliders: []
-  rb: {fileID: 0}
 --- !u!114 &5134317704293698372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: 20
-  speed: 1
+  moveSpeed: 0
+  rotSpeed: 1
   targetSite: {fileID: 0}
   currentState: 0
 --- !u!82 &7766545823095819990
@@ -833,6 +841,12 @@ GameObject:
 --- !u!4 &679387257627720856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e25908840325b214bbf5785abcb4c8d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5482886062349621122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7991733638971130149 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2521814262471464615, guid: e25908840325b214bbf5785abcb4c8d4,
     type: 3}
   m_PrefabInstance: {fileID: 5482886062349621122}
   m_PrefabAsset: {fileID: 0}

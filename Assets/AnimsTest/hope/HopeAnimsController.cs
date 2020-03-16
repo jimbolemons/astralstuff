@@ -16,11 +16,16 @@ public class HopeAnimsController : MonoBehaviour
     public bool grounded = false;
     public bool hooked = false;
 
+    public Camera mainCamera;
 
+    public float hookFov;
+    public float baseFov;
+    public float cameraFovSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        baseFov = mainCamera.fieldOfView;
         anim = animator.GetComponent<Animator>();
     }
 
@@ -94,10 +99,13 @@ public class HopeAnimsController : MonoBehaviour
         }
         if (hooked)
         {
+            mainCamera.fieldOfView = Mathf.SmoothStep(mainCamera.fieldOfView, hookFov, cameraFovSpeed * Time.deltaTime);
+            //mainCamera.fieldOfView = hookFov;
              anim.SetBool("hooked", true);
         }
         else
-        {
+        {           
+            mainCamera.fieldOfView = Mathf.SmoothStep(mainCamera.fieldOfView, baseFov, cameraFovSpeed * Time.deltaTime);
              anim.SetBool("hooked", false);
         }
 

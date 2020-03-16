@@ -22,6 +22,7 @@ public class PlayerHP : ObjectWithHealth
     private void Start()
     {
         objectType = objectWithHealthType.player;
+        GetRenderers();
     }
 
     public void Update()

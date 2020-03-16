@@ -16,7 +16,8 @@ public class EnemyTarget : MonoBehaviour
     BruteAnimCon bruteAnim;
     conjAnimCon conjAnim;
 
-    public float speed;
+    public float moveSpeed;
+    public float rotSpeed = 1;
     //float step;
 
     
@@ -113,7 +114,7 @@ public class EnemyTarget : MonoBehaviour
                     agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
 
                     var neededRotation2 = Quaternion.LookRotation(player.transform.position - transform.position);
-                  Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * speed);
+                  Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * rotSpeed);
 
                    
                    // transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
@@ -158,7 +159,7 @@ public class EnemyTarget : MonoBehaviour
                         //transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
 
                         var neededRotation3 = Quaternion.LookRotation(targetSite.transform.position - transform.position);
-                        Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * speed);
+                        Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * rotSpeed);
 
                         //transform.rotation *= Quaternion.Euler(0, -90, 0);
                     }
