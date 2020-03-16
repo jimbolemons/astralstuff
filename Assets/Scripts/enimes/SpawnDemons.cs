@@ -25,6 +25,8 @@ public class SpawnDemons : MonoBehaviour
     public Transform SacredTarget;
     public List<GameObject> demonList;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class SpawnDemons : MonoBehaviour
     {
         if (!MasterStaticScript.gameIsPaused)
         {
+            
             //if ready to send out the demons
             if (numberOfDemons >= demonsToSpawn)
             {
@@ -83,6 +86,7 @@ public class SpawnDemons : MonoBehaviour
 
             //TODO: different demons take different time / energy?
         }
+        
     }
 
     Vector3 SpawnLocation(Bounds bounds)

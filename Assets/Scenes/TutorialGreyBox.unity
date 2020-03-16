@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 13791394}
   - component: {fileID: 13791396}
   - component: {fileID: 13791395}
+  - component: {fileID: 13791397}
   m_Layer: 0
   m_Name: BoundaryFog (1)
   m_TagString: Untagged
@@ -4966,6 +4967,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &13791397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13791393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &20588917
 GameObject:
   m_ObjectHideFlags: 0
@@ -9523,6 +9536,7 @@ GameObject:
   - component: {fileID: 575365174}
   - component: {fileID: 575365176}
   - component: {fileID: 575365175}
+  - component: {fileID: 575365177}
   m_Layer: 0
   m_Name: Fog2 (7)
   m_TagString: Untagged
@@ -14265,6 +14279,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &575365177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575365173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &587317195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14345,6 +14371,7 @@ GameObject:
   - component: {fileID: 605138471}
   - component: {fileID: 605138473}
   - component: {fileID: 605138472}
+  - component: {fileID: 605138474}
   m_Layer: 0
   m_Name: Fog2 (3)
   m_TagString: Untagged
@@ -19087,6 +19114,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &605138474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605138470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &610783221
 GameObject:
   m_ObjectHideFlags: 0
@@ -19630,6 +19669,7 @@ GameObject:
   - component: {fileID: 710414150}
   - component: {fileID: 710414152}
   - component: {fileID: 710414151}
+  - component: {fileID: 710414153}
   m_Layer: 0
   m_Name: Fog2 (2)
   m_TagString: Untagged
@@ -24372,6 +24412,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &710414153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710414149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &711829310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25364,6 +25416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitKey: 112
   pauseKey: 27
+  setiings: {fileID: 0}
+  menu: {fileID: 0}
 --- !u!1001 &765161847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26721,6 +26775,7 @@ GameObject:
   - component: {fileID: 936544380}
   - component: {fileID: 936544382}
   - component: {fileID: 936544381}
+  - component: {fileID: 936544383}
   m_Layer: 0
   m_Name: Fog2
   m_TagString: Untagged
@@ -31463,6 +31518,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &936544383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936544379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943745371
 GameObject:
   m_ObjectHideFlags: 0
@@ -32340,6 +32407,7 @@ GameObject:
   - component: {fileID: 1040429769}
   - component: {fileID: 1040429771}
   - component: {fileID: 1040429770}
+  - component: {fileID: 1040429772}
   m_Layer: 0
   m_Name: Fog2 (1)
   m_TagString: Untagged
@@ -37082,6 +37150,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1040429772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040429768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046853343
 GameObject:
   m_ObjectHideFlags: 0
@@ -37262,6 +37342,7 @@ GameObject:
   - component: {fileID: 1053388084}
   - component: {fileID: 1053388086}
   - component: {fileID: 1053388085}
+  - component: {fileID: 1053388087}
   m_Layer: 0
   m_Name: Fog2 (6)
   m_TagString: Untagged
@@ -42004,6 +42085,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1053388087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053388083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1059499581
 GameObject:
   m_ObjectHideFlags: 0
@@ -45172,6 +45265,7 @@ GameObject:
   - component: {fileID: 1444132026}
   - component: {fileID: 1444132028}
   - component: {fileID: 1444132027}
+  - component: {fileID: 1444132029}
   m_Layer: 0
   m_Name: BoundaryFog (4)
   m_TagString: Untagged
@@ -49914,6 +50008,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1444132029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444132025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1446537237
 GameObject:
   m_ObjectHideFlags: 0
@@ -50344,6 +50450,7 @@ GameObject:
   - component: {fileID: 1509034490}
   - component: {fileID: 1509034492}
   - component: {fileID: 1509034491}
+  - component: {fileID: 1509034493}
   m_Layer: 0
   m_Name: BoundaryFog (3)
   m_TagString: Untagged
@@ -55086,6 +55193,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1509034493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509034489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509129016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57367,6 +57486,7 @@ GameObject:
   - component: {fileID: 1783727703}
   - component: {fileID: 1783727705}
   - component: {fileID: 1783727704}
+  - component: {fileID: 1783727706}
   m_Layer: 0
   m_Name: Fog2 (4)
   m_TagString: Untagged
@@ -62109,6 +62229,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1783727706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783727702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1798420214
 GameObject:
   m_ObjectHideFlags: 0
@@ -64520,6 +64652,7 @@ GameObject:
   - component: {fileID: 1979911381}
   - component: {fileID: 1979911383}
   - component: {fileID: 1979911382}
+  - component: {fileID: 1979911384}
   m_Layer: 0
   m_Name: BoundaryFog
   m_TagString: Untagged
@@ -69262,6 +69395,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1979911384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979911380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010475821
 GameObject:
   m_ObjectHideFlags: 0
@@ -69365,6 +69510,7 @@ GameObject:
   - component: {fileID: 2022002918}
   - component: {fileID: 2022002917}
   - component: {fileID: 2022002916}
+  - component: {fileID: 2022002919}
   m_Layer: 0
   m_Name: Fog1
   m_TagString: Untagged
@@ -74107,6 +74253,18 @@ Transform:
   m_Father: {fileID: 106917705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022002919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022002915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2024476630
 PrefabInstance:
   m_ObjectHideFlags: 0
