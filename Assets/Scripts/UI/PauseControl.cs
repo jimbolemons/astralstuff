@@ -9,6 +9,12 @@ public class PauseControl : MonoBehaviour
     bool prevPaused = false;
     [Tooltip("Reference to the pause canvas.")]
     public Canvas pauseCanvas;
+    public CenterMouse centerMouse;
+
+    private void Start()
+    {
+        pauseCanvas.enabled = false;
+    }
 
     void Update()
     {
@@ -37,6 +43,7 @@ public class PauseControl : MonoBehaviour
     {
         MasterStaticScript.gameIsPaused = true;
         SetPauseCanvasState();
+      // centerMouse.enabled = false;
     }
     /// <summary>
     /// Public function to unpause game
@@ -45,6 +52,7 @@ public class PauseControl : MonoBehaviour
     {
         MasterStaticScript.gameIsPaused = false;
         SetPauseCanvasState();
+      //  centerMouse.enabled = true;
     }
     /// <summary>
     /// function that sets the master script to the correct state
