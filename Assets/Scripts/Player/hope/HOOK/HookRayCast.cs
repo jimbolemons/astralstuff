@@ -50,60 +50,62 @@ public class HookRayCast : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        
-        TestLine();
-        DrawHookLine();
-        layerMask = 1 << 2;
-        layerMask = ~layerMask;
-        //line2 = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
-        line = new Ray(cameras.transform.position, cameras.transform.forward);
-        Timer();
-
-        if (!hooked & fired)
+        if (!MasterStaticScript.gameIsPaused)
         {
-            FireHook();
-            
-        }
+            TestLine();
+            DrawHookLine();
+            layerMask = 1 << 2;
+            layerMask = ~layerMask;
+            //line2 = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
+            line = new Ray(cameras.transform.position, cameras.transform.forward);
+            Timer();
 
-        if (hooked && fired)
-        {
-            
-            MakeLines();
-            ReelIn();
-          
-
-
-        }
-
-        if (hooked && fired && ropeDis <= 1)
-        {
-            UnHook();
-           
-        }
-        if (player.GetComponent<ControlSwap>().controlState != 0)
-        {
-            UnHook();
-        }
-
-            if (unhookedButInAir & !IsGrounded.downHook )
-        {
-            if (!IsGrounded.up && !CanClimb.cannotClimb)
+            if (!hooked & fired)
             {
-                ClimbUp();
-                //BaseMovementModule.gravity = -35;
-                climbing = true;
+                FireHook();
+
             }
-            else
+
+            if (hooked && fired)
+            {
+
+                MakeLines();
+                ReelIn();
+
+
+
+            }
+
+            if (hooked && fired && ropeDis <= 1)
+            {
+                UnHook();
+
+            }
+            if (player.GetComponent<ControlSwap>().controlState != 0)
+            {
+                UnHook();
+            }
+
+            if (unhookedButInAir & !IsGrounded.downHook)
+            {
+                if (!IsGrounded.up && !CanClimb.cannotClimb)
+                {
+                    ClimbUp();
+                    //BaseMovementModule.gravity = -35;
+                    climbing = true;
+                }
+                else
+                {
+                    unhookedButInAir = false;
+                    climbDelay = .5f;
+                }
+
+            }
+
+            if (unhookedButInAir & IsGrounded.downHook)
             {
                 unhookedButInAir = false;
-                climbDelay = .5f;
-            }           
-
-        }
-        
-        if (unhookedButInAir & IsGrounded.downHook)
-        {
-            unhookedButInAir = false;
+            }
         }
     }
 

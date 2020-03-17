@@ -24,20 +24,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(quitKey))
-            Quit();
-
-        if (Input.GetKeyDown(pauseKey))
-        {
-            if (!gamePaused)
-            {
-                PauseGame();
-            }
-            else
-            {
-                UnPauseGame();
-            }
-        }            
+           
     }
 
     public void GoToScene(int SceneNumber)
@@ -49,20 +36,8 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
         Debug.Log("I am Quiting the game");
     }
-    public void PauseGame()
-    {
-        gamePaused = true;
-        Time.timeScale = 0;
-    }
-    public void UnPauseGame()
-    {
-        gamePaused = false;
-        Time.timeScale = 1;
-    }
-    public void Mute()
-    {
-
-    }
+   
+   
 
     
 }

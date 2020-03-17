@@ -55,6 +55,16 @@ public class animsWaffles : MonoBehaviour
             // Debug.Log("no Run");
             anim2.SetBool("running", false);
         }
+        if (!MasterStaticScript.gameIsPaused)
+        {
+
+            anim2.enabled = true;
+        }
+        else
+        {
+            anim2.enabled = false;
+
+        }
 
     }
     public void Right()

@@ -108,6 +108,16 @@ public class HopeAnimsController : MonoBehaviour
             mainCamera.fieldOfView = Mathf.SmoothStep(mainCamera.fieldOfView, baseFov, cameraFovSpeed * Time.deltaTime);
              anim.SetBool("hooked", false);
         }
+        if (!MasterStaticScript.gameIsPaused)
+        {
+
+            anim.enabled = true;
+        }
+        else
+        {
+            anim.enabled = false;
+
+        }
 
 
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4958141353704272290}
   - component: {fileID: 757401674578751973}
   - component: {fileID: 6281363238619276147}
+  - component: {fileID: 3870919263299498463}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4753,6 +4754,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3870919263299498463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360986963097760958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partical: {fileID: 757401674578751973}
 --- !u!1 &2517067802339726911
 GameObject:
   m_ObjectHideFlags: 0
@@ -4943,6 +4957,13 @@ MonoBehaviour:
   maxHealth: 0
   health: 10
   immortal: 0
+  baseMat: {fileID: 0}
+  lerpMat: {fileID: 0}
+  color2Mat: {fileID: 0}
+  baseMats: []
+  testRenderers: []
+  testRenderer: {fileID: 0}
+  flashMat: {fileID: 0}
   isDead: 0
 --- !u!1 &7691558053287986457
 GameObject:
