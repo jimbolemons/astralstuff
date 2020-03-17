@@ -19,7 +19,7 @@ public class CenterMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sceneName == "GateCrashing" || sceneName == "TutorialGreyBox" && MasterStaticScript.gameIsPaused == false)
+        if (sceneName == "GateCrashing" || sceneName == "TutorialGreyBox" || sceneName == "Tutorial_New" && MasterStaticScript.gameIsPaused == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
