@@ -192,6 +192,11 @@ public class HookRayCast : MonoBehaviour
                 img.color = UnityEngine.Color.green;
                 canHit = true;
             }
+            else
+            {
+                img.color = UnityEngine.Color.red;
+                canHit = false;
+            }
 
         }
         else

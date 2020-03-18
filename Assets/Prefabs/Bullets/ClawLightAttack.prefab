@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9006340539365496245}
   - component: {fileID: 8524728553021628189}
   - component: {fileID: 7062866606252543753}
+  - component: {fileID: 506666347576612973}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4753,6 +4754,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &506666347576612973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133177202846774196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8532a6b0edef95d4ea1b860c56411853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HowLongToLive: 2
 --- !u!1 &3811140800667417732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,8 +4831,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34576172, y: 0.33092523, z: 3.5063517}
-  m_Center: {x: 0.036039382, y: 0.011006236, z: 1.2531756}
+  m_Size: {x: 0.6, y: 0.33092523, z: 2.09}
+  m_Center: {x: 0.25, y: 0.011006236, z: 1.2531756}
 --- !u!82 &5412369774175438119
 AudioSource:
   m_ObjectHideFlags: 0

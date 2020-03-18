@@ -4851,6 +4851,8 @@ MonoBehaviour:
   playerBullet: 0
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
+  bloodSplat: {fileID: 0}
+  bloodspot: {fileID: 0}
 --- !u!1001 &6095912048958609032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4862,7 +4864,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 597c8a00df7357c45a9ec4bb4b373ca2, type: 2}
+      objectReference: {fileID: 2100000, guid: b5884d1529ae4b247b6fd5ef3b9a045b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 1f307d7648daa93499677e43913da88c,
         type: 3}
       propertyPath: m_LocalPosition.x
