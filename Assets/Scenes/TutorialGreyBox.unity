@@ -5471,6 +5471,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3631123474867992965}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &30851760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30851756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643a0ad22a54e014a851df68f3754cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  parentType: 0
+  playerBullet: 0
+  cameraShake: {fileID: 0}
+  cameras: {fileID: 0}
 --- !u!1 &51661404
 GameObject:
   m_ObjectHideFlags: 0
@@ -78215,6 +78232,11 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3631123473549299210, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: gunEnd
@@ -78373,6 +78395,7 @@ MonoBehaviour:
   parentType: 0
   dummyBody: {fileID: 0}
   bodySpeed: 7500
+  fireAtAngle: 0
   cameraPivot: {fileID: 138862044}
 --- !u!1001 &6139826429167079141
 PrefabInstance:

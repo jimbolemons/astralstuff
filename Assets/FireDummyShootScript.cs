@@ -7,6 +7,8 @@ public class FireDummyShootScript : Gun
     public Rigidbody dummyBody;
     public float bodySpeed;
 
+    public bool fireAtAngle;
+
 
     public Transform cameraPivot;
 
@@ -26,8 +28,14 @@ public class FireDummyShootScript : Gun
             projectilePrefab.transform.position = gunEnd.transform.position;
             projectilePrefab.transform.rotation = cameraPivot.transform.rotation;
 
-            dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up/2) * Time.deltaTime * bodySpeed;
-            //dummyBody.AddForce(cameraPivot.transform.forward * Time.deltaTime * bodySpeed);
+            if (fireAtAngle)
+            {
+                dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up / 2) * Time.deltaTime * bodySpeed;
+            }
+            else
+            {
+                dummyBody.velocity =  (cameraPivot.transform.forward * Time.deltaTime * bodySpeed);
+            }
             dummyBody.AddTorque(50, 0, 0);
 
             canFire = false;
