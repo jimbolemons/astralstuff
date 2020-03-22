@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5459,6 +5459,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25974284}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &30851756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5367720194544765141, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631123474867992965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &51661404
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,7 +7459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.9999924, y: 0}
+  m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &288588381
@@ -57996,7 +58002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5313726, y: 0.08714815}
   m_AnchorMax: {x: 0.92700005, y: 0.1591852}
-  m_AnchoredPosition: {x: -0.40000153, y: 1}
+  m_AnchoredPosition: {x: -0.40000916, y: 1}
   m_SizeDelta: {x: 156, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599827111
@@ -77991,6 +77997,16 @@ PrefabInstance:
       propertyPath: cameras
       value: 
       objectReference: {fileID: 138862044}
+    - target: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3631123473549299210, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: gunEnd
@@ -78021,6 +78037,21 @@ PrefabInstance:
       propertyPath: cameraControl
       value: 
       objectReference: {fileID: 680966645}
+    - target: {fileID: 8060628530584088470, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: FireDummyShootScript
+      value: 
+      objectReference: {fileID: 3631123474867992967}
+    - target: {fileID: 8600859692509937052, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600859692509937052, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameraShake
@@ -78112,6 +78143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f34d89d46f26bf4595d823a37f09387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunEnd: {fileID: 8630143290528383240}
+  projectilePrefab: {fileID: 30851756}
+  fireCooldown: 0.3
+  canFire: 1
+  parentType: 0
+  dummyBody: {fileID: 0}
+  bodySpeed: 7500
+  cameraPivot: {fileID: 138862044}
 --- !u!1001 &6139826429167079141
 PrefabInstance:
   m_ObjectHideFlags: 0

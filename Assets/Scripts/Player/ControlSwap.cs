@@ -12,6 +12,8 @@ public class ControlSwap : MonoBehaviour
     public BaseMovementModule wafflesMovement;
 
     public ThirdPersonCamera cameraControl;
+
+    public Gun FireDummyShootScript;
     
 
     public int controlState = 0;
@@ -24,6 +26,7 @@ public class ControlSwap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FireDummyShootScript = GetComponent<Gun>();
     }
 
     // Update is called once per frame
@@ -75,7 +78,8 @@ public class ControlSwap : MonoBehaviour
         waffles.SetActive(true);
         hope.SetActive(false);
         body.SetActive(true);
-        body.transform.position = transform.position;
+        //body.transform.position = transform.position;
+        FireDummyShootScript.Fire();
         body.transform.SetParent(null);
         BaseMovementModule.gravity = -35;
     }
