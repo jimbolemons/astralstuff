@@ -5,7 +5,8 @@ using UnityEngine;
 public class ControlSwap : MonoBehaviour
 {
     public GameObject hope;
-    public GameObject body;
+    public GameObject dummy;
+    public GameObject dummyArrow;
     public GameObject waffles;
 
     public BaseMovementModule hopeMovement;
@@ -68,19 +69,21 @@ public class ControlSwap : MonoBehaviour
         waffles.SetActive(false);
         if (revertToBody)
         {
-            transform.position = body.transform.position;
+            transform.position = dummy.transform.position;
         }
-        body.SetActive(false);
+        dummy.SetActive(false);
+        dummyArrow.SetActive(false);
     }
     void ActivateWaffles()
     {
         hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);
-        body.SetActive(true);
+        dummy.SetActive(true);
+        dummyArrow.SetActive(true);
         //body.transform.position = transform.position;
         FireDummyShootScript.Fire();
-        body.transform.SetParent(null);
+        dummy.transform.SetParent(null);
         BaseMovementModule.gravity = -35;
     }
 }
