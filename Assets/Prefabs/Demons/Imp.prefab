@@ -182,10 +182,10 @@ MonoBehaviour:
   maxHealth: 1
   health: 1
   immortal: 0
-  materials: []
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
   color2Mat: {fileID: 0}
+  baseMats: []
   testRenderers:
   - {fileID: 7487778551449828996}
   testRenderer: {fileID: 0}
@@ -550,7 +550,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b5884d1529ae4b247b6fd5ef3b9a045b, type: 2}
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
     - target: {fileID: -4216859302048453862, guid: f118aeec27a154f4985984619d724f62,
         type: 3}
       propertyPath: m_LocalPosition.x
