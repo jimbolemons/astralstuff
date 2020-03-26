@@ -17,6 +17,8 @@ public class MainMenuController : MonoBehaviour
     private float volumeFloat = 1f;
     private AudioSource audioSrc;
 
+    public LevelTransitionLoader levelLoader;
+
     private void Start()
     {
         
@@ -29,7 +31,9 @@ public class MainMenuController : MonoBehaviour
 
     public void GoToScene(int SceneNumber)
     {
+        //levelLoader.TriggerAnimation();
         SceneManager.LoadScene(SceneNumber);
+        
     }
     public void Quit()
     {

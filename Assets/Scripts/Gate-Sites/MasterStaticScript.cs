@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class containing static variables for easy reference in the scene
@@ -15,6 +14,8 @@ public class MasterStaticScript : MonoBehaviour
     public static GameObject playerReference;
 
     private static MasterStaticScript instance;
+
+    public static LevelTransitionLoader LevelLoader;
 
     [Tooltip("Stores all the Sacred Sites in the scene.")]
     public static List<GameObject> sacredSites = new List<GameObject>();
@@ -46,7 +47,7 @@ public class MasterStaticScript : MonoBehaviour
         if (sacredSites.Count <= 0)
         {
             print("Game has been lost. Via Site Distruction");
-            SceneManager.LoadScene("loseMk2");
+            LevelLoader.LoadScene("loseMk2");
             //TODO: change Game's lose state to true, go to lose scene.
 
         }       
@@ -54,8 +55,8 @@ public class MasterStaticScript : MonoBehaviour
 
     public static void PlayerDead()
     {
-        print("Game has been lost.");
-        SceneManager.LoadScene("loseMk2");
+        print("Game has been lost.");        
+        LevelLoader.LoadScene("loseMk2");
     }
 
     public static void CheckForGameWin()
@@ -63,9 +64,11 @@ public class MasterStaticScript : MonoBehaviour
         if (enemyGates.Count <= 1)
         {
         print("Game has been won!");
-            SceneManager.LoadScene("WinState");
-        //TODO: change Game's win state to true, go to win scene.
+
+            LevelLoader.LoadScene("WinState");
         }
     }
+
+
     
 }
