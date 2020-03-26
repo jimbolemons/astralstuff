@@ -26,8 +26,8 @@ public class MasterStaticScript : MonoBehaviour
     void Awake()
     {
         playerReference = GameObject.FindGameObjectsWithTag("Player")[0];
-        Debug.Log(playerReference);
-        print(playerReference.transform.position);
+       // Debug.Log(playerReference);
+       // print(playerReference.transform.position);
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class MasterStaticScript : MonoBehaviour
     public static void RemoveFromObjectList(GameObject objectToRemove, List<GameObject> objectList)
     {
         objectList.Remove(objectToRemove);
-        print("Current number of objects in List: " + objectList.Count);
+        //print("Current number of objects in List: " + objectList.Count);
     }
 
     public static void CheckForGameLose()
