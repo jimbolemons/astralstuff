@@ -4964,6 +4964,8 @@ MonoBehaviour:
   testRenderer: {fileID: 0}
   flashMat: {fileID: 0}
   isDead: 0
+  expansionRing: {fileID: 5944818764900820491, guid: f46568298838e2045a7f492f71c94cb3,
+    type: 3}
 --- !u!1 &7691558053287986457
 GameObject:
   m_ObjectHideFlags: 0

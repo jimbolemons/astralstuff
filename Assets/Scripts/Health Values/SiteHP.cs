@@ -5,6 +5,8 @@ using UnityEngine;
 public class SiteHP : ObjectWithHealth
 {
     public bool isDead = false;
+    public GameObject expansionRing;
+    public float playerWarningDistance = 80;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class SiteHP : ObjectWithHealth
         {
             //do your thing.
         }
+       // Debug.Log(MasterStaticScript.playerReference.transform.position);
     }
 
 
@@ -32,7 +35,7 @@ public class SiteHP : ObjectWithHealth
 
     private void killSite()
     {
-        print("Site is dead.");
+        //print("Site is dead.");
         MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.sacredSites);
 
         MasterStaticScript.CheckForGameLose();
@@ -40,6 +43,10 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        float dist = Vector3.Distance(transform.position, MasterStaticScript.playerReference.transform.position);
+        if (dist > playerWarningDistance) {
+        Instantiate(expansionRing, new Vector3(transform.position.x, transform.position.y + 40, transform.position.z), Quaternion.identity);
+        }
     }
 }
