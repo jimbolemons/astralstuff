@@ -18,7 +18,7 @@ public class Ring_Contraction : MonoBehaviour
     void Update()
     {
         float size = Mathf.Lerp(1, initialSize, sizeTimer / secondsToShrink);
-        print(size);
+        //print(size);
         transform.localScale = new Vector3(size,1,size);
         //print(transform.localScale);
         //print(Mathf.Lerp(1, initialSize, sizeTimer/initialSize));
