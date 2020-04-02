@@ -64,7 +64,9 @@ public class ControlSwap : MonoBehaviour
 
     void ActivateHope()
     {
-       
+
+        //SOUND
+        FindObjectOfType<AudioManager>().Play("timeScream");
         hope.SetActive(true);
         waffles.SetActive(false);
         if (revertToBody)
@@ -76,6 +78,8 @@ public class ControlSwap : MonoBehaviour
     }
     void ActivateWaffles()
     {
+        //Sound
+        FindObjectOfType<AudioManager>().Play("timeScream");
         hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);

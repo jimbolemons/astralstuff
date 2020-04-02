@@ -25,6 +25,8 @@ public class IsGrounded : MonoBehaviour
     public static bool wall;
      //public static bool cannotClimb;
     public static bool canClimb;
+    int time;
+    bool grounded = false;
 
     int layerMask = 0;
 
@@ -64,11 +66,27 @@ public class IsGrounded : MonoBehaviour
         {
             anim.SetBool("Grounded", true);
             anim2.SetBool("Grounded", true);
+            if (!grounded)
+            {
+                //SOUND
+                FindObjectOfType<AudioManager>().Play("timeScream");
+
+                grounded = true;
+            }
+            
+            
         }
         if (!down)
         {
             anim.SetBool("Grounded", false);
             anim2.SetBool("Grounded", false);
+            if (grounded)
+            {
+                //SOUND
+                FindObjectOfType<AudioManager>().Play("timeScream");
+
+                grounded = false;
+            }
         }
 
     }
