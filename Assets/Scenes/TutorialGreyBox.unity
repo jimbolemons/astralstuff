@@ -5911,7 +5911,7 @@ Transform:
   - {fileID: 1444132026}
   - {fileID: 575365174}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113349081
 GameObject:
@@ -6386,7 +6386,7 @@ Transform:
   - {fileID: 690653860}
   - {fileID: 610783222}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &138862044 stripped
 Transform:
@@ -30677,7 +30677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 37.401, y: 8.226001, z: -141.16}
 --- !u!1 &749464093
 GameObject:
@@ -31193,7 +31193,7 @@ RectTransform:
   - {fileID: 1798420215}
   - {fileID: 1046853344}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -32603,7 +32603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917447342
 GameObject:
@@ -56402,6 +56402,77 @@ Transform:
   m_Father: {fileID: 470737437}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!1001 &1451624664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -272.69214
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 74.40626
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312842, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756112813902312846, guid: 6b844b4267673a4489c70f764c326eee,
+        type: 3}
+      propertyPath: m_Name
+      value: Explosion
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -5269862804423337287, guid: 6b844b4267673a4489c70f764c326eee, type: 3}
+    - {fileID: 5756112813902312841, guid: 6b844b4267673a4489c70f764c326eee, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 6b844b4267673a4489c70f764c326eee, type: 3}
 --- !u!1 &1478990645
 GameObject:
   m_ObjectHideFlags: 0
@@ -70030,7 +70101,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
+  m_fontSize: 28.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
