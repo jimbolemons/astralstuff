@@ -17,14 +17,17 @@ public class IsGrounded : MonoBehaviour
 
     public static bool up;
     public static bool down;
+    public bool wasGrounded;
     public static bool downHook;
     public static bool right;
     public static bool left;
     public static bool front;
     public static bool back;
     public static bool wall;
-     //public static bool cannotClimb;
+    //public static bool cannotClimb;
     public static bool canClimb;
+
+    public ParticleSystem landingDust;
 
     int layerMask = 0;
 
@@ -35,33 +38,40 @@ public class IsGrounded : MonoBehaviour
     }
     void Update()
     {
-       
+
         layerMask = 1 << 2;
         layerMask = ~layerMask;
-        up    = Up();
-        down  = Down();
+        up = Up();
+        down = Down();
         downHook = DownHook();
         right = Right();
-        left  = Left();
+        left = Left();
         front = Front();
-        back  = Back();
+        back = Back();
         wall = TouchingWall();
         //cannotClimb = CannotClimb();
         //Debug.DrawRay(climbSpot.transform.position, transform.forward * 2f, Color.yellow, layerMask);
-        
 
-        Debug.DrawRay(player.transform.position, transform.up* 1.5f, Color.yellow, layerMask);
-        Debug.DrawRay(player.transform.position, -transform.up* 1.5f, Color.yellow, layerMask);
+
+        Debug.DrawRay(player.transform.position, transform.up * 1.5f, Color.yellow, layerMask);
+        Debug.DrawRay(player.transform.position, -transform.up * 1.5f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, transform.right * 1f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, -transform.right * 1f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, transform.forward * 1f, Color.yellow, layerMask);
         Debug.DrawRay(player.transform.position, -transform.forward * 1f, Color.yellow, layerMask);
         AnimateFunc();
+
+        wasGrounded = down;
     }
     public void AnimateFunc()
     {
         if (down)
         {
+            if (wasGrounded != down)
+            {
+                print("just grounded");
+                landingDust.Play();
+            }
             anim.SetBool("Grounded", true);
             anim2.SetBool("Grounded", true);
         }
@@ -84,10 +94,10 @@ public class IsGrounded : MonoBehaviour
         }
     }
     public bool Up()
-    {        
-        return Physics.Raycast(player.transform.position, transform.up, 1.5f, layerMask);        
+    {
+        return Physics.Raycast(player.transform.position, transform.up, 1.5f, layerMask);
     }
-    public  bool Down()
+    public bool Down()
     {
         return Physics.Raycast(player.transform.position, -transform.up, 1.5f, layerMask);
     }
@@ -112,9 +122,9 @@ public class IsGrounded : MonoBehaviour
         return Physics.Raycast(player.transform.position, -transform.forward, 1f, layerMask);
     }
     //public bool CannotClimb()
-   // {
+    // {
     //    return Physics.Raycast(climbSpot.transform.position, transform.forward, 2f, layerMask);
     //}
-    
+
 
 }

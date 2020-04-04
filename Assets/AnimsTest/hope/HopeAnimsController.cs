@@ -42,7 +42,15 @@ public class HopeAnimsController : MonoBehaviour
         }
         else
         {
+            try
+            {
            anim.SetBool("dance", false);
+            }
+            catch
+            {
+                print("dance animation not working");
+            }
+
 
             // Debug.Log("NO E");
 
