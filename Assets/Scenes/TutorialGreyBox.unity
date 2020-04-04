@@ -6683,7 +6683,7 @@ GameObject:
   - component: {fileID: 159571196}
   - component: {fileID: 159571195}
   m_Layer: 2
-  m_Name: Particle System
+  m_Name: Dust Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6696,12 +6696,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159571193}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1823960351}
-  m_RootOrder: 0
+  m_Father: {fileID: 3631123474867992968}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &159571195
 ParticleSystemRenderer:
@@ -12293,7 +12293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.9999847, y: 0}
+  m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &288588381
@@ -31031,6 +31031,31 @@ PrefabInstance:
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 8630143290528383240}
+    - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: cameraLerpSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: cameraSnapDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: maxLerpTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: baseLerpSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179153274459336454, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
+        type: 3}
+      propertyPath: minCamDis
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2179153274459336455, guid: e5114f03e0f4b8c4ebefdc150a69ae15,
         type: 3}
       propertyPath: m_Name
@@ -50165,12 +50190,6 @@ Transform:
   m_Father: {fileID: 137714544}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!4 &1316870759 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 835125535822189513, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3631123474867992965}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1322461268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63147,7 +63166,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 39.95
+  m_fontSize: 45.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -69926,37 +69945,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc43c6863f94c04bb1f61ada91a3aa7, type: 3}
---- !u!1 &1823960350
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1823960351}
-  m_Layer: 2
-  m_Name: Dust Particles
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1823960351
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823960350}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 159571194}
-  m_Father: {fileID: 1316870759}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824002023
 GameObject:
   m_ObjectHideFlags: 0
@@ -70042,7 +70030,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 27.75
+  m_fontSize: 28
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -83264,6 +83252,12 @@ MonoBehaviour:
   bodySpeed: 7500
   fireAtAngle: 0
   cameraPivot: {fileID: 138862044}
+--- !u!4 &3631123474867992968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8630143291791907486, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631123474867992965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6139826429167079141
 PrefabInstance:
   m_ObjectHideFlags: 0
