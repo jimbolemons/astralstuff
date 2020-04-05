@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max: 0.1
   min: -0.1
-  shakeSpeed: 50
+  shakeSpeed: 80
 --- !u!1 &8169618987251675690
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2214929974055843566}
   - component: {fileID: 7498080174881612859}
   - component: {fileID: 5014048632473215301}
-  - component: {fileID: 816096892827099350}
+  - component: {fileID: 7522349593111932091}
   m_Layer: 0
   m_Name: Hadoken
   m_TagString: Untagged
@@ -190,7 +190,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &816096892827099350
+--- !u!114 &7522349593111932091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,11 +199,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8169618987251675690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52c0aabffa5edc44af7e11120b9cb76, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da0c29d45162c041a16ea3230c1aacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   parentType: 0
-  playerBullet: 0
+  playerBullet: 1
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
+  explosion: {fileID: 230024017517161355, guid: 069b60b96db0ee4438788ae456df0117,
+    type: 3}

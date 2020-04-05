@@ -55,8 +55,15 @@ public class MasterStaticScript : MonoBehaviour
 
     public static void PlayerDead()
     {
-        print("Game has been lost.");        
+        print("Game has been lost.");
+        try{
         LevelLoader.LoadScene("loseMk2");
+        }
+        catch
+        {
+            print("WARNING!! May need to check which lose state is loaded in build settings");
+        LevelLoader.LoadScene("loseState");
+        }
     }
 
     public static void CheckForGameWin()

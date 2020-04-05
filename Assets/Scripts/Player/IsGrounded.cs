@@ -69,7 +69,7 @@ public class IsGrounded : MonoBehaviour
         {
             if (wasGrounded != down)
             {
-                print("just grounded");
+                //print("just grounded");
                 landingDust.Play();
             }
             anim.SetBool("Grounded", true);
