@@ -43,6 +43,8 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
+        FindObjectOfType<AudioManager>().Play("timeScream");
+        //SOUND
         //Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         float dist = Vector3.Distance(transform.position, MasterStaticScript.playerReference.transform.position);
         if (dist > playerWarningDistance) {

@@ -59,39 +59,39 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         //only run if game isn't paused
         if (!MasterStaticScript.gameIsPaused)
-        {
-            //set position to be camera target, so we follow player
-            //transform.position = cameraTarget.transform.position;
-
-            float distance = Vector3.Distance(transform.position, cameraTarget.transform.position);
-            if (distance < minCamDis) lerping = false;
-
-            if (lerping)
-            {
-                lerpTimer += Time.deltaTime;
-                transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, lerpTimer/maxLerpTime);
-            }
-            else
-            {
-                lerpTimer = 0;
-                transform.position = cameraTarget.transform.position;
-            }
-
-
-            if(raycastConfirm)
-            {
-                mainCamera.transform.position = wantedPos;
-            }
-            else
-            {
-               UpdateCameraDistance();
-            }
-
-           // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);
-
-            //if camera distance has been updated, fix camera position
-           // UpdateCameraDistance();
-
+        {
+            //set position to be camera target, so we follow player
+            //transform.position = cameraTarget.transform.position;
+
+            float distance = Vector3.Distance(transform.position, cameraTarget.transform.position);
+            if (distance < minCamDis) lerping = false;
+
+            if (lerping)
+            {
+                lerpTimer += Time.deltaTime;
+                transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, lerpTimer/maxLerpTime);
+            }
+            else
+            {
+                lerpTimer = 0;
+                transform.position = cameraTarget.transform.position;
+            }
+
+
+            if(raycastConfirm)
+            {
+                mainCamera.transform.position = wantedPos;
+            }
+            else
+            {
+               UpdateCameraDistance();
+            }
+
+           // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);
+
+            //if camera distance has been updated, fix camera position
+           // UpdateCameraDistance();
+
             CheckRayCamera();
 
 
@@ -118,8 +118,8 @@ public class ThirdPersonCamera : MonoBehaviour
     }
 
 
-    public void SetLerp(bool x)
-    {        
+    public void SetLerp(bool x)
+    {        
         lerping = x;        
     }
     void UpdateCameraDistance()

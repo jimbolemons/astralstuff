@@ -40,5 +40,7 @@ public class GateHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
+        FindObjectOfType<AudioManager>().Play("timeScream");
+        //SOUND
     }
 }

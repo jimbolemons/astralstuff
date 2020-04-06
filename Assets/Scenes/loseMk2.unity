@@ -695,7 +695,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 111
+  m_fontSize: 44.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -988,6 +988,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3277937218242186532, guid: 310b54889c533f542afddc3e12a4f980,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
+    - target: {fileID: 5212293329183706894, guid: 310b54889c533f542afddc3e12a4f980,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
     - target: {fileID: 6171926495927456056, guid: 310b54889c533f542afddc3e12a4f980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1048,6 +1058,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: loserholder 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7782406232088149248, guid: 310b54889c533f542afddc3e12a4f980,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
+    - target: {fileID: 8705990103803859395, guid: 310b54889c533f542afddc3e12a4f980,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
+    - target: {fileID: 8734727714448350806, guid: 310b54889c533f542afddc3e12a4f980,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fff3144f584b4a9e65612394d909b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 310b54889c533f542afddc3e12a4f980, type: 3}
 --- !u!1 &2074630516
