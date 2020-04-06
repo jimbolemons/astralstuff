@@ -13,7 +13,7 @@ public class SiteHP : ObjectWithHealth
     {
         objectType = objectWithHealthType.destructible;
         MasterStaticScript.sacredSites.Add(gameObject);
-        audio = FindObjectOFType<AudioManager>();
+        audio = FindObjectOfType<AudioManager>();
     }
 
     public void Update()
