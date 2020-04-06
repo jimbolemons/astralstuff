@@ -23,10 +23,13 @@ public class ControlSwap : MonoBehaviour
 
     bool keyWasPressed;
     bool setupCheck = false;
+    public AudioManager audio;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = FindObjectOfType<AudioManager>();
         FireDummyShootScript = GetComponent<Gun>();
     }
 
@@ -66,7 +69,7 @@ public class ControlSwap : MonoBehaviour
     {
 
         //SOUND
-        FindObjectOfType<AudioManager>().Play("timeScream");
+        audio.Play("timeScream");
         hope.SetActive(true);
         waffles.SetActive(false);
         if (revertToBody)
@@ -79,7 +82,7 @@ public class ControlSwap : MonoBehaviour
     void ActivateWaffles()
     {
         //Sound
-        FindObjectOfType<AudioManager>().Play("timeScream");
+       audio.Play("timeScream");
         hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);
