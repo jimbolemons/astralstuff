@@ -28,12 +28,12 @@ public abstract class ObjectWithHealth : MonoBehaviour
     public Material baseMat;
     public Material lerpMat;
 
-    public Material color2Mat;
+    //public Material color2Mat;
     public List<Material> baseMats;
 
 
     public SkinnedMeshRenderer[] testRenderers;
-    public Renderer testRenderer;
+    //public Renderer testRenderer;
     
     //public Color baseColor;
     public Material flashMat;
