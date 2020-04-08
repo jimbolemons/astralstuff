@@ -106,7 +106,7 @@ public class SpawnDemons : MonoBehaviour
         }
         catch
         {
-
+            Debug.LogError("Enemy unable to set valid target!!");
         }
     }
 
