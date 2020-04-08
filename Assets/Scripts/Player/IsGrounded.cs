@@ -30,7 +30,7 @@ public class IsGrounded : MonoBehaviour
     bool grounded = false;
 
     public ParticleSystem landingDust;
-
+    AudioManager audio;
     int layerMask = 0;
 
     private void Start()

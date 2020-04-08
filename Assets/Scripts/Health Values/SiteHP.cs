@@ -7,11 +7,13 @@ public class SiteHP : ObjectWithHealth
     public bool isDead = false;
     public GameObject expansionRing;
     public float playerWarningDistance = 80;
+    public AudioManager audio;
 
     private void Start()
     {
         objectType = objectWithHealthType.destructible;
         MasterStaticScript.sacredSites.Add(gameObject);
+        audio = FindObjectOfType<AudioManager>();
     }
 
     public void Update()
@@ -43,7 +45,7 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-        FindObjectOfType<AudioManager>().Play("timeScream");
+       audio.Play("timeScream");
         //SOUND
         //Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         float dist = Vector3.Distance(transform.position, MasterStaticScript.playerReference.transform.position);

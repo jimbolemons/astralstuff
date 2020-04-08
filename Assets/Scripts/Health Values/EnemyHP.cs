@@ -12,10 +12,9 @@ public class EnemyHP : ObjectWithHealth
     public CameraShake cameraShake;
     public GameObject cameras;
     public AudioSource slap;
-    public EnemyTarget eneeie;
+    public EnemyTarget eneeie;    
     public AutoFire shoot;
     public NavMeshAgent agent;
-
     public Collider[] colliders;
 
     ImpAnimCOn impAnim;
