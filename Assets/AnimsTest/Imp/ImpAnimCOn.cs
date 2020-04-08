@@ -24,6 +24,7 @@ public class ImpAnimCOn : MonoBehaviour
         {
            
            // Debug.Log("HOLDING E");
+           anim.SetTrigger("hit");
         }
         else
         {
