@@ -515,12 +515,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 84dde6370273a034b8f6083c49e72807,
-        type: 3}
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2262635010941596131, guid: 51fc27426079f39459e1d33e34cc5897,
         type: 3}
       propertyPath: m_Type
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262635010941596131, guid: 51fc27426079f39459e1d33e34cc5897,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262635010941596131, guid: 51fc27426079f39459e1d33e34cc5897,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262635010941596131, guid: 51fc27426079f39459e1d33e34cc5897,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262635010941596131, guid: 51fc27426079f39459e1d33e34cc5897,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51fc27426079f39459e1d33e34cc5897, type: 3}
@@ -706,7 +725,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 122
+  m_fontSize: 120.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1270,6 +1289,11 @@ PrefabInstance:
     - target: {fileID: 3949492885875187178, guid: 0cc3c14941ebd6742960bce5031c017a,
         type: 3}
       propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949492885875187178, guid: 0cc3c14941ebd6742960bce5031c017a,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3949492885875187180, guid: 0cc3c14941ebd6742960bce5031c017a,
