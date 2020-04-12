@@ -13,7 +13,7 @@ public class EnemyHP : ObjectWithHealth
     public GameObject cameras;
     public AudioSource slap;
     public EnemyTarget eneeie;    
-    public AutoFire shoot;
+    public DemonAttackFire shoot;
     public NavMeshAgent agent;
     public Collider[] colliders;
 
@@ -31,7 +31,7 @@ public class EnemyHP : ObjectWithHealth
         bruteAnim = gameObject.GetComponentInChildren<BruteAnimCon>();
         conjAnim = gameObject.GetComponentInChildren<conjAnimCon>();
         eneeie = gameObject.GetComponent<EnemyTarget>();
-        shoot = gameObject.GetComponentInChildren<AutoFire>();
+        shoot = gameObject.GetComponentInChildren<DemonAttackFire>();
         agent = gameObject.GetComponent<NavMeshAgent>();
 
         colliders = GetComponents<Collider>();

@@ -355,11 +355,9 @@ MonoBehaviour:
   immortal: 0
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
-  color2Mat: {fileID: 0}
   baseMats: []
   testRenderers:
   - {fileID: 7991733638971130149}
-  testRenderer: {fileID: 0}
   flashMat: {fileID: 2100000, guid: bb0ba4999bc02c541b6807f9adf03a0e, type: 2}
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
@@ -383,7 +381,9 @@ MonoBehaviour:
   distanceToPlayer: 20
   moveSpeed: 0
   rotSpeed: 1
+  gunReference: {fileID: 5575375505374192244}
   targetSite: {fileID: 0}
+  attackRange: 3
   currentState: 0
 --- !u!82 &7766545823095819990
 AudioSource:
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 1867413545703099807}
   - component: {fileID: 5404928556451065144}
   - component: {fileID: 8760678163909712583}
-  - component: {fileID: 7335090523586891995}
+  - component: {fileID: 5575375505374192244}
   m_Layer: 0
   m_Name: GunSingleShot (1)
   m_TagString: Untagged
@@ -594,7 +594,7 @@ MonoBehaviour:
   fireCooldown: 1
   canFire: 1
   parentType: 0
---- !u!114 &7335090523586891995
+--- !u!114 &5575375505374192244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7798454252353926137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc87afcb491e2104ca65ec9d7ea04312, type: 3}
+  m_Script: {fileID: 11500000, guid: 64925fb9198588d4e9a347abe56226cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 8760678163909712583}

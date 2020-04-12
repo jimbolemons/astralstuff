@@ -10,9 +10,6 @@ public class GateHealthBar : MonoBehaviour
     public ObjectWithHealth gateHealth;
     void Start()
     {
-        //TODO : fix this to get reference from master static script
-        // player = MasterStaticScript.playerReference;
-
         healthBarSlider.maxValue = gateHealth.maxHealth;
     }
 

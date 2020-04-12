@@ -18,6 +18,9 @@ public class EnemyTarget : MonoBehaviour
 
     public float moveSpeed;
     public float rotSpeed = 1;
+
+
+    public DemonAttackFire gunReference;
     //float step;
 
     
@@ -25,6 +28,8 @@ public class EnemyTarget : MonoBehaviour
     NavMeshAgent agent;
     public Transform targetSite;
     private bool readyToGo = false;
+
+    public float attackRange = 5;
 
     public enum EnemyState { IDLE, FOLLOW_PLAYER, FOLLOW_SITE };
 
@@ -120,23 +125,30 @@ public class EnemyTarget : MonoBehaviour
                     var neededRotation2 = Quaternion.LookRotation(player.transform.position - transform.position);
                   Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * rotSpeed);
 
-                   
-                   // transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
+                    print("test1");                    
+                    print("trying to fire" + checkDistance(player.transform.position, attackRange));
+                    if (checkDistance(targetSite.transform.position, attackRange))
+                    {
+                        print("firing");
+                        gunReference.Fire();
+                    }
+
+                    // transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));        //MasterStaticScript.player.position
                     //transform.LookAt(player.transform.position);       
                     //TODO: face gun / attack towards player y, not whole model
                     //transform.rotation *= Quaternion.Euler(0, -90, 0);
                     //print("Demon is following player.");
                 }
 
-                if (dist > distanceToPlayer)
-                {
-                    currentState = EnemyState.IDLE;
-                   
-                }
                 if (readyToGo && dist > distanceToPlayer)
                 {
                     currentState = EnemyState.FOLLOW_SITE;
                     
+                }
+                if (dist > distanceToPlayer)
+                {
+                    currentState = EnemyState.IDLE;
+                   
                 }
                 break;
             case (EnemyState.FOLLOW_SITE):
@@ -166,6 +178,13 @@ public class EnemyTarget : MonoBehaviour
                         Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * rotSpeed);
 
                         //transform.rotation *= Quaternion.Euler(0, -90, 0);
+
+                        print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
+                        if (checkDistance(targetSite.transform.position, attackRange))
+                        {
+                            print("firing");
+                            gunReference.Fire();
+                        }
                     }
                     //print("Demon is moving towards Sacred Site.");
                     catch
@@ -180,6 +199,17 @@ public class EnemyTarget : MonoBehaviour
                 //else currentState = EnemyState.IDLE;
                 break;
         }
+    }
+
+    public bool checkDistance(Vector3 targetLocation, float distance)
+    {
+        float distanceFromTarget = Vector3.Distance(targetLocation, transform.position);
+
+        if(distanceFromTarget < distance)
+        {
+            return true;
+        }
+        return false;
     }
     public void SetTarget(Transform target)
     {
