@@ -137,4 +137,10 @@ public class HopeAnimsController : MonoBehaviour
     {
         hooked = false;
     }
+    public void Hit() 
+    {
+            anim.SetTrigger("hit");
+
+
+    }
 }

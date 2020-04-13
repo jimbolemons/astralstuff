@@ -5486,8 +5486,8 @@ MonoBehaviour:
   damage: 1
   parentType: 0
   playerBullet: 0
-  cameraShake: {fileID: 0}
-  cameras: {fileID: 0}
+  cameraShake: {fileID: 296115076}
+  cameras: {fileID: 1382703673}
 --- !u!1 &51661404
 GameObject:
   m_ObjectHideFlags: 0
@@ -49981,6 +49981,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219501966}
   m_CullTransparentMesh: 0
+--- !u!114 &1222006451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1787188517102596531, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631123474867992965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2286d71564faa1540ba999ecf9d08cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1236714949
 GameObject:
   m_ObjectHideFlags: 0
@@ -83708,6 +83720,11 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2666501639396820587, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2116565242}
     - target: {fileID: 3518690060133789538, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: landingDust
@@ -83743,6 +83760,11 @@ PrefabInstance:
       propertyPath: hook
       value: 
       objectReference: {fileID: 897559118}
+    - target: {fileID: 7824055317388645834, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2116565242}
     - target: {fileID: 8060628530584088470, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameraControl
@@ -83776,13 +83798,18 @@ PrefabInstance:
     - target: {fileID: 8630143290454248264, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 296115076}
+    - target: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: waffleanims
+      value: 
+      objectReference: {fileID: 1222006451}
     - target: {fileID: 8630143291791907486, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_LocalPosition.x

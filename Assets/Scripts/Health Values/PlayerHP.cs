@@ -18,11 +18,16 @@ public class PlayerHP : ObjectWithHealth
     public GameObject hope;
     public GameObject deadBody;
     public GameObject waffles;
+    
+    HopeAnimsController hopeAnims;
+     animsWaffles waffleanims;
 
     private void Start()
     {
         objectType = objectWithHealthType.player;
         GetRenderers();
+        hopeAnims =  GetComponentInChildren<HopeAnimsController>();
+        waffleanims = GetComponentInChildren<animsWaffles>();
     }
 
     public void Update()
@@ -48,6 +53,8 @@ public class PlayerHP : ObjectWithHealth
     {
         if (!deadNoflash)
         {
+            hopeAnims.Hit();
+            waffleanims.Hit();
             StartCoroutine(cameraShake.Shake(.15f, .4f));
             PostProcessingEffectsManager.instance.Flash2();
             FindObjectOfType<AudioManager>().Play("timeScream");
