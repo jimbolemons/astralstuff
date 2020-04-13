@@ -18,7 +18,7 @@ public class FireDummyShootScript : Gun
     }
     private void FixedUpdate()
     {
-        dummyBody.useGravity = false;
+       // dummyBody.useGravity = false;
         dummyBody.AddForce(Physics.gravity * (dummyBody.mass * dummyBody.mass));
     }
     public override void Fire()

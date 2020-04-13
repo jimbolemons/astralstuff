@@ -5062,7 +5062,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14.95
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5468,6 +5468,12 @@ GameObject:
 --- !u!4 &30851757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1539676818644627001, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631123474867992965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &30851759 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
     type: 3}
   m_PrefabInstance: {fileID: 3631123474867992965}
   m_PrefabAsset: {fileID: 0}
@@ -14670,7 +14676,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 12.9
+  m_fontSize: 18.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -63674,7 +63680,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 12.45
+  m_fontSize: 18.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64447,7 +64453,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.95
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64817,7 +64823,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 7.45
+  m_fontSize: 10.7
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -65137,7 +65143,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10.1
+  m_fontSize: 14.5
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -70623,7 +70629,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.65
+  m_fontSize: 12.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -70778,7 +70784,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14.95
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -83713,7 +83719,7 @@ PrefabInstance:
     - target: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_Drag
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
@@ -83901,9 +83907,9 @@ MonoBehaviour:
   fireCooldown: 0.3
   canFire: 1
   parentType: 0
-  dummyBody: {fileID: 0}
-  bodySpeed: 7500
-  fireAtAngle: 0
+  dummyBody: {fileID: 30851759}
+  bodySpeed: 6000
+  fireAtAngle: 1
   cameraPivot: {fileID: 138862044}
 --- !u!4 &3631123474867992968 stripped
 Transform:
