@@ -127,7 +127,7 @@ public class EnemyTarget : MonoBehaviour
 
                     print("test1");                    
                     print("trying to fire" + checkDistance(player.transform.position, attackRange));
-                    if (checkDistance(targetSite.transform.position, attackRange))
+                    if (checkDistance(player.transform.position, attackRange))
                     {
                         print("firing");
                         gunReference.Fire();

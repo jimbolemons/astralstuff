@@ -21,7 +21,7 @@ public class Fire3ShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             //if player presses fire2
-            if (Input.GetKeyDown(KeyCode.J) && pFiring == 0)
+            if (Input.GetMouseButtonDown(1) && pFiring == 0)
             {
                 //fire every gun the hand is holding
                 foreach (Gun g in leftArmGuns)
@@ -37,7 +37,7 @@ public class Fire3ShootScript : MonoBehaviour
                 //if (Input.GetKeyDown(KeyCode.J)) pFiring = 0;
                 //fire every gun the hand is holding               
 
-                if (Input.GetKeyUp(KeyCode.J))
+                if (Input.GetMouseButtonUp(1))
                 {
                     //audioManager.Play("SLAP");
                     foreach (Gun g in leftArmGuns)
