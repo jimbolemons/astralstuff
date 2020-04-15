@@ -24,6 +24,7 @@ public class ControlSwap : MonoBehaviour
     bool keyWasPressed;
     bool setupCheck = false;
     public AudioManager audio;
+    public bool slow = false;
 
 
     // Start is called before the first frame update
@@ -42,7 +43,37 @@ public class ControlSwap : MonoBehaviour
             setupCheck = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Tab) != keyWasPressed)
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            slow = true;
+
+        }
+        //if(Input.GetKeyUp(KeyCode.Tab))
+        //{
+        //    slow = false;
+
+        //}
+
+        if(controlState == 0)
+        {
+            if(slow)
+                {
+                    Time.timeScale = 0.5f;
+                }
+            else
+                {
+                    Time.timeScale = 1f;
+                }
+        }
+        if(controlState == 1)
+        {
+            if(!slow)
+                {
+                    Time.timeScale = 1f;
+                }            
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab) && Input.GetKeyUp(KeyCode.Tab) != keyWasPressed)
         {
             if (controlState == 0)
             {
@@ -59,6 +90,7 @@ public class ControlSwap : MonoBehaviour
                 //state 1 controlling waffles
                 controlState = 0;
                 cameraControl.SetLerp(true);
+                slow = false;
             }
         }
         //if key was pressed last frame
@@ -67,7 +99,6 @@ public class ControlSwap : MonoBehaviour
 
     void ActivateHope()
     {
-
         //SOUND
         audio.Play("timeScream");
         hope.SetActive(true);
