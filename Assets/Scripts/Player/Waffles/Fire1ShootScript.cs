@@ -24,6 +24,7 @@ public class Fire1ShootScript : MonoBehaviour
     public float attackDashTime = 1;
     public int mouse;
 
+
    
     // Start is called before the first frame update
     void Start()

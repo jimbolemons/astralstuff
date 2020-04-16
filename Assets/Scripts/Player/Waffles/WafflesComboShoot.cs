@@ -19,6 +19,8 @@ public class WafflesComboShoot : Gun
     public GameObject player;
     public CharacterController controller;
 
+    public PlayerEnergy playerEnergyReference;
+
     public animsWaffles waffles;
 
     public bool failCombo = false;
@@ -132,9 +134,10 @@ public class WafflesComboShoot : Gun
     {
         GameObject g = Instantiate(projectilePrefab, gunEnd.position, gunEnd.rotation);
         g.transform.SetParent(this.transform);
+            g.GetComponent<ClawDamage>().playerEnergyReference = playerEnergyReference;
         try
         {
-            g.GetComponent<BulletStats>().SetParent(parentType);
+            g.GetComponent<BulletStats>().SetParent(parentType);            
         }
         catch
         {
@@ -162,7 +165,6 @@ public class WafflesComboShoot : Gun
             //direction += Input.GetAxis("Horizontal") * transform.right;
             direction *= speed;
             controller.Move(direction * Time.deltaTime);
-
         }
 
 

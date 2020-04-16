@@ -8,7 +8,7 @@ public class DemonAttackFire : MonoBehaviour
 
     public void Fire()
     {
-        print("firing demon gun");
+        //print("firing demon gun");
         gun.Fire();
     }
 }

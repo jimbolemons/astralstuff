@@ -6,6 +6,8 @@ public class ClawDamage : BulletDamage
 {
     public GameObject bloodSplat;
     public Transform bloodspot;
+
+    public PlayerEnergy playerEnergyReference;
     override public void OnTriggerEnter(Collider other)
     {
         //print("HIT SOMETHING??!?!? collider");
@@ -41,6 +43,8 @@ public class ClawDamage : BulletDamage
                     }
                     if(target.objectType == ObjectWithHealth.objectWithHealthType.enemy)
                     {
+                        playerEnergyReference.MeleeHit();
+
                        // Debug.Log("spawning blood 2");
                         GameObject g = Instantiate(bloodSplat, target.transform);
                         g.transform.position = bloodspot.position;

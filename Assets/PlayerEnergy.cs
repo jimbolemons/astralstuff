@@ -11,6 +11,8 @@ public class PlayerEnergy : MonoBehaviour
     public float initialCost = 5;
     public float costPerSec = 5;
 
+    public float meleeEnergyBonus = 20;
+
     public float regenPerSec = 2;
 
     bool charging = false;
@@ -26,7 +28,7 @@ public class PlayerEnergy : MonoBehaviour
         if (!charging)
         {
             energy += regenPerSec * Time.deltaTime;
-        if (energy > maxEnergy) energy = maxEnergy;
+            OverFlowCheck();
         }
         if (charging)
         {
@@ -56,5 +58,22 @@ public class PlayerEnergy : MonoBehaviour
     public void StopCharging()
     {
         charging = false;
+    }
+
+    public void MeleeHit()
+    {
+        AddEnergy(meleeEnergyBonus);
+    }
+   void AddEnergy(float amountToAdd)
+    {
+        energy += amountToAdd;
+        OverFlowCheck();
+    }
+    private void OverFlowCheck()
+    {
+        if (energy > maxEnergy)
+        {
+            energy = maxEnergy;
+        }
     }
 }

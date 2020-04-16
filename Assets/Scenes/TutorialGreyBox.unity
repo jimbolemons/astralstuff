@@ -20074,6 +20074,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140ed69a6173bf347a054a260c61624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &575940957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8630143290728825005, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631123474867992965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &575940960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575940957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7ff848deee46b419565bb91cbf6579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightArmGuns: []
+  pFiring: 0
+  holdBeforNewAttackTime: 0.75
+  attackTimer: 0
+  speed: 5
+  direction: {x: 0, y: 0, z: 0}
+  mouse: 0
 --- !u!1001 &587317195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63429,7 +63454,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 42.25
+  m_fontSize: 44.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64202,7 +64227,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 53.6
+  m_fontSize: 61.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -70293,7 +70318,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24.5
+  m_fontSize: 28.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -83320,6 +83345,26 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 542850202}
+    - target: {fileID: 1866197806, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: regenPerSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866197806, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: defaultAmountToAdd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866197806, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: costPerSec
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866197806, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: initialCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866197806, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: meleeEnergyBonus
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 843937652316500832, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_IsActive
@@ -83365,6 +83410,16 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 138862044}
+    - target: {fileID: 3631123473549299210, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: chargeSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166413896864221255, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: playerEnergyReference
+      value: 
+      objectReference: {fileID: 3631123474867992970}
     - target: {fileID: 4792109502320995174, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_Enabled
@@ -83418,6 +83473,11 @@ PrefabInstance:
     - target: {fileID: 8630143290454248264, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630143290728825002, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,

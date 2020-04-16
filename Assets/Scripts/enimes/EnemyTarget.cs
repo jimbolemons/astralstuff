@@ -125,11 +125,11 @@ public class EnemyTarget : MonoBehaviour
                     var neededRotation2 = Quaternion.LookRotation(player.transform.position - transform.position);
                   Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * rotSpeed);
 
-                    print("test1");                    
-                    print("trying to fire" + checkDistance(player.transform.position, attackRange));
+                    
+                    //print("trying to fire" + checkDistance(player.transform.position, attackRange));
                     if (checkDistance(player.transform.position, attackRange))
                     {
-                        print("firing");
+                        //print("firing");
                         gunReference.Fire();
                     }
 
@@ -179,10 +179,10 @@ public class EnemyTarget : MonoBehaviour
 
                         //transform.rotation *= Quaternion.Euler(0, -90, 0);
 
-                        print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
+                        //print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
                         if (checkDistance(targetSite.transform.position, attackRange))
                         {
-                            print("firing");
+                            //print("firing");
                             gunReference.Fire();
                         }
                     }
