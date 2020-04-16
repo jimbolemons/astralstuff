@@ -63,15 +63,15 @@ public class BaseMovementModule : MonoBehaviour
 
     float jumptimer = .1f;
     bool canJumpTimer = true;
+
+    public float jumpExtentionTimerBase = .5f;
+    public float jumpExtentionTimer;
     
 
 
     void Start()
     {
         coyoteTimer = coyoteTime;
-
-
-       
     }
 
     // Update is called once per frame
@@ -151,10 +151,10 @@ public class BaseMovementModule : MonoBehaviour
             {
                 Jump();
                 canJumpTimer = false;
+                jumpExtentionTimer = jumpExtentionTimerBase;
                 jumptimer = .1f;
-
             }
-
+            
 
             if (jumptimer > 0)
             {
@@ -167,6 +167,13 @@ public class BaseMovementModule : MonoBehaviour
         }
         else
         {//if not grounded
+            if (Input.GetButton("Jump") && jumpExtentionTimer > 0)
+            {
+                direction.y = jumpSpeed;
+            }
+
+            if (jumpExtentionTimer > 0) jumpExtentionTimer -= Time.deltaTime;
+
             //apply weaker input controls while in the air
             Vector3 airControl = new Vector3();
 
@@ -182,8 +189,6 @@ public class BaseMovementModule : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
                 Quaternion newrot = Quaternion.LookRotation(new Vector3(airControl.x, 0f, airControl.z));
                 playermodel.transform.rotation = Quaternion.Slerp(playermodel.transform.rotation, newrot, rotateSpeed * Time.deltaTime);
-
-
             }
            
         }
