@@ -39,7 +39,7 @@ public class BaseMovementModule : MonoBehaviour
     //TODO: Apply this better
 
     [Tooltip("Amount of force applied when player jumps")]
-    public float jumpSpeed = 20;
+    public float jumpSpeed = 10;
 
     //aka velocity. the direction the player is moving this frame
     [System.NonSerialized]
