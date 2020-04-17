@@ -37,6 +37,7 @@ public class ClawDamage : BulletDamage
                     if (target.tag != "SacredSite")
                     {                        
                         target.TakeDamage(damage);
+                        playerEnergyReference.MeleeHit();
                         //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                         //Destroy(gameObject);
@@ -88,7 +89,8 @@ public class ClawDamage : BulletDamage
                     //player cannot hit sacred site
                     if (target.tag != "SacredSite")
                     {
-                  // Instantiate(bloodSplat, target.transform.position, Quaternion.Euler(collision.contacts[0].normal));
+                        playerEnergyReference.MeleeHit();
+                        // Instantiate(bloodSplat, target.transform.position, Quaternion.Euler(collision.contacts[0].normal));
                         target.TakeDamage(damage);
                         //Destroy(gameObject);
                     }

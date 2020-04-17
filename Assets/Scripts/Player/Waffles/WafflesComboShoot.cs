@@ -30,7 +30,7 @@ public class WafflesComboShoot : Gun
     // Start is called before the first frame update
     void Start()
     {
-        if(minTimeBetweenShots > maxTimeBetweenShots)
+        if (minTimeBetweenShots > maxTimeBetweenShots)
         {
             throw new System.Exception("ERROR: waffles combo min time is greater than max time. THE ATTACK CANNOT HAPPEN!!!");
         }
@@ -53,6 +53,11 @@ public class WafflesComboShoot : Gun
 
     public override void Fire()
     {
+        if (failCombo || comboCounter >= maxCombo)
+        {
+            ResetCombo();
+        }
+
         if (canFire)
         {
             if (comboCounter == 0)
@@ -60,36 +65,12 @@ public class WafflesComboShoot : Gun
                 //left
                 waffles.Left();
                 attackDash = true;
-                Fire1();                
+                Fire1();
+
                 comboTimer = 0;
                 comboCounter++;
             }
             else if (comboCounter == 1)
-            {
-                if (ComboCheck())
-                {
-                    //right
-                    waffles.Right();
-                    attackDash = true;
-                    Fire2();
-                comboTimer = 0;
-                comboCounter++;
-                }                
-            }
-            else if (comboCounter == 2)
-            {
-                if (ComboCheck())
-                {
-                    // left hands
-                    waffles.Left();
-                    attackDash = true;
-                    Fire1();
-                
-                comboTimer = 0;
-                comboCounter++;
-                }                
-            }
-            else if (comboCounter == 3)
             {
                 if (ComboCheck())
                 {
@@ -102,21 +83,43 @@ public class WafflesComboShoot : Gun
                     comboCounter++;
                 }
             }
+            else if (comboCounter == 2)
+            {
+                if (ComboCheck())
+                {
+                    // left hands
+                    waffles.Left();
+                    attackDash = true;
+                    Fire1();
+
+                    comboTimer = 0;
+                    comboCounter++;
+                }
+            }
+            else if (comboCounter == 3)
+            {
+                if (ComboCheck())
+                {
+                    //right
+                    waffles.Right();
+                    attackDash = true;
+                    Fire2();
+            
+                    comboTimer = 0;
+                    comboCounter++;
+                }
+            }
             else
             {
                 ResetCombo();
-            }
-            if (failCombo || comboCounter >= maxCombo)
-            {
-                ResetCombo();
-            }
-           // print(comboCounter);
-           // print(ComboCheck());          
+            }          
+            // print(comboCounter);
+            // print(ComboCheck());          
         }
     }
     void ResetCombo()
     {
-       // print("noob, resetting");
+        // print("noob, resetting");
         Invoke("ResetFire", fireCooldown);
         comboCounter = 0;
         comboTimer = 0;
@@ -134,10 +137,10 @@ public class WafflesComboShoot : Gun
     {
         GameObject g = Instantiate(projectilePrefab, gunEnd.position, gunEnd.rotation);
         g.transform.SetParent(this.transform);
-            g.GetComponent<ClawDamage>().playerEnergyReference = playerEnergyReference;
+        g.GetComponent<ClawDamage>().playerEnergyReference = playerEnergyReference;
         try
         {
-            g.GetComponent<BulletStats>().SetParent(parentType);            
+            g.GetComponent<BulletStats>().SetParent(parentType);
         }
         catch
         {
@@ -147,7 +150,7 @@ public class WafflesComboShoot : Gun
     void Fire2()
     {
         GameObject g = Instantiate(projectilePrefab, gunEnd2.position, gunEnd2.rotation);
-            g.transform.SetParent(this.transform);
+        g.transform.SetParent(this.transform);
         try
         {
             g.GetComponent<BulletStats>().SetParent(parentType);

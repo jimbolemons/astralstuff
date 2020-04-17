@@ -6,15 +6,18 @@ using UnityEngine;
 public class ClawMovement : MonoBehaviour
 {
     [Tooltip("How fast the attack rotates.")]
-    public float speed = 4;
+    public float speed = 5;
     [Tooltip("How long Does the hitbox linger")]
-    public float lifeSpan = .5f;
+    public float lifeSpan = .4f;
+    public float baseLifeSpan;
     float speed2 = 2;
     bool grow = true;
 
     public float angleToRotate = 45;
-    public ParticleSystem emit;
 
+    public float baseSize = .1f;
+    public float targetSize = 1.5f;
+    public ParticleSystem emit;
     
 
     Vector3 originalScale;
@@ -23,6 +26,7 @@ public class ClawMovement : MonoBehaviour
     Quaternion targetRotation;
     void Start()
     {
+        baseLifeSpan = lifeSpan;
         originalScale = transform.localScale;
         transform.localScale = Vector3.zero;
         destinationScale = new Vector3(2.0f, 2.0f, 2.0f);
@@ -40,30 +44,14 @@ public class ClawMovement : MonoBehaviour
             //move forward
             //transform.position += this.transform.forward * speed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation,  speed * Time.deltaTime);
-            transform.localScale = Vector3.Lerp(originalScale, destinationScale, speed2);
+            //transform.localScale = Vector3.Lerp(originalScale, destinationScale, speed2);
             speed2 += Time.deltaTime;
             //transform.localScale = new Vector3(10,10,10);
 
-            /*
-            if (speed2 >= 1)
-            {
-                grow = false;
-            }
-            else if(speed2 <= 0)
-            {
-                grow = true;
-            }
-            
             if (grow)
             {
-                
+                SizeOverLifetime();
             }
-            else
-            {
-                transform.localScale = Vector3.Lerp(destinationScale, originalScale, speed2);
-                speed2 -= Time.deltaTime;
-            }
-            */
 
             lifeSpan -= Time.deltaTime;
            
@@ -72,6 +60,11 @@ public class ClawMovement : MonoBehaviour
                 DestroySelf();
             }
         }
+    }
+    void SizeOverLifetime()
+    {
+        float size = Mathf.SmoothStep(baseSize, targetSize, 1 - lifeSpan); 
+        transform.localScale = Vector3.one * size;
     }
     void DetachParticles()
     {

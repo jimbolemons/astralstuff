@@ -4818,7 +4818,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifeSpan: 0.3
+  baseLifeSpan: 0
   angleToRotate: 135
+  baseSize: 1
+  targetSize: 3
   emit: {fileID: 8524728553021628189}
 --- !u!65 &8512174891321090133
 BoxCollider:
@@ -4949,6 +4952,7 @@ MonoBehaviour:
   bloodSplat: {fileID: 3505124026446006010, guid: 3c7ea1d74cbdbf242aca205a51f77d29,
     type: 3}
   bloodspot: {fileID: 4429619757339251852}
+  playerEnergyReference: {fileID: 0}
 --- !u!1 &5847096244866104364
 GameObject:
   m_ObjectHideFlags: 0
