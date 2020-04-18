@@ -13256,6 +13256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2W Canal
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e9a2317cb37122d47b3f340a7d383fde,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hookable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a2317cb37122d47b3f340a7d383fde, type: 3}
 --- !u!1 &287440226
@@ -19661,8 +19666,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1715.6, y: 1087.1, z: 1038.54}
+  m_Center: {x: 2454, y: 557, z: -3525.4}
+--- !u!65 &464094262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464094260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 151.6, y: 97, z: 74}
+  m_Center: {x: 3036.5, y: 1305.6, z: -3538.9}
+--- !u!65 &464094263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464094260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 339.4, y: 165, z: 192}
+  m_Center: {x: 3036.5, y: 1199, z: -3538.9}
 --- !u!1 &465733967
 GameObject:
   m_ObjectHideFlags: 0
