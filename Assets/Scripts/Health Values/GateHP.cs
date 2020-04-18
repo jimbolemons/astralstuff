@@ -8,11 +8,21 @@ public class GateHP : ObjectWithHealth
     public CameraShake cameraShake;
     public GameObject camera;
 
+    public GameObject UIHealthBar;
+    GateHealthBar UIHealthBarScript;
+
     public bool doCameraShake;
 
     float prevPercent;
     private void Start()
-    {
+    {     
+        if(UIHealthBar == null)
+        {
+            //print("searching");
+            UIHealthBar = GameObject.Find("GateHealthBar").GetComponent<GameObject>();
+        }
+        UIHealthBarScript = UIHealthBar.GetComponentInChildren<GateHealthBar>();
+
         objectType = objectWithHealthType.destructible;
         MasterStaticScript.enemyGates.Add(gameObject);
     }
@@ -39,12 +49,17 @@ public class GateHP : ObjectWithHealth
     private void killGate()
     {
         print("Gate is dead.");
+        UIHealthBar.SetActive(false);
         MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.enemyGates);
         MasterStaticScript.CheckForGameWin();
         Destroy(gameObject);
     }
     public override void TriggerOnDamage()
     {
+     
+        UIHealthBar.SetActive(true);
+        UIHealthBarScript.UpdateValues(health, maxHealth);
+
         //logic for making camera shake (or other thing) when 1/3 breakpoints hit
         if (doCameraShake)
         {
