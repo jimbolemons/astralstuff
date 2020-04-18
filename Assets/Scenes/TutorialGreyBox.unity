@@ -8726,7 +8726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.530003, y: 7.530004}
+  m_AnchoredPosition: {x: -12.970005, y: 0.260005}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &376107895
@@ -25928,10 +25928,10 @@ RectTransform:
   m_Father: {fileID: 1149982216}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.84000003}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -279.5, y: -30.7}
-  m_SizeDelta: {x: 1, y: 568}
+  m_AnchoredPosition: {x: 24, y: -58}
+  m_SizeDelta: {x: -1177.3, y: 20.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &720858077
 GameObject:
@@ -25943,6 +25943,8 @@ GameObject:
   m_Component:
   - component: {fileID: 720858076}
   - component: {fileID: 720858079}
+  - component: {fileID: 720858080}
+  - component: {fileID: 720858078}
   m_Layer: 5
   m_Name: GateHealthBar
   m_TagString: Untagged
@@ -25950,6 +25952,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &720858078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720858077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95d53b7f5a6019459e1d9a652740d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsToFadeIn: 0.5
+  group: {fileID: 720858080}
 --- !u!222 &720858079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25958,6 +25974,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720858077}
   m_CullTransparentMesh: 0
+--- !u!225 &720858080
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720858077}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &732427235
 GameObject:
   m_ObjectHideFlags: 0
@@ -27820,7 +27848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.590004, y: 7.53}
+  m_AnchoredPosition: {x: 5.0899963, y: 0.26000118}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &865931853
@@ -46676,7 +46704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.98601}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444092, y: 0.17000341}
+  m_AnchoredPosition: {x: -30.5, y: -7.1}
   m_SizeDelta: {x: 55, y: 14.86}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1362745535
@@ -78590,6 +78618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level Loader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262635010941596130, guid: 51fc27426079f39459e1d33e34cc5897,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51fc27426079f39459e1d33e34cc5897, type: 3}
