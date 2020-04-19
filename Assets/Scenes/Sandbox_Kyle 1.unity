@@ -12096,7 +12096,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.4
+  m_fontSize: 40.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29714,6 +29714,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847902757}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &850731535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2289810818737904111, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253026405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &850731536
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850731535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &855760559
 GameObject:
   m_ObjectHideFlags: 0
@@ -36393,7 +36415,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24.3
+  m_fontSize: 24.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36465,6 +36487,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997834209}
   m_CullTransparentMesh: 0
+--- !u!1 &1010793681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2289810818737904111, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 881840082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1010793682
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010793681}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1011009139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72744,6 +72788,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781110439}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1791964769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2289810818737904111, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 414985762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1791964770
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791964769}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1798602912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2289810818737904108, guid: 3447a4dfe0b1c4e41bd86c8a9375f9dc,
@@ -85655,7 +85721,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 53.15
+  m_fontSize: 52.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
