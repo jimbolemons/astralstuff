@@ -22,6 +22,7 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         
+        
     }
 
     private void Update()
