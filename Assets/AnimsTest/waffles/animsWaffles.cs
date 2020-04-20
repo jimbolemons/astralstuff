@@ -31,9 +31,8 @@ public class animsWaffles : MonoBehaviour
         }
         //this is a test
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-           // anim2.SetTrigger("right");
-
+        {          
+        
 
         }
         else
@@ -74,5 +73,9 @@ public class animsWaffles : MonoBehaviour
     public void Left()
     {
         anim2.SetTrigger("left");
+    }
+    public void Hit() 
+    {
+     anim2.SetTrigger("hit");
     }
 }

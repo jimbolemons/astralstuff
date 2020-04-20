@@ -47,11 +47,11 @@ public class conjAnimCon : MonoBehaviour
 
         if (dead)
         {
-            anim.SetBool("dead", true);
+           // anim.SetBool("dead", true);
         }
         else
         {
-            anim.SetBool("dead", false);
+           // anim.SetBool("dead", false);
         }
         if (!MasterStaticScript.gameIsPaused)
         {

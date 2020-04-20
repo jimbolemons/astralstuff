@@ -66,4 +66,9 @@ public class ImpAnimCOn : MonoBehaviour
         }
 
     }
+    public void Hit ()
+    {
+        anim.SetTrigger("hit");
+
+    }
 }
