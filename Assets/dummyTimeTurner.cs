@@ -16,12 +16,12 @@ public class dummyTimeTurner : MonoBehaviour
     {
         
     }
-   void OnCollisionEnter(Collision collision)
-   {
-       player1.slow = false;
-       Debug.Log("wtf");
+   //void OnCollisionEnter(Collision collision)
+  // {
+   //    player1.slow = false;
+   //    Debug.Log("wtf");
 
-   }
+  // }
    
     
 }

@@ -49,11 +49,11 @@ public class ControlSwap : MonoBehaviour
             slow = true;
 
         }
-        //if(Input.GetKeyUp(KeyCode.Tab))
-        //{
-        //    slow = false;
+        if(Input.GetKeyUp(KeyCode.Tab))
+        {
+            slow = false;
 
-        //}
+        }
 
         if(controlState == 0)
         {
