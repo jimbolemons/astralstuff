@@ -69,6 +69,8 @@ public class EnemyTarget : MonoBehaviour
             currentState = EnemyState.IDLE;
         }
       }
+
+    //debug helper that draws the nav mesh path when demon is selected
     void OnDrawGizmosSelected()
     {
 
