@@ -37,6 +37,7 @@ public class ControlSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        revertToBody = !Input.GetKey(KeyCode.LeftShift);
         if (!setupCheck && Time.time > .1f)
         {
             ActivateHope();
