@@ -10,8 +10,7 @@ public class LevelTransitionLoader : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        MasterStaticScript.LevelLoader = this;
-        
+        MasterStaticScript.LevelLoader = this;        
     }
     public void LoadScene(string scene)
     {

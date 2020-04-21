@@ -4944,7 +4944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc4c1a25e47f6b4b9d0e5e2bfcdcd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   parentType: 0
   playerBullet: 0
   cameraShake: {fileID: 0}
