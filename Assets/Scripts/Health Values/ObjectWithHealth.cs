@@ -76,9 +76,9 @@ public abstract class ObjectWithHealth : MonoBehaviour
     {
         if (canTakeDamage)
         {
-            TriggerOnDamage();
+            
             health -= damage;
-
+            TriggerOnDamage();
             canTakeDamage = false;
         }
 

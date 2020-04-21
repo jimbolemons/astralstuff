@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2179153274459336449}
   - component: {fileID: 2179153274459336454}
+  - component: {fileID: 1661314633}
   m_Layer: 0
   m_Name: cameraHolder
   m_TagString: Untagged
@@ -52,12 +53,26 @@ MonoBehaviour:
   mouseSensitivity: 5
   yMinMax: {x: -40, y: 60}
   rotationSmoothTime: 0.12
-  cameraSnapDistance: 1
+  cameraSnapDistance: 3
   cameraOffsetAngle: 0
   cameraDis: 20
   cameraMoveSpeed: 10
-  minCamDis: 3
+  maxLerpTime: 2
+  minCamDis: 0.5
+  lerping: 1
   cameraShake: {fileID: 4010060582985081985}
+--- !u!114 &1661314633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179153274459336455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaea687371ff244993a4fba878160b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4216267902685295215
 GameObject:
   m_ObjectHideFlags: 0

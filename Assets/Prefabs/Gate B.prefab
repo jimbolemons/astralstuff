@@ -4980,8 +4980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 2
-  maxHealth: 20
-  health: 20
+  maxHealth: 30
+  health: 30
   immortal: 0
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}

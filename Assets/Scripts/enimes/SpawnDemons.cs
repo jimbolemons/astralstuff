@@ -83,10 +83,9 @@ public class SpawnDemons : MonoBehaviour
             if (numberOfDemons >= demonsToSpawn)
             {
                 //tell the demons to go
-                foreach (GameObject g in demonList)
-                {
-                    SetDemonTarget(g);
-                }
+                SendOutTheDemons();
+
+
                 //clear the references
                 demonList.Clear();
 
@@ -126,8 +125,14 @@ public class SpawnDemons : MonoBehaviour
         }
         
     }
-
   
+    public void SendOutTheDemons()
+    {
+        foreach (GameObject g in demonList)
+        {
+            SetDemonTarget(g);
+        }
+    }
 
     Vector3 SpawnLocation(Bounds bounds)
     {

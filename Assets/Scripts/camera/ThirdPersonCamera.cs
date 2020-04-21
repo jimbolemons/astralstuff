@@ -66,27 +66,24 @@ public class ThirdPersonCamera : MonoBehaviour
             float distance = Vector3.Distance(transform.position, cameraTarget.transform.position);
             if (distance < minCamDis) lerping = false;
 
-            if (lerping)
-            {
+            if (lerping)
+            {
                 lerpTimer += Time.deltaTime;
-                transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, lerpTimer/maxLerpTime);
-            }
-            else
-            {
+                transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, lerpTimer/maxLerpTime);
+            }
+            else
+            {
                 lerpTimer = 0;
-                transform.position = cameraTarget.transform.position;
+                transform.position = cameraTarget.transform.position;
             }
-
-
-            if(raycastConfirm)
-            {
-                mainCamera.transform.position = wantedPos;
-            }
-            else
-            {
-               UpdateCameraDistance();
-            }
-
+            if(raycastConfirm)
+            {
+                mainCamera.transform.position = wantedPos;
+            }
+            else
+            {
+               UpdateCameraDistance();
+            }
            // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, wantedPos + transform.forward * 2, Time.deltaTime * cameraMoveSpeed);
 
             //if camera distance has been updated, fix camera position
@@ -104,13 +101,10 @@ public class ThirdPersonCamera : MonoBehaviour
             //clamps up and down camera movment
             y = Mathf.Clamp(y, yMinMax.x, yMinMax.y);
 
-
-
             //rotation stuff
             Vector3 targetRotation = new Vector3(y, x);
             currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation, ref rotationSmoothVelocity, rotationSmoothTime);
             transform.eulerAngles = currentRotation;
-
 
 
             cameraTarget.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);

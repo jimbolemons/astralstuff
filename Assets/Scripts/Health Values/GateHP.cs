@@ -11,11 +11,14 @@ public class GateHP : ObjectWithHealth
     public GameObject UIHealthBar;
     GateHealthBar UIHealthBarScript;
 
+    SpawnDemons demonController;
+
     public bool doCameraShake;
 
     float prevPercent;
     private void Start()
-    {     
+    {
+        demonController = GetComponent<SpawnDemons>();
         if(UIHealthBar == null)
         {
             //print("searching");
@@ -48,6 +51,7 @@ public class GateHP : ObjectWithHealth
 
     private void killGate()
     {
+        demonController.SendOutTheDemons();
         print("Gate is dead.");
         UIHealthBar.SetActive(false);
         MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.enemyGates);

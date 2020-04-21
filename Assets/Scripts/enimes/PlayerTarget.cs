@@ -27,20 +27,20 @@ public class PlayerTarget : MonoBehaviour
         }
         else
         {
-            if (moving)
-            {
+            if (moving)
+            {
             //path towards target
             agent.isStopped = false;
             agent.SetDestination(player.position);
             transform.LookAt(player.position);
-            transform.rotation *= Quaternion.Euler(0, -90, 0);
+            transform.rotation *= Quaternion.Euler(0, -90, 0);
             }
         }
     }
 
-    public void SetTarget(Transform target)
-    {
+    public void SetTarget(Transform target)
+    {
         player = target;
-        moving = true;
+        moving = true;
     }
 }

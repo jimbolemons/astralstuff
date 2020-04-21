@@ -28,7 +28,7 @@ public class FireDummyShootScript : Gun
 
             if (fireAtAngle)
             {
-                dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up / 2) * Time.fixedDeltaTime * bodySpeed;
+                dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up / 4) * Time.fixedDeltaTime * bodySpeed;
             }
             else
             {

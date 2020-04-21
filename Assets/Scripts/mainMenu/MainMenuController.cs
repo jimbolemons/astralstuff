@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField]
-    KeyCode quitKey = KeyCode.P;
+    //[SerializeField]
+    //KeyCode quitKey = KeyCode.P;
 
     [SerializeField]
     KeyCode pauseKey = KeyCode.Escape;

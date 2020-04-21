@@ -9,6 +9,7 @@ public class EnemyTarget : MonoBehaviour
 {
 
     [Tooltip("Reference to the player.")]
+    GameObject player;
     public float distanceToPlayer = 20;
     //more anim stuff
 
@@ -37,7 +38,9 @@ public class EnemyTarget : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = moveSpeed;
         //animstuf go here
         impAnim = gameObject.GetComponentInChildren<ImpAnimCOn>();
         bruteAnim = gameObject.GetComponentInChildren<BruteAnimCon>();
@@ -72,10 +75,8 @@ public class EnemyTarget : MonoBehaviour
 
     //debug helper that draws the nav mesh path when demon is selected
     void OnDrawGizmosSelected()
-    {
-
-        var nav = GetComponent<NavMeshAgent>();
-        if (nav == null || nav.path == null)
+    {        
+        if (agent == null || agent.path == null)
             return;
 
         var line = this.GetComponent<LineRenderer>();
@@ -87,7 +88,7 @@ public class EnemyTarget : MonoBehaviour
             line.SetColors(Color.yellow, Color.yellow);
         }
 
-        var path = nav.path;
+        var path = agent.path;
 
         line.SetVertexCount(path.corners.Length);
 
@@ -100,8 +101,6 @@ public class EnemyTarget : MonoBehaviour
     void EnemyStateMachine()
     {
         Vector3 forwardTransform = transform.position;
-
-        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
 
         float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
         if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
