@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -11696,7 +11696,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
+  m_fontSize: 15.95
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11936,7 +11936,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 44.85
+  m_fontSize: 27.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13165,6 +13165,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 6788091566615477822, guid: e9a2317cb37122d47b3f340a7d383fde,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de29ecccde676cb4c8a6359f9a80de79, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a2317cb37122d47b3f340a7d383fde, type: 3}
 --- !u!1 &287440226
@@ -14038,6 +14043,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 6831303215506633166, guid: ef075659c21784f4da00feca2c8f48a0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 403033338e6e7884885b8b57911b0ff4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef075659c21784f4da00feca2c8f48a0, type: 3}
 --- !u!1 &408180664
@@ -25387,6 +25397,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 8405317065323677370, guid: 96e79cc909eeadc4bbf916a9e0315452,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5af2a1991c57ea04898786d9452d16f0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e79cc909eeadc4bbf916a9e0315452, type: 3}
 --- !u!1 &553749225
@@ -28528,6 +28543,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 6873840122380121693, guid: cf8bd44a2eea36f4c93128e054cd0906,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83a2cab405ae7d64d89a6595d7098176, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf8bd44a2eea36f4c93128e054cd0906, type: 3}
 --- !u!1 &816237299
@@ -29701,6 +29721,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 4559765893128493706, guid: c2e1a22bd2298c3428d360d707256778,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbc9e04682f90ed46a59535730b1b73a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e1a22bd2298c3428d360d707256778, type: 3}
 --- !u!1 &889930804
@@ -35897,7 +35922,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
+  m_fontSize: 18.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48819,6 +48844,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hookable
       objectReference: {fileID: 0}
+    - target: {fileID: 961979586302584144, guid: 6780ac66b7f3dd44e9fe2a5e93c6e490,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5678952ee10d314486e10ad14173753, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6780ac66b7f3dd44e9fe2a5e93c6e490, type: 3}
 --- !u!1 &1320300624
@@ -66360,7 +66390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea1a5951c146e48a26dfd04412f4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitKey: 112
   pauseKey: 27
   setiings: {fileID: 0}
   menu: {fileID: 0}
@@ -77220,6 +77249,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5404450125145899266, guid: 8d5b79c2b9ed6e9419692628ad13d1fa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 12f9308d104815b46960cb67820e969c, type: 2}
     - target: {fileID: -4216859302048453862, guid: 8d5b79c2b9ed6e9419692628ad13d1fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77942,6 +77976,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.022744717
       objectReference: {fileID: 0}
+    - target: {fileID: -3238210897375113031, guid: deb4936eb39091c4eac353bb06c9c27e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17b6af1258d1fb54caa3b635cab444f9, type: 2}
     - target: {fileID: -927199367670048503, guid: deb4936eb39091c4eac353bb06c9c27e,
         type: 3}
       propertyPath: m_Name
@@ -78297,6 +78336,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6550738123068590246, guid: f2a6ff0108b8894429bf20833cc7d473,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 747174e8ef094144cad363be71c7dda5, type: 2}
     - target: {fileID: -4216859302048453862, guid: f2a6ff0108b8894429bf20833cc7d473,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84922,7 +84966,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 61.3
+  m_fontSize: 40.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
