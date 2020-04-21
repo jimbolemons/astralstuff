@@ -9,9 +9,7 @@ public class FireDummyShootScript : Gun
 
     public bool fireAtAngle;
 
-
     public Transform cameraPivot;
-
     private void Start()
     {
         dummyBody = projectilePrefab.GetComponent<Rigidbody>();
@@ -30,7 +28,7 @@ public class FireDummyShootScript : Gun
 
             if (fireAtAngle)
             {
-                dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up / 2) * Time.deltaTime * bodySpeed;
+                dummyBody.velocity = (cameraPivot.transform.forward + cameraPivot.transform.up / 2) * Time.fixedDeltaTime * bodySpeed;
             }
             else
             {

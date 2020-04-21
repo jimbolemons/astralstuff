@@ -36,7 +36,7 @@ public class ClawDamage : BulletDamage
                     //player cannot hit sacred sites
                     if (target.tag != "SacredSite")
                     {                        
-                        target.TakeDamage(damage);
+                        target.TakeDamage(damage);                        
                         playerEnergyReference.MeleeHit();
                         //StartCoroutine(cameraShake.Shake(.15f, .4f));
 

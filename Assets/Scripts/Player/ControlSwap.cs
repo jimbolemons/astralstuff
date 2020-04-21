@@ -6,6 +6,7 @@ public class ControlSwap : MonoBehaviour
 {
     public GameObject hope;
     public GameObject dummy;
+    Rigidbody dummyBody;
     public GameObject dummyArrow;
     public GameObject waffles;
 
@@ -32,12 +33,13 @@ public class ControlSwap : MonoBehaviour
     {
         audio = FindObjectOfType<AudioManager>();
         FireDummyShootScript = GetComponent<Gun>();
+        dummyBody = dummy.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        revertToBody = !Input.GetKey(KeyCode.LeftShift);
+        //revertToBody = !Input.GetKey(KeyCode.LeftShift);
         if (!setupCheck && Time.time > .1f)
         {
             ActivateHope();
@@ -52,7 +54,6 @@ public class ControlSwap : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Tab))
         {
             slow = false;
-
         }
 
         if(controlState == 0)
@@ -108,13 +109,14 @@ public class ControlSwap : MonoBehaviour
         {
             transform.position = dummy.transform.position;
         }
+        dummyBody.velocity = Vector3.zero;
         dummy.SetActive(false);
         dummyArrow.SetActive(false);
     }
     void ActivateWaffles()
     {
         //Sound
-       audio.Play("timeScream");
+        audio.Play("timeScream");
         hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);

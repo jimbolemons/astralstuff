@@ -68,14 +68,11 @@ public class MasterStaticScript : MonoBehaviour
 
     public static void CheckForGameWin()
     {
-        if (enemyGates.Count <= 1)
+        if (enemyGates.Count <= 0)
         {
         print("Game has been won!");
 
             LevelLoader.LoadScene("WinState");
         }
-    }
-
-
-    
+    }    
 }

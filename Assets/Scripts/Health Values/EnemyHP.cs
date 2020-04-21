@@ -66,8 +66,15 @@ public class EnemyHP : ObjectWithHealth
     {
         //StartCoroutine(cameraShake.Shake(.15f, .4f));
         //FindObjectOfType<AudioManager>().Play("SLAP");
+        try
+        {
+            impAnim.Hit();
+        }
+        catch
+        {
+            Debug.Log("no imp animation controller!");
+        }
         slap.Play();
-        impAnim.Hit();
         //Debug.Log("ouch");
     }
     private void Death()

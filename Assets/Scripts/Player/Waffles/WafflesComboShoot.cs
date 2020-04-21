@@ -150,6 +150,7 @@ public class WafflesComboShoot : Gun
     void Fire2()
     {
         GameObject g = Instantiate(projectilePrefab, gunEnd2.position, gunEnd2.rotation);
+        g.GetComponent<ClawDamage>().playerEnergyReference = playerEnergyReference;
         g.transform.SetParent(this.transform);
         try
         {
