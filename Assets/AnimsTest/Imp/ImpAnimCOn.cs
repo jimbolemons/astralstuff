@@ -71,4 +71,11 @@ public class ImpAnimCOn : MonoBehaviour
         anim.SetTrigger("hit");
 
     }
+    public void Attack()
+    {
+        anim.SetTrigger("attack");
+
+
+    }
+    
 }

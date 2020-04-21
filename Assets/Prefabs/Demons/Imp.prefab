@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 1037164397080371833}
+  impAnim: {fileID: 7409124222264893087}
 --- !u!1001 &3052196228466409395
 PrefabInstance:
   m_ObjectHideFlags: 0

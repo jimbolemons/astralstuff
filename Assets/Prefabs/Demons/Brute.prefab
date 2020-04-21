@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 8760678163909712583}
+  impAnim: {fileID: 9178863318175159091}
 --- !u!114 &9178863318175159091
 MonoBehaviour:
   m_ObjectHideFlags: 0
