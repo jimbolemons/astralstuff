@@ -11,8 +11,8 @@ public class WafflesEnergyBarScale : MonoBehaviour
     {
         //TODO : fix this to get reference from master static script
         // player = MasterStaticScript.playerReference;
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-        playerEnergy = player.GetComponent<PlayerEnergy>();
+        //player = MasterStaticScript.playerReference;
+        //playerEnergy = player.GetComponent<PlayerEnergy>();
     }
 
     // Update is called once per frame

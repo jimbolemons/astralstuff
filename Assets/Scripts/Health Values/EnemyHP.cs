@@ -49,7 +49,14 @@ public class EnemyHP : ObjectWithHealth
         if (conjAnim != null)
             conjAnim.dead = true;
         agent.enabled = false;
+        try
+        {
         shoot.enabled = false;
+        }
+        catch
+        {
+            Debug.Log("conjurors don't have claws");
+        }
         eneeie.enabled = false;
 
         //turn off colliders so it stops taking damage

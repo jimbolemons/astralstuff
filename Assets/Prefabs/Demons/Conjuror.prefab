@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 5540569678324034332}
+  impAnim: {fileID: 0}
 --- !u!1 &4792024901624038468
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +215,7 @@ MonoBehaviour:
   distanceToPlayer: 35
   moveSpeed: 5
   rotSpeed: 1000
-  gunReference: {fileID: 3366443778228135085}
+  gunReference: {fileID: 5540569678324034332}
   targetSite: {fileID: 0}
   attackRange: 10
   currentState: 0

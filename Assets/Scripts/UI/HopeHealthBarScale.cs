@@ -10,9 +10,9 @@ public class HopeHealthBarScale : MonoBehaviour
     void Start()
     {
         //TODO : fix this to get reference from master static script
-       // player = MasterStaticScript.playerReference;
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-        playerHealth = player.GetComponent<ObjectWithHealth>();
+        //player = MasterStaticScript.playerReference;
+        //player = MasterStaticScript.playerReference;
+        //playerHealth = player.GetComponent<ObjectWithHealth>();
     }
 
     // Update is called once per frame
