@@ -50,7 +50,7 @@ public class BaseMovementModule : MonoBehaviour
     public float coyoteTimer;
     
     //reference to the camera target assistant
-    public Transform cameraTarget;
+    Transform cameraTarget;
 
     //the player's transform, for editing correctly
     public Transform player;

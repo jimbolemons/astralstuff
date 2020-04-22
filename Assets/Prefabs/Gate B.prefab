@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 1315957307770618950}
   spawnArea: {fileID: 8248652384819109319}
-  imp: {fileID: 5540625690113268280, guid: 921fc764a1be175428c117a348de83b4, type: 3}
+  imp: {fileID: 5540625690113268280, guid: c59a7e879d9cff646adb6c4da0010919, type: 3}
   brute: {fileID: 4588974315857495838, guid: 2b48bdba13e10f54c82bb116c15caa24, type: 3}
   conjuror: {fileID: 4792024901624038468, guid: a880a38c522277d43a30aa62c6837575,
     type: 3}

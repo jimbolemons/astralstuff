@@ -21,7 +21,7 @@ public class EnemyTarget : MonoBehaviour
     public float rotSpeed = 1;
 
 
-    public DemonAttackFire gunReference;
+    public Gun gunReference;
     //float step;
 
     
