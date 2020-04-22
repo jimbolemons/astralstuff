@@ -22,7 +22,8 @@ public class MasterStaticScript : MonoBehaviour
     [Tooltip("Stores all the Enemy Gates in the scene.")]
     public static List<GameObject> enemyGates = new List<GameObject>();
     [Tooltip("Stores all references to enemies in the scene.")]
-    public static List<GameObject> enemyList = new List<GameObject>(); 
+    public static List<GameObject> enemyList = new List<GameObject>();
+
 
     void Awake()
     {
