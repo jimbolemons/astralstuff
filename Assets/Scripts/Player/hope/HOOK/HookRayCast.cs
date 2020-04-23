@@ -215,7 +215,7 @@ public class HookRayCast : MonoBehaviour
             if (hit.collider.gameObject.tag == "Hookable")
             {
                 
-                FindObjectOfType<AudioManager>().Play("fart");
+                FindObjectOfType<AudioManager>().Play("hook");
                 hook.transform.position = hit.point;
                 ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
                 hooked = true;

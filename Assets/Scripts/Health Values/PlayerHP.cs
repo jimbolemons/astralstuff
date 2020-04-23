@@ -57,7 +57,7 @@ public class PlayerHP : ObjectWithHealth
             waffleanims.Hit();
             StartCoroutine(cameraShake.Shake(.15f, .4f));
             PostProcessingEffectsManager.instance.Flash2();
-            FindObjectOfType<AudioManager>().Play("timeScream");
+            FindObjectOfType<AudioManager>().Play("wafflesAttackhit");
         }
     }
 

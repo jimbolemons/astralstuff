@@ -7,6 +7,7 @@ public class animsWaffles : MonoBehaviour
     public GameObject animator2;
     Animator anim2;
     public bool run = false;
+   public  bool run2;
 
     // Start is called before the first frame update
     void Start()
@@ -41,18 +42,26 @@ public class animsWaffles : MonoBehaviour
 
 
         }
+        
 
 
         if (run)
         {
             //Debug.Log("Run");
             anim2.SetBool("running", true);
+            if(run2)
+            {
+            FindObjectOfType<AudioManager>().Play("wafflerun");
+            run2 = false;
+            }
 
         }
         else
         {
             // Debug.Log("no Run");
             anim2.SetBool("running", false);
+             FindObjectOfType<AudioManager>().Stop("wafflerun");
+            run2 = true;
         }
         if (!MasterStaticScript.gameIsPaused)
         {

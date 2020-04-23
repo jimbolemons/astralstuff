@@ -77,7 +77,7 @@ public class GateHP : ObjectWithHealth
                 StartCoroutine(cameraShake.Shake(.5f, .6f));
             }
         }
-        FindObjectOfType<AudioManager>().Play("timeScream");
+        FindObjectOfType<AudioManager>().Play("wafflesAttackhit");
         //SOUND
     }
 }

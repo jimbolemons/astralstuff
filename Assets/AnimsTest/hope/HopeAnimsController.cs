@@ -15,6 +15,7 @@ public class HopeAnimsController : MonoBehaviour
     public bool climbing = false;
     public bool grounded = false;
     public bool hooked = false;
+    public bool run2;
 
     public Camera mainCamera;
 
@@ -32,6 +33,7 @@ public class HopeAnimsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         //this is a test
         if (Input.GetKey(KeyCode.E))
@@ -89,12 +91,19 @@ public class HopeAnimsController : MonoBehaviour
         {
             // Debug.Log("Run");
             anim.SetBool("run", true);
+            if(run2)
+            {
+            FindObjectOfType<AudioManager>().Play("hoperun");
+            run2 = false;
+            }
 
         }
         else
         {
             //  Debug.Log("no Run");
             anim.SetBool("run", false);
+            FindObjectOfType<AudioManager>().Stop("hoperun");
+            run2 = true;
         }
 
         if (dead)

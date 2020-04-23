@@ -737,7 +737,6 @@ MonoBehaviour:
   jumpSpeed: 20
   coyoteTime: 0.2
   coyoteTimer: 0
-  cameraTarget: {fileID: 0}
   player: {fileID: 8630143291791907486}
   playermodel: {fileID: 352829498485110578}
   rotateSpeed: 15
@@ -1707,7 +1706,6 @@ MonoBehaviour:
   jumpSpeed: 15
   coyoteTime: 0.2
   coyoteTimer: 0
-  cameraTarget: {fileID: 0}
   player: {fileID: 8630143291791907486}
   playermodel: {fileID: 2026617745161254316}
   rotateSpeed: 15
@@ -2047,8 +2045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 0
-  maxHealth: 15
-  health: 15
+  maxHealth: 10
+  health: 10
   immortal: 0
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
@@ -2189,7 +2187,7 @@ MonoBehaviour:
   canFire: 1
   parentType: 0
   dummyBody: {fileID: 1852340925544421681}
-  bodySpeed: 8000
+  bodySpeed: 7000
   fireAtAngle: 1
   cameraPivot: {fileID: 0}
 --- !u!1001 &2099009598
@@ -2274,7 +2272,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunSingleShot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4792109501195072344, guid: 99cf745ec2405dd4a80d0bc93a4a6849, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99cf745ec2405dd4a80d0bc93a4a6849, type: 3}
 --- !u!1 &2552185333528277719 stripped
 GameObject:

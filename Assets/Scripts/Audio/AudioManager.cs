@@ -37,6 +37,26 @@ public class AudioManager : Singleton<AudioManager>
             Play("MLG");
            // Debug.Log("fuck you ya cunt");
         }
+        if(MasterStaticScript.gameIsPaused)
+        {
+            foreach (Sound s in sounds)
+            {
+
+            s.source.Pause();
+
+            }
+
+        }
+        else 
+        {
+             foreach (Sound s in sounds)
+            {
+                
+                s.source.UnPause();
+                
+
+            }
+        }
        
     }
 
@@ -49,6 +69,21 @@ public class AudioManager : Singleton<AudioManager>
             return;
         }
         s.source.Play();
+       // s.playing = true;
+        //Debug.Log("fuck you");
+        
+    }
+
+     public void Stop(string name)
+    {
+       Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log(name + " is spelled wrong");
+            return;
+        }
+        s.source.Stop();
+        //s.playing = false;
         //Debug.Log("fuck you");
         
     }

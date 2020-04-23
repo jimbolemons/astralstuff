@@ -26,6 +26,11 @@ public class ControlSwap : MonoBehaviour
     bool setupCheck = false;
     public AudioManager audio;
     public bool slow = false;
+     
+     animsWaffles waff;
+
+     HopeAnimsController hoe;
+
 
 
     // Start is called before the first frame update
@@ -34,6 +39,8 @@ public class ControlSwap : MonoBehaviour
         audio = FindObjectOfType<AudioManager>();
         FireDummyShootScript = GetComponent<Gun>();
         dummyBody = dummy.GetComponent<Rigidbody>();
+        hoe = GetComponentInChildren<HopeAnimsController>();
+        waff = GetComponentInChildren<animsWaffles>();
     }
 
     // Update is called once per frame
@@ -102,7 +109,9 @@ public class ControlSwap : MonoBehaviour
     void ActivateHope()
     {
         //SOUND
-        audio.Play("timeScream");
+        audio.Play("switch");
+        waff.run2 = true;
+        FindObjectOfType<AudioManager>().Stop("wafflerun");
         hope.SetActive(true);
         waffles.SetActive(false);
         if (revertToBody)
@@ -116,7 +125,9 @@ public class ControlSwap : MonoBehaviour
     void ActivateWaffles()
     {
         //Sound
-        audio.Play("timeScream");
+        audio.Play("switch");
+        hoe.run2 = true;
+        FindObjectOfType<AudioManager>().Stop("hoperun");
         hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);

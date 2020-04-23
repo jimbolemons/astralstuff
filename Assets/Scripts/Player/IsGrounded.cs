@@ -74,12 +74,16 @@ public class IsGrounded : MonoBehaviour
                 //print("just grounded");
                 landingDust.Play();
             }
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                    FindObjectOfType<AudioManager>().Play("jump");
+            }
             anim.SetBool("Grounded", true);
             anim2.SetBool("Grounded", true);
             if (!grounded)
             {
                 //SOUND
-                FindObjectOfType<AudioManager>().Play("timeScream");
+                FindObjectOfType<AudioManager>().Play("hopeland");
 
                 grounded = true;
             }
@@ -93,7 +97,7 @@ public class IsGrounded : MonoBehaviour
             if (grounded)
             {
                 //SOUND
-                FindObjectOfType<AudioManager>().Play("timeScream");
+                
 
                 grounded = false;
             }
