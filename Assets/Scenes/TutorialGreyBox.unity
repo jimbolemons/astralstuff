@@ -73313,6 +73313,11 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 138862044}
+    - target: {fileID: 3631123474867992967, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: bodySpeed
+      value: 7000
+      objectReference: {fileID: 0}
     - target: {fileID: 6854081960721465606, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameras
