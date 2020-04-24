@@ -17,6 +17,9 @@ public class HookRayCast : MonoBehaviour
     public float ropeLength = 100f;
     public float hookDelay = 5f;
 
+    public float upAmount = 20;
+    public float forwardAmount = 15;
+
     float climbDelay = .5f;
 
     public BaseMovementModule playerMove;
@@ -144,8 +147,8 @@ public class HookRayCast : MonoBehaviour
         if (climbDelay > 0)
         {
             
-            player.transform.Translate(Vector3.up * Time.deltaTime * 20f);
-            player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * 15f);
+            player.transform.Translate(Vector3.up * Time.deltaTime * upAmount);
+            player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * forwardAmount);
             playerMove.direction = Vector3.zero;
         }
         else

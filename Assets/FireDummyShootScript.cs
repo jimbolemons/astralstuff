@@ -36,8 +36,12 @@ public class FireDummyShootScript : Gun
             }
             dummyBody.AddTorque(50, 0, 0);
 
-            canFire = false;
-            Invoke("ResetFire", fireCooldown);
+            fireBlank();          
         }
+    }
+    public void fireBlank()
+    {
+        canFire = false;
+        Invoke("ResetFire", fireCooldown);
     }
 }

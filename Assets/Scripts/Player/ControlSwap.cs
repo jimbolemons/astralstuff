@@ -15,8 +15,8 @@ public class ControlSwap : MonoBehaviour
 
     public ThirdPersonCamera cameraControl;
 
-    public Gun FireDummyShootScript;
-    
+    public FireDummyShootScript FireDummyShootScript;
+
 
     public int controlState = 0;
 
@@ -26,10 +26,10 @@ public class ControlSwap : MonoBehaviour
     bool setupCheck = false;
     public AudioManager audio;
     public bool slow = false;
-     
-     public animsWaffles waff;
 
-     public HopeAnimsController hoe;
+    public animsWaffles waff;
+
+    public HopeAnimsController hoe;
 
 
 
@@ -37,10 +37,10 @@ public class ControlSwap : MonoBehaviour
     void Start()
     {
         audio = FindObjectOfType<AudioManager>();
-        FireDummyShootScript = GetComponent<Gun>();
+        FireDummyShootScript = GetComponent<FireDummyShootScript>();
         dummyBody = dummy.GetComponent<Rigidbody>();
         //hoe = GetComponentInChildren<HopeAnimsController>();
-       // waff = GetComponentInChildren<animsWaffles>();
+        // waff = GetComponentInChildren<animsWaffles>();
     }
 
     // Update is called once per frame
@@ -58,48 +58,56 @@ public class ControlSwap : MonoBehaviour
             slow = true;
 
         }
-        if(Input.GetKeyUp(KeyCode.Tab))
+        if (Input.GetKeyUp(KeyCode.Tab))
         {
             slow = false;
         }
 
-        if(controlState == 0)
+        if (controlState == 0)
         {
-            if(slow)
-                {
-                    Time.timeScale = 0.5f;
-                }
+            if (slow)
+            {
+                Time.timeScale = 0.5f;
+            }
             else
-                {
-                    Time.timeScale = 1f;
-                }
+            {
+                Time.timeScale = 1f;
+            }
         }
-        if(controlState == 1)
+        if (controlState == 1)
         {
-            if(!slow)
-                {
-                    Time.timeScale = 1f;
-                }            
+            if (!slow)
+            {
+                Time.timeScale = 1f;
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Tab) && Input.GetKeyUp(KeyCode.Tab) != keyWasPressed)
         {
-            if (controlState == 0)
+            if (FireDummyShootScript.canFire)
             {
-                Vector3 velocity = hopeMovement.pVelocity;
-                //state 0 - controlling hope
-                ActivateWaffles();
-                wafflesMovement.pVelocity = velocity;
-                controlState = 1;
-            }
-            else
+                if (controlState == 0)
+                {
+
+                    Vector3 velocity = hopeMovement.pVelocity;
+                    //state 0 - controlling hope
+                    ActivateWaffles();
+                    wafflesMovement.pVelocity = velocity;
+                    controlState = 1;
+                }
+                else
             if (controlState == 1)
-            {   
-                ActivateHope();
-                //state 1 controlling waffles
-                controlState = 0;
-                cameraControl.SetLerp(true);
-                slow = false;
+                {
+                    ActivateHope();
+                    //state 1 controlling waffles
+                    controlState = 0;
+                    cameraControl.SetLerp(true);
+                    slow = false;
+
+                    FireDummyShootScript.fireBlank();
+
+                }
+
             }
         }
         //if key was pressed last frame
