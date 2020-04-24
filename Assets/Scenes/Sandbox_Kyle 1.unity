@@ -11271,7 +11271,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16.05
+  m_fontSize: 18
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11523,7 +11523,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
+  m_fontSize: 47
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25925,27 +25925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a564811e2e4454844b00049dd98e7a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &799930564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799930560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f34d89d46f26bf4595d823a37f09387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunEnd: {fileID: 177726978}
-  projectilePrefab: {fileID: 1544921676}
-  fireCooldown: 0.3
-  canFire: 1
-  parentType: 0
-  dummyBody: {fileID: 1544921683}
-  bodySpeed: 7500
-  fireAtAngle: 0
-  cameraPivot: {fileID: 150175625}
 --- !u!114 &799930565 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8630143291791907481, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
@@ -33134,7 +33113,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.65
+  m_fontSize: 28.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -51900,12 +51879,6 @@ MonoBehaviour:
   playerBullet: 0
   cameraShake: {fileID: 0}
   cameras: {fileID: 0}
---- !u!54 &1544921683 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1852340925544421681, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2018801160}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1548110059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79004,7 +78977,7 @@ PrefabInstance:
         type: 3}
       propertyPath: FireDummyShootScript
       value: 
-      objectReference: {fileID: 799930564}
+      objectReference: {fileID: 0}
     - target: {fileID: 8060628530584088470, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: dummyArrow
@@ -80276,7 +80249,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.8
+  m_fontSize: 61.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
