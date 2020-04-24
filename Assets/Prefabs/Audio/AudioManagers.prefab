@@ -44,28 +44,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: fart
+  - name: hook
     clip: {fileID: 8300000, guid: cfb7c920678bdda4caff46ca1616a5d2, type: 3}
     loop: 0
     volume: 0.1
     pitch: 1
     source: {fileID: 0}
-  - name: timeScream
-    clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
+    playing: 0
+  - name: landwaffles
+    clip: {fileID: 8300000, guid: ca6dc3eb00303884982e4ce7e015189d, type: 3}
     loop: 0
     volume: 0.136
     pitch: 1
     source: {fileID: 0}
+    playing: 0
   - name: MLG
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: SLAP
-    clip: {fileID: 8300000, guid: a146db1885572ee4a90181904c81c65a, type: 3}
+    playing: 0
+  - name: wafflesAttackhit
+    clip: {fileID: 8300000, guid: a28037caff4d17345919ffaac24a52dd, type: 3}
     loop: 0
     volume: 0.099
     pitch: 1
     source: {fileID: 0}
+    playing: 0
+  - name: hopeland
+    clip: {fileID: 8300000, guid: ca6dc3eb00303884982e4ce7e015189d, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: hoperun
+    clip: {fileID: 8300000, guid: 6adfe1aa366f6fa479172a2d7ec03d8c, type: 3}
+    loop: 1
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: wafflerun
+    clip: {fileID: 8300000, guid: 90174eb08e3efc54eb881ce6994ea5ff, type: 3}
+    loop: 1
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: switch
+    clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: shoot
+    clip: {fileID: 8300000, guid: cfb7c920678bdda4caff46ca1616a5d2, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: fart
+    clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: jump
+    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    loop: 0
+    volume: 0.099
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
   volu: 1

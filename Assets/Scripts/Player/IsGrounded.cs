@@ -83,6 +83,7 @@ public class IsGrounded : MonoBehaviour
             if (!grounded)
             {
                 //SOUND
+                if(anim.isActiveAndEnabled)
                 FindObjectOfType<AudioManager>().Play("hopeland");
 
                 grounded = true;

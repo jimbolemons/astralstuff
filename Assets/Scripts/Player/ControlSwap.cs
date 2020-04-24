@@ -27,9 +27,9 @@ public class ControlSwap : MonoBehaviour
     public AudioManager audio;
     public bool slow = false;
      
-     animsWaffles waff;
+     public animsWaffles waff;
 
-     HopeAnimsController hoe;
+     public HopeAnimsController hoe;
 
 
 
@@ -39,8 +39,8 @@ public class ControlSwap : MonoBehaviour
         audio = FindObjectOfType<AudioManager>();
         FireDummyShootScript = GetComponent<Gun>();
         dummyBody = dummy.GetComponent<Rigidbody>();
-        hoe = GetComponentInChildren<HopeAnimsController>();
-        waff = GetComponentInChildren<animsWaffles>();
+        //hoe = GetComponentInChildren<HopeAnimsController>();
+       // waff = GetComponentInChildren<animsWaffles>();
     }
 
     // Update is called once per frame
