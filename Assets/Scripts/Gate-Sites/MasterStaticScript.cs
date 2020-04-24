@@ -50,7 +50,6 @@ public class MasterStaticScript : MonoBehaviour
             print("Game has been lost. Via Site Distruction");
             LevelLoader.LoadScene("loseMk2");
             //TODO: change Game's lose state to true, go to lose scene.
-
         }       
     }
 
@@ -58,11 +57,11 @@ public class MasterStaticScript : MonoBehaviour
     {
         print("Game has been lost.");
         try{
+            sacredSites.Clear();
         LevelLoader.LoadScene("loseMk2");
         }
         catch
-        {
-            print("WARNING!! May need to check which lose state is loaded in build settings");
+        {            print("WARNING!! May need to check which lose state is loaded in build settings");
         LevelLoader.LoadScene("loseState");
         }
     }
