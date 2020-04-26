@@ -54,7 +54,14 @@ public class PlayerHP : ObjectWithHealth
         if (!deadNoflash)
         {
             hopeAnims.Hit();
+            try
+            {
             waffleanims.Hit();
+            }
+            catch
+            {
+
+            }
             StartCoroutine(cameraShake.Shake(.15f, .4f));
             PostProcessingEffectsManager.instance.Flash2();
             FindObjectOfType<AudioManager>().Play("wafflesAttackhit");

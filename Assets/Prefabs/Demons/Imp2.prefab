@@ -213,6 +213,7 @@ MonoBehaviour:
   maxHealth: 1
   health: 1
   immortal: 0
+  InvolnTime: 0.5
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
   baseMats: []
@@ -460,7 +461,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   fireCooldown: 0.3
   canFire: 1
-  parentType: 0
+  parentType: 1
   claw: {fileID: 946240284268823084}
   impAnim: {fileID: 7409124222264893087}
 --- !u!1001 &3052196228466409395

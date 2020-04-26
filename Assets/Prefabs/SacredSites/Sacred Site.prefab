@@ -4857,6 +4857,7 @@ GameObject:
   - component: {fileID: 679501194778150638}
   - component: {fileID: 7886470520931381073}
   - component: {fileID: 8265925460510805031}
+  - component: {fileID: 3450220715744961150}
   m_Layer: 0
   m_Name: Sacred Site
   m_TagString: SacredSite
@@ -4936,7 +4937,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.65
+  m_Radius: 0.42
   m_Height: 2.51
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -4953,19 +4954,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 2
-  maxHealth: 0
-  health: 10
+  maxHealth: 20
+  health: 20
   immortal: 0
+  InvolnTime: 0.5
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
-  color2Mat: {fileID: 0}
   baseMats: []
   testRenderers: []
-  testRenderer: {fileID: 0}
   flashMat: {fileID: 0}
   isDead: 0
   expansionRing: {fileID: 5944818764900820491, guid: f46568298838e2045a7f492f71c94cb3,
     type: 3}
+  playerWarningDistance: 80
+  audio: {fileID: 0}
+--- !u!208 &3450220715744961150
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7454551397834097682}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.49, y: 1, z: 0.49}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7691558053287986457
 GameObject:
   m_ObjectHideFlags: 0
