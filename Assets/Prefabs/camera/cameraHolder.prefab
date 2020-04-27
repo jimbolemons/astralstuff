@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2179153274459336449}
   - component: {fileID: 2179153274459336454}
   - component: {fileID: 1661314633}
+  - component: {fileID: 895519556}
   m_Layer: 0
   m_Name: cameraHolder
   m_TagString: Untagged
@@ -73,6 +74,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abaea687371ff244993a4fba878160b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &895519556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179153274459336455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaea687371ff244993a4fba878160b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4216267902685295215
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +106,7 @@ GameObject:
   - component: {fileID: 3413502582431328743}
   - component: {fileID: 2921281273470672605}
   - component: {fileID: 2116565232}
+  - component: {fileID: 1743834366}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -343,6 +357,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1743834366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216267902685295215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_RendererOverrideOption: 0
+  m_RendererData: {fileID: 11400000, guid: 55c184e0786f3a445a1939fd041e5fd5, type: 2}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &6302592387830470819
 GameObject:
   m_ObjectHideFlags: 0
