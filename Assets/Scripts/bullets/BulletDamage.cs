@@ -15,7 +15,9 @@ public class BulletDamage : BulletStats
     public bool playerBullet;
     public CameraShake cameraShake;
     public GameObject cameras;
+    public ParticleSystem emit;
     private void Start()
+    
     {
         GameObject player = GameObject.Find("Player 1");
         if (playerBullet)
@@ -106,5 +108,18 @@ public class BulletDamage : BulletStats
             }
             //print("I HIT A THING! " + collision.gameObject.name);
         }
+    }
+    public void DestroySelf()
+    {
+        DetachParticles();
+        Destroy(gameObject);
+    }
+    void DetachParticles()
+    {
+        // This splits the particle off so it doesn't get deleted with the parent
+        emit.transform.parent = null;
+
+        // this stops the particle from creating more bits
+        emit.Stop();
     }
 }

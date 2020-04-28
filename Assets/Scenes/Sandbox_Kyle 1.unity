@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -31509,6 +31509,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1483466971494973073, guid: 1713abe3a2f74aa43844cc2322783b9e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bb060daf81136bd468fdadf05273d1e0, type: 3}
     - target: {fileID: 1483466971494973075, guid: 1713abe3a2f74aa43844cc2322783b9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -70142,6 +70147,12 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 150175625}
+    - target: {fileID: 3631123473549299210, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4176801664597943643, guid: 0fa7373b19dc0f0428123e5f978a47a3,
+        type: 3}
     - target: {fileID: 3631123474867992967, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameraPivot
