@@ -8,6 +8,8 @@ public class ControlSwap : MonoBehaviour
     public GameObject dummy;
     Rigidbody dummyBody;
     public GameObject dummyArrow;
+
+    public GameObject launchArc;
     public GameObject waffles;
 
     public BaseMovementModule hopeMovement;
@@ -41,6 +43,9 @@ public class ControlSwap : MonoBehaviour
         dummyBody = dummy.GetComponent<Rigidbody>();
         //hoe = GetComponentInChildren<HopeAnimsController>();
         // waff = GetComponentInChildren<animsWaffles>();
+
+
+        launchArc.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,11 +61,16 @@ public class ControlSwap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             slow = true;
+            if (controlState == 0)
+            {
+                launchArc.SetActive(true);
+            }
 
         }
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             slow = false;
+            launchArc.SetActive(false);
         }
 
         if (controlState == 0)
@@ -88,7 +98,6 @@ public class ControlSwap : MonoBehaviour
             {
                 if (controlState == 0)
                 {
-
                     Vector3 velocity = hopeMovement.pVelocity;
                     //state 0 - controlling hope
                     ActivateWaffles();

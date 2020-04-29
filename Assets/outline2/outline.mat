@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: outline
   m_Shader: {fileID: 4800000, guid: 791a76f9b8acd9a448f4cd0b2863389f, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: POSTERIZE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -63,8 +63,8 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Outline: 0.00548
-    - _Poseterize: 0
-    - _PosterizationCount: 20.78
+    - _Poseterize: 1
+    - _PosterizationCount: 3.41
     - _QueueOffset: 0
     - _Raw: 0
     - _ReceiveShadows: 1
