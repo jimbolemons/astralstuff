@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class ControlSwap : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class ControlSwap : MonoBehaviour
     public ThirdPersonCamera cameraControl;
 
     public FireDummyShootScript FireDummyShootScript;
+
+   public PostProcessVolume effects;
 
 
     public int controlState = 0;
@@ -46,7 +49,9 @@ public class ControlSwap : MonoBehaviour
 
 
         launchArc.SetActive(false);
-    }
+        //effects.enabled = false;
+        
+     }
 
     // Update is called once per frame
     void Update()
@@ -125,7 +130,9 @@ public class ControlSwap : MonoBehaviour
 
     void ActivateHope()
     {
+
         //SOUND
+        effects.enabled = false;
         audio.Play("switch");
         waff.run2 = true;
         FindObjectOfType<AudioManager>().Stop("wafflerun");
@@ -141,6 +148,7 @@ public class ControlSwap : MonoBehaviour
     }
     void ActivateWaffles()
     {
+        effects.enabled = true;
         //Sound
         audio.Play("switch");
         hoe.run2 = true;
