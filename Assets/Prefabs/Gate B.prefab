@@ -4983,6 +4983,7 @@ MonoBehaviour:
   maxHealth: 30
   health: 30
   immortal: 0
+  InvolnTime: 0.1
   baseMat: {fileID: 0}
   lerpMat: {fileID: 0}
   baseMats: []

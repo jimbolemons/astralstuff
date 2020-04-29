@@ -45,7 +45,7 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-       audio.Play("wafflesAttackhit");
+       audio.Play("sitehit");
         //SOUND
         //Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         float dist = Vector3.Distance(transform.position, MasterStaticScript.playerReference.transform.position);

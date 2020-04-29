@@ -22,7 +22,7 @@ public abstract class ObjectWithHealth : MonoBehaviour
 
     bool canTakeDamage = true;
     float timer =.5f;
-    float InvolnTime = .5f;
+    public float InvolnTime = .5f;
 
     //public Material[] materials;
     public Material baseMat;

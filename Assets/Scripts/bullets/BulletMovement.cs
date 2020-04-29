@@ -11,6 +11,7 @@ public class BulletMovement : MonoBehaviour
     public float speed = 20;
     [Tooltip("How long til the bullet times out.")]
     public float lifeSpan = 4;
+     public ParticleSystem emit;
     public bool moving = true;
     void Start()
     {
@@ -36,10 +37,18 @@ public class BulletMovement : MonoBehaviour
             }
         }
     }
+void DetachParticles()
+    {
+        // This splits the particle off so it doesn't get deleted with the parent
+        emit.transform.parent = null;
 
+        // this stops the particle from creating more bits
+        emit.Stop();
+    }
 
     public void DestroySelf()
     {
+        DetachParticles();
         Destroy(gameObject);
     }
 }

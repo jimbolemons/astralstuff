@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ChangeResolution : MonoBehaviour
 {
     //public Dropdown resolutionList;
     //public Dropdown screenModeList;
-    public TMP_Dropdown resolutionList;
-    public TMP_Dropdown screenModeList;
+    public Dropdown resolutionList;
+    public Dropdown screenModeList;
     
 
     public void ApplyChanges()

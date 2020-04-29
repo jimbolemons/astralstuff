@@ -76,6 +76,7 @@ public class IsGrounded : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.Space))
             {
+                if(anim.isActiveAndEnabled)
                     FindObjectOfType<AudioManager>().Play("jump");
             }
             anim.SetBool("Grounded", true);
@@ -83,6 +84,9 @@ public class IsGrounded : MonoBehaviour
             if (!grounded)
             {
                 //SOUND
+                //TODO: check to see if hope is active if not skip the sound
+
+                
                 FindObjectOfType<AudioManager>().Play("hopeland");
 
                 grounded = true;
@@ -96,7 +100,7 @@ public class IsGrounded : MonoBehaviour
             anim2.SetBool("Grounded", false);
             if (grounded)
             {
-                //SOUND
+                
                 
 
                 grounded = false;

@@ -27,6 +27,7 @@ public class PickUp : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("pickup");
             Debug.Log(type);
             hp.CollectedPickUp(type);
             Destroy(this.gameObject);
