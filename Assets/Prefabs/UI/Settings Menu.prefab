@@ -266,7 +266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: -0.5}
+  m_AnchoredPosition: {x: -7.5000076, y: -0.5}
   m_SizeDelta: {x: -35, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3791907961482786806
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: 1920 x 1080
 --- !u!1 &1909726087005399219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,11 +1138,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: 1920 x 1080
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: 1600 x 900
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: 1280 x 720
+      m_Image: {fileID: 0}
+    - m_Text: 1024 x 576
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1714,8 +1716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a060505783077d4e839045e93d03f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolutionList: {fileID: 0}
-  screenModeList: {fileID: 0}
+  resolutionList: {fileID: 7491899978835305447}
+  screenModeList: {fileID: 3430924721992716112}
 --- !u!1 &6460208628278210517
 GameObject:
   m_ObjectHideFlags: 0
