@@ -35,7 +35,7 @@ using UnityEngine.UI;
         source.clip = sound;
 
         source.playOnAwake = false;
-        
+        source.volume = .5f;
 
 
 
