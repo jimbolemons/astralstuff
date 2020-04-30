@@ -45,11 +45,11 @@ public class animsWaffles : MonoBehaviour
         
 
 
-        if (run)
+        if (run && IsGrounded.down)
         {
             //Debug.Log("Run");
             anim2.SetBool("running", true);
-            if(run2)
+            if(run2 )
             {
             FindObjectOfType<AudioManager>().Play("wafflerun");
             run2 = false;

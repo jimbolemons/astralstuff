@@ -64,13 +64,14 @@ public class PlayerHP : ObjectWithHealth
             }
             StartCoroutine(cameraShake.Shake(.15f, .4f));
             PostProcessingEffectsManager.instance.Flash2();
-            FindObjectOfType<AudioManager>().Play("wafflesAttackhit");
+            FindObjectOfType<AudioManager>().Play("playerDamage");
         }
     }
 
     public override void TriggerOnDeath()
     {
         isDead = true;
+        FindObjectOfType<AudioManager>().Play("playerdeath");
 
         deadNoflash = true;
         player.GetComponent<CharacterController>().enabled = false;

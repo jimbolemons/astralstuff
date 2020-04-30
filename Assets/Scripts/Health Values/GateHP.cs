@@ -45,6 +45,7 @@ public class GateHP : ObjectWithHealth
     {
         //Explosions totally go here!
         //print("Barrel go boom");
+        FindObjectOfType<AudioManager>().Play("gatedeath");
         isDead = true;
 
     }

@@ -9,6 +9,8 @@ public class IsGrounded : MonoBehaviour
      */
     public GameObject player;
     public GameObject climbSpot;
+    public HopeAnimsController hope;
+    public animsWaffles waffles;
 
     public GameObject animator;
     Animator anim;
@@ -69,6 +71,7 @@ public class IsGrounded : MonoBehaviour
     {
         if (down)
         {
+            
             if (wasGrounded != down)
             {
                 //print("just grounded");
@@ -96,6 +99,7 @@ public class IsGrounded : MonoBehaviour
         }
         if (!down)
         {
+           
             anim.SetBool("Grounded", false);
             anim2.SetBool("Grounded", false);
             if (grounded)

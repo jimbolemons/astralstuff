@@ -6,7 +6,7 @@ public class HopeAnimsController : MonoBehaviour
 {
     public GameObject animator;
     Animator anim;
-    public bool run = false;
+    public  bool run = false;
     public bool dead = false;
     public bool jump = false;
     public bool falling = false;
@@ -87,7 +87,7 @@ public class HopeAnimsController : MonoBehaviour
 
         }
 
-        if (run)
+        if (run&& IsGrounded.down)
         {
             // Debug.Log("Run");
             anim.SetBool("run", true);

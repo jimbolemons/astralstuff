@@ -31,6 +31,7 @@ public class SiteHP : ObjectWithHealth
     {
         //Explosions totally go here!
         //print("Barrel go boom");
+        audio.Play("sitedeath");
         isDead = true;
 
     }
