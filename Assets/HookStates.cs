@@ -16,22 +16,21 @@ public class HookStates : MonoBehaviour
     Rigidbody playerBody;
 
     HopeAnimsController hopeAnims;
+    public BaseMovementModule playerMove;
+
+    [Space(10)]
     public float playerTravelSpeed = 20f;
     public float ropeLength = 100f;
-    public float hookDelay = 5f;
 
     public float upAmount = 20;
     public float forwardAmount = 15;
 
     public float ropeDistance = 50;
 
-    public float climbSpeed;
+    //public float climbSpeed;
 
 
-    public float climbDelaybase = .5f;
-    float climbDelay;
-
-    public BaseMovementModule playerMove;
+    
 
     Ray line;
     RaycastHit hit;
@@ -42,17 +41,20 @@ public class HookStates : MonoBehaviour
 
     public bool canHit;
 
-    public float climbTimerBase = .5f;
-    public float climbTimer;
+    [Space(10)]
+    public float howLongToClimbFor = .5f;
+    float climbTimer;
 
     public float playerState = 1;
 
-    public Vector3 targetClimbPosition;
-    public Vector3 startClimbPosition;
+    Vector3 targetClimbPosition;
+    Vector3 startClimbPosition;
 
     public float verticalOffset;
     public float forwardOffset;
 
+    [Tooltip("Shows the target point, 'where player wants to climb to'")]
+    //remove when fixed
     public GameObject helperCube;
 
     LineRenderer rope;
@@ -68,7 +70,6 @@ public class HookStates : MonoBehaviour
         rope = hook.GetComponent<LineRenderer>();
         img = GameObject.Find("crosshair").GetComponent<Image>();
         hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
-        climbDelay = climbDelaybase;
     }
 
     // Update is called once per frame
@@ -80,13 +81,11 @@ public class HookStates : MonoBehaviour
             line = new Ray(cameraPivot.transform.position, cameraPivot.transform.forward);
             switch (playerState)
             {                
+                    //ready to fire (normal)
                 case 1:
                     TestLine();
-                    //ready to fire (normal)
                     if (Input.GetMouseButton(0) && canHit)
                     {
-                        //FireHook();
-
                         //fire hook
 
                         if (FireHook())
@@ -95,8 +94,8 @@ public class HookStates : MonoBehaviour
                         }
                     }
                     break;
-                case 2:
                     //being pulled
+                case 2:
                     ReelIn();
                     MakeLines();
                     ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
@@ -107,25 +106,34 @@ public class HookStates : MonoBehaviour
                         if (IsGrounded.downHook)
                         {
                             playerState = 1;
-                        }
-                        else //if hitting a cieling, reset
+                            Reset();
+                            return;
+                        } else print("not grounded");
+
+                        //if hitting a cieling, reset
                         if (IsGrounded.up)
                         {
                             playerState = 1;
-                        }
-                        else //if hitting a wall, reset
+                            Reset();
+                            return;
+                        }else print("not bonking");
+                        //if hitting a wall, reset
                         if (CanClimb.cannotClimb)
                         {
                             playerState = 1;
+                            Reset();
+                            return;
                         }
-                        else //then you must be good to climb
-                        {
+                        else print("can climb");
+                        //then you must be good to climb
+
+                            DestroyLines();
                             targetClimbPosition = climbDetector.transform.position + climbDetector.transform.forward *forwardOffset+ climbDetector.transform.up *verticalOffset;
                             startClimbPosition = player.transform.position;
                             helperCube.transform.position = targetClimbPosition;
                             playerState = 3;
                             climbTimer = 0;
-                        }
+                        
                         //climb check
 
                         //else return to normal
@@ -138,9 +146,9 @@ public class HookStates : MonoBehaviour
                     //player.transform.Translate(climbDetector.transform.forward * forwardAmount);
                     //player.transform.position = Vector3.MoveTowards(player.transform.position, targetClimbPosition, climbSpeed);
 
-                    player.transform.position = Vector3.Slerp(startClimbPosition, targetClimbPosition,  climbTimer / climbTimerBase);
+                    player.transform.position = Vector3.Slerp(startClimbPosition, targetClimbPosition,  climbTimer / howLongToClimbFor);
 
-                    if (IsGrounded.down || climbTimer > climbTimerBase)
+                    if (IsGrounded.down || climbTimer > howLongToClimbFor)
                     {
                         playerState = 1;
                         Reset();
@@ -153,9 +161,6 @@ public class HookStates : MonoBehaviour
             {
                 //switch to default
                 Reset();
-                hook.transform.position = cameraPivot.transform.position;
-                hopeAnims.hooked = false;
-
             }
         }
     }
@@ -187,15 +192,18 @@ public class HookStates : MonoBehaviour
 
     private void Reset()
     {
+        playerState = 1;
         player.GetComponent<CharacterController>().enabled = true;
         hook.transform.position = cameraPivot.transform.position;
         DestroyLines();
         BaseMovementModule.gravity = -35;
+        hook.transform.position = cameraPivot.transform.position;
+        hopeAnims.hooked = false;
     }
     private void DestroyLines()
     {
-        rope.SetVertexCount(0);
-        //rope.positionCount = 0;
+        //rope.SetVertexCount(0);
+        rope.positionCount = 0;
     }
     private bool FireHook()
     {
@@ -220,9 +228,9 @@ public class HookStates : MonoBehaviour
     }
     private void MakeLines()
     {
-        rope.SetVertexCount(2);
+        //rope.SetVertexCount(2);
         
-        //rope.positionCount = 2;
+        rope.positionCount = 2;
         rope.SetPosition(0, hookHolder.transform.position);
         rope.SetPosition(1, hook.transform.position);
     }
