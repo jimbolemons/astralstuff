@@ -148,7 +148,7 @@ public class HookStates : MonoBehaviour
 
                     player.transform.position = Vector3.Slerp(startClimbPosition, targetClimbPosition,  climbTimer / howLongToClimbFor);
 
-                    if (IsGrounded.down || climbTimer > howLongToClimbFor)
+                    if (IsGrounded.down || climbTimer > howLongToClimbFor || IsGrounded.up)
                     {
                         playerState = 1;
                         Reset();

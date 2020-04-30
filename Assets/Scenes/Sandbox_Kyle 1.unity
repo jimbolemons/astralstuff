@@ -40652,6 +40652,18 @@ PrefabInstance:
       propertyPath: helperCube
       value: 
       objectReference: {fileID: 1514160981}
+    - target: {fileID: 1228796970, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: verticalOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228796970, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: howLongToClimbFor
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228796970, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f, type: 3}
+      propertyPath: forwardOffset
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1600123678471378607, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: cameras
