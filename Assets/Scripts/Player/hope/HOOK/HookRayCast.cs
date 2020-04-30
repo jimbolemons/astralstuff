@@ -49,9 +49,7 @@ public class HookRayCast : MonoBehaviour
         rope = hook.GetComponent<LineRenderer>();
         img = GameObject.Find("crosshair").GetComponent<Image>();
         hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
-        climbDelay = climbDelaybase;
-
-        climbDelay = baseClimbDelay;
+        climbDelay = climbDelaybase;        
     }
 
     // Update is called once per frame
@@ -169,7 +167,7 @@ public class HookRayCast : MonoBehaviour
         else
         {
             unhookedButInAir = false;
-            climbDelay = baseClimbDelay;
+            climbDelay = climbDelaybase;
         }
         climbDelay -= Time.deltaTime;
 

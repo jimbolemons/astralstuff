@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 9ba9f5385d6093140ae9939351955a80
   - enabled: 1
+    path: Assets/Scenes/josh_tutorialarea.unity
+    guid: 7d3db21db7073ef4887c893223cf3844
+  - enabled: 1
     path: Assets/Scenes/Sandbox_Kyle 1.unity
     guid: 474b293975a82b543874530c37076a19
   - enabled: 1
