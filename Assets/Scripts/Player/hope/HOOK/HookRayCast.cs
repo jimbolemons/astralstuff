@@ -20,8 +20,9 @@ public class HookRayCast : MonoBehaviour
     public float upAmount = 20;
     public float forwardAmount = 15;
 
-    public float climbDelay = 0;
-    public float baseClimbDelay = .5f;
+    
+    public float climbDelaybase = .5f;
+    float climbDelay;
 
     public BaseMovementModule playerMove;
 
@@ -48,6 +49,7 @@ public class HookRayCast : MonoBehaviour
         rope = hook.GetComponent<LineRenderer>();
         img = GameObject.Find("crosshair").GetComponent<Image>();
         hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
+        climbDelay = climbDelaybase;
 
         climbDelay = baseClimbDelay;
     }
@@ -57,6 +59,7 @@ public class HookRayCast : MonoBehaviour
     {
         if (!MasterStaticScript.gameIsPaused)
         {
+            Climb2();
             TestLine();
             DrawHookLine();
             layerMask = 1 << 2;
@@ -78,7 +81,7 @@ public class HookRayCast : MonoBehaviour
                 ReelIn();
             }
 
-            if (hooked && fired && ropeDis <= .2f)
+            if (hooked && fired && ropeDis <= 5)
             {
                 UnHook();
 
@@ -88,27 +91,33 @@ public class HookRayCast : MonoBehaviour
                 UnHook();
             }
 
-            if (unhookedButInAir & !IsGrounded.downHook)
+            if (unhookedButInAir && !IsGrounded.downHook && !IsGrounded.up)
             {
-                print("climbtest");
-                print("grounded" + IsGrounded.up);
-                print("cannotclimb" + CanClimb.cannotClimb);
-
-                if (!IsGrounded.up && !CanClimb.cannotClimb)
+                if (!CanClimb.cannotClimb)
                 {
-                    ClimbUp();
+                    //ClimbUp();
                     //BaseMovementModule.gravity = -35;
                     climbing = true;
+                   
                 }
                 else
                 {
+                   
                     unhookedButInAir = false;
-                    climbDelay = baseClimbDelay;
+                    climbing = false;
+                    
                 }
 
             }
+            if (IsGrounded.downHook && IsGrounded.up)
+            {
+                climbing = false;
+            }
 
-            if (unhookedButInAir & IsGrounded.downHook)
+            
+            
+
+            if (unhookedButInAir && IsGrounded.downHook)
             {
                 unhookedButInAir = false;
             }
@@ -140,8 +149,10 @@ public class HookRayCast : MonoBehaviour
         hopeAnims.hooked = true;
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
         player.GetComponent<CharacterController>().enabled = false;
-        player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
         BaseMovementModule.gravity = 0;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        playerMove.direction = Vector3.zero;
+        player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
     }
 
     private void ClimbUp()
@@ -150,8 +161,9 @@ public class HookRayCast : MonoBehaviour
         
         if (climbDelay > 0)
         {            
-            player.transform.Translate(Vector3.up * Time.deltaTime * upAmount);
-            player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * forwardAmount);
+            //player.transform.Translate(Vector3.up * Time.deltaTime * upAmount);
+            //player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * forwardAmount);
+           
             playerMove.direction = Vector3.zero;
         }
         else
@@ -160,6 +172,18 @@ public class HookRayCast : MonoBehaviour
             climbDelay = baseClimbDelay;
         }
         climbDelay -= Time.deltaTime;
+
+    }
+    private void Climb2()
+    {
+        if(climbing)
+        {
+            // player.GetComponent<Rigidbody>().AddForce(Vector3.up*upAmount, ForceMode.Force);
+          //  player.GetComponent<Rigidbody>().AddForce(Vector3.forward*forwardAmount,ForceMode.Force) ;
+        climbing = false;
+       player.transform.Translate(Vector3.up * upAmount);
+        player.transform.Translate(climbDetector.transform.forward * forwardAmount);
+        }
 
     }
 

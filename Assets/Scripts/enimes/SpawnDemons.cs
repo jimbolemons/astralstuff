@@ -137,7 +137,7 @@ public class SpawnDemons : MonoBehaviour
     Vector3 SpawnLocation(Bounds bounds)
     {
         return new Vector3(Random.Range(bounds.min.x, bounds.max.x),
-            0,
+            this.transform.position.y,
             Random.Range(bounds.min.z, bounds.max.z));
     }
 
