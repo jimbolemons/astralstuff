@@ -18,14 +18,13 @@ public class ControlSwap : MonoBehaviour
 
     public ThirdPersonCamera cameraControl;
 
-    public FireDummyShootScript FireDummyShootScript;
+    FireDummyShootScript FireDummyShootScript;
 
-   public PostProcessVolume effects;
+    public PostProcessVolume effects;
 
 
     public int controlState = 0;
 
-    public bool revertToBody;
 
     bool keyWasPressed;
     bool setupCheck = false;
@@ -48,15 +47,15 @@ public class ControlSwap : MonoBehaviour
         // waff = GetComponentInChildren<animsWaffles>();
 
 
+        dummy.transform.SetParent(null);
+
         launchArc.SetActive(false);
-        //effects.enabled = false;
-        
-     }
+        //effects.enabled = false;        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //revertToBody = !Input.GetKey(KeyCode.LeftShift);
         if (!setupCheck && Time.time > .1f)
         {
             ActivateHope();
@@ -110,7 +109,7 @@ public class ControlSwap : MonoBehaviour
                     controlState = 1;
                 }
                 else
-            if (controlState == 1)
+                if (controlState == 1)
                 {
                     ActivateHope();
                     //state 1 controlling waffles
@@ -119,32 +118,31 @@ public class ControlSwap : MonoBehaviour
                     slow = false;
 
                     FireDummyShootScript.fireBlank();
-
                 }
-
             }
         }
         //if key was pressed last frame
         keyWasPressed = Input.GetKeyDown(KeyCode.Tab);
+
+        //print(this.transform.position);
     }
 
     void ActivateHope()
     {
+        dummyBody.velocity = Vector3.zero;
+        dummy.SetActive(false);
+        dummyArrow.SetActive(false);
 
+        Vector3 testPos = dummy.transform.position;
         //SOUND
         effects.enabled = false;
         audio.Play("switch");
         waff.run2 = true;
         FindObjectOfType<AudioManager>().Stop("wafflerun");
+
         hope.SetActive(true);
         waffles.SetActive(false);
-        if (revertToBody)
-        {
-            transform.position = dummy.transform.position;
-        }
-        dummyBody.velocity = Vector3.zero;
-        dummy.SetActive(false);
-        dummyArrow.SetActive(false);
+        this.transform.position = dummy.transform.position + Vector3.up;      
     }
     void ActivateWaffles()
     {
@@ -160,7 +158,7 @@ public class ControlSwap : MonoBehaviour
         dummyArrow.SetActive(true);
         //body.transform.position = transform.position;
         FireDummyShootScript.Fire();
-        dummy.transform.SetParent(null);
+
         BaseMovementModule.gravity = -35;
     }
 }

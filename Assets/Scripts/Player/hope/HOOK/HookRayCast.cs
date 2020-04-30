@@ -20,7 +20,8 @@ public class HookRayCast : MonoBehaviour
     public float upAmount = 20;
     public float forwardAmount = 15;
 
-    float climbDelay = .5f;
+    public float climbDelay = 0;
+    public float baseClimbDelay = .5f;
 
     public BaseMovementModule playerMove;
 
@@ -48,6 +49,7 @@ public class HookRayCast : MonoBehaviour
         img = GameObject.Find("crosshair").GetComponent<Image>();
         hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
 
+        climbDelay = baseClimbDelay;
     }
 
     // Update is called once per frame
@@ -74,12 +76,9 @@ public class HookRayCast : MonoBehaviour
 
                 MakeLines();
                 ReelIn();
-
-
-
             }
 
-            if (hooked && fired && ropeDis <= 1)
+            if (hooked && fired && ropeDis <= .2f)
             {
                 UnHook();
 
@@ -91,6 +90,10 @@ public class HookRayCast : MonoBehaviour
 
             if (unhookedButInAir & !IsGrounded.downHook)
             {
+                print("climbtest");
+                print("grounded" + IsGrounded.up);
+                print("cannotclimb" + CanClimb.cannotClimb);
+
                 if (!IsGrounded.up && !CanClimb.cannotClimb)
                 {
                     ClimbUp();
@@ -100,7 +103,7 @@ public class HookRayCast : MonoBehaviour
                 else
                 {
                     unhookedButInAir = false;
-                    climbDelay = .5f;
+                    climbDelay = baseClimbDelay;
                 }
 
             }
@@ -143,19 +146,18 @@ public class HookRayCast : MonoBehaviour
 
     private void ClimbUp()
     {
+        print("Trying to climb");
         
         if (climbDelay > 0)
-        {
-            
+        {            
             player.transform.Translate(Vector3.up * Time.deltaTime * upAmount);
             player.transform.Translate(climbDetector.transform.forward * Time.deltaTime * forwardAmount);
             playerMove.direction = Vector3.zero;
         }
         else
         {
-
             unhookedButInAir = false;
-            climbDelay = .5f;
+            climbDelay = baseClimbDelay;
         }
         climbDelay -= Time.deltaTime;
 
