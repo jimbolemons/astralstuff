@@ -84,7 +84,7 @@ public class HookStates : MonoBehaviour
                     //ready to fire (normal)
                 case 1:
                     TestLine();
-                    if (Input.GetMouseButton(0) && canHit)
+                    if (Input.GetMouseButtonDown(0) && canHit)
                     {
                         //fire hook
 

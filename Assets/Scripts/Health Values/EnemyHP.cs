@@ -81,6 +81,9 @@ public class EnemyHP : ObjectWithHealth
         {
             Debug.Log("no imp animation controller!");
         }
+        //TODO : if take damage form waffles claws play slap
+        // if take damage from range attack play diffent sound
+        // if take dammage from body  play diffent sound        
         slap.Play();
         //Debug.Log("ouch");
     }

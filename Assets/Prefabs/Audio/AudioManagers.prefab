@@ -47,147 +47,161 @@ MonoBehaviour:
   - name: hook
     clip: {fileID: 8300000, guid: b0ef66417a54bbb46b3123f8513635f7, type: 3}
     loop: 0
-    volume: 0.1
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: landwaffles
     clip: {fileID: 8300000, guid: ca6dc3eb00303884982e4ce7e015189d, type: 3}
     loop: 0
-    volume: 0.136
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: MLG
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: wafflesAttackhit
     clip: {fileID: 8300000, guid: a28037caff4d17345919ffaac24a52dd, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: hopeland
     clip: {fileID: 8300000, guid: ca6dc3eb00303884982e4ce7e015189d, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: hoperun
     clip: {fileID: 8300000, guid: 6adfe1aa366f6fa479172a2d7ec03d8c, type: 3}
     loop: 1
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: wafflerun
     clip: {fileID: 8300000, guid: 90174eb08e3efc54eb881ce6994ea5ff, type: 3}
     loop: 1
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: switch
-    clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
+    clip: {fileID: 8300000, guid: 09f631d8699b011479c3a38421a9f099, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: shoot
-    clip: {fileID: 8300000, guid: cfb7c920678bdda4caff46ca1616a5d2, type: 3}
+    clip: {fileID: 8300000, guid: 53824cc047752cc488be4a9a1440547c, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: fart
     clip: {fileID: 8300000, guid: eea80bee7e0fce1429a4bed8dfca5006, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: jump
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: bfbd7fa6d3f929a439260653caeb68ef, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: ambience
     clip: {fileID: 8300000, guid: 56b38f0fd65b2b04ea28a60a3b2dc5e2, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: pickup
     clip: {fileID: 8300000, guid: 1f3566b177eb21340b75e65e7627d15a, type: 3}
     loop: 0
-    volume: 0.207
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: playerDamage
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: 2b3fed6cd82ebe142904111daafadce2, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: rangeattack
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: 53824cc047752cc488be4a9a1440547c, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: explode
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: playerdeath
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: sitehit
-    clip: {fileID: 8300000, guid: 692afd712a6fa1d488946db2b54ebb43, type: 3}
+    clip: {fileID: 8300000, guid: 2b3fed6cd82ebe142904111daafadce2, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: gatehit
     clip: {fileID: 8300000, guid: 2b3fed6cd82ebe142904111daafadce2, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: sitedeath
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: gatedeath
     clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
     loop: 0
-    volume: 0.099
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: button
+    clip: {fileID: 8300000, guid: 89465436ec5d7674f8fc84c171eb4c45, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: pause
+    clip: {fileID: 8300000, guid: 4b361abe76a8fa84fabf16810be58b39, type: 3}
+    loop: 0
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0

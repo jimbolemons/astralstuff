@@ -11,11 +11,14 @@ public class PauseControl : MonoBehaviour
     bool prevPaused = false;
     [Tooltip("Reference to the pause canvas.")]
     public Canvas pauseCanvas;
+     AudioManager audios;
     
 
     private void Start()
     {
         pauseCanvas.enabled = false;
+        audios = FindObjectOfType<AudioManager>();
+        
     }
 
     void Update()
@@ -44,7 +47,8 @@ public class PauseControl : MonoBehaviour
    /// </summary>
     public void Pause()
     {
-       
+        
+       audios.Play("pause");
         MasterStaticScript.gameIsPaused = true;
         SetPauseCanvasState();
        
@@ -55,7 +59,7 @@ public class PauseControl : MonoBehaviour
     /// </summary>
     public void UnPause()
     {
-        
+        audios.Play("pause");
         MasterStaticScript.gameIsPaused = false;
         SetPauseCanvasState();
         

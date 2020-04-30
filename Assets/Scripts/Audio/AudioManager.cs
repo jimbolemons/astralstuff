@@ -97,5 +97,15 @@ public class AudioManager : Singleton<AudioManager>
 
         }
     }
+    public void Buttonpress()
+    {
+      Play("button");
+
+    }
+     public void ButtonpressPlay()
+    {
+      Play("pickup");
+
+    }
     
 }
