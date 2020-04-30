@@ -137,8 +137,6 @@ public class BaseMovementModule : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
                 Quaternion newrot = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
                 playermodel.transform.rotation = Quaternion.Slerp(playermodel.transform.rotation, newrot, rotateSpeed * Time.deltaTime);
-
-
             }
 
            

@@ -7,8 +7,8 @@ public class HookRayCast : MonoBehaviour
 {
 
     public GameObject hookHolder;
-    public GameObject cameras;
-    public GameObject player;
+    public GameObject cameraPivot;
+    GameObject player;
     public GameObject hook;
     public GameObject climbDetector;
 
@@ -49,7 +49,9 @@ public class HookRayCast : MonoBehaviour
         rope = hook.GetComponent<LineRenderer>();
         img = GameObject.Find("crosshair").GetComponent<Image>();
         hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
-        climbDelay = climbDelaybase;        
+        climbDelay = climbDelaybase;
+
+        player = MasterStaticScript.playerReference;
     }
 
     // Update is called once per frame
@@ -59,11 +61,11 @@ public class HookRayCast : MonoBehaviour
         {
             Climb2();
             TestLine();
-            DrawHookLine();
+            //DrawHookLine();
             layerMask = 1 << 2;
             layerMask = ~layerMask;
             //line2 = new Ray(hookHolder.transform.position, hookHolder.transform.forward);
-            line = new Ray(cameras.transform.position, cameras.transform.forward);
+            line = new Ray(cameraPivot.transform.position, cameraPivot.transform.forward);
             Timer();
 
             if (!hooked & fired)
@@ -203,11 +205,10 @@ public class HookRayCast : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = true;
         BaseMovementModule.gravity = -35;
        // hook.transform.position = hookHolder.transform.position;
-        hook.transform.position = cameras.transform.position;
+        hook.transform.position = cameraPivot.transform.position;
         hopeAnims.hooked = false;        
 
-        DestroyLines();
-        
+        DestroyLines();        
     }
 
     private void TestLine()
