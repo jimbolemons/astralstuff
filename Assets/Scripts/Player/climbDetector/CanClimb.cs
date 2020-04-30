@@ -22,11 +22,11 @@ public class CanClimb : MonoBehaviour
         layerMask = 1 << 2;
         layerMask = ~layerMask;
         cannotClimb = CannotClimb();
-        Debug.DrawRay(climbSpot.transform.position, transform.forward * 2f, Color.yellow, layerMask);
+        Debug.DrawRay(climbSpot.transform.position, transform.forward * 5f, Color.yellow, layerMask);
 
     }
     public bool CannotClimb()
     {
-        return Physics.Raycast(climbSpot.transform.position, transform.forward, 2f, layerMask);
+        return Physics.Raycast(climbSpot.transform.position, transform.forward, 5f, layerMask);
     }
 }

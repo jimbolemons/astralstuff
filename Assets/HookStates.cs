@@ -100,7 +100,7 @@ public class HookStates : MonoBehaviour
                     MakeLines();
                     ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
 
-                    if (ropeDis < 5)
+                    if (ropeDis < 4)
                     {
                         //if grounded, reset
                         if (IsGrounded.downHook)
