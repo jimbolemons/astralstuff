@@ -197,7 +197,7 @@ public class EnemyTarget : MonoBehaviour
                     {
                        // Debug.Log(agent.SetDestination(targetSite.position));                       
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
-                        transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
+                               //MasterStaticScript.player.position
 
                         var neededRotation3 = Quaternion.LookRotation(targetSite.transform.position - transform.position);
                         Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * rotSpeed);
@@ -207,6 +207,7 @@ public class EnemyTarget : MonoBehaviour
                         //print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
                         if (checkDistance(targetSite.transform.position, attackRange + bonusAttackRange))
                         {
+                            transform.LookAt(targetSite.position); 
                             agent.isStopped = true;
                             //print("firing");
                             gunReference.Fire();

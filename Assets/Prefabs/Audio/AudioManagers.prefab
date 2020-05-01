@@ -157,7 +157,7 @@ MonoBehaviour:
     source: {fileID: 0}
     playing: 0
   - name: playerdeath
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: 692afd712a6fa1d488946db2b54ebb43, type: 3}
     loop: 0
     volume: 0.3
     pitch: 1
@@ -178,14 +178,14 @@ MonoBehaviour:
     source: {fileID: 0}
     playing: 0
   - name: sitedeath
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: 774384a5c7db07b4ab689ed4909f5271, type: 3}
     loop: 0
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
     playing: 0
   - name: gatedeath
-    clip: {fileID: 8300000, guid: 6afc193a0543d0244886d7a14bfe30d0, type: 3}
+    clip: {fileID: 8300000, guid: d82dd3084bfe37846b58e937273cdf14, type: 3}
     loop: 0
     volume: 0.3
     pitch: 1

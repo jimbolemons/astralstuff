@@ -107,5 +107,14 @@ public class AudioManager : Singleton<AudioManager>
       Play("pickup");
 
     }
+    public void StopAll()
+    {
+        foreach(Sound s in sounds)
+        {
+            s.source.Stop();
+
+        }
+
+    }
     
 }

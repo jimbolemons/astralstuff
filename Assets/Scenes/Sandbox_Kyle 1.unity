@@ -23920,7 +23920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524389251}
   - component: {fileID: 524389252}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25035,7 +25035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633124995}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Kyle's Added Platforming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26433,7 +26433,7 @@ GameObject:
   - component: {fileID: 768308732}
   - component: {fileID: 768308731}
   - component: {fileID: 768308734}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (1)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -26633,7 +26633,7 @@ GameObject:
   - component: {fileID: 779128137}
   - component: {fileID: 779128136}
   - component: {fileID: 779128139}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (8)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -27497,7 +27497,7 @@ GameObject:
   - component: {fileID: 846486598}
   - component: {fileID: 846486597}
   - component: {fileID: 846486600}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (11)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -33612,7 +33612,7 @@ GameObject:
   - component: {fileID: 931568431}
   - component: {fileID: 931568430}
   - component: {fileID: 931568433}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (3)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -41080,7 +41080,7 @@ GameObject:
   - component: {fileID: 1197398492}
   - component: {fileID: 1197398491}
   - component: {fileID: 1197398494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (19)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -47480,7 +47480,17 @@ PrefabInstance:
     - target: {fileID: 6817759220634159428, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817759220846395713, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 850615692}
+    - target: {fileID: 6817759220846395713, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnPause
       objectReference: {fileID: 0}
     - target: {fileID: 6817759221622094503, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
         type: 3}
@@ -48868,7 +48878,7 @@ GameObject:
   - component: {fileID: 1582254824}
   - component: {fileID: 1582254823}
   - component: {fileID: 1582254826}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (4)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -59354,7 +59364,7 @@ GameObject:
   - component: {fileID: 1710029477}
   - component: {fileID: 1710029476}
   - component: {fileID: 1710029475}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64541,7 +64551,7 @@ GameObject:
   - component: {fileID: 1773173978}
   - component: {fileID: 1773173977}
   - component: {fileID: 1773173980}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (2)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -64656,7 +64666,7 @@ GameObject:
   - component: {fileID: 1781110442}
   - component: {fileID: 1781110441}
   - component: {fileID: 1781110444}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -70681,7 +70691,7 @@ PrefabInstance:
     - target: {fileID: 4610192742045658197, guid: f46568298838e2045a7f492f71c94cb3,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5944818764900820491, guid: f46568298838e2045a7f492f71c94cb3,
         type: 3}
@@ -70691,7 +70701,7 @@ PrefabInstance:
     - target: {fileID: 5944818764900820491, guid: f46568298838e2045a7f492f71c94cb3,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7267513420686791704, guid: f46568298838e2045a7f492f71c94cb3,
         type: 3}
@@ -70785,7 +70795,7 @@ GameObject:
   - component: {fileID: 1905146080}
   - component: {fileID: 1905146079}
   - component: {fileID: 1905146082}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (5)
   m_TagString: Hookable
   m_Icon: {fileID: 0}
@@ -77469,7 +77479,7 @@ GameObject:
   - component: {fileID: 2069880941}
   - component: {fileID: 2069880940}
   - component: {fileID: 2069880943}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (10)
   m_TagString: Hookable
   m_Icon: {fileID: 0}

@@ -7,11 +7,14 @@ public class LevelTransitionLoader : MonoBehaviour
 {
     public Animator crossfade;
     public float fadeDuration = 1;
+    AudioManager sounds;
     // Start is called before the first frame update
     void Awake()
     {
-        MasterStaticScript.LevelLoader = this;        
+        MasterStaticScript.LevelLoader = this; 
+        sounds = FindObjectOfType<AudioManager>();       
     }
+
     public void LoadScene(string scene)
     {
         StartCoroutine(LoadLevel(scene));
@@ -27,6 +30,7 @@ public class LevelTransitionLoader : MonoBehaviour
     }
     IEnumerator LoadLevel(string level)
     {
+        sounds.StopAll();
         TriggerAnimation();
         yield return new WaitForSeconds(fadeDuration);
 
@@ -34,6 +38,7 @@ public class LevelTransitionLoader : MonoBehaviour
     }
     IEnumerator LoadLevel(int level)
     {
+        sounds.StopAll();
         TriggerAnimation();
         yield return new WaitForSeconds(fadeDuration);
 
