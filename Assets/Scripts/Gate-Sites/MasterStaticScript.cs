@@ -50,6 +50,7 @@ public class MasterStaticScript : MonoBehaviour
         if (sacredSites.Count <= 0)
         {
             print("Game has been lost. Via Site Distruction");
+            enemyGates.Clear();
             LevelLoader.LoadScene("loseMk2");
             //TODO: change Game's lose state to true, go to lose scene.
         }     
@@ -67,6 +68,7 @@ public class MasterStaticScript : MonoBehaviour
         print("Game has been lost.");
         try{
             sacredSites.Clear();
+            enemyGates.Clear();
         LevelLoader.LoadScene("loseMk2");
         }
         catch
@@ -79,6 +81,8 @@ public class MasterStaticScript : MonoBehaviour
     {
         if (enemyGates.Count <= 0)
         {
+            enemyGates.Clear();
+            sacredSites.Clear();
         print("Game has been won!");
 
             LevelLoader.LoadScene("WinState");

@@ -18,11 +18,15 @@ public class LevelTransitionLoader : MonoBehaviour
     public void LoadScene(string scene)
     {
         StartCoroutine(LoadLevel(scene));
+        MasterStaticScript.sacredSites.Clear();
+        MasterStaticScript.enemyGates.Clear();
     }
     public void LoadScene(int SceneNumber)
     {
         //levelLoader.TriggerAnimation();
        StartCoroutine(LoadLevel(SceneNumber));
+        MasterStaticScript.sacredSites.Clear();
+        MasterStaticScript.enemyGates.Clear();
     }
     public void TriggerAnimation()
     {
