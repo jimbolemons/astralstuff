@@ -11,7 +11,7 @@ public class ShootCharge : Gun
     public float chargeSpeed = 2;
 
     public PlayerEnergy energy;
-    public HadokenControl control;
+    HadokenControl control;
 
     public Transform cameraPivot;
 

@@ -28,6 +28,8 @@ public class HopeAnimsController : MonoBehaviour
     {
         baseFov = mainCamera.fieldOfView;
         anim = animator.GetComponent<Animator>();
+
+        mainCamera = MasterStaticScript.mainCameraReference;
     }
 
     // Update is called once per frame

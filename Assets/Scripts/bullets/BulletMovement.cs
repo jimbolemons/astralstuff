@@ -40,7 +40,7 @@ public class BulletMovement : MonoBehaviour
 void DetachParticles()
     {
         // This splits the particle off so it doesn't get deleted with the parent
-        emit.transform.parent = null;
+        if (emit != null) emit.transform.parent = null;
 
         // this stops the particle from creating more bits
         emit.Stop();
@@ -48,7 +48,7 @@ void DetachParticles()
 
     public void DestroySelf()
     {
-        DetachParticles();
+        if(emit != null) DetachParticles();
         Destroy(gameObject);
     }
 }

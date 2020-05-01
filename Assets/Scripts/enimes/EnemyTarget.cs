@@ -9,7 +9,8 @@ public class EnemyTarget : MonoBehaviour
 {
 
     [Tooltip("Reference to the player.")]
-    GameObject player;
+    [HideInInspector]
+    public GameObject player;
     public float distanceToPlayer = 20;
     //more anim stuff
 
@@ -22,15 +23,17 @@ public class EnemyTarget : MonoBehaviour
 
 
     public Gun gunReference;
-    //float step;
 
-    
+    public Gun hiddenGun;
+    //float step;    
 
     NavMeshAgent agent;
     public Transform targetSite;
     private bool readyToGo = false;
 
     public float attackRange = 5;
+
+    public float bonusAttackRange = 0;
 
     public enum EnemyState { IDLE, FOLLOW_PLAYER, FOLLOW_SITE };
 
@@ -53,13 +56,14 @@ public class EnemyTarget : MonoBehaviour
         try
         {
             if (targetSite != null)
-            { 
-            //print("Site is fine");
+            {
+                FindNearestSite();
+                //print("Site is fine");
             }
           }
           catch
           {
-              FindNearestSite();
+         
               print("Try not working!");
           }
     }
@@ -166,15 +170,10 @@ public class EnemyTarget : MonoBehaviour
                     //print("Demon is following player.");
                 }
 
-                if (readyToGo && dist > distanceToPlayer)
-                {
-                    currentState = EnemyState.FOLLOW_SITE;
-                    
-                }
                 if (dist > distanceToPlayer)
                 {
-                    currentState = EnemyState.IDLE;
-                   
+                    readyToGo = true;
+                    currentState = EnemyState.IDLE;                    
                 }
                 break;
             case (EnemyState.FOLLOW_SITE):
@@ -196,9 +195,9 @@ public class EnemyTarget : MonoBehaviour
                     agent.isStopped = false;                    
                     try
                     {
-                       // Debug.Log(agent.SetDestination(targetSite.position));
+                       // Debug.Log(agent.SetDestination(targetSite.position));                       
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
-                        //transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
+                        transform.LookAt(targetSite.position);        //MasterStaticScript.player.position
 
                         var neededRotation3 = Quaternion.LookRotation(targetSite.transform.position - transform.position);
                         Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * rotSpeed);
@@ -206,10 +205,13 @@ public class EnemyTarget : MonoBehaviour
                         //transform.rotation *= Quaternion.Euler(0, -90, 0);
 
                         //print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
-                        if (checkDistance(targetSite.transform.position, attackRange))
+                        if (checkDistance(targetSite.transform.position, attackRange + bonusAttackRange))
                         {
+                            agent.isStopped = true;
                             //print("firing");
                             gunReference.Fire();
+
+                            if(hiddenGun!= null) hiddenGun.Fire();
                         }
                     }
                     //print("Demon is moving towards Sacred Site.");
@@ -219,7 +221,6 @@ public class EnemyTarget : MonoBehaviour
                         FindNearestSite();
                     }
                 }
-
 
                 //TODO: refine "back to IDLE" for state machine.
                 //else currentState = EnemyState.IDLE;

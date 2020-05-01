@@ -22,9 +22,6 @@ public class HookStates : MonoBehaviour
     public float playerTravelSpeed = 20f;
     public float ropeLength = 100f;
 
-    public float upAmount = 20;
-    public float forwardAmount = 15;
-
     public float ropeDistance = 50;
 
     //public float climbSpeed;
@@ -52,6 +49,8 @@ public class HookStates : MonoBehaviour
 
     public float verticalOffset;
     public float forwardOffset;
+
+    public bool useHelperCube = false;
 
     [Tooltip("Shows the target point, 'where player wants to climb to'")]
     //remove when fixed
@@ -108,7 +107,7 @@ public class HookStates : MonoBehaviour
                             playerState = 1;
                             Reset();
                             return;
-                        } else print("not grounded");
+                        }// else print("not grounded");
 
                         //if hitting a cieling, reset
                         if (IsGrounded.up)
@@ -116,7 +115,7 @@ public class HookStates : MonoBehaviour
                             playerState = 1;
                             Reset();
                             return;
-                        }else print("not bonking");
+                        }//else print("not bonking");
                         //if hitting a wall, reset
                         if (CanClimb.cannotClimb)
                         {
@@ -124,13 +123,13 @@ public class HookStates : MonoBehaviour
                             Reset();
                             return;
                         }
-                        else print("can climb");
+                        //else print("can climb");
                         //then you must be good to climb
 
                             DestroyLines();
                             targetClimbPosition = climbDetector.transform.position + climbDetector.transform.forward *forwardOffset+ climbDetector.transform.up *verticalOffset;
                             startClimbPosition = player.transform.position;
-                            helperCube.transform.position = targetClimbPosition;
+                            if(useHelperCube) helperCube.transform.position = targetClimbPosition;
                             playerState = 3;
                             climbTimer = 0;
                         

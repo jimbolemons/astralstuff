@@ -31,7 +31,7 @@ public class PauseControl : MonoBehaviour
             MasterStaticScript.gameIsPaused = !MasterStaticScript.gameIsPaused;
             SetPauseCanvasState();
 
-            print("pause state - " + MasterStaticScript.gameIsPaused);
+            //print("pause state - " + MasterStaticScript.gameIsPaused);
         }
 
         //won't reset pause check until button is released

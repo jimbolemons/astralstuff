@@ -111,7 +111,7 @@ public class BulletDamage : BulletStats
     }
     public void DestroySelf()
     {
-        DetachParticles();
+        if(emit!= null) DetachParticles();
         Destroy(gameObject);
     }
     void DetachParticles()

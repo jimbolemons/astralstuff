@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class minimap : MonoBehaviour
 {
-    public Transform player;
+     Transform player;
+
+    private void Start()
+    {
+        player = MasterStaticScript.playerReference.transform;
+    }
     private void LateUpdate()
     {
         Vector3 newposition = player.position;

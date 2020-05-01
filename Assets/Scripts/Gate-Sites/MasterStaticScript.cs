@@ -13,6 +13,8 @@ public class MasterStaticScript : MonoBehaviour
 
     public static GameObject playerReference;
 
+    public static Camera mainCameraReference;
+
     private static MasterStaticScript instance;
 
     public static LevelTransitionLoader LevelLoader;

@@ -16,11 +16,11 @@ public class ControlSwap : MonoBehaviour
     public BaseMovementModule hopeMovement;
     public BaseMovementModule wafflesMovement;
 
-    public ThirdPersonCamera cameraControl;
+    ThirdPersonCamera cameraControl;
 
     FireDummyShootScript FireDummyShootScript;
 
-    public PostProcessVolume effects;
+    PostProcessVolume effects;
 
 
     public int controlState = 0;
@@ -39,8 +39,15 @@ public class ControlSwap : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
+        cameraControl = MasterStaticScript.mainCameraReference.GetComponentInParent<ThirdPersonCamera>();
+        effects = cameraControl.GetComponentInChildren<PostProcessVolume>();
+        //launchArc = MasterStaticScript.mainCameraReference.transform.Find("launchArc").gameObject;
+
+
+
         audio = FindObjectOfType<AudioManager>();
+        //audio = GameObject.Find("AudioManagers").GetComponent<AudioManager>();
         FireDummyShootScript = GetComponent<FireDummyShootScript>();
         dummyBody = dummy.GetComponent<Rigidbody>();
         //hoe = GetComponentInChildren<HopeAnimsController>();
@@ -151,7 +158,7 @@ public class ControlSwap : MonoBehaviour
         audio.Play("switch");
         hoe.run2 = true;
         FindObjectOfType<AudioManager>().Stop("hoperun");
-        hope.GetComponent<HookRayCast>().WafflesUnhook();
+        //hope.GetComponent<HookRayCast>().WafflesUnhook();
         waffles.SetActive(true);
         hope.SetActive(false);
         dummy.SetActive(true);

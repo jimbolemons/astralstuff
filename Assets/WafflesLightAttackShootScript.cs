@@ -34,8 +34,7 @@ public class WafflesLightAttackShootScript : MonoBehaviour
         if (MasterStaticScript.gameIsPaused == false)
         {
             //checks to see if the player is grounded if they are then continue
-            if (IsGrounded.down)
-            {
+           
                 // if the player is holding down the left mouse button
                 if (Input.GetMouseButton(mouse))
                 {
@@ -90,8 +89,7 @@ public class WafflesLightAttackShootScript : MonoBehaviour
                     //if the player is not holding fire, enable firing
                     if (Input.GetAxis("Fire1") == 0) pFiring = 0;
                 }
-                */
-            }
+                */            
         }
     }
 

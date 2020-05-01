@@ -11,6 +11,8 @@ public class GateHP : ObjectWithHealth
     public GameObject UIHealthBar;
     GateHealthBar UIHealthBarScript;
 
+    public bool addToStaticList = true;
+
     SpawnDemons demonController;
 
     public bool doCameraShake;
@@ -27,7 +29,7 @@ public class GateHP : ObjectWithHealth
         UIHealthBarScript = UIHealthBar.GetComponentInChildren<GateHealthBar>();
 
         objectType = objectWithHealthType.destructible;
-        MasterStaticScript.enemyGates.Add(gameObject);
+        if(addToStaticList) MasterStaticScript.enemyGates.Add(gameObject);
     }
 
     public void Update()
@@ -53,10 +55,10 @@ public class GateHP : ObjectWithHealth
     private void killGate()
     {
         demonController.SendOutTheDemons();
-        print("Gate is dead.");
+        //print("Gate is dead.");
         UIHealthBar.SetActive(false);
-        MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.enemyGates);
-        MasterStaticScript.CheckForGameWin();
+        if(addToStaticList) MasterStaticScript.RemoveFromObjectList(gameObject, MasterStaticScript.enemyGates);
+        if(addToStaticList) MasterStaticScript.CheckForGameWin();
         Destroy(gameObject);
     }
     public override void TriggerOnDamage()
