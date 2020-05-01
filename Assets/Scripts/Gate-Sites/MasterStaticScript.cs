@@ -52,7 +52,14 @@ public class MasterStaticScript : MonoBehaviour
             print("Game has been lost. Via Site Distruction");
             LevelLoader.LoadScene("loseMk2");
             //TODO: change Game's lose state to true, go to lose scene.
-        }       
+        }     
+        //todo : if site in park dies before the gate in park then lose  
+    }
+    public static void Lose()
+    {
+        print("Game has been lost. Via PARK Site Distruction");
+            LevelLoader.LoadScene("loseMk2");
+
     }
 
     public static void PlayerDead()

@@ -11852,6 +11852,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5944818764900820491, guid: f46568298838e2045a7f492f71c94cb3,
         type: 3}
+    - target: {fileID: 8265925460510805031, guid: ebc43c6863f94c04bb1f61ada91a3aa7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc43c6863f94c04bb1f61ada91a3aa7, type: 3}
 --- !u!4 &247037298 stripped
@@ -27559,6 +27564,7 @@ MonoBehaviour:
   timeToSlerp: 1
   timeToSlerpBase: 1
   starterGate: {fileID: 511382146}
+  starterSite: {fileID: 929270949}
   otherGates:
   - {fileID: 227161140}
   - {fileID: 647354321}
@@ -33679,6 +33685,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &929270949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7454551397834097682, guid: ebc43c6863f94c04bb1f61ada91a3aa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 247037297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931568428
 GameObject:
   m_ObjectHideFlags: 0

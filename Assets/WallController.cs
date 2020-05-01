@@ -33,6 +33,8 @@ public class WallController : MonoBehaviour
 
     public GameObject starterGate;
 
+    public GameObject starterSite;
+
     public List<GameObject> otherGates = new List<GameObject>();
 
 
@@ -117,6 +119,13 @@ public class WallController : MonoBehaviour
         if(starterGate == null)
         {
             releaseTheWalls();
+        }
+        if(slerping == false){
+            if(starterSite == null)
+            {
+             MasterStaticScript.Lose();
+
+            }
         }
     }
     public void releaseTheWalls()
