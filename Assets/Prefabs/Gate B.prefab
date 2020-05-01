@@ -4957,8 +4957,8 @@ MonoBehaviour:
   conjuror: {fileID: 4792024901624038468, guid: a880a38c522277d43a30aa62c6837575,
     type: 3}
   numberOfDemons: 0
-  demonsToSpawn: 5
-  secondsBetweenGroups: 10
+  demonsToSpawn: 7
+  secondsBetweenGroups: 20
   countdownForGroup: 0
   secondsToSpawn: 3
   spawnEnergy: 0
@@ -4993,6 +4993,7 @@ MonoBehaviour:
   cameraShake: {fileID: 0}
   camera: {fileID: 0}
   UIHealthBar: {fileID: 0}
+  addToStaticList: 1
   doCameraShake: 0
 --- !u!1 &4403006188033075874
 GameObject:

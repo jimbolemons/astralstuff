@@ -9,10 +9,13 @@ public class FireDummyShootScript : Gun
 
     public bool fireAtAngle;
 
+    ParticleSystem smokeTrail;
+
     public Transform cameraPivot;
     private void Start()
     {
         dummyBody = projectilePrefab.GetComponent<Rigidbody>();
+        smokeTrail = dummyBody.GetComponentInChildren<ParticleSystem>();
     }
     private void FixedUpdate()
     {
@@ -25,6 +28,8 @@ public class FireDummyShootScript : Gun
         {
             projectilePrefab.transform.position = gunEnd.transform.position;
             projectilePrefab.transform.rotation = cameraPivot.transform.rotation;
+
+            smokeTrail.Play();
 
             if (fireAtAngle)
             {

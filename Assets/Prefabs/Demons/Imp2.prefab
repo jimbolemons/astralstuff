@@ -266,6 +266,10 @@ MonoBehaviour:
   gunReference: {fileID: 1148849419080714206}
   hiddenGun: {fileID: 7482847272133422569}
   targetSite: {fileID: 0}
+  parentGate: {fileID: 0}
+  noGateTimer: 5
+  noGateTimerBase: 5
+  noGateDamage: 0.5
   attackRange: 4
   bonusAttackRange: 3
   currentState: 0

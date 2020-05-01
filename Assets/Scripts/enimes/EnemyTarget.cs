@@ -31,6 +31,21 @@ public class EnemyTarget : MonoBehaviour
     public Transform targetSite;
     private bool readyToGo = false;
 
+    [HideInInspector]
+    public GameObject parentGate;
+
+    public bool takeDamageWhenGateLost = true;
+
+    float noGateTimer;
+    public float noGateTimerBase = 5;
+    public float percentOfHPLostWithNoGate = 10f;
+
+    public bool overLoad = false;
+    public float overLoadMultiplier = 2;
+
+
+    EnemyHP myHp;
+
     public float attackRange = 5;
 
     public float bonusAttackRange = 0;
@@ -41,6 +56,9 @@ public class EnemyTarget : MonoBehaviour
 
     void Start()
     {
+        myHp = GetComponent<EnemyHP>();
+        noGateTimer = noGateTimerBase;
+
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
@@ -52,20 +70,27 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
-        
-        try
+        if (parentGate == null && takeDamageWhenGateLost)
         {
-            if (targetSite != null)
+            overLoad = true;
+            noGateTimer -= Time.deltaTime;
+            if (noGateTimer < 0)
             {
-                FindNearestSite();
-                //print("Site is fine");
+                myHp.TakeDamage(myHp.maxHealth * percentOfHPLostWithNoGate *.01f);
+                noGateTimer = noGateTimerBase;
             }
-          }
-          catch
-          {
-         
-              print("Try not working!");
-          }
+        }
+
+        if (overLoad)
+        {
+            agent.speed = moveSpeed * 2;            
+        }
+
+        if (targetSite != null)
+        {
+            FindNearestSite();
+            //print("Site is fine");
+        }
     }
 
     private void LateUpdate()
@@ -75,11 +100,11 @@ public class EnemyTarget : MonoBehaviour
         {
             currentState = EnemyState.IDLE;
         }
-      }
+    }
 
     //debug helper that draws the nav mesh path when demon is selected
     void OnDrawGizmosSelected()
-    {        
+    {
         if (agent == null || agent.path == null)
             return;
 
@@ -100,7 +125,6 @@ public class EnemyTarget : MonoBehaviour
         {
             line.SetPosition(i, path.corners[i]);
         }
-
     }
     void EnemyStateMachine()
     {
@@ -119,17 +143,17 @@ public class EnemyTarget : MonoBehaviour
                 }
                 catch
                 {
-                    
+
                 }
                 //Anims Idle
-                if(impAnim != null)
-                impAnim.run = false;
+                if (impAnim != null)
+                    impAnim.run = false;
                 if (bruteAnim != null)
                     bruteAnim.run = false;
                 if (conjAnim != null)
                     conjAnim.run = false;
-               
-                    if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
+
+                if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
                 if (readyToGo) currentState = EnemyState.FOLLOW_SITE;
 
                 break;
@@ -153,9 +177,9 @@ public class EnemyTarget : MonoBehaviour
                     agent.SetDestination(player.transform.position);    //MasterStaticScript.player.position
 
                     var neededRotation2 = Quaternion.LookRotation(player.transform.position - transform.position);
-                  Quaternion.Slerp(transform.rotation, neededRotation2  , Time.deltaTime * rotSpeed);
+                    Quaternion.Slerp(transform.rotation, neededRotation2, Time.deltaTime * rotSpeed);
 
-                    
+
                     //print("trying to fire" + checkDistance(player.transform.position, attackRange));
                     if (checkDistance(player.transform.position, attackRange))
                     {
@@ -173,7 +197,7 @@ public class EnemyTarget : MonoBehaviour
                 if (dist > distanceToPlayer)
                 {
                     readyToGo = true;
-                    currentState = EnemyState.IDLE;                    
+                    currentState = EnemyState.IDLE;
                 }
                 break;
             case (EnemyState.FOLLOW_SITE):
@@ -192,12 +216,12 @@ public class EnemyTarget : MonoBehaviour
                     if (conjAnim != null)
                         conjAnim.run = true;
                     //path towards target
-                    agent.isStopped = false;                    
+                    agent.isStopped = false;
                     try
                     {
-                       // Debug.Log(agent.SetDestination(targetSite.position));                       
+                        // Debug.Log(agent.SetDestination(targetSite.position));                       
                         agent.SetDestination(targetSite.position);    //MasterStaticScript.player.position
-                               //MasterStaticScript.player.position
+                                                                      //MasterStaticScript.player.position
 
                         var neededRotation3 = Quaternion.LookRotation(targetSite.transform.position - transform.position);
                         Quaternion.Slerp(transform.rotation, neededRotation3, Time.deltaTime * rotSpeed);
@@ -207,12 +231,12 @@ public class EnemyTarget : MonoBehaviour
                         //print("trying to fire" + checkDistance(targetSite.transform.position, attackRange));
                         if (checkDistance(targetSite.transform.position, attackRange + bonusAttackRange))
                         {
-                            transform.LookAt(targetSite.position); 
+                            transform.LookAt(targetSite.position);
                             agent.isStopped = true;
                             //print("firing");
                             gunReference.Fire();
 
-                            if(hiddenGun!= null) hiddenGun.Fire();
+                            if (hiddenGun != null) hiddenGun.Fire();
                         }
                     }
                     //print("Demon is moving towards Sacred Site.");
@@ -233,7 +257,7 @@ public class EnemyTarget : MonoBehaviour
     {
         float distanceFromTarget = Vector3.Distance(targetLocation, transform.position);
 
-        if(distanceFromTarget < distance)
+        if (distanceFromTarget < distance)
         {
             return true;
         }
@@ -265,7 +289,7 @@ public class EnemyTarget : MonoBehaviour
             }
         }
         if (closestSite != null)
-        { 
+        {
             SetTarget(closestSite.transform);
         }
         //2.) Output the final gate's transform to SacredTarget.

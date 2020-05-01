@@ -212,12 +212,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442aadf61986ed0469d2bba3535fba67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   distanceToPlayer: 35
   moveSpeed: 5
   rotSpeed: 1000
   gunReference: {fileID: 5540569678324034332}
+  hiddenGun: {fileID: 0}
   targetSite: {fileID: 0}
+  parentGate: {fileID: 0}
+  noGateTimer: 5
+  noGateTimerBase: 5
+  noGateDamage: 0.5
   attackRange: 10
+  bonusAttackRange: 0
   currentState: 0
 --- !u!114 &7158892832373729742
 MonoBehaviour:

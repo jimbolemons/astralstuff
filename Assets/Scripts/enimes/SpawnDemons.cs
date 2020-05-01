@@ -57,7 +57,7 @@ public class SpawnDemons : MonoBehaviour
                     for (int i = 0; i < threatMultiplier/2; i++)
                     {
                         Vector3 demonSpawn = SpawnLocation(spawnArea.bounds);
-                        GameObject demon = SpawnDemon(demonSpawn);
+                        GameObject demon = SpawnDemon(demonSpawn);                        
                     }
                 }
                 threatLevel = 2;
@@ -111,7 +111,6 @@ public class SpawnDemons : MonoBehaviour
                     //SetDemonTarget(demon);
                     numberOfDemons++;
                     spawnEnergy -= secondsToSpawn;
-                    demonList.Add(demon);
                 }
             }
             //TODO: something if the sacred site is destroyed
@@ -158,6 +157,9 @@ public class SpawnDemons : MonoBehaviour
     GameObject SpawnDemon(Vector3 location)
     {
         GameObject demon = Instantiate(RandomDemon(), location, Quaternion.identity);
+        demon.GetComponent<EnemyTarget>().parentGate = this.transform.gameObject;
+        demonList.Add(demon);
+
         return demon;
     }
     GameObject RandomDemon()
