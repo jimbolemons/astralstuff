@@ -220,9 +220,11 @@ MonoBehaviour:
   hiddenGun: {fileID: 0}
   targetSite: {fileID: 0}
   parentGate: {fileID: 0}
-  noGateTimer: 5
+  takeDamageWhenGateLost: 1
   noGateTimerBase: 5
-  noGateDamage: 0.5
+  percentOfHPLostWithNoGate: 10
+  overLoad: 0
+  overLoadMultiplier: 2
   attackRange: 10
   bonusAttackRange: 0
   currentState: 0
@@ -433,7 +435,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

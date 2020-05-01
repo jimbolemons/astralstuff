@@ -8,6 +8,7 @@ public class SiteHP : ObjectWithHealth
     public GameObject expansionRing;
     public float playerWarningDistance = 80;
     public AudioManager audio;
+    public AudioSource sitehit;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class SiteHP : ObjectWithHealth
     }
     public override void TriggerOnDamage()
     {
-       audio.Play("sitehit");
+       sitehit.Play();
         //SOUND
         //Debug.Log("site has taken Damage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         float dist = Vector3.Distance(transform.position, MasterStaticScript.playerReference.transform.position);

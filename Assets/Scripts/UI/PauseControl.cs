@@ -11,13 +11,14 @@ public class PauseControl : MonoBehaviour
     bool prevPaused = false;
     [Tooltip("Reference to the pause canvas.")]
     public Canvas pauseCanvas;
-     AudioManager audios;
+    public AudioSource pause;
+    public AudioSource backToMenu;
     
 
     private void Start()
     {
         pauseCanvas.enabled = false;
-        audios = FindObjectOfType<AudioManager>();
+       // audios = FindObjectOfType<AudioManager>();
         
     }
 
@@ -30,6 +31,7 @@ public class PauseControl : MonoBehaviour
         {
             MasterStaticScript.gameIsPaused = !MasterStaticScript.gameIsPaused;
             SetPauseCanvasState();
+            pause.Play();
 
             //print("pause state - " + MasterStaticScript.gameIsPaused);
         }
@@ -48,7 +50,7 @@ public class PauseControl : MonoBehaviour
     public void Pause()
     {
         
-       audios.Play("pause");
+      
         MasterStaticScript.gameIsPaused = true;
         SetPauseCanvasState();
        
@@ -59,13 +61,19 @@ public class PauseControl : MonoBehaviour
     /// </summary>
     public void UnPause()
     {
-        audios.Play("pause");
+        pause.Play();
         MasterStaticScript.gameIsPaused = false;
-        SetPauseCanvasState();
+        SetPauseCanvasState(); 
+
+        }
+        public void UnPauseExit()
+    {
+        backToMenu.Play();
+        MasterStaticScript.gameIsPaused = false;
+        SetPauseCanvasState(); 
         
-    
-}
-    /// <summary>
+        }
+            /// <summary>
     /// function that sets the master script to the correct state
     /// </summary>
     void SetPauseCanvasState()

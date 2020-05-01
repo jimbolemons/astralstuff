@@ -30,17 +30,28 @@ public class MainMenuController : MonoBehaviour
            
     }
 
-    public void GoToScene(int SceneNumber)
+    public void GoToScene()
+    {
+        Invoke("BigGoToScene",.5f);
+        
+    }
+    public void BigGoToScene()
     {
         //levelLoader.TriggerAnimation();
-        SceneManager.LoadScene(SceneNumber);
+        SceneManager.LoadScene(0);
         
     }
     public void Quit()
     {
          Debug.Log("I am Quiting the game");
+         Invoke("BigQuit",.5f);
+         
         Application.Quit();
        
+    }
+    public void BigQuit()
+    {
+
     }
    
    
