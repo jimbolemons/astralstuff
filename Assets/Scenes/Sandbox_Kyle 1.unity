@@ -79608,6 +79608,11 @@ PrefabInstance:
       propertyPath: audio
       value: 
       objectReference: {fileID: 1888195788}
+    - target: {fileID: 4181738280286917452, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4640614021143915168, guid: 05ddcc84a26a90e449c7fbaf7cbdae8f,
         type: 3}
       propertyPath: playerTravelSpeed

@@ -17,10 +17,9 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.Find("Player 1");
+        player = MasterStaticScript.playerReference;
         //player = player.GetComponent<PlayerHP>();
         hp = player.GetComponent<PlayerHP>();
-
     }
 
     private void OnTriggerEnter(Collider col)
