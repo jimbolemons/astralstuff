@@ -21,7 +21,7 @@ public class BaseMovementModule : MonoBehaviour
     //TODO: Check this is working correctly
 
     [Tooltip("How fast the player falls (should be negative value)")]
-    public static float gravity = -35;
+    public float gravity = -35;
 
 
     [Tooltip("How much dead area before the control sticks cause movement")]

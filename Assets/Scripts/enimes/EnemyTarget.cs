@@ -130,7 +130,13 @@ public class EnemyTarget : MonoBehaviour
     {
         Vector3 forwardTransform = transform.position;
 
-        float dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
+        float dist = 1000;
+
+        if (player != null)
+        {
+            dist = Vector3.Distance(player.transform.position, transform.position);  ////MasterStaticScript.player.position
+        }
+        else print("can't find player");
         if (dist <= distanceToPlayer) currentState = EnemyState.FOLLOW_PLAYER;
         if (readyToGo && dist >= distanceToPlayer) currentState = EnemyState.FOLLOW_SITE;
 
@@ -143,7 +149,7 @@ public class EnemyTarget : MonoBehaviour
                 }
                 catch
                 {
-
+                    print("no navmesh found");
                 }
                 //Anims Idle
                 if (impAnim != null)

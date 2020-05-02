@@ -5,17 +5,15 @@ using UnityEngine.UI;
 
 public class HookStates : MonoBehaviour
 {
-
-    public GameObject hookHolder;
     public GameObject cameraPivot;
-    GameObject player;
+    public GameObject player;
     public GameObject hook;
     public GameObject climbDetector;
 
-    CharacterController playerController;
-    Rigidbody playerBody;
+    public CharacterController playerController;
+    public Rigidbody playerBody;
 
-    HopeAnimsController hopeAnims;
+    public HopeAnimsController hopeAnims;
     public BaseMovementModule playerMove;
 
     [Space(10)]
@@ -25,9 +23,6 @@ public class HookStates : MonoBehaviour
     public float ropeDistance = 50;
 
     //public float climbSpeed;
-
-
-    
 
     Ray line;
     RaycastHit hit;
@@ -50,11 +45,11 @@ public class HookStates : MonoBehaviour
     public float verticalOffset;
     public float forwardOffset;
 
-    public bool useHelperCube = false;
+    //public bool useHelperCube = false;
 
     [Tooltip("Shows the target point, 'where player wants to climb to'")]
     //remove when fixed
-    public GameObject helperCube;
+    //public GameObject helperCube;
 
     LineRenderer rope;
     Image img;
@@ -74,6 +69,59 @@ public class HookStates : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if(player == null)
+        {
+            player = MasterStaticScript.playerReference;
+        }
+        if(hook == null)
+        {
+            hook = GameObject.Find("superhook");
+        }
+        if(cameraPivot == null)
+        {
+            cameraPivot = GameObject.Find("cameraPivot");
+        }
+        if(playerController == null)
+        {
+            //playerController = player.GetComponent<CharacterController>();
+            //playerController = MasterStaticScript.playerReference.GetComponent<CharacterController>();
+            playerController = GetComponentInParent<CharacterController>();
+            Debug.Log("player controller missing");
+        }
+        if (playerBody == null)
+        {
+           // playerBody = player.GetComponent<Rigidbody>();
+            Debug.Log("player body missing");
+            //playerBody = MasterStaticScript.playerReference.GetComponent<Rigidbody>();
+            playerBody = GetComponentInParent<Rigidbody>();
+        }
+        if(climbDetector == null)
+        {
+            climbDetector = GameObject.Find("climbDetector");
+        }
+        if(playerMove == null)
+        {
+            playerMove = GameObject.Find("HopeLegs").GetComponent<BaseMovementModule>();
+        }
+        if(hopeAnims == null)
+        {
+            hopeAnims = gameObject.GetComponentInChildren<HopeAnimsController>();
+        }
+
+
+        //Debug.Log("hook" + hook);        
+        //Debug.Log("cameraPivot" + cameraPivot);        
+        //Debug.Log("playercontroller: " + playerController);
+        //Debug.Log("playerbody: " + playerBody);
+        //Debug.Log("climb detector: " + climbDetector);
+        //Debug.Log("playermove" + playerMove);
+        //Debug.Log("anims " + hopeAnims);
+
+        //Debug.Log("player" + player);
+        //Debug.Log("rope" + rope);
+        //Debug.Log("img" + img);
+
+
         if (!MasterStaticScript.gameIsPaused)
         {
             //start state machine
@@ -107,7 +155,7 @@ public class HookStates : MonoBehaviour
                             playerState = 1;
                             Reset();
                             return;
-                        }// else print("not grounded");
+                        } else print("not grounded");
 
                         //if hitting a cieling, reset
                         if (IsGrounded.up)
@@ -115,7 +163,7 @@ public class HookStates : MonoBehaviour
                             playerState = 1;
                             Reset();
                             return;
-                        }//else print("not bonking");
+                        }else print("not bonking");
                         //if hitting a wall, reset
                         if (CanClimb.cannotClimb)
                         {
@@ -123,17 +171,17 @@ public class HookStates : MonoBehaviour
                             Reset();
                             return;
                         }
-                        //else print("can climb");
+                        else print("can climb");
                         //then you must be good to climb
 
                             DestroyLines();
                             targetClimbPosition = climbDetector.transform.position + climbDetector.transform.forward *forwardOffset+ climbDetector.transform.up *verticalOffset;
                             startClimbPosition = player.transform.position;
-                            if(useHelperCube) helperCube.transform.position = targetClimbPosition;
+                            //if(useHelperCube) helperCube.transform.position = targetClimbPosition;
                             playerState = 3;
                             climbTimer = 0;
-                        
-                        //climb check
+
+                        Debug.Log("start climbing up");
 
                         //else return to normal
                     }
@@ -145,12 +193,15 @@ public class HookStates : MonoBehaviour
                     //player.transform.Translate(climbDetector.transform.forward * forwardAmount);
                     //player.transform.position = Vector3.MoveTowards(player.transform.position, targetClimbPosition, climbSpeed);
 
+                    Debug.Log("am climbing now");
+
                     player.transform.position = Vector3.Slerp(startClimbPosition, targetClimbPosition,  climbTimer / howLongToClimbFor);
 
                     if (IsGrounded.down || climbTimer > howLongToClimbFor || IsGrounded.up)
                     {
                         playerState = 1;
                         Reset();
+                        Debug.Log("done climbing");
                     }
                     climbTimer += Time.deltaTime;
                     break;
@@ -178,7 +229,6 @@ public class HookStates : MonoBehaviour
                 img.color = UnityEngine.Color.red;
                 canHit = false;
             }
-
         }
         else
         {
@@ -192,10 +242,11 @@ public class HookStates : MonoBehaviour
     private void Reset()
     {
         playerState = 1;
-        player.GetComponent<CharacterController>().enabled = true;
+        //player.GetComponent<CharacterController>().enabled = true;
+        playerController.enabled = true;
         hook.transform.position = cameraPivot.transform.position;
         DestroyLines();
-        BaseMovementModule.gravity = -35;
+        playerMove.gravity = -35;
         hook.transform.position = cameraPivot.transform.position;
         hopeAnims.hooked = false;
     }
@@ -214,9 +265,7 @@ public class HookStates : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("hook");
                 hook.transform.position = hit.point;
-                ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
-
-               
+                ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);               
 
                 //switch to being pulled
 
@@ -230,7 +279,7 @@ public class HookStates : MonoBehaviour
         //rope.SetVertexCount(2);
         
         rope.positionCount = 2;
-        rope.SetPosition(0, hookHolder.transform.position);
+        rope.SetPosition(0, player.transform.position + Vector3.up*2);
         rope.SetPosition(1, hook.transform.position);
     }
     private void ReelIn()
@@ -239,11 +288,9 @@ public class HookStates : MonoBehaviour
         ropeDis = Vector3.Distance(player.transform.position, hook.transform.position);
         
         playerController.enabled = false;
-        BaseMovementModule.gravity = 0;
+        playerMove.gravity = 0;
         playerBody.velocity = Vector3.zero;
         playerMove.direction = Vector3.zero;
-        player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
-
-
+        player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);        
     }
 }

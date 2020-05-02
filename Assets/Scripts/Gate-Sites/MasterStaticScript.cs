@@ -29,7 +29,7 @@ public class MasterStaticScript : MonoBehaviour
 
     void Awake()
     {
-        playerReference = GameObject.FindGameObjectsWithTag("Player")[0];
+        playerReference = GameObject.Find("MASTERPLAYER");
        // Debug.Log(playerReference);
        // print(playerReference.transform.position);
     }

@@ -9,7 +9,7 @@ public class clearSitelist : MonoBehaviour
     void Awake()
     {
         MasterStaticScript.enemyGates.Clear();
-        Debug.Log(MasterStaticScript.enemyGates.Count);
+        //Debug.Log(MasterStaticScript.enemyGates.Count);
     }
     void Start()
     {

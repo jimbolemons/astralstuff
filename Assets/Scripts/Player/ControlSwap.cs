@@ -118,11 +118,12 @@ public class ControlSwap : MonoBehaviour
                 else
                 if (controlState == 1)
                 {
-                    ActivateHope();
                     //state 1 controlling waffles
+                    ActivateHope();
                     controlState = 0;
                     cameraControl.SetLerp(true);
                     slow = false;
+                    hopeMovement.pVelocity = Vector3.zero;
 
                     FireDummyShootScript.fireBlank();
                 }
@@ -149,7 +150,7 @@ public class ControlSwap : MonoBehaviour
 
         hope.SetActive(true);
         waffles.SetActive(false);
-        this.transform.position = dummy.transform.position + Vector3.up;      
+        transform.position = dummy.transform.position + Vector3.up;      
     }
     void ActivateWaffles()
     {
@@ -165,7 +166,5 @@ public class ControlSwap : MonoBehaviour
         dummyArrow.SetActive(true);
         //body.transform.position = transform.position;
         FireDummyShootScript.Fire();
-
-        BaseMovementModule.gravity = -35;
     }
 }
