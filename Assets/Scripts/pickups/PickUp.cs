@@ -15,15 +15,17 @@ public class PickUp : MonoBehaviour
     public PickupType type;
     //    public Placement placement;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        player = MasterStaticScript.playerReference;
+        //player = MasterStaticScript.playerReference;
         //player = player.GetComponent<PlayerHP>();
-        hp = player.GetComponent<PlayerHP>();
+        //hp = player.GetComponent<PlayerHP>();
+        hp = MasterStaticScript.playerReference.GetComponent<PlayerHP>();
     }
 
     private void OnTriggerEnter(Collider col)
     {
+       // if(hp == null) hp = MasterStaticScript.playerReference.GetComponent<PlayerHP>();
         if (col.gameObject.tag == "Player")
         {
             FindObjectOfType<AudioManager>().Play("pickup");

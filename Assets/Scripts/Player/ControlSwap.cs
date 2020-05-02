@@ -31,9 +31,13 @@ public class ControlSwap : MonoBehaviour
     public AudioManager audio;
     public bool slow = false;
 
+    public bool useSlowMo = false;
+
     public animsWaffles waff;
 
     public HopeAnimsController hoe;
+
+    bool doSwapStuff = false;
 
 
 
@@ -61,7 +65,32 @@ public class ControlSwap : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (useSlowMo) slow = true;   
+        }
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            if (controlState == 0 && FireDummyShootScript.canFire)
+            {
+                launchArc.SetActive(true);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            if (useSlowMo) slow = false;
+            launchArc.SetActive(false);
+
+            doSwapStuff = true;
+        }
+
+        keyWasPressed = Input.GetKeyDown(KeyCode.Tab);
+    }
+    void FixedUpdate()
     {
         if (!setupCheck && Time.time > .1f)
         {
@@ -69,20 +98,6 @@ public class ControlSwap : MonoBehaviour
             setupCheck = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            slow = true;
-            if (controlState == 0)
-            {
-                launchArc.SetActive(true);
-            }
-
-        }
-        if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            slow = false;
-            launchArc.SetActive(false);
-        }
 
         if (controlState == 0)
         {
@@ -103,7 +118,7 @@ public class ControlSwap : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Tab) && Input.GetKeyUp(KeyCode.Tab) != keyWasPressed)
+        if (doSwapStuff)
         {
             if (FireDummyShootScript.canFire)
             {
@@ -128,9 +143,10 @@ public class ControlSwap : MonoBehaviour
                     FireDummyShootScript.fireBlank();
                 }
             }
+            doSwapStuff = false;
         }
         //if key was pressed last frame
-        keyWasPressed = Input.GetKeyDown(KeyCode.Tab);
+      
 
         //print(this.transform.position);
     }

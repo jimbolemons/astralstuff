@@ -29,9 +29,7 @@ public class MovModDoubleJump : BaseMovementModule
     {
         //initialize default count
         doubleJumpCount = doubleJumpBase;
-        anim = animator.GetComponent<Animator>();
-      
-
+        anim = animator.GetComponent<Animator>();    
     }
 
     // Update is called once per frame

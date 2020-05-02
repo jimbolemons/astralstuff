@@ -67,7 +67,7 @@ public class HookStates : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         if(player == null)
         {
