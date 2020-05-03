@@ -22,10 +22,12 @@ public class CenterMouse : MonoBehaviour
         if (sceneName == "TutorialGreyBox" && !MasterStaticScript.gameIsPaused || sceneName == "Sandbox_Kyle 1" && !MasterStaticScript.gameIsPaused || sceneName == "josh_tutorialarea" && !MasterStaticScript.gameIsPaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         
     }
