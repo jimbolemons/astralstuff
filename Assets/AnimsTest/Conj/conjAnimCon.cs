@@ -36,22 +36,22 @@ public class conjAnimCon : MonoBehaviour
         if (run)
         {
             // Debug.Log("Run");
-            anim.SetBool("walking", true);
+         //   anim.SetBool("walking", true);
 
         }
         else
         {
             //  Debug.Log("no Run");
-            anim.SetBool("walking", false);
+           // anim.SetBool("walking", false);
         }
 
         if (dead)
         {
-           // anim.SetBool("dead", true);
+           anim.SetBool("dead", true);
         }
         else
         {
-           // anim.SetBool("dead", false);
+           anim.SetBool("dead", false);
         }
         if (!MasterStaticScript.gameIsPaused)
         {

@@ -33,10 +33,13 @@ public abstract class ObjectWithHealth : MonoBehaviour
 
 
     public SkinnedMeshRenderer[] testRenderers;
+
+    public MeshRenderer[] meshRenderers;
     //public Renderer testRenderer;
     
     //public Color baseColor;
     public Material flashMat;
+    
 
 
 
@@ -45,21 +48,40 @@ public abstract class ObjectWithHealth : MonoBehaviour
         if (maxHealth == 0) health = -1;
         health = maxHealth;
         Debug.Log(testRenderers.Length);
+
         GetRenderers();
+
     }
 
     public void GetRenderers()
     {
         testRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        if (testRenderers.Length == 0 )
+        {
+            meshRenderers = GetComponentsInChildren<MeshRenderer>();
+
+        }
         //testRenderer = testRenderers[0];
 
         // foreach(Renderer r in testRenderers)
         // {
         //     baseMats.Add(r.materials[0]);
         // }
+        if (testRenderers.Length > 0){
         for (int i = 0; i < testRenderers.Length; i++)
         {
             baseMats.Add(testRenderers[i].material);
+
+        }
+        }
+        else
+        {
+            for (int i = 0; i < meshRenderers.Length; i++)
+        {
+            baseMats.Add(meshRenderers[i].material);
+
+        }
+
         }
 
         //materials = testRenderers.materials;

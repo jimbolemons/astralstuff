@@ -19,10 +19,10 @@ public class HadokenDamage : BulletStats
         GameObject player = GameObject.Find("Player 1");
         if (playerBullet)
         {
-            if (player.GetComponent<PickupsManager>().usingPower)
-            {
-                MoreDam();
-            }
+           // if (player.GetComponent<PickupsManager>().usingPower)
+          //  {
+           //     MoreDam();
+           // }
             //Debug.Log(damage);
         }
         cameras = GameObject.Find("/cameraHolder/Camera");

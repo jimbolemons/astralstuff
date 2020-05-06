@@ -70,6 +70,7 @@ public class EnemyTarget : MonoBehaviour
 
     void Update()
     {
+        if(!MasterStaticScript.gameIsPaused){
         if (parentGate == null && takeDamageWhenGateLost)
         {
             overLoad = true;
@@ -90,6 +91,7 @@ public class EnemyTarget : MonoBehaviour
         {
             FindNearestSite();
             //print("Site is fine");
+        }
         }
     }
 
