@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5369,6 +5369,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!64 &76162599
 MeshCollider:
@@ -10623,6 +10624,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &131954471
 PrefabInstance:
@@ -11209,6 +11211,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &190588078 stripped
 GameObject:
@@ -11349,6 +11352,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &204841473
 GameObject:
@@ -12935,6 +12939,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &319901205
 PrefabInstance:
@@ -13054,6 +13059,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &365532315
 PrefabInstance:
@@ -13661,6 +13667,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &417518214
 PrefabInstance:
@@ -19020,6 +19027,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!4 &473129065 stripped
 Transform:
@@ -19151,6 +19159,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &485292108
 GameObject:
@@ -24290,6 +24299,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &532691576
 PrefabInstance:
@@ -24653,6 +24663,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!4 &584105165 stripped
 Transform:
@@ -24904,6 +24915,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &606581669
 PrefabInstance:
@@ -25219,6 +25231,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &616495600
 PrefabInstance:
@@ -26080,6 +26093,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &673807561
 PrefabInstance:
@@ -26348,6 +26362,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &701623093
 GameObject:
@@ -26570,6 +26585,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &721453492
 PrefabInstance:
@@ -27112,6 +27128,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &771932209
 PrefabInstance:
@@ -27312,6 +27329,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &788346997
 GameObject:
@@ -27946,6 +27964,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &832684039
 GameObject:
@@ -28061,6 +28080,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &834486469
 GameObject:
@@ -28240,6 +28260,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &850615687 stripped
 GameObject:
@@ -34353,6 +34374,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &934309589
 PrefabInstance:
@@ -34981,6 +35003,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &999864613
 PrefabInstance:
@@ -35408,6 +35431,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1049108412 stripped
 GameObject:
@@ -35436,6 +35460,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1058475285
 GameObject:
@@ -40828,6 +40853,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &1149654336
 PrefabInstance:
@@ -41198,6 +41224,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1164888918 stripped
 GameObject:
@@ -41226,6 +41253,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1166871489
 GameObject:
@@ -41569,6 +41597,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &1189944327
 PrefabInstance:
@@ -41854,6 +41883,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1210930952
 GameObject:
@@ -48161,6 +48191,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 520955648065503804, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6817759220634159428, guid: 56fd1d8db442356428e5d7e2d2a46a4a,
         type: 3}
       propertyPath: m_IsActive
@@ -48363,6 +48398,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &1487433515
 PrefabInstance:
@@ -48933,6 +48969,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1525920690
 GameObject:
@@ -49360,6 +49397,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1576628490 stripped
 GameObject:
@@ -49388,6 +49426,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &1577784397
 PrefabInstance:
@@ -49683,6 +49722,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!4 &1594880580 stripped
 Transform:
@@ -60385,6 +60425,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1748099384
 GameObject:
@@ -65362,6 +65403,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1781110439
 GameObject:
@@ -65477,6 +65519,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1785323730 stripped
 GameObject:
@@ -65505,6 +65548,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &1785419837
 PrefabInstance:
@@ -65618,6 +65662,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1796289192
 GameObject:
@@ -71606,6 +71651,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &1907855177
 GameObject:
@@ -77386,6 +77432,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &2001496407
 PrefabInstance:
@@ -77499,6 +77546,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &2015759502
 PrefabInstance:
@@ -78290,6 +78338,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1 &2082982173
 GameObject:
@@ -78405,6 +78454,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &2092579379
 PrefabInstance:
@@ -78990,6 +79040,7 @@ MonoBehaviour:
   lerpMat: {fileID: 0}
   baseMats: []
   testRenderers: []
+  meshRenderers: []
   flashMat: {fileID: 0}
 --- !u!1001 &2161533143867494057
 PrefabInstance:
